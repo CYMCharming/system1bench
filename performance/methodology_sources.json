@@ -1,0 +1,60 @@
+{
+  "sources": [
+    {
+      "file": "mlperf_abstract.html",
+      "url": "https://arxiv.org/abs/1911.02549",
+      "bytes": 50871,
+      "sha256": "cfabea7083841fd32dde04594194d0f821906e813b7a1d649e4b5c5ae73085c7",
+      "status": "ok"
+    },
+    {
+      "file": "mlperf.pdf",
+      "url": "https://arxiv.org/pdf/1911.02549",
+      "bytes": 1185996,
+      "sha256": "ab71faac2c06fa5c317f559e3e96c7baa24a7d15bcf757efcee085ee1a3a1efd",
+      "status": "ok"
+    },
+    {
+      "file": "vllm_abstract.html",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "bytes": 43425,
+      "sha256": "de9353854db4e16af0c63f73502f7e463f03bdc4f3c98f3fcd377fe1c625ed08",
+      "status": "ok"
+    },
+    {
+      "file": "vllm.pdf",
+      "url": "https://arxiv.org/pdf/2309.06180",
+      "bytes": 1459631,
+      "sha256": "55b3b324d779a67c59dac2519445e3b07c14e6ff5c656fadb47a3d7b5997469e",
+      "status": "ok"
+    },
+    {
+      "file": "orca.html",
+      "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
+      "bytes": 38596,
+      "sha256": "4a2ac19ce9625f246b1a7975952635b439b8db963f473427b9259fb8e7a5d519",
+      "status": "ok"
+    },
+    {
+      "file": "pytorch_benchmark.html",
+      "url": "https://docs.pytorch.org/tutorials/recipes/recipes/benchmark.html",
+      "bytes": 252921,
+      "sha256": "95d581e735a6cbe467c8555f6d559f1152e31e8a4287629d388f0f375c93d072",
+      "status": "ok"
+    },
+    {
+      "file": "mlperf_rules.md",
+      "url": "https://raw.githubusercontent.com/mlcommons/inference_policies/master/inference_rules.adoc",
+      "bytes": 79883,
+      "sha256": "94c69f01f1e0be24dc057180af6db878d1f5339fd31d54cbe5c386f8e198ce08",
+      "status": "ok"
+    },
+    {
+      "file": "sarathi.pdf",
+      "url": "https://arxiv.org/pdf/2403.02310",
+      "sha256": "45f59f4474de29baf4d315c785b850625548b69a9bc7be2e036d6fc59f54b54a",
+      "bytes": 1945812,
+      "status": "ok"
+    }
+  ]
+}
