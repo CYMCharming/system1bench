@@ -17,6 +17,7 @@ retrieval and actual option-order perturbations. Scores stay separate by source
 and reference quality. There is no blended “decision intelligence” score.
 
 - [Results and Chinese report](docs/RESULTS.zh-CN.md)
+- [数据集中文解读：用途、来源与适用性](docs/DATASETS.zh-CN.md)
 - [Protocol and metrics](PROTOCOL.md) · [dataset suitability review](docs/DATASET_REVIEW.md)
 - [Machine-readable results](results/summary.json) · [CSV](results/metrics.csv)
 - [v0.2 comparison integrity review](docs/BASELINE_AUDIT.md) · [original Laya review](docs/EXPERIMENT_AUDIT.md)
