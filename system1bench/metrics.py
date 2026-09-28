@@ -167,11 +167,16 @@ def main():
     # Compare only common complete cases if either tokenizer truncates a question.
     models = list(summary["models"])
     shared = {}
-    if len(models) == 2:
+    if len(models) >= 2:
         for spec in manifest["suites"]:
             name = spec["name"]
             maps = [{(r["id"], r["qid"]): r for r in read_run(root / m / (name + ".json.gz"))["rows"]} for m in models]
-            keys = [k for k in maps[0] if maps[0][k]["audit"]["complete"] and maps[1][k]["audit"]["complete"]]
+            if any(m.keys() != maps[0].keys() for m in maps):
+                raise ValueError("Cross-model result IDs mismatch")
+            for k in maps[0]:
+                if any((m[k]["request_sha256"], m[k]["gold"]) != (maps[0][k]["request_sha256"], maps[0][k]["gold"]) for m in maps):
+                    raise ValueError("Cross-model input/reference mismatch")
+            keys = [k for k in maps[0] if all(m[k]["audit"]["complete"] for m in maps)]
             shared[name] = {m: metrics([maps[i][k] for k in keys]) for i, m in enumerate(models)}
     summary["shared_complete_input"] = shared
     write(root / "summary.json", summary)

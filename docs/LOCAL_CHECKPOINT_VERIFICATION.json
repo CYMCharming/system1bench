@@ -1,0 +1,156 @@
+{
+  "qwen3_8b": {
+    "repo": "Qwen/Qwen3-8B",
+    "verified_against_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "files": {
+      "config.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "actual": "d46195ac87f837ad233d02b2f80f148bf7c005e0",
+        "matches": true
+      },
+      "generation_config.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "actual": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+        "matches": true
+      },
+      "model-00001-of-00005.safetensors": {
+        "hash_type": "sha256",
+        "expected": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+        "actual": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+        "matches": true
+      },
+      "model-00002-of-00005.safetensors": {
+        "hash_type": "sha256",
+        "expected": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+        "actual": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+        "matches": true
+      },
+      "model-00003-of-00005.safetensors": {
+        "hash_type": "sha256",
+        "expected": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+        "actual": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+        "matches": true
+      },
+      "model-00004-of-00005.safetensors": {
+        "hash_type": "sha256",
+        "expected": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+        "actual": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+        "matches": true
+      },
+      "model-00005-of-00005.safetensors": {
+        "hash_type": "sha256",
+        "expected": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+        "actual": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+        "matches": true
+      },
+      "model.safetensors.index.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "actual": "2b85c00f1b118961cd7a477e2bba0fe197a4ce1a",
+        "matches": true
+      },
+      "tokenizer.json": {
+        "hash_type": "sha256",
+        "expected": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "actual": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "matches": true
+      },
+      "tokenizer_config.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "actual": "417d038a63fa3de29cfde265caedae14d1a58d92",
+        "matches": true
+      },
+      "vocab.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "actual": "4783fe10ac3adce15ac8f358ef5462739852c569",
+        "matches": true
+      }
+    },
+    "all_files_match": true,
+    "supplemental_post_launch_files": {
+      "merges.txt": {
+        "hash_type": "git_blob_sha1",
+        "actual": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "expected": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+        "matches": true,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "pre_inference_inventory": false
+      }
+    }
+  },
+  "llama31_8b_instruct": {
+    "repo": "meta-llama/Llama-3.1-8B-Instruct",
+    "verified_against_revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+    "files": {
+      "config.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "0bb6fd75b3ad2fe988565929f329945262c2814e",
+        "actual": "0bb6fd75b3ad2fe988565929f329945262c2814e",
+        "matches": true
+      },
+      "configuration.json": {
+        "matches": false,
+        "reason": "no remote blob metadata"
+      },
+      "generation_config.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "cc7276afd599de091142c6ed3005faf8a74aa257",
+        "actual": "cc7276afd599de091142c6ed3005faf8a74aa257",
+        "matches": true
+      },
+      "model-00001-of-00004.safetensors": {
+        "hash_type": "sha256",
+        "expected": "2b1879f356aed350030bb40eb45ad362c89d9891096f79a3ab323d3ba5607668",
+        "actual": "2b1879f356aed350030bb40eb45ad362c89d9891096f79a3ab323d3ba5607668",
+        "matches": true
+      },
+      "model-00002-of-00004.safetensors": {
+        "hash_type": "sha256",
+        "expected": "09d433f650646834a83c580877bd60c6d1f88f7755305c12576b5c7058f9af15",
+        "actual": "09d433f650646834a83c580877bd60c6d1f88f7755305c12576b5c7058f9af15",
+        "matches": true
+      },
+      "model-00003-of-00004.safetensors": {
+        "hash_type": "sha256",
+        "expected": "fc1cdddd6bfa91128d6e94ee73d0ce62bfcdb7af29e978ddcab30c66ae9ea7fa",
+        "actual": "fc1cdddd6bfa91128d6e94ee73d0ce62bfcdb7af29e978ddcab30c66ae9ea7fa",
+        "matches": true
+      },
+      "model-00004-of-00004.safetensors": {
+        "hash_type": "sha256",
+        "expected": "92ecfe1a2414458b4821ac8c13cf8cb70aed66b5eea8dc5ad9eeb4ff309d6d7b",
+        "actual": "92ecfe1a2414458b4821ac8c13cf8cb70aed66b5eea8dc5ad9eeb4ff309d6d7b",
+        "matches": true
+      },
+      "model.safetensors.index.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "0fd8120f1c6acddc268ebc2583058efaf699a771",
+        "actual": "0fd8120f1c6acddc268ebc2583058efaf699a771",
+        "matches": true
+      },
+      "special_tokens_map.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "02ee80b6196926a5ad790a004d9efd6ab1ba6542",
+        "actual": "02ee80b6196926a5ad790a004d9efd6ab1ba6542",
+        "matches": true
+      },
+      "tokenizer.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "5cc5f00a5b203e90a27a3bd60d1ec393b07971e8",
+        "actual": "5cc5f00a5b203e90a27a3bd60d1ec393b07971e8",
+        "matches": true
+      },
+      "tokenizer_config.json": {
+        "hash_type": "git_blob_sha1",
+        "expected": "db88166e2bc4c799fd5d1ae643b75e84d03ee70e",
+        "actual": "db88166e2bc4c799fd5d1ae643b75e84d03ee70e",
+        "matches": true
+      }
+    },
+    "all_files_match": false
+  }
+}

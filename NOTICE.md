@@ -13,3 +13,10 @@ under MIT. Its original license is preserved in
 Laya is developed by NandhaKishorM / Convai Innovations. Jev is associated with
 TypeSafe AI. System1Bench is an independent evaluation project, not an official
 benchmark, endorsement or product of those organizations.
+
+The local v0.2 baselines use Qwen3-8B (Qwen, Apache 2.0) and
+Llama-3.1-8B-Instruct (Meta, Llama 3.1 Community License). This repository
+publishes evaluation code and outputs, not model weights. Model terms and
+required access remain with the original publishers; our MIT license does not
+replace them. Exact checkpoint byte/revision verification is linked in
+[LLM_BASELINES.md](docs/LLM_BASELINES.md).

@@ -1,9 +1,15 @@
-# System1Bench v0.1 — frozen evaluation protocol
+# System1Bench — frozen data protocol and model-specific execution
 
-Frozen before the new inference runs on 2026-09-28. This release evaluates the
+The v0.1 data protocol was frozen before inference on 2026-09-28. The initial release evaluated the
 English and multilingual checkpoints in convaiinnovations/laya at
 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851 using Laya 0.3.20. Jev is not evaluated.
 The versioned machine-readable specification is `protocol_manifest.json`.
+
+v0.2 retains these inputs and original Laya results, and adds real local
+Llama-3.1-8B-Instruct and Qwen3-8B runs. Their prompt, code scoring, no-thinking
+mode and context ceiling were frozen before measured inference; see
+[LLM_BASELINES.md](docs/LLM_BASELINES.md). Laya-specific limits below do not
+apply to the autoregressive adapters.
 
 ## Scope and reference quality
 
@@ -51,7 +57,7 @@ These are 15 source datasets/collections, not 36 independent benchmarks.
 
 ## Token budget
 
-Every new run uses max_len=8192 and head_max_len=4096, batch size8. Actual
+Every Laya run uses max_len=8192 and head_max_len=4096, batch size8. Actual
 padding follows each batch's longest input; this is not 8,192 generated tokens.
 The stock model's per-option 48-token cap remains. Audit actual encoded options,
 instruction tokens, state space, option collisions and special-mask sanitation.
@@ -103,7 +109,8 @@ files before Agent construction. Bind results to prepared inputs, source code,
 model bytes and batch config. Finish each suite atomically with its batch times;
 an interrupted suite is rerun in full. Completed suites are hash/ID/signature
 checked before reuse. Do not combine partial timing with complete denominators.
-All checkpoints have fresh runs; previous local results are not relabeled as new.
+Each published checkpoint has actual measured outputs; the v0.1 Laya artifacts
+are preserved, not relabeled as new v0.2 inference.
 Reported timing is batch inference wall time, not single-request serving latency.
 
 ## Validity and publication

@@ -36,3 +36,9 @@ generic interface is implemented, but no Jev adapter or Jev run is claimed.
 
 The benchmark treats the model's `action` as auxiliary output. v0.1 evaluates
 labels/probabilities, not a learned escalate/retrieve policy or monetary cost.
+
+The included `system1bench.llm_adapter:LLMAdapter` supplies a local Llama/Qwen
+comparison using restricted next-token code logits. See [LLM_BASELINES.md](LLM_BASELINES.md)
+for the full conversion, context auditing and probability semantics. It stores
+actual prompt token hashes and uses `head_tokens: null` because it has no
+separate Laya-style head allocation.

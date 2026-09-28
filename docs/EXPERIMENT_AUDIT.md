@@ -1,4 +1,7 @@
-# System1Bench experiment integrity audit
+# System1Bench v0.1 Laya experiment integrity audit
+
+Historical scope: this report covers the original two Laya runs and v0.1 code,
+not the added LLM baselines. The [v0.2 comparison review](BASELINE_AUDIT.md) is separate.
 
 Date: 2026-09-28. Reviewer: GPT-5.6-Sol ultra, fresh read-only agent with a
 focused follow-up after repairs. **Review independence: same-family. Acceptance:
