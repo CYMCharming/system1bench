@@ -1,0 +1,122 @@
+{
+  "jevbench": {
+    "repo": "fstandhartinger/jevbench",
+    "revision": "fd54ea7dc02bbe29c6ac8f6e015a54cdcff26805",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "datasets/public/original.jsonl",
+        "sha256": "5c2414edb3006b8bfcb70fda433f0f9ca015759433849f8d3104328a1f7c4180"
+      },
+      {
+        "path": "datasets/public/easy.jsonl",
+        "sha256": "231df3c2c8e88a1a8c137ebe85de96ba70fabd330849098ac7b3c52c70b7172b"
+      },
+      {
+        "path": "datasets/public/hard.jsonl",
+        "sha256": "89e9e6becb33ed88c1de7d42dcc87531b2fb64cfaef4e1986faf7c37b3f80ebb"
+      }
+    ]
+  },
+  "reflexbench": {
+    "repo": "brida-ai/reflexbench",
+    "revision": "0c3535de20124d278502c6d5e261916876ecfadd",
+    "license": "Apache-2.0",
+    "files": [
+      {
+        "path": "corpora/reflex-public-choice-v1.jsonl",
+        "sha256": "2e267739e87a0c32a27e2bb767330ad3989bb12bdf6d1a67ef2bd1fde1a19bd4"
+      }
+    ]
+  },
+  "jev_laya": {
+    "repo": "harrymunro/jev-laya-benchmark",
+    "revision": "0f977d20641e347bffee05745fed265858930489",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "bench/data/claims.jsonl",
+        "sha256": "b9382065f169aeb8dbea30b40f638f4afb640b336ccbff4f7ef9e023a36d1e5c"
+      },
+      {
+        "path": "bench/data/guard.jsonl",
+        "sha256": "06021f998fae98f649194d80e58f57091d38258031a749b20b0a547833ae1154"
+      },
+      {
+        "path": "bench/data/moderation.jsonl",
+        "sha256": "a7d33935cc50a5d786b61fc994ad9f10dc2f6ee0f63e71247bfd9af6c5b0931d"
+      },
+      {
+        "path": "bench/data/multilingual.jsonl",
+        "sha256": "3edabacf075358419366085f71a4e2ac21861e96f9a1debc2561c6f5e47959c1"
+      },
+      {
+        "path": "bench/data/needle.jsonl",
+        "sha256": "d8515e8f5448fd97c24a52108439f0f10dcab66a671a82cc886ec6546e394605"
+      },
+      {
+        "path": "bench/data/reviews.jsonl",
+        "sha256": "bc0f97b07d1992e98ae21ec53a40eabb25497b6670b5bc02dc25234edb8986c2"
+      },
+      {
+        "path": "bench/data/routing.jsonl",
+        "sha256": "801eb619f37ff8312776eec64639ebdc4e0420a7c850ecccd005206e63e8dce6"
+      },
+      {
+        "path": "bench/data/triage.jsonl",
+        "sha256": "fa24e8f9abdcabb512aaa4f6a268166464ef8396cb5cc7af1e55a3a3fa88dec9"
+      },
+      {
+        "path": "bench/tasks.py",
+        "sha256": "683d5ae8fc93662466b05b69f576ee9a2f1fd00ab8c75308246aa80d963414c3"
+      }
+    ]
+  },
+  "clinc": {
+    "provider": "hf",
+    "repo": "clinc/clinc_oos",
+    "revision": "155b9c710419136e17307b80d0a13e68cd46b4ec",
+    "license": "CC-BY-3.0",
+    "files": [
+      {
+        "path": "README.md",
+        "sha256": "e28704a3c04f6b05c286ca2a8891bbf32c69c000dedfc5825d6e1713369b7a89"
+      },
+      {
+        "path": "plus/test-00000-of-00001.parquet",
+        "sha256": "3e60e45b25bf86543aa5df8ba4fcc674114164e6184f0197690648c2908d0102"
+      },
+      {
+        "path": "api_metadata.json",
+        "sha256": "b143c90931018fc37d74d66307348a295e7d623f9e27152570ce634cece3d772"
+      }
+    ]
+  },
+  "turtle": {
+    "repo": "spoonnotfound/decision-model-bench",
+    "revision": "b04899d53eee353225f6774a170968e17652a8b8",
+    "license": "Apache-2.0",
+    "files": [
+      {
+        "path": "tasks/data/turtlebench-en.jsonl",
+        "sha256": "f3a6f96e7883bc4b0f5760e3d5681a6914c5bc82d54d005b26d4e4b06693ef21"
+      }
+    ]
+  },
+  "aegis": {
+    "provider": "hf",
+    "repo": "nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
+    "revision": "d86bb8bedff51d25ac834ab7838f1cc61acb7a2c",
+    "license": "CC-BY-4.0",
+    "files": [
+      {
+        "path": "README.md",
+        "sha256": "da2598e587850bacc77c0658f56d0ea430f55d1cf70b197eb06070871802d3ba"
+      },
+      {
+        "path": "test.json",
+        "sha256": "b0a6d602260524866053cb34105194f074f2c2906e3691b68d43b9e6e9318f35"
+      }
+    ]
+  }
+}

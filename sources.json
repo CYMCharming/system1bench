@@ -1,0 +1,266 @@
+{
+  "ag_news": {
+    "suite": "ag_news",
+    "repo": "fancyzhx/ag_news",
+    "revision": "eb185aade064a813bc0b7f42de02595523103ca4",
+    "source_file": "data/test-00000-of-00001.parquet",
+    "split": "test",
+    "language": "en",
+    "count": 7600,
+    "features": {
+      "text": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "label": {
+        "names": [
+          "World",
+          "Sports",
+          "Business",
+          "Sci/Tech"
+        ],
+        "_type": "ClassLabel"
+      }
+    },
+    "original_file": "datasets/ag_news/test-00000-of-00001.parquet",
+    "rows_file": "datasets/ag_news/rows.jsonl",
+    "original_sha256": "71de87ec66bc5737752a2502204dfa6d7fe9856ade3ea444dc6317789a4f13fb",
+    "rows_sha256": "cc4814d38043b233883fc7727eb633e0c4377b35330805409c4b29ed22dd054b",
+    "url": "https://huggingface.co/datasets/fancyzhx/ag_news/tree/eb185aade064a813bc0b7f42de02595523103ca4"
+  },
+  "emotion": {
+    "suite": "emotion",
+    "repo": "dair-ai/emotion",
+    "revision": "cab853a1dbdf4c42c2b3ef2173804746df8825fe",
+    "source_file": "split/test-00000-of-00001.parquet",
+    "split": "test",
+    "language": "en",
+    "count": 2000,
+    "features": {
+      "text": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "label": {
+        "names": [
+          "sadness",
+          "joy",
+          "love",
+          "anger",
+          "fear",
+          "surprise"
+        ],
+        "_type": "ClassLabel"
+      }
+    },
+    "original_file": "datasets/emotion/test-00000-of-00001.parquet",
+    "rows_file": "datasets/emotion/rows.jsonl",
+    "original_sha256": "6f8407fa1ca9c310f55781f082ed73812f6551e8dda2c61973123a121869245b",
+    "rows_sha256": "f8624603c09c9b8766dd6978cde80197dbf8fb649c43161beb5aaee7da3910d2",
+    "url": "https://huggingface.co/datasets/dair-ai/emotion/tree/cab853a1dbdf4c42c2b3ef2173804746df8825fe"
+  },
+  "banking77": {
+    "suite": "banking77",
+    "repo": "mteb/banking77",
+    "revision": "18072d2685ea682290f7b8924d94c62acc19c0b2",
+    "source_file": "data/test-00000-of-00001.parquet",
+    "split": "test",
+    "language": "en",
+    "count": 3076,
+    "features": {
+      "text": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "label": {
+        "dtype": "int64",
+        "_type": "Value"
+      },
+      "label_text": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    },
+    "original_file": "datasets/banking77/test-00000-of-00001.parquet",
+    "rows_file": "datasets/banking77/rows.jsonl",
+    "original_sha256": "9575f636fdeae0c94a0f3f2d926ca8f9a2833b998cf94108936dfd5d72322bf9",
+    "rows_sha256": "c12b6fda6d253b3f8a218c7fcf536eddb1258abac35f5849642ffd49e0719589",
+    "url": "https://huggingface.co/datasets/mteb/banking77/tree/18072d2685ea682290f7b8924d94c62acc19c0b2"
+  },
+  "boolq": {
+    "suite": "boolq",
+    "repo": "google/boolq",
+    "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+    "source_file": "data/validation-00000-of-00001.parquet",
+    "split": "validation",
+    "language": "en",
+    "count": 3270,
+    "features": {
+      "question": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "answer": {
+        "dtype": "bool",
+        "_type": "Value"
+      },
+      "passage": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    },
+    "original_file": "datasets/boolq/validation-00000-of-00001.parquet",
+    "rows_file": "datasets/boolq/rows.jsonl",
+    "original_sha256": "52355d11524b4b874a9b9dcc278feb10f672d52c4f4eff9872e695ede59820f8",
+    "rows_sha256": "dbad2984e58eaa2184b6d0acfe2e94a73b9868381046255d6be6c3bed9088b68",
+    "url": "https://huggingface.co/datasets/google/boolq/tree/35b264d03638db9f4ce671b711558bf7ff0f80d5"
+  },
+  "sst5": {
+    "suite": "sst5",
+    "repo": "SetFit/sst5",
+    "revision": "e51bdcd8cd3a30da231967c1a249ba59361279a3",
+    "source_file": "test.jsonl",
+    "split": "test",
+    "language": "en",
+    "count": 2210,
+    "features": null,
+    "original_file": "datasets/sst5/test.jsonl",
+    "rows_file": "datasets/sst5/rows.jsonl",
+    "original_sha256": "1384216112a34f3d70b6fa210762f3399bb080410c0456ac6e54a5cb413f04b2",
+    "rows_sha256": "cc07a6ead2710c504bb3dc373fcbd7e023eed7e9cd489973f5d436ef5e0e9954",
+    "url": "https://huggingface.co/datasets/SetFit/sst5/tree/e51bdcd8cd3a30da231967c1a249ba59361279a3"
+  },
+  "xnli_en": {
+    "suite": "xnli_en",
+    "repo": "facebook/xnli",
+    "revision": "b8dd5d7af51114dbda02c0e3f6133f332186418e",
+    "source_file": "en/test-00000-of-00001.parquet",
+    "split": "test",
+    "language": "en",
+    "count": 5010,
+    "features": {
+      "premise": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "hypothesis": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "label": {
+        "names": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "_type": "ClassLabel"
+      }
+    },
+    "original_file": "datasets/xnli_en/test-00000-of-00001.parquet",
+    "rows_file": "datasets/xnli_en/rows.jsonl",
+    "original_sha256": "8f0fd1e105091e0f11cd37f9b2bc382f16de9949aa9471e1366b2605ba037167",
+    "rows_sha256": "4405581e49e176b41d88e485fa01b4e7f497b56a467d2d340fd8fefbec8e291f",
+    "url": "https://huggingface.co/datasets/facebook/xnli/tree/b8dd5d7af51114dbda02c0e3f6133f332186418e"
+  },
+  "xnli_zh": {
+    "suite": "xnli_zh",
+    "repo": "facebook/xnli",
+    "revision": "b8dd5d7af51114dbda02c0e3f6133f332186418e",
+    "source_file": "zh/test-00000-of-00001.parquet",
+    "split": "test",
+    "language": "zh",
+    "count": 5010,
+    "features": {
+      "premise": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "hypothesis": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "label": {
+        "names": [
+          "entailment",
+          "neutral",
+          "contradiction"
+        ],
+        "_type": "ClassLabel"
+      }
+    },
+    "original_file": "datasets/xnli_zh/test-00000-of-00001.parquet",
+    "rows_file": "datasets/xnli_zh/rows.jsonl",
+    "original_sha256": "0588db7da3ed00a677dc6ac521e9b3e1c8ecf286ea0c2182b9a6a346b22c4645",
+    "rows_sha256": "fe3cfaf6705c986307b3e736b0de6690318e69a9a2d79af81e0f0e4736e59a31",
+    "url": "https://huggingface.co/datasets/facebook/xnli/tree/b8dd5d7af51114dbda02c0e3f6133f332186418e"
+  },
+  "massive_en": {
+    "suite": "massive_en",
+    "repo": "mteb/amazon_massive_intent",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2",
+    "source_file": "test/en.json.gz",
+    "split": "test",
+    "language": "en",
+    "count": 2974,
+    "features": null,
+    "original_file": "datasets/massive_en/en.json.gz",
+    "rows_file": "datasets/massive_en/rows.jsonl",
+    "original_sha256": "6dd692a9c188f395956b0534b70486c8ed959fd6d7e50d26d419ff169d213894",
+    "rows_sha256": "dd3e3b64094d8652624adfe13555ae0595572482c9f6b4e076afcb8f572cfa82",
+    "url": "https://huggingface.co/datasets/mteb/amazon_massive_intent/tree/940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+  },
+  "massive_zh": {
+    "suite": "massive_zh",
+    "repo": "mteb/amazon_massive_intent",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2",
+    "source_file": "test/zh-CN.json.gz",
+    "split": "test",
+    "language": "zh",
+    "count": 2974,
+    "features": null,
+    "original_file": "datasets/massive_zh/zh-CN.json.gz",
+    "rows_file": "datasets/massive_zh/rows.jsonl",
+    "original_sha256": "57d7ae5ef5376eeb82a10f109a1111d95e88e4ae165febedc4ba5767ce755295",
+    "rows_sha256": "167a20fe3d6a3abdcff18ef33be46688be978a3017e82f8bad813004437d39b9",
+    "url": "https://huggingface.co/datasets/mteb/amazon_massive_intent/tree/940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+  },
+  "prompt_injections": {
+    "suite": "prompt_injections",
+    "repo": "deepset/prompt-injections",
+    "revision": "4f61ecb038e9c3fb77e21034b22511b523772cdd",
+    "source_file": "data/test-00000-of-00001-701d16158af87368.parquet",
+    "split": "test",
+    "language": "en",
+    "count": 116,
+    "features": {
+      "text": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "label": {
+        "dtype": "int64",
+        "_type": "Value"
+      }
+    },
+    "original_file": "datasets/prompt_injections/test-00000-of-00001-701d16158af87368.parquet",
+    "rows_file": "datasets/prompt_injections/rows.jsonl",
+    "original_sha256": "39ac797cabc157eeed58435a08593b2952bb6cb16fc394a2d383f447cc7b246e",
+    "rows_sha256": "de0996d15cabd838d50a4925a8493062ba70c29f845601cd6a17412236614486",
+    "url": "https://huggingface.co/datasets/deepset/prompt-injections/tree/4f61ecb038e9c3fb77e21034b22511b523772cdd"
+  },
+  "typed_decisions": {
+    "suite": "typed_decisions",
+    "repo": "LocalLLaMA/typed-decisions",
+    "revision": "f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8",
+    "source_file": "all/test-00000-of-00001.parquet",
+    "split": "test",
+    "language": "en",
+    "count": 400,
+    "features": null,
+    "original_file": "datasets/typed_decisions/test-00000-of-00001.parquet",
+    "rows_file": "datasets/typed_decisions/rows.jsonl",
+    "original_sha256": "4f294f218ea1da27f3efef936359389c62ea4d3973a41457732990f1d31b647c",
+    "rows_sha256": "e6b149efbae9d91b111f20d18fca3ed0e7df2043497f8364f03d9310e3f1c796",
+    "url": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions/tree/f7a2487edd7a043a5441a5e9ccc7fe5ddbd9ebe8"
+  }
+}

@@ -1,0 +1,651 @@
+{
+  "protocol": "system1bench-v0.1",
+  "seed": 20260927,
+  "budget": {
+    "max_len": 8192,
+    "head_max_len": 4096
+  },
+  "prepared_sha256": "5baf87ce9010d8229ea1a39722b865fb5ecc20db3c981e97f51a4baae3653be4",
+  "sources_sha256": "9010f2c63508f5782351e2b21645ef5086d09a316d8ee7585d5bdebed36eaa4c",
+  "external_sources_sha256": "639975032dc3f6f120825f028689989b975c19ecdfff9cbd84b9bf38b101f4ff",
+  "suites": [
+    {
+      "name": "ag_news",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "ag_news",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "emotion",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "emotion",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "banking77",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "banking77",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "boolq",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "boolq",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "boolq_choice",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "boolq",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "sst5",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "sst5",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "sst5_choice",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "sst5",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "xnli_en",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "xnli_en",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "xnli_zh",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "xnli_zh",
+      "language": "zh",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "zh": 1000
+      }
+    },
+    {
+      "name": "massive_en",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "massive_en",
+      "language": "en",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "en": 1000
+      }
+    },
+    {
+      "name": "massive_zh",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "massive_zh",
+      "language": "zh",
+      "requests": 1000,
+      "decisions": 1000,
+      "languages": {
+        "zh": 1000
+      }
+    },
+    {
+      "name": "prompt_injections",
+      "track": "semantic",
+      "reference": "dataset_provided",
+      "source": "prompt_injections",
+      "language": "en",
+      "requests": 116,
+      "decisions": 116,
+      "languages": {
+        "en": 116
+      }
+    },
+    {
+      "name": "typed_decisions",
+      "track": "synthetic_workflow",
+      "reference": "synthetic_teacher",
+      "source": "typed_decisions",
+      "language": "en",
+      "requests": 400,
+      "decisions": 2000,
+      "languages": {
+        "en": 400
+      }
+    },
+    {
+      "name": "jevbench_original",
+      "track": "authored_workflow",
+      "reference": "authored_or_AI_reviewed",
+      "source": "jevbench",
+      "language": "en",
+      "requests": 72,
+      "decisions": 72,
+      "languages": {
+        "en": 72
+      }
+    },
+    {
+      "name": "jevbench_easy",
+      "track": "authored_workflow",
+      "reference": "authored_or_AI_reviewed",
+      "source": "jevbench",
+      "language": "en",
+      "requests": 48,
+      "decisions": 48,
+      "languages": {
+        "en": 48
+      }
+    },
+    {
+      "name": "jevbench_hard",
+      "track": "authored_workflow",
+      "reference": "authored_or_AI_reviewed",
+      "source": "jevbench",
+      "language": "en",
+      "requests": 111,
+      "decisions": 111,
+      "languages": {
+        "en": 111
+      }
+    },
+    {
+      "name": "reflexbench_reflex-public-choice-v1",
+      "track": "authored_workflow",
+      "reference": "authored_or_AI_reviewed",
+      "source": "reflexbench",
+      "language": "en",
+      "requests": 95,
+      "decisions": 95,
+      "languages": {
+        "en": 95
+      }
+    },
+    {
+      "name": "jev_laya_triage",
+      "track": "synthetic_workflow",
+      "reference": "synthetic_teacher",
+      "source": "jev_laya",
+      "language": "en",
+      "requests": 167,
+      "decisions": 501,
+      "languages": {
+        "en": 167
+      }
+    },
+    {
+      "name": "jev_laya_moderation",
+      "track": "synthetic_workflow",
+      "reference": "synthetic_teacher",
+      "source": "jev_laya",
+      "language": "en",
+      "requests": 142,
+      "decisions": 426,
+      "languages": {
+        "en": 142
+      }
+    },
+    {
+      "name": "jev_laya_routing",
+      "track": "synthetic_workflow",
+      "reference": "synthetic_teacher",
+      "source": "jev_laya",
+      "language": "en",
+      "requests": 137,
+      "decisions": 411,
+      "languages": {
+        "en": 137
+      }
+    },
+    {
+      "name": "jev_laya_claims",
+      "track": "synthetic_workflow",
+      "reference": "synthetic_teacher",
+      "source": "jev_laya",
+      "language": "en",
+      "requests": 150,
+      "decisions": 300,
+      "languages": {
+        "en": 150
+      }
+    },
+    {
+      "name": "jev_laya_reviews",
+      "track": "synthetic_workflow",
+      "reference": "synthetic_teacher",
+      "source": "jev_laya",
+      "language": "en",
+      "requests": 150,
+      "decisions": 300,
+      "languages": {
+        "en": 150
+      }
+    },
+    {
+      "name": "jev_laya_guard",
+      "track": "synthetic_workflow",
+      "reference": "synthetic_teacher",
+      "source": "jev_laya",
+      "language": "en",
+      "requests": 146,
+      "decisions": 292,
+      "languages": {
+        "en": 146
+      }
+    },
+    {
+      "name": "jev_laya_multilingual",
+      "track": "synthetic_workflow",
+      "reference": "synthetic_teacher",
+      "source": "jev_laya",
+      "language": "mixed",
+      "requests": 128,
+      "decisions": 256,
+      "languages": {
+        "es": 17,
+        "fr": 19,
+        "pt": 19,
+        "ja": 18,
+        "de": 19,
+        "zh": 16,
+        "it": 20
+      }
+    },
+    {
+      "name": "jev_laya_needle",
+      "track": "synthetic_workflow",
+      "reference": "programmatic",
+      "source": "jev_laya",
+      "language": "en",
+      "requests": 450,
+      "decisions": 900,
+      "languages": {
+        "en": 450
+      }
+    },
+    {
+      "name": "clinc150_oos",
+      "track": "open_set",
+      "reference": "dataset_provided",
+      "source": "clinc",
+      "language": "en",
+      "requests": 5500,
+      "decisions": 5500,
+      "languages": {
+        "en": 5500
+      }
+    },
+    {
+      "name": "turtlebench",
+      "track": "contextual_reasoning",
+      "reference": "dataset_provided",
+      "source": "turtle",
+      "language": "en",
+      "requests": 1532,
+      "decisions": 1532,
+      "languages": {
+        "en": 1532
+      }
+    },
+    {
+      "name": "aegis2_prompt",
+      "track": "safety",
+      "reference": "human_prompt_annotation",
+      "source": "aegis",
+      "language": "en",
+      "requests": 1928,
+      "decisions": 1928,
+      "languages": {
+        "en": 1928
+      }
+    },
+    {
+      "name": "banking77_repeat",
+      "track": "order_robustness",
+      "reference": "dataset_provided",
+      "source": "banking77",
+      "language": "en",
+      "base_suite": "banking77",
+      "condition": "repeat",
+      "requests": 100,
+      "decisions": 100,
+      "languages": {
+        "en": 100
+      }
+    },
+    {
+      "name": "banking77_reversed",
+      "track": "order_robustness",
+      "reference": "dataset_provided",
+      "source": "banking77",
+      "language": "en",
+      "base_suite": "banking77",
+      "condition": "reversed",
+      "requests": 100,
+      "decisions": 100,
+      "languages": {
+        "en": 100
+      }
+    },
+    {
+      "name": "massive_en_repeat",
+      "track": "order_robustness",
+      "reference": "dataset_provided",
+      "source": "massive_en",
+      "language": "en",
+      "base_suite": "massive_en",
+      "condition": "repeat",
+      "requests": 100,
+      "decisions": 100,
+      "languages": {
+        "en": 100
+      }
+    },
+    {
+      "name": "massive_en_reversed",
+      "track": "order_robustness",
+      "reference": "dataset_provided",
+      "source": "massive_en",
+      "language": "en",
+      "base_suite": "massive_en",
+      "condition": "reversed",
+      "requests": 100,
+      "decisions": 100,
+      "languages": {
+        "en": 100
+      }
+    },
+    {
+      "name": "jevbench_original_repeat",
+      "track": "order_robustness",
+      "reference": "authored_or_AI_reviewed",
+      "source": "jevbench",
+      "language": "en",
+      "base_suite": "jevbench_original",
+      "condition": "repeat",
+      "requests": 36,
+      "decisions": 36,
+      "languages": {
+        "en": 36
+      }
+    },
+    {
+      "name": "jevbench_original_reversed",
+      "track": "order_robustness",
+      "reference": "authored_or_AI_reviewed",
+      "source": "jevbench",
+      "language": "en",
+      "base_suite": "jevbench_original",
+      "condition": "reversed",
+      "requests": 36,
+      "decisions": 36,
+      "languages": {
+        "en": 36
+      }
+    },
+    {
+      "name": "reflexbench_reflex-public-choice-v1_repeat",
+      "track": "order_robustness",
+      "reference": "authored_or_AI_reviewed",
+      "source": "reflexbench",
+      "language": "en",
+      "base_suite": "reflexbench_reflex-public-choice-v1",
+      "condition": "repeat",
+      "requests": 95,
+      "decisions": 95,
+      "languages": {
+        "en": 95
+      }
+    },
+    {
+      "name": "reflexbench_reflex-public-choice-v1_reversed",
+      "track": "order_robustness",
+      "reference": "authored_or_AI_reviewed",
+      "source": "reflexbench",
+      "language": "en",
+      "base_suite": "reflexbench_reflex-public-choice-v1",
+      "condition": "reversed",
+      "requests": 95,
+      "decisions": 95,
+      "languages": {
+        "en": 95
+      }
+    }
+  ],
+  "exclusions": {
+    "aegis2_prompt": [
+      {
+        "source_index": 947,
+        "id": "7c366f9bf06046738e155e32c8853daf",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 954,
+        "id": "91eddfbd735f4fc1867d69439f472dc0",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 974,
+        "id": "257342be7eb9404caccdf5a51c78a241",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 987,
+        "id": "18b08752cdcb4987962e500f8b853aca",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1121,
+        "id": "213a3c198d0a47718c1ed40a4ae86dd8",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1138,
+        "id": "2ea0d98c0440479abde2f0dc703f60d5",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1160,
+        "id": "86cdf8b152b74e35953f51ad2b695dd4",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1173,
+        "id": "b3cbca2b4aa0454196f74e61ab89571a",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1187,
+        "id": "aeae9633d1ca464dbec94879eda52ecc",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1198,
+        "id": "d17c959757524e0993c07b6891d3e5da",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1209,
+        "id": "3fd08536ad02457691839b72338ae5de",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1275,
+        "id": "2290f28812a24272b702300fd7923eb4",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1301,
+        "id": "f1cf23b0ad214b5c9a538639a729b018",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1307,
+        "id": "ce236460489d4f2da5df1eb06b99e40f",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1308,
+        "id": "1779157e6f4e4b629af06c09962fd15f",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1352,
+        "id": "42384d01f10d44b493ad0c15fcf81b4e",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1379,
+        "id": "0864e729ed2e43d8bdba3897ef1d5ee8",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1384,
+        "id": "86046eac494f4144876ced8d5528fa5a",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1421,
+        "id": "e2ec179935104b568918ec4ed25f777f",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1463,
+        "id": "7bcdc0b703de4d32b65dc791bfe7633f",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1486,
+        "id": "45359466ae4d4292aaa1eea215c36769",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1496,
+        "id": "9f7725481e7e4f95adb36671e5b81198",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1538,
+        "id": "c0b41b82008648f9b5ffa4f522b70126",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1551,
+        "id": "809eba16a4be40c0ba4726509f48f46b",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1556,
+        "id": "4df14035551e47a98fbe89f0dbf3d40c",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1585,
+        "id": "9f32bc513e5b45bfbc65e577cb3aa4d6",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1612,
+        "id": "82da152fa0804182bc35fcc4174e1a74",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1647,
+        "id": "fcef060390b043a4993f15547347bfe1",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1684,
+        "id": "d6aea77e3e2742019e2565438576e632",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1701,
+        "id": "0d4431790fdc4596823c188ffb924d7a",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1720,
+        "id": "d76acfca4c1e465c809932a1f106fab9",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1737,
+        "id": "e3af44ef89304f5080bb62c9dd720039",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1814,
+        "id": "e495d0c5366442deb381f45e9647667b",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1861,
+        "id": "3f4f8fb6f8334de6ab16a3ded0c527e7",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1891,
+        "id": "f4d48b6e4a624abe96ec9258cdf3449c",
+        "reason": "redacted_or_empty_prompt"
+      },
+      {
+        "source_index": 1895,
+        "id": "0e377db4a3fd403ab9b5330a157bde74",
+        "reason": "redacted_or_empty_prompt"
+      }
+    ]
+  }
+}
