@@ -1,0 +1,25 @@
+{
+  "protocol": "system1bench-policy-v1",
+  "generator_sha256": "3e235f23b8de7b72e9bedc8628cb19aa279ef4c9387bc0a87c43a914ae75ae8b",
+  "frozen_sha256": "c5419322dc2824e3868cee3074d6adc1d9b46b7e80237cdf0db92d4e65d6c338",
+  "requests": 2304,
+  "decisions": 6912,
+  "independent_base_states": 288,
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "variants": [
+    "original",
+    "repeat",
+    "reversed",
+    "chinese",
+    "distractor",
+    "paraphrase",
+    "choice_encoded",
+    "counterfactual"
+  ],
+  "oracle": "executable policy; no model-generated labels",
+  "design_scope": "fresh programmatic compositional policy transfer, not real-world business validity"
+}
