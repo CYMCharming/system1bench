@@ -1,0 +1,5628 @@
+{
+  "analysis_scope": "post-hoc descriptive localization after observing primary results; no new inference or confirmatory inference",
+  "frozen_sha256": "c5419322dc2824e3868cee3074d6adc1d9b46b7e80237cdf0db92d4e65d6c338",
+  "confusions": [
+    {
+      "model": "english",
+      "family": "policy_refund",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_refund",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_refund",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 17
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 23
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 22
+        },
+        {
+          "gold": "replace",
+          "prediction": "refund",
+          "n": 7
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 1
+        },
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_refund",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 18
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 20
+        },
+        {
+          "gold": "refund",
+          "prediction": "deny",
+          "n": 6
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_refund",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_refund",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_refund",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_refund",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 9
+        },
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 72
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 11
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_access",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_access",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_access",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 32
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 22
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 17
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 12
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 1
+        },
+        {
+          "gold": "challenge",
+          "prediction": "allow",
+          "n": 10
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 1
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_access",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_access",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_access",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 27
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 25
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 18
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 4
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 5
+        },
+        {
+          "gold": "challenge",
+          "prediction": "allow",
+          "n": 4
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 4
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 8
+        },
+        {
+          "gold": "deny",
+          "prediction": "allow",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_access",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_access",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 17
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 63
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 14
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_routing",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "general",
+          "n": 15
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 21
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 24
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "technical",
+          "n": 2
+        },
+        {
+          "gold": "technical",
+          "prediction": "general",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_routing",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "general",
+          "n": 15
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 21
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 24
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "technical",
+          "n": 2
+        },
+        {
+          "gold": "technical",
+          "prediction": "general",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_routing",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "general",
+          "n": 17
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "general",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 24
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 7
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_routing",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "general",
+          "n": 11
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 23
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 24
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 1
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_routing",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_routing",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "general",
+          "n": 15
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 21
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 24
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "technical",
+          "n": 2
+        },
+        {
+          "gold": "technical",
+          "prediction": "general",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_routing",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "general",
+          "n": 15
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 21
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 24
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "technical",
+          "n": 2
+        },
+        {
+          "gold": "technical",
+          "prediction": "general",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "model": "english",
+      "family": "policy_routing",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 11
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 17
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 28
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 8
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "general",
+          "n": 19
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "technical",
+          "n": 8
+        },
+        {
+          "gold": "technical",
+          "prediction": "general",
+          "n": 5
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_refund",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "replace",
+          "n": 16
+        },
+        {
+          "gold": "deny",
+          "prediction": "replace",
+          "n": 23
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 8
+        },
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_refund",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "replace",
+          "n": 16
+        },
+        {
+          "gold": "deny",
+          "prediction": "replace",
+          "n": 23
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 8
+        },
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_refund",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "refund",
+          "n": 21
+        },
+        {
+          "gold": "replace",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 1
+        },
+        {
+          "gold": "hold",
+          "prediction": "replace",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_refund",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 18
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "hold",
+          "prediction": "replace",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_refund",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "replace",
+          "n": 23
+        },
+        {
+          "gold": "deny",
+          "prediction": "replace",
+          "n": 23
+        },
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 1
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_refund",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "replace",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_refund",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "replace",
+          "n": 16
+        },
+        {
+          "gold": "deny",
+          "prediction": "replace",
+          "n": 23
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 8
+        },
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_refund",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 2
+        },
+        {
+          "gold": "hold",
+          "prediction": "replace",
+          "n": 72
+        },
+        {
+          "gold": "deny",
+          "prediction": "replace",
+          "n": 7
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 11
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 3
+        },
+        {
+          "gold": "refund",
+          "prediction": "replace",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_access",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_access",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_access",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_access",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 32
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 28
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 2
+        },
+        {
+          "gold": "deny",
+          "prediction": "allow",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_access",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_access",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 11
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 19
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_access",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_access",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 17
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 63
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 16
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_routing",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_routing",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_routing",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 19
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 5
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_routing",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 19
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 4
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 5
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 5
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 20
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 19
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_routing",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_routing",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 9
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 21
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 15
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 3
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 17
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_routing",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "family": "policy_routing",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 11
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 44
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 23
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 13
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 5
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_refund",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_refund",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_refund",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_refund",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 22
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 20
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 22
+        },
+        {
+          "gold": "deny",
+          "prediction": "refund",
+          "n": 6
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 18
+        },
+        {
+          "gold": "replace",
+          "prediction": "refund",
+          "n": 4
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 2
+        },
+        {
+          "gold": "hold",
+          "prediction": "refund",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_refund",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_refund",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_refund",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_refund",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 9
+        },
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 72
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 11
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_access",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "allow",
+          "n": 14
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 17
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 11
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 19
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 19
+        },
+        {
+          "gold": "challenge",
+          "prediction": "allow",
+          "n": 16
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_access",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "allow",
+          "n": 14
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 17
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 11
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 19
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 19
+        },
+        {
+          "gold": "challenge",
+          "prediction": "allow",
+          "n": 16
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_access",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "allow",
+          "n": 25
+        },
+        {
+          "gold": "challenge",
+          "prediction": "allow",
+          "n": 31
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 29
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 6
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 2
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 2
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_access",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 6
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 29
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 7
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 27
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 23
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_access",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 23
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 21
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 16
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 13
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 12
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 10
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_access",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "allow",
+          "n": 23
+        },
+        {
+          "gold": "challenge",
+          "prediction": "allow",
+          "n": 28
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 26
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 5
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 10
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_access",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "allow",
+          "n": 14
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 17
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 11
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 19
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 19
+        },
+        {
+          "gold": "challenge",
+          "prediction": "allow",
+          "n": 16
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_access",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "challenge",
+          "prediction": "allow",
+          "n": 9
+        },
+        {
+          "gold": "deny",
+          "prediction": "allow",
+          "n": 33
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 30
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 5
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 8
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 11
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_routing",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 23
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_routing",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 23
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_routing",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_routing",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 21
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "general",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_routing",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_routing",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_routing",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 23
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "multilingual",
+      "family": "policy_routing",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 11
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "billing",
+          "n": 44
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 27
+        },
+        {
+          "gold": "technical",
+          "prediction": "billing",
+          "n": 13
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_refund",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_refund",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_refund",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 21
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "replace",
+          "n": 5
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 3
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 19
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_refund",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_refund",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_refund",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_refund",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_refund",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 1
+        },
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 72
+        },
+        {
+          "gold": "deny",
+          "prediction": "hold",
+          "n": 8
+        },
+        {
+          "gold": "replace",
+          "prediction": "hold",
+          "n": 11
+        },
+        {
+          "gold": "refund",
+          "prediction": "hold",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_access",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 31
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 25
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 13
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 8
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 2
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 9
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 8
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_access",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 31
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 25
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 13
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 8
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 2
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 9
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 8
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_access",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 17
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 29
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 16
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_access",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 23
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 30
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 18
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 10
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 4
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 8
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_access",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 8
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 9
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 25
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 21
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_access",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 24
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 12
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 14
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 9
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_access",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 31
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 25
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 13
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 8
+        },
+        {
+          "gold": "deny",
+          "prediction": "challenge",
+          "n": 2
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 9
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 8
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_access",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 12
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 63
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 1
+        },
+        {
+          "gold": "allow",
+          "prediction": "challenge",
+          "n": 5
+        },
+        {
+          "gold": "challenge",
+          "prediction": "deny",
+          "n": 5
+        },
+        {
+          "gold": "allow",
+          "prediction": "deny",
+          "n": 10
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_routing",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 11
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 12
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 5
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 19
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 13
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 12
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_routing",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 11
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 12
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 5
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 19
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 13
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 12
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_routing",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 12
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 20
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 12
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_routing",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 15
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 15
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 9
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 15
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 9
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 9
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_routing",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 18
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 9
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 6
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 15
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_routing",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 14
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 15
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 6
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 18
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 10
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 9
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_routing",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 11
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 12
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 5
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 19
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 13
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 12
+        }
+      ]
+    },
+    {
+      "model": "qwen3_8b",
+      "family": "policy_routing",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 11
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 44
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 8
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 5
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_refund",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_refund",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_refund",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_refund",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 23
+        },
+        {
+          "gold": "deny",
+          "prediction": null,
+          "n": 1
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_refund",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_refund",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_refund",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 24
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 24
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 24
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_refund",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 9
+        },
+        {
+          "gold": "hold",
+          "prediction": "hold",
+          "n": 72
+        },
+        {
+          "gold": "replace",
+          "prediction": "replace",
+          "n": 11
+        },
+        {
+          "gold": "refund",
+          "prediction": "refund",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_access",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_access",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_access",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_access",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_access",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_access",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_access",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 33
+        },
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 33
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_access",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "challenge",
+          "prediction": "challenge",
+          "n": 17
+        },
+        {
+          "gold": "deny",
+          "prediction": "deny",
+          "n": 63
+        },
+        {
+          "gold": "allow",
+          "prediction": "allow",
+          "n": 16
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_routing",
+      "condition": "original",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 17
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 10
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 11
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 13
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 14
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_routing",
+      "condition": "repeat",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 17
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 10
+        },
+        {
+          "gold": "general",
+          "prediction": "technical",
+          "n": 3
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 13
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 14
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 8
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_routing",
+      "condition": "reversed",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 17
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 10
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 6
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 14
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 14
+        },
+        {
+          "gold": "general",
+          "prediction": "technical",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_routing",
+      "condition": "chinese",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 24
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 24
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 24
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_routing",
+      "condition": "distractor",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 17
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 8
+        },
+        {
+          "gold": "general",
+          "prediction": "technical",
+          "n": 3
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 14
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 16
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 7
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_routing",
+      "condition": "paraphrase",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 17
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 10
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 9
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 13
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 14
+        },
+        {
+          "gold": "general",
+          "prediction": "technical",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_routing",
+      "condition": "choice_encoded",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 24
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 17
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 10
+        },
+        {
+          "gold": "general",
+          "prediction": "general",
+          "n": 8
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 7
+        },
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 13
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 14
+        },
+        {
+          "gold": "general",
+          "prediction": "billing",
+          "n": 1
+        },
+        {
+          "gold": "general",
+          "prediction": "technical",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "family": "policy_routing",
+      "condition": "counterfactual",
+      "n": 96,
+      "cells": [
+        {
+          "gold": "general",
+          "prediction": "urgent_support",
+          "n": 11
+        },
+        {
+          "gold": "urgent_support",
+          "prediction": "urgent_support",
+          "n": 44
+        },
+        {
+          "gold": "billing",
+          "prediction": "billing",
+          "n": 21
+        },
+        {
+          "gold": "billing",
+          "prediction": "urgent_support",
+          "n": 7
+        },
+        {
+          "gold": "technical",
+          "prediction": "technical",
+          "n": 7
+        },
+        {
+          "gold": "technical",
+          "prediction": "urgent_support",
+          "n": 6
+        }
+      ]
+    }
+  ],
+  "routing_boolean_slices": [
+    {
+      "model": "english",
+      "condition": "original",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 28,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "original",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 23,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "original",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 18,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "original",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "repeat",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 28,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "repeat",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 23,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "repeat",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 18,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "repeat",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "reversed",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 18,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "reversed",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 18,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "reversed",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 12,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "reversed",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "chinese",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 18,
+      "urgent_support_predictions": 10,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "chinese",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 18,
+      "urgent_support_predictions": 8,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "chinese",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 11,
+      "urgent_support_predictions": 7,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "chinese",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 6,
+      "urgent_support_predictions": 6,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "distractor",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 0,
+      "urgent_support_predictions": 28,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "distractor",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "distractor",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "distractor",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 28,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 23,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 18,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 28,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 23,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 18,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 27,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": true,
+      "n": 24,
+      "correct": 20,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": false,
+      "n": 0,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "english",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": true,
+      "n": 44,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "original",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 0,
+      "urgent_support_predictions": 28,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "original",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "original",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "original",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "repeat",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 0,
+      "urgent_support_predictions": 28,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "repeat",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "repeat",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "repeat",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "reversed",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 2,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "reversed",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 3,
+      "urgent_support_predictions": 23,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "reversed",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "reversed",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "chinese",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 5,
+      "urgent_support_predictions": 14,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "chinese",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "chinese",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "chinese",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "distractor",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 0,
+      "urgent_support_predictions": 28,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "distractor",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "distractor",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "distractor",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 5,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 4,
+      "urgent_support_predictions": 17,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 0,
+      "urgent_support_predictions": 28,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 5,
+      "urgent_support_predictions": 23,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": false,
+      "n": 0,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": true,
+      "n": 44,
+      "correct": 44,
+      "urgent_support_predictions": 44,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "original",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 6,
+      "urgent_support_predictions": 1,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "original",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 10,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "original",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "original",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "repeat",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 6,
+      "urgent_support_predictions": 1,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "repeat",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 10,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "repeat",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "repeat",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "reversed",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "reversed",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 10,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "reversed",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "reversed",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "chinese",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 6,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "chinese",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 10,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "chinese",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 5,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "chinese",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "distractor",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "distractor",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 10,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "distractor",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "distractor",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 10,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 6,
+      "urgent_support_predictions": 1,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 10,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 20,
+      "urgent_support_predictions": 1,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": true,
+      "n": 24,
+      "correct": 7,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": false,
+      "n": 0,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "multilingual",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": true,
+      "n": 44,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "original",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 16,
+      "urgent_support_predictions": 8,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "original",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 7,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "original",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "original",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "repeat",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 16,
+      "urgent_support_predictions": 8,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "repeat",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 7,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "repeat",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "repeat",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "reversed",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 10,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "reversed",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 6,
+      "urgent_support_predictions": 20,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "reversed",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "reversed",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "chinese",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 16,
+      "urgent_support_predictions": 4,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "chinese",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 10,
+      "urgent_support_predictions": 15,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "chinese",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 4,
+      "urgent_support_predictions": 14,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "chinese",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "distractor",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 15,
+      "urgent_support_predictions": 13,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "distractor",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "distractor",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "distractor",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 16,
+      "urgent_support_predictions": 7,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 13,
+      "urgent_support_predictions": 12,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 16,
+      "urgent_support_predictions": 8,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 7,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 26,
+      "urgent_support_predictions": 2,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": true,
+      "n": 24,
+      "correct": 6,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": false,
+      "n": 0,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "qwen3_8b",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": true,
+      "n": 44,
+      "correct": 44,
+      "urgent_support_predictions": 44,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "original",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 28,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "original",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "original",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "original",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "repeat",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 25,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "repeat",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "repeat",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "repeat",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "reversed",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 23,
+      "urgent_support_predictions": 1,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "reversed",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "reversed",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "reversed",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "chinese",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 28,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "chinese",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 26,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "chinese",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 18,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "chinese",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "distractor",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 22,
+      "urgent_support_predictions": 3,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "distractor",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "distractor",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "distractor",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 26,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "paraphrase",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "paraphrase",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 25,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "choice_encoded",
+      "outage": false,
+      "paying": true,
+      "n": 26,
+      "correct": 0,
+      "urgent_support_predictions": 26,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": false,
+      "n": 18,
+      "correct": 0,
+      "urgent_support_predictions": 18,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "choice_encoded",
+      "outage": true,
+      "paying": true,
+      "n": 24,
+      "correct": 24,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": false,
+      "n": 28,
+      "correct": 28,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "counterfactual",
+      "outage": false,
+      "paying": true,
+      "n": 24,
+      "correct": 0,
+      "urgent_support_predictions": 24,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": false,
+      "n": 0,
+      "correct": 0,
+      "urgent_support_predictions": 0,
+      "failures": 0
+    },
+    {
+      "model": "jev-1.13.0",
+      "condition": "counterfactual",
+      "outage": true,
+      "paying": true,
+      "n": 44,
+      "correct": 44,
+      "urgent_support_predictions": 44,
+      "failures": 0
+    }
+  ]
+}

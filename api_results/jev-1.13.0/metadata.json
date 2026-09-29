@@ -1,0 +1,248 @@
+{
+  "status": "DONE",
+  "started_at": "2026-09-29T07:26:10.190836+00:00",
+  "updated_at": "2026-09-29T08:04:09.268077+00:00",
+  "signature": {
+    "model": "jev-1.13.0",
+    "endpoint": "https://api.typesafe.ai/v1/systemone",
+    "frozen_sha256": "5baf87ce9010d8229ea1a39722b865fb5ecc20db3c981e97f51a4baae3653be4",
+    "runner_sha256": "e915d685d4780f9409b8a72474ae8a55ee0d3241aa1b64a29ae42fa1a96dc555",
+    "common_sha256": "c820c2e908f3581d422ee7a8edbdc277f34df2c2bf0acb5f2966fc479c7019a7",
+    "workers": 12,
+    "max_request_starts_per_second": 15,
+    "price_usd_per_million_input_tokens": 0.042,
+    "max_accounted_usd": 10,
+    "attempts_per_request": 5,
+    "connect_timeout_seconds": 15,
+    "read_timeout_seconds": 90,
+    "client_proxy_used": true,
+    "full_payload_sent": true,
+    "server_tokenizer_available": false,
+    "comparison_track": "hosted_api_accuracy_and_client_latency"
+  },
+  "planned_requests": 22934,
+  "completed_requests": 22934,
+  "input_tokens": 23841873,
+  "accounted_cost_usd": 1.0013586660000002,
+  "transport_or_response_failed_requests": 4,
+  "finished_at": "2026-09-29T08:04:13.868796+00:00",
+  "suites": {
+    "ag_news": {
+      "sha256": "aec5728b1ee8417d9b015d066563a3dd45a15c03e42873ae32b7fac9e9b6f5dc",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 0
+    },
+    "emotion": {
+      "sha256": "b4845579452efee50654664b5d5ac0e60dbf00390beeee74991d3d7d124d2e57",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 0
+    },
+    "banking77": {
+      "sha256": "13530f6da8cce24c8c375bd0f1e62597194607250102b9fdd7d52bb7ec403990",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 0
+    },
+    "boolq": {
+      "sha256": "146b0eed6880999bc412be92afbd08399b2ec3fb85937c4fc7ff577fb56de3a3",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 0
+    },
+    "boolq_choice": {
+      "sha256": "c9071d5fe93af4aec1287c2f727cdfb1b5b61cfd181b2c4fc0e225d077a63ba3",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 0
+    },
+    "sst5": {
+      "sha256": "8a890f64c86f2d4159fd0d888aeb8cea02263fbe2282c11360dac474e448fa92",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 0
+    },
+    "sst5_choice": {
+      "sha256": "ee0c6436539e846e4ccf4f5be42135c6ee35785cc45acdbc0e6f851e73e81994",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 1
+    },
+    "xnli_en": {
+      "sha256": "2b9017164ade339456861b74eb3cdf9a922609fe21e40633e00c67607e57b0e0",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 0
+    },
+    "xnli_zh": {
+      "sha256": "3fd4caade2d424c6f6091134f04300164ef15f17d3ab3c935c73b35751cd78f8",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 1
+    },
+    "massive_en": {
+      "sha256": "0ff472b56565b5339625a018a0429ab01049028e256afac604a55959662e6fde",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 1
+    },
+    "massive_zh": {
+      "sha256": "93f034e5dce78123182ca83517f7359b46eb2e969fe0f48221f8e6000d754b0a",
+      "requests": 1000,
+      "decisions": 1000,
+      "failures": 0
+    },
+    "prompt_injections": {
+      "sha256": "6cce540a5fff6fcdb786e6535ee2f379a719e7f6c82d11e829194d1f8c1355ff",
+      "requests": 116,
+      "decisions": 116,
+      "failures": 0
+    },
+    "typed_decisions": {
+      "sha256": "03000bd75175dd747458bc0899f0379374ce6cd27223c46ac30e30db28f6c6a1",
+      "requests": 400,
+      "decisions": 2000,
+      "failures": 5
+    },
+    "jevbench_original": {
+      "sha256": "0b8ed63139bf2014357848e2088c55808c8ba7902a19e85dd9ba143788f0f531",
+      "requests": 72,
+      "decisions": 72,
+      "failures": 0
+    },
+    "jevbench_easy": {
+      "sha256": "732d45514b0ba1ed83b5ed52d845fe0406b7a13512be1f77a49437f10b1b571f",
+      "requests": 48,
+      "decisions": 48,
+      "failures": 0
+    },
+    "jevbench_hard": {
+      "sha256": "5c91aaedd7a48b62643a3e1cf504b9383e5eb6b7fa96a9a72859ae5919643e59",
+      "requests": 111,
+      "decisions": 111,
+      "failures": 0
+    },
+    "reflexbench_reflex-public-choice-v1": {
+      "sha256": "b8d1f21267c5c7b9459a8b6fd2ff7b5d56b8c25b9d04898462f38bd6e3f150b9",
+      "requests": 95,
+      "decisions": 95,
+      "failures": 0
+    },
+    "jev_laya_triage": {
+      "sha256": "1451c4b4e189d57f3a696470ff24f7ab9c1c388780276aac0534fdd0b9f1c4ef",
+      "requests": 167,
+      "decisions": 501,
+      "failures": 0
+    },
+    "jev_laya_moderation": {
+      "sha256": "9d320795911f49c64b2bef29044b9908967d4f360dc73b9ef5c375818ea5194e",
+      "requests": 142,
+      "decisions": 426,
+      "failures": 0
+    },
+    "jev_laya_routing": {
+      "sha256": "99318f6781544dc616f2a34303b6fa13bc8731bca20f2f8def20fe050c6ea1b4",
+      "requests": 137,
+      "decisions": 411,
+      "failures": 0
+    },
+    "jev_laya_claims": {
+      "sha256": "03b9f667064677b2a2be2083947d9cf336295a33cd74cad3feda565662391a3b",
+      "requests": 150,
+      "decisions": 300,
+      "failures": 0
+    },
+    "jev_laya_reviews": {
+      "sha256": "96a500144d675b4fb4a6fe28380403d69718c39cd1c3974c4a5bd72fb185d920",
+      "requests": 150,
+      "decisions": 300,
+      "failures": 0
+    },
+    "jev_laya_guard": {
+      "sha256": "fb8118ba07538815ad2d9495465718d8328640c53440ba32dfcb7062c52c2d05",
+      "requests": 146,
+      "decisions": 292,
+      "failures": 0
+    },
+    "jev_laya_multilingual": {
+      "sha256": "97653a90d9d73c1f5a85214474c4abafe1c4cb88630c849cfca25d94536a4706",
+      "requests": 128,
+      "decisions": 256,
+      "failures": 0
+    },
+    "jev_laya_needle": {
+      "sha256": "54a12c77c785c8c4937f28bcb38e9d19564bcf898d81ae8f26bf6dca2e22be5e",
+      "requests": 450,
+      "decisions": 900,
+      "failures": 0
+    },
+    "clinc150_oos": {
+      "sha256": "858d0b50bdac4f675308c248550ea19f68c07df667ed8f5c9787ac5dc68beb56",
+      "requests": 5500,
+      "decisions": 5500,
+      "failures": 0
+    },
+    "turtlebench": {
+      "sha256": "7d22f3ae08a7187d9a7e07ee4e3f4938a3a044b7f7f47847de87b678ecae830e",
+      "requests": 1532,
+      "decisions": 1532,
+      "failures": 0
+    },
+    "aegis2_prompt": {
+      "sha256": "39300f06265a8e29966f242490234dbeb5e9b168d22d40b5049a5301bd9546ba",
+      "requests": 1928,
+      "decisions": 1928,
+      "failures": 0
+    },
+    "banking77_repeat": {
+      "sha256": "de2b30ae67a37e843cce6a50e5518873f93acfdbcee5888234c468d6308c1805",
+      "requests": 100,
+      "decisions": 100,
+      "failures": 0
+    },
+    "banking77_reversed": {
+      "sha256": "99557f9af9b3d2dd028106a351c6d94c1e3d8b9a31e3aa2557a29fed98e12287",
+      "requests": 100,
+      "decisions": 100,
+      "failures": 0
+    },
+    "massive_en_repeat": {
+      "sha256": "750299f7f37e6099c876694535d91d00e123af2fda0506fb90ff8487d6b8c845",
+      "requests": 100,
+      "decisions": 100,
+      "failures": 0
+    },
+    "massive_en_reversed": {
+      "sha256": "0fee6887566eefd025342de35c6a34127f653506b9c7931d5d2df4afe52af8d9",
+      "requests": 100,
+      "decisions": 100,
+      "failures": 0
+    },
+    "jevbench_original_repeat": {
+      "sha256": "07af5dfaeaf00a3fdcd1905a17cf8bf17d856c64e948d0c221c345753340c6ca",
+      "requests": 36,
+      "decisions": 36,
+      "failures": 0
+    },
+    "jevbench_original_reversed": {
+      "sha256": "456d1c394abaab9aff168d01e96243c25ba60d1f65317164ca50170af6543bae",
+      "requests": 36,
+      "decisions": 36,
+      "failures": 0
+    },
+    "reflexbench_reflex-public-choice-v1_repeat": {
+      "sha256": "f3c28a3600e130e116c50cbfbb90f1025531769d9c98be28e195ec0c4289fbac",
+      "requests": 95,
+      "decisions": 95,
+      "failures": 0
+    },
+    "reflexbench_reflex-public-choice-v1_reversed": {
+      "sha256": "5d038fd17f3fe001cfc41ed472bef7e5f1b8b52edba0a849a9c9231a368567e3",
+      "requests": 95,
+      "decisions": 95,
+      "failures": 0
+    }
+  },
+  "journal_sha256": "5cdf418ea34616f6b81b41afa84be7fd42a1458e40977739e9b8dfb355be7778"
+}

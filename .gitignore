@@ -11,3 +11,10 @@ local_logs/
 performance/**/measurement_phase.json
 performance/**/telemetry_status.json
 performance/**/telemetry.log
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out

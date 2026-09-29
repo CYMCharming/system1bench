@@ -1,0 +1,55 @@
+{
+  "axes": [
+    "task_family",
+    "output_type",
+    "reference_provenance",
+    "language",
+    "candidate_cardinality",
+    "context_length",
+    "state_question_multiplicity"
+  ],
+  "families": {
+    "semantic_classification": [
+      "ag_news",
+      "emotion",
+      "banking77",
+      "massive_en",
+      "massive_zh"
+    ],
+    "contextual_judgment": [
+      "boolq",
+      "boolq_choice",
+      "xnli_en",
+      "xnli_zh",
+      "turtlebench"
+    ],
+    "ordinal_judgment": [
+      "sst5",
+      "sst5_choice"
+    ],
+    "policy_screening": [
+      "prompt_injections",
+      "aegis2_prompt"
+    ],
+    "workflow_routing": [
+      "typed_decisions",
+      "jevbench_original",
+      "jevbench_easy",
+      "jevbench_hard",
+      "reflexbench_reflex-public-choice-v1",
+      "jev_laya_triage",
+      "jev_laya_moderation",
+      "jev_laya_routing",
+      "jev_laya_claims",
+      "jev_laya_reviews",
+      "jev_laya_guard",
+      "jev_laya_multilingual"
+    ],
+    "explicit_rejection": [
+      "clinc150_oos"
+    ],
+    "controlled_retrieval": [
+      "jev_laya_needle"
+    ]
+  }
+}

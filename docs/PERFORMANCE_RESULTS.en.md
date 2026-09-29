@@ -1,6 +1,6 @@
 # Controlled local decision performance (v1)
 
-All timings below are new local measurements using the [predeclared protocol](PERFORMANCE_PROTOCOL.md). They compare the stated adapters, not optimized serving engines or architecture-only speed. Jev is not evaluated.
+All timings below are new local measurements using the [predeclared protocol](PERFORMANCE_PROTOCOL.md). They compare the stated adapters, not optimized serving engines or architecture-only speed. Jev is excluded from this resident-GPU track; hosted results are reported separately.
 
 The completed matrix contains 67,584 measured logical requests and 98,304 decisions, excluding warm-up. All inputs are complete; failures: 0. There are 11 workloads, four checkpoints, three batch sizes, and eight rounds on the same physical A100 80GB PCIe.
 

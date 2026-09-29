@@ -6,8 +6,8 @@
 for models that turn a supplied state into typed `choice`, `noul` and `score`
 decisions.
 
-**v0.2 includes our real runs of Laya English, Laya Multilingual,
-Llama-3.1-8B-Instruct and Qwen3-8B. Jev has not been evaluated.** The framework accepts a model adapter for future Jev runs;
+**Our measured systems are Laya English, Laya Multilingual,
+Llama-3.1-8B-Instruct, Qwen3-8B and the pinned Jev 1.13.0 API.**
 “Jev-style” describes the interface/task category, not a shared architecture.
 
 System1Bench combines 15 public source datasets/collections into 36 suites and
@@ -24,11 +24,32 @@ and reference quality. There is no blended “decision intelligence” score.
 - [v0.2 comparison integrity review](docs/BASELINE_AUDIT.md) · [original Laya review](docs/EXPERIMENT_AUDIT.md)
 - [LLM comparison protocol](docs/LLM_BASELINES.md) · [local checkpoint verification](docs/LOCAL_CHECKPOINT_VERIFICATION.json)
 - [Source pins](sources.json) · [additional source pins](external_sources.json)
+- [Jev API results](docs/JEV_RESULTS.en.md) · [hosted execution deviations](research/JEV_RUN_LOG.md)
+- [Research insights](research/INSIGHTS.en.md) · [fresh policy results](research/CONFIRMATION_RESULTS.en.md) · [研究进展与启发（中文）](research/RESEARCH_PROGRESS.zh-CN.md)
+
+## Beyond aggregate accuracy
+
+The fresh policy diagnostic evaluates 288 base states, eight matched variants and
+three output primitives on all five systems. Separate LLM controls change display
+order and answer-code identity independently. In Llama access-control decisions,
+changing only codes flips 55.2% of predictions, while changing both display and
+codes flips none. Combined reversal can therefore hide sensitivity to its components.
+These findings describe the fixed adapters, not an architectural cause.
+
+![Orthogonal display and answer-code controls](paper/figures/fig_codebook.png)
+
+Each policy/model uses 96 base clusters; whiskers are pointwise paired 95% intervals.
+All conditions, including null and contrary effects, are retained in the
+[fresh report](research/CONFIRMATION_RESULTS.en.md). The
+[post-hoc error localization](research/POSTHOC_DIAGNOSTICS.en.md) and
+[six-effect simultaneous-interval figure](paper/figures/fig_confirmation.svg)
+provide complementary diagnostics. Synthetic policies test supplied-rule execution,
+and have not received independent human construct or bilingual validation.
 
 <!-- BEGIN GENERATED RESULTS -->
 ## Measured results — all tasks
 
-**Every score below comes from our own local model runs in this repository. No third-party model scores are copied. Jev has not been evaluated.**
+**Every score below comes from our own model runs and API calls. No third-party model scores are copied.**
 
 4 checkpoints × 26,450 decisions = **105,800 measured decisions**, including controls. Failures: **0**; complete inputs: **105,800/105,800**.
 
@@ -36,51 +57,55 @@ Laya uses native decision heads. The Llama and Qwen baselines use zero-shot cons
 
 Values are accuracy against each source reference. **Teacher/synthetic and authored/AI-reviewed rows measure reference agreement**, not independently human-verified correctness. We publish all suites without an overall blended score. Full confidence intervals, F1, Brier/ECE, ordinal errors, language/length slices and timings are in the [report](docs/RESULTS.zh-CN.md), [CSV](results/metrics.csv) and [JSON](results/summary.json).
 
+The pinned **Jev 1.13.0** hosted track adds **26,450 decisions** from 22,934 requests, with **8 invalid decisions counted as incorrect**. Full client payloads were sent; server tokenization is unverified. [Jev report and all intervals](docs/JEV_RESULTS.en.md).
+
+New research: [paired insights](research/INSIGHTS.en.md), [fresh policy interventions and codebook controls](research/CONFIRMATION_RESULTS.en.md). Local GPU timing and hosted network observations are separate tracks.
+
 ### Main tasks (28 suites)
 
-| Task | Decisions / model | Laya English | Laya Multilingual | Llama-3.1-8B-Instruct | Qwen3-8B | Reference |
-|---|---:|---:|---:|---:|---:|---:|
-| ag_news | 1000 | 94.30% | 92.40% | 88.90% | 86.80% | dataset_provided |
-| emotion | 1000 | 59.10% | 53.00% | 50.50% | 54.80% | dataset_provided |
-| banking77 | 1000 | 55.30% | 51.20% | 54.10% | 66.80% | dataset_provided |
-| boolq | 1000 | 84.60% | 77.70% | 64.80% | 83.50% | dataset_provided |
-| boolq_choice | 1000 | 83.60% | 77.40% | 68.70% | 83.30% | dataset_provided |
-| sst5 | 1000 | 34.60% | 29.50% | 32.00% | 45.70% | dataset_provided |
-| sst5_choice | 1000 | 49.60% | 35.60% | 42.20% | 43.90% | dataset_provided |
-| xnli_en | 1000 | 86.00% | 81.70% | 46.20% | 78.70% | dataset_provided |
-| xnli_zh | 1000 | 61.50% | 74.30% | 40.50% | 69.10% | dataset_provided |
-| massive_en | 1000 | 54.10% | 42.30% | 57.20% | 66.30% | dataset_provided |
-| massive_zh | 1000 | 30.40% | 33.20% | 53.50% | 62.60% | dataset_provided |
-| prompt_injections | 116 | 70.69% | 57.76% | 62.93% | 63.79% | dataset_provided |
-| typed_decisions | 2000 | 36.35% | 34.90% | 51.20% | 55.50% | synthetic_teacher |
-| jevbench_original | 72 | 70.83% | 41.67% | 75.00% | 83.33% | authored_or_AI_reviewed |
-| jevbench_easy | 48 | 95.83% | 89.58% | 100.00% | 100.00% | authored_or_AI_reviewed |
-| jevbench_hard | 111 | 29.73% | 32.43% | 34.23% | 46.85% | authored_or_AI_reviewed |
-| reflexbench_reflex-public-choice-v1 | 95 | 58.95% | 46.32% | 60.00% | 84.21% | authored_or_AI_reviewed |
-| jev_laya_triage | 501 | 62.48% | 55.69% | 75.65% | 80.04% | synthetic_teacher |
-| jev_laya_moderation | 426 | 67.84% | 48.36% | 88.97% | 77.46% | synthetic_teacher |
-| jev_laya_routing | 411 | 64.23% | 51.09% | 61.31% | 83.70% | synthetic_teacher |
-| jev_laya_claims | 300 | 90.00% | 80.00% | 61.67% | 98.67% | synthetic_teacher |
-| jev_laya_reviews | 300 | 70.67% | 42.33% | 83.00% | 87.00% | synthetic_teacher |
-| jev_laya_guard | 292 | 60.62% | 33.22% | 88.01% | 83.22% | synthetic_teacher |
-| jev_laya_multilingual | 256 | 57.81% | 62.50% | 94.53% | 98.44% | synthetic_teacher |
-| jev_laya_needle | 900 | 50.22% | 47.44% | 77.89% | 87.78% | programmatic |
-| clinc150_oos | 5500 | 55.73% | 64.76% | 55.20% | 67.78% | dataset_provided |
-| turtlebench | 1532 | 42.62% | 41.64% | 42.17% | 44.19% | dataset_provided |
-| aegis2_prompt | 1928 | 49.59% | 57.05% | 66.80% | 72.67% | human_prompt_annotation |
+| Task | Decisions / model | Laya English | Laya Multilingual | Llama-3.1-8B-Instruct | Qwen3-8B | jev-1.13.0 | Reference |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| ag_news | 1000 | 94.30% | 92.40% | 88.90% | 86.80% | 88.60% | dataset_provided |
+| emotion | 1000 | 59.10% | 53.00% | 50.50% | 54.80% | 59.00% | dataset_provided |
+| banking77 | 1000 | 55.30% | 51.20% | 54.10% | 66.80% | 79.90% | dataset_provided |
+| boolq | 1000 | 84.60% | 77.70% | 64.80% | 83.50% | 92.60% | dataset_provided |
+| boolq_choice | 1000 | 83.60% | 77.40% | 68.70% | 83.30% | 92.20% | dataset_provided |
+| sst5 | 1000 | 34.60% | 29.50% | 32.00% | 45.70% | 56.50% | dataset_provided |
+| sst5_choice | 1000 | 49.60% | 35.60% | 42.20% | 43.90% | 55.90% | dataset_provided |
+| xnli_en | 1000 | 86.00% | 81.70% | 46.20% | 78.70% | 85.90% | dataset_provided |
+| xnli_zh | 1000 | 61.50% | 74.30% | 40.50% | 69.10% | 73.60% | dataset_provided |
+| massive_en | 1000 | 54.10% | 42.30% | 57.20% | 66.30% | 77.50% | dataset_provided |
+| massive_zh | 1000 | 30.40% | 33.20% | 53.50% | 62.60% | 76.00% | dataset_provided |
+| prompt_injections | 116 | 70.69% | 57.76% | 62.93% | 63.79% | 76.72% | dataset_provided |
+| typed_decisions | 2000 | 36.35% | 34.90% | 51.20% | 55.50% | 73.90% | synthetic_teacher |
+| jevbench_original | 72 | 70.83% | 41.67% | 75.00% | 83.33% | 98.61% | authored_or_AI_reviewed |
+| jevbench_easy | 48 | 95.83% | 89.58% | 100.00% | 100.00% | 100.00% | authored_or_AI_reviewed |
+| jevbench_hard | 111 | 29.73% | 32.43% | 34.23% | 46.85% | 72.07% | authored_or_AI_reviewed |
+| reflexbench_reflex-public-choice-v1 | 95 | 58.95% | 46.32% | 60.00% | 84.21% | 93.68% | authored_or_AI_reviewed |
+| jev_laya_triage | 501 | 62.48% | 55.69% | 75.65% | 80.04% | 90.02% | synthetic_teacher |
+| jev_laya_moderation | 426 | 67.84% | 48.36% | 88.97% | 77.46% | 92.72% | synthetic_teacher |
+| jev_laya_routing | 411 | 64.23% | 51.09% | 61.31% | 83.70% | 88.81% | synthetic_teacher |
+| jev_laya_claims | 300 | 90.00% | 80.00% | 61.67% | 98.67% | 100.00% | synthetic_teacher |
+| jev_laya_reviews | 300 | 70.67% | 42.33% | 83.00% | 87.00% | 87.67% | synthetic_teacher |
+| jev_laya_guard | 292 | 60.62% | 33.22% | 88.01% | 83.22% | 93.84% | synthetic_teacher |
+| jev_laya_multilingual | 256 | 57.81% | 62.50% | 94.53% | 98.44% | 100.00% | synthetic_teacher |
+| jev_laya_needle | 900 | 50.22% | 47.44% | 77.89% | 87.78% | 95.22% | programmatic |
+| clinc150_oos | 5500 | 55.73% | 64.76% | 55.20% | 67.78% | 89.51% | dataset_provided |
+| turtlebench | 1532 | 42.62% | 41.64% | 42.17% | 44.19% | 74.02% | dataset_provided |
+| aegis2_prompt | 1928 | 49.59% | 57.05% | 66.80% | 72.67% | 82.42% | human_prompt_annotation |
 
 ### Same-order repeats and reversed-option controls (8 suites)
 
-| Task | Decisions / model | Laya English | Laya Multilingual | Llama-3.1-8B-Instruct | Qwen3-8B | Reference |
-|---|---:|---:|---:|---:|---:|---:|
-| banking77_repeat | 100 | 49.00% | 44.00% | 62.00% | 72.00% | dataset_provided |
-| banking77_reversed | 100 | 58.00% | 44.00% | 37.00% | 54.00% | dataset_provided |
-| massive_en_repeat | 100 | 54.00% | 50.00% | 62.00% | 74.00% | dataset_provided |
-| massive_en_reversed | 100 | 52.00% | 43.00% | 60.00% | 66.00% | dataset_provided |
-| jevbench_original_repeat | 36 | 61.11% | 58.33% | 80.56% | 83.33% | authored_or_AI_reviewed |
-| jevbench_original_reversed | 36 | 58.33% | 55.56% | 66.67% | 86.11% | authored_or_AI_reviewed |
-| reflexbench_reflex-public-choice-v1_repeat | 95 | 58.95% | 46.32% | 60.00% | 84.21% | authored_or_AI_reviewed |
-| reflexbench_reflex-public-choice-v1_reversed | 95 | 58.95% | 45.26% | 57.89% | 82.11% | authored_or_AI_reviewed |
+| Task | Decisions / model | Laya English | Laya Multilingual | Llama-3.1-8B-Instruct | Qwen3-8B | jev-1.13.0 | Reference |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| banking77_repeat | 100 | 49.00% | 44.00% | 62.00% | 72.00% | 81.00% | dataset_provided |
+| banking77_reversed | 100 | 58.00% | 44.00% | 37.00% | 54.00% | 82.00% | dataset_provided |
+| massive_en_repeat | 100 | 54.00% | 50.00% | 62.00% | 74.00% | 83.00% | dataset_provided |
+| massive_en_reversed | 100 | 52.00% | 43.00% | 60.00% | 66.00% | 82.00% | dataset_provided |
+| jevbench_original_repeat | 36 | 61.11% | 58.33% | 80.56% | 83.33% | 100.00% | authored_or_AI_reviewed |
+| jevbench_original_reversed | 36 | 58.33% | 55.56% | 66.67% | 86.11% | 100.00% | authored_or_AI_reviewed |
+| reflexbench_reflex-public-choice-v1_repeat | 95 | 58.95% | 46.32% | 60.00% | 84.21% | 94.74% | authored_or_AI_reviewed |
+| reflexbench_reflex-public-choice-v1_reversed | 95 | 58.95% | 45.26% | 57.89% | 82.11% | 94.74% | authored_or_AI_reviewed |
 
 ### Option-order agreement
 
@@ -179,7 +204,7 @@ These are our own new measurements on one A100 80GB PCIe, using the existing fou
 | needle_4000 | Llama-3.1-8B-Instruct | 705.78 [705.57, 706.11] | 1.15 [1.15, 1.15] | 1.16 [1.16, 1.16] |
 | needle_4000 | Qwen3-8B | 758.71 [757.50, 759.77] | 1.06 [1.06, 1.06] | 1.07 [1.07, 1.07] |
 
-Requests include all questions in a state. Fixed-batch throughput is completed requests divided by summed prediction time; it is not server capacity. No generated-token speed, optimal-serving-engine result, architecture-only speedup, or overall cross-task winner is claimed. Jev was not run.
+Requests include all questions in a state. Fixed-batch throughput is completed requests divided by summed prediction time; it is not server capacity. No generated-token speed, optimal-serving-engine result, architecture-only speedup, or overall cross-task winner is claimed. Jev was not run in this resident-GPU track.
 
 <!-- END GENERATED PERFORMANCE -->
 

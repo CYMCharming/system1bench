@@ -24,18 +24,36 @@ def homepage(summary, manifest, models):
     total = per_model * len(models)
     full = sum(s['complete_input']['n'] for m in summary['models'].values() for s in m['suites'].values())
     failures = sum(s['all']['failures'] for m in summary['models'].values() for s in m['suites'].values())
+    hosted_path = ROOT / 'api_results/jev-1.13.0/summary.json'
+    hosted = read(hosted_path) if hosted_path.exists() else None
+    if hosted:
+        hosted_root = hosted_path.parent
+        metadata = read(hosted_root / 'metadata.json')
+        if metadata['status'] != 'DONE' or sha(hosted_root / 'metadata.json') != hosted['metadata_sha256']:
+            raise ValueError('Hosted summary metadata mismatch')
+        if sha(hosted_root / 'requests.jsonl') != metadata['journal_sha256']:
+            raise ValueError('Hosted journal mismatch')
+        for suite, details in metadata['suites'].items():
+            if sha(hosted_root / (suite + '.json.gz')) != details['sha256']:
+                raise ValueError('Hosted raw output mismatch')
+    table_models = models + (['jev-1.13.0'] if hosted else [])
     text = ['<!-- BEGIN GENERATED RESULTS -->', '## Measured results — all tasks', '',
-            '**Every score below comes from our own local model runs in this repository. No third-party model scores are copied. Jev has not been evaluated.**', '',
+            '**Every score below comes from our own model runs and API calls. No third-party model scores are copied.**', '',
             f"{len(models)} checkpoints × {per_model:,} decisions = **{total:,} measured decisions**, including controls. Failures: **{failures}**; complete inputs: **{full:,}/{total:,}**.", '',
             'Laya uses native decision heads. The Llama and Qwen baselines use zero-shot constrained next-token answer selection; Qwen thinking is disabled. See the [exact comparison protocol](docs/LLM_BASELINES.md). These are fixed direct-decision baselines, not best-achievable LLM scores.', '',
             'Values are accuracy against each source reference. **Teacher/synthetic and authored/AI-reviewed rows measure reference agreement**, not independently human-verified correctness. We publish all suites without an overall blended score. Full confidence intervals, F1, Brier/ECE, ordinal errors, language/length slices and timings are in the [report](docs/RESULTS.zh-CN.md), [CSV](results/metrics.csv) and [JSON](results/summary.json).', '']
+    if hosted:
+        text += [f"The pinned **Jev 1.13.0** hosted track adds **{hosted['decisions']:,} decisions** from {hosted['requests']:,} requests, with **{hosted['failures']} invalid decisions counted as incorrect**. Full client payloads were sent; server tokenization is unverified. [Jev report and all intervals](docs/JEV_RESULTS.en.md).", '',
+                 'New research: [paired insights](research/INSIGHTS.en.md), [fresh policy interventions and codebook controls](research/CONFIRMATION_RESULTS.en.md). Local GPU timing and hosted network observations are separate tracks.', '']
     for title, control in [('Main tasks', False), ('Same-order repeats and reversed-option controls', True)]:
         count = sum((s['track'] == 'order_robustness') == control for s in manifest['suites'])
-        text += [f'### {title} ({count} suites)', ''] + table_header(['Task', 'Decisions / model'], models, ['Reference'])
+        text += [f'### {title} ({count} suites)', ''] + table_header(['Task', 'Decisions / model'], table_models, ['Reference'])
         for spec in manifest['suites']:
             if (spec['track'] == 'order_robustness') != control:
                 continue
             vals = [percent(summary['models'][m]['suites'][spec['name']]['all']['accuracy']) for m in models]
+            if hosted:
+                vals.append(percent(hosted['suites'][spec['name']]['accuracy']))
             text.append('| ' + ' | '.join([spec['name'], str(spec['decisions'])] + vals + [spec['reference']]) + ' |')
         text.append('')
     text += ['### Option-order agreement', '', 'Agreement compares predictions on the same inputs; it is not accuracy. The LLM reversal also reassigns answer codes.', '',
@@ -87,7 +105,7 @@ def main():
     failures = sum(s["all"]["failures"] for m in summary["models"].values() for s in m["suites"].values())
     complete = sum(s["complete_input"]["n"] for m in summary["models"].values() for s in m["suites"].values())
     text = ["# System1Bench：本仓库实测结果（v0.2）", "",
-            "**System 1 决策模型评测基准。所有数值来自本仓库实际运行，未运行 Jev，也未引用第三方模型成绩。**", "",
+            "**System 1 决策模型评测基准。本文保留 v0.2 四个本地检查点的历史实测，不引用第三方成绩。新增 Jev 托管实测见 [JEV_RESULTS.en.md](JEV_RESULTS.en.md)。**", "",
             f"覆盖15个公开来源、{len(manifest['suites'])}个任务与对照套件。每个检查点{requests:,}次请求、{decisions:,}个决策；{len(models)}个检查点合计{decisions * len(models):,}个决策，失败{failures}个。来源、语言、原语和参考标签质量分别报告，不计算混合总分。", "",
             "两款Laya（English/Multilingual）检查点均来自 `convaiinnovations/laya@55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851`，使用 Laya0.3.20；不是 `laya-typed-decisions` 检查点。", "",
             "Llama/Qwen采用固定零样本候选代码logit评分，Qwen关闭thinking；每题独立前向，不生成推理链。候选内softmax不是校准置信度。详见 [LLM_BASELINES.md](LLM_BASELINES.md)。", "",

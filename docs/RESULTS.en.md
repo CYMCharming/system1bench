@@ -1,7 +1,7 @@
 # System1Bench: Results from our own runs (v0.2)
 
 English translation of the frozen [Chinese results report](RESULTS.zh-CN.md). All historical values are preserved.
-**System 1 decision-model benchmark. All values come from actual runs in this repository. Jev has not been evaluated, and no third-party model scores have been imported.**
+**System 1 decision-model benchmark. All values come from actual runs in this repository. This report preserves the four local v0.2 baselines; the subsequent hosted Jev evaluation is in [JEV_RESULTS.en.md](JEV_RESULTS.en.md). No third-party scores have been imported.**
 
 The evaluation covers 15 public sources and 36 task/control suites. Each checkpoint has 22,934 logical requests and 26,450 decisions; the four checkpoints total 105,800 decisions, with zero failures. Sources, languages, primitives, and reference quality are reported separately, without a blended overall score.
 

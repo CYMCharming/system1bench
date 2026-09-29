@@ -1,0 +1,30 @@
+{
+  "retrieved_on": "2026-09-29",
+  "sources": [
+    {
+      "url": "https://docs.typesafe.ai/llms.txt",
+      "final_url": "https://docs.typesafe.ai/llms.txt",
+      "status": 200,
+      "sha256": "3bad966207794ce900ebc81759fd48185cd2d1f287df13a08ae4d601e96450fd",
+      "bytes": 16019
+    },
+    {
+      "url": "https://docs.typesafe.ai/api.md",
+      "final_url": "https://docs.typesafe.ai/api.md",
+      "status": 200,
+      "sha256": "0252c4126fdaa45c537fa83718f90d544890a878a12324690294dfeee9f0849e",
+      "bytes": 11231
+    },
+    {
+      "url": "https://docs.typesafe.ai/models.md",
+      "final_url": "https://docs.typesafe.ai/models.md",
+      "status": 200,
+      "sha256": "2f808305a59eff809cdb74f13344b6583579a200af38495ae3017335eb584e9f",
+      "bytes": 6577
+    }
+  ],
+  "price_source": "https://docs.typesafe.ai/models.md",
+  "observed_input_usd_per_million_tokens": 0.042,
+  "price_quote": "Price (per Btok / per Mtok): $42 / $0.042",
+  "scope": "Observed documentation at collection time, not a guarantee of future price or endpoint behavior."
+}

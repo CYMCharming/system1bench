@@ -1,0 +1,50 @@
+{
+  "status": "DONE",
+  "started_at": "2026-09-29T08:05:02.960096+00:00",
+  "updated_at": "2026-09-29T08:07:37.911532+00:00",
+  "signature": {
+    "model": "jev-1.13.0",
+    "endpoint": "https://api.typesafe.ai/v1/systemone",
+    "frozen_sha256": "c5419322dc2824e3868cee3074d6adc1d9b46b7e80237cdf0db92d4e65d6c338",
+    "runner_sha256": "e915d685d4780f9409b8a72474ae8a55ee0d3241aa1b64a29ae42fa1a96dc555",
+    "common_sha256": "c820c2e908f3581d422ee7a8edbdc277f34df2c2bf0acb5f2966fc479c7019a7",
+    "workers": 12,
+    "max_request_starts_per_second": 15,
+    "price_usd_per_million_input_tokens": 0.042,
+    "max_accounted_usd": 10,
+    "attempts_per_request": 5,
+    "connect_timeout_seconds": 15,
+    "read_timeout_seconds": 90,
+    "client_proxy_used": false,
+    "full_payload_sent": true,
+    "server_tokenizer_available": false,
+    "comparison_track": "hosted_api_accuracy_and_client_latency"
+  },
+  "planned_requests": 2304,
+  "completed_requests": 2304,
+  "input_tokens": 1531397,
+  "accounted_cost_usd": 0.064318674,
+  "transport_or_response_failed_requests": 1,
+  "finished_at": "2026-09-29T08:07:38.254403+00:00",
+  "suites": {
+    "policy_refund": {
+      "sha256": "6ea83d4d1d578ee43f4b114f68d85bdaaaf6cf88df8bb0fa634ff7037d466a7c",
+      "requests": 768,
+      "decisions": 2304,
+      "failures": 3
+    },
+    "policy_access": {
+      "sha256": "58affde3e3a223624d8c769008d816992f69582feb86965f71d64812eee90fea",
+      "requests": 768,
+      "decisions": 2304,
+      "failures": 0
+    },
+    "policy_routing": {
+      "sha256": "290e95c91f37a30c92df117462685ff84267eae08774ffd3d3840018aef7e1aa",
+      "requests": 768,
+      "decisions": 2304,
+      "failures": 0
+    }
+  },
+  "journal_sha256": "0fbab09df5582f1dcee8a0d4d87e50d564c9e000e3ecd94251d1ab2ca890a68c"
+}

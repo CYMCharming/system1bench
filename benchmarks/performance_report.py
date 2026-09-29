@@ -246,7 +246,7 @@ def interval(value, scale=1):
 def report(root, summary):
     lines = ['# Controlled local decision performance (v1)', '',
              'All timings below are new local measurements using the [predeclared protocol](PERFORMANCE_PROTOCOL.md). '
-             'They compare the stated adapters, not optimized serving engines or architecture-only speed. Jev is not evaluated.', '',
+             'They compare the stated adapters, not optimized serving engines or architecture-only speed. Jev is excluded from this resident-GPU track; hosted results are reported separately.', '',
              f'The completed matrix contains {summary["measured_requests"]:,} measured logical requests and '
              f'{summary["measured_decisions"]:,} decisions, excluding warm-up. All inputs are complete; failures: 0. '
              'There are 11 workloads, four checkpoints, three batch sizes, and eight rounds on the same physical A100 80GB PCIe.', '',
@@ -336,7 +336,7 @@ def homepage(summary):
                          f'{interval(cells[workload, model, 32]["requests_per_second"])} |')
     lines += ['', 'Requests include all questions in a state. Fixed-batch throughput is completed requests divided by summed '
               'prediction time; it is not server capacity. No generated-token speed, optimal-serving-engine result, '
-              'architecture-only speedup, or overall cross-task winner is claimed. Jev was not run.', '',
+              'architecture-only speedup, or overall cross-task winner is claimed. Jev was not run in this resident-GPU track.', '',
               '<!-- END GENERATED PERFORMANCE -->']
     path = ROOT / 'README.md'
     text = path.read_text()
