@@ -34,7 +34,7 @@ block. Each block records its own start/end time, status and raw artifact hashes
 A complete result requires 32 successful fresh-process blocks and 1,056 cells:
 4 checkpoints × 8 rounds × 11 workload strata × 3 batch sizes.
 
-Failures or detected contention invalidate a block; investigate and retain failed
+Failures, foreign GPU processes or sustained CPU/SMT threshold violations invalidate a block; investigate and retain failed
 artifacts. Never select the fastest retry. Any deviation or restart is documented
 here before inclusion in the final analysis.
 
@@ -59,3 +59,21 @@ The replacement-affinity Qwen pilot completed successfully with no observer
 errors. The earlier Laya external-observer pilot also completed successfully.
 An additional regression verifies that an unexpected clean observer exit is
 rejected; all nine performance tests pass. These checks precede formal timing.
+
+## Completed official measurement
+
+The formal run started at 2026-09-28T15:59:17.486927+00:00 and finished at 2026-09-28T19:08:36.100587+00:00 (UTC).
+All 32 scheduled blocks completed with status DONE: 1,056 cells, 67,584 measured
+logical requests and 98,304 decisions, excluding warm-up. No formal block was
+retried or excluded; recorded failures and sustained telemetry violations are zero.
+Independent replay found six isolated measured CPU intervals above the 15%
+threshold (five for Laya Multilingual, one for Llama), with maximum streak one;
+the predeclared rejection rule requires two consecutive intervals. These records
+remain included under that unchanged rule. The host was not contention-free.
+The complete raw matrix is retained under `v1/raw/`.
+
+CPU-only reporting validates the matrix and raw hashes against the frozen contract
+and references. The final local verification passed 27 tests and Ruff; the public
+environment witness reproduced the seeded BF16 sum and both 151-code tokenizer
+checks. Final review status and limitations are recorded in
+[the audit record](../docs/PERFORMANCE_AUDIT.md).

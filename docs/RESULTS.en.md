@@ -9,6 +9,8 @@ Both Laya checkpoints (English/Multilingual) come from `convaiinnovations/laya@5
 
 Llama/Qwen use fixed zero-shot candidate-code logit scoring, with Qwen thinking disabled. Each question has a separate forward pass, with no generated chain of thought. Candidate-only softmax is not calibrated confidence. See [LLM_BASELINES.md](LLM_BASELINES.md).
 
+New controlled latency and fixed-batch throughput measurements are reported separately in [Performance results](PERFORMANCE_RESULTS.en.md), with their [protocol](PERFORMANCE_PROTOCOL.md) and [audit record](PERFORMANCE_AUDIT.md). They do not replace the full accuracy evaluation below.
+
 ## Results by task
 
 The following values are accuracy/agreement against source references over all scheduled samples. Parentheses show 95% group-bootstrap intervals. Multiple questions share a state cluster; TurtleBench clusters by story, and needle tasks by original needle. Synthetic-reference results do not establish human-verified real-world decision correctness.

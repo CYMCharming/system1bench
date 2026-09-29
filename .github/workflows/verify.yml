@@ -11,8 +11,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -e . ruff
-      - run: ruff check system1bench tests
+      - run: ruff check system1bench benchmarks tests
       - run: python -m unittest discover -s tests -v
       - run: python -m system1bench.metrics
       - run: python -m system1bench.report
+      - run: python benchmarks/performance_report.py --root performance/v1
       - run: git diff --exit-code -- results/summary.json results/metrics.csv docs/RESULTS.zh-CN.md README.md
+      - run: git diff --exit-code -- performance/v1/summary.json performance/v1/metrics.csv docs/PERFORMANCE_RESULTS.en.md

@@ -256,6 +256,8 @@ def report(root, summary):
              'GPU occupancy was monitored; the wider host remained shared.', '',
              'Cells show the median of eight round statistics and a 95% bootstrap interval over rounds. '
              'Intervals describe this fixed workload on this host; eight rounds are too few to certify rare-tail behavior. '
+             'Reference-agreement intervals measure repeat variation on the same 64 states, not uncertainty over new dataset samples; '
+             'a zero-width interval does not imply known population accuracy. '
              'p95 is descriptive, not a service-level guarantee. All round values, ranges, memory and token counts are in '
              '[summary.json](../performance/v1/summary.json).', '',
              '## Sequential request latency (batch size 1)', '',
@@ -278,6 +280,11 @@ def report(root, summary):
                              f'{interval(c["decisions_per_second"])} | {c["peak_allocated_gib"]["median"]:.2f} | '
                              f'{c["reference_agreement"]["median"] * 100:.2f} |')
     lines += ['', '## Hardware observations', '',
+              'These telemetry ranges span the monitored block, including input audit, warm-up, idle gaps and measurement. '
+              'They are not active-kernel-only clock or power summaries. Raw phase labels and monotonic call boundaries '
+              'support finer inspection. The observer ran on CPU 24, separately from worker cores 20–23 and their '
+              'SMT siblings 84–87; no block may pass with an observed foreign GPU process or a sustained CPU/SMT '
+              'threshold violation. Brief interference and shared memory-bandwidth effects remain possible.', '',
               '| Model | GPU telemetry samples | Foreign GPU process observations | SM clock MHz min–max | Temperature C min–max | Host 1-minute load min–max |',
               '|---|---:|---:|---:|---:|---:|']
     for model, t in summary['telemetry'].items():
@@ -300,7 +307,7 @@ def report(root, summary):
         metrics = ['batch_p50_ms', 'batch_p95_ms', 'requests_per_second', 'decisions_per_second', 'reference_agreement', 'peak_allocated_gib']
         fields = ['model', 'workload', 'batch_size', 'requests_per_round', 'decisions_per_round', 'rounds']
         fields += [m + suffix for m in metrics for suffix in ['_median', '_ci95_low', '_ci95_high', '_min', '_max']]
-        w = csv.DictWriter(f, fields)
+        w = csv.DictWriter(f, fields, lineterminator='\n')
         w.writeheader()
         for c in summary['cells']:
             row = {k: c[k] for k in fields[:6]}
@@ -308,6 +315,39 @@ def report(root, summary):
                 row.update({m + '_median': c[m]['median'], m + '_ci95_low': c[m]['ci95'][0],
                             m + '_ci95_high': c[m]['ci95'][1], m + '_min': c[m]['min'], m + '_max': c[m]['max']})
             w.writerow(row)
+    homepage(summary)
+
+
+def homepage(summary):
+    lines = ['<!-- BEGIN GENERATED PERFORMANCE -->', '## Controlled local decision speed — all workloads', '',
+             'These are our own new measurements on one A100 80GB PCIe, using the existing four adapters. '
+             'Each cell shows the median over eight rounds and its 95% bootstrap interval. '
+             'Encoding and structured-answer construction are included; model loading, network/queue time and validation are excluded. '
+             'The full [performance report](docs/PERFORMANCE_RESULTS.en.md) includes p95, reference agreement, memory, token counts and limits. '
+             'See the [frozen protocol](docs/PERFORMANCE_PROTOCOL.md) and [raw records](performance/v1/raw).', '',
+             '| Workload | Model | Batch 1 request p50 ms | Batch 8 requests/s | Batch 32 requests/s |',
+             '|---|---|---:|---:|---:|']
+    cells = {(c['workload'], c['model'], c['batch_size']): c for c in summary['cells']}
+    workloads = list(dict.fromkeys(c['workload'] for c in summary['cells']))
+    for workload in workloads:
+        for model in NAMES:
+            lines.append(f'| {workload} | {NAMES[model]} | {interval(cells[workload, model, 1]["batch_p50_ms"])} | '
+                         f'{interval(cells[workload, model, 8]["requests_per_second"])} | '
+                         f'{interval(cells[workload, model, 32]["requests_per_second"])} |')
+    lines += ['', 'Requests include all questions in a state. Fixed-batch throughput is completed requests divided by summed '
+              'prediction time; it is not server capacity. No generated-token speed, optimal-serving-engine result, '
+              'architecture-only speedup, or overall cross-task winner is claimed. Jev was not run.', '',
+              '<!-- END GENERATED PERFORMANCE -->']
+    path = ROOT / 'README.md'
+    text = path.read_text()
+    marker = '<!-- BEGIN GENERATED PERFORMANCE -->'
+    if marker in text:
+        start = text.index(marker)
+        end = text.index('<!-- END GENERATED PERFORMANCE -->', start) + len('<!-- END GENERATED PERFORMANCE -->')
+        text = text[:start] + '\n'.join(lines) + text[end:]
+    else:
+        text = text.replace('## Run provenance', '\n'.join(lines) + '\n\n## Run provenance', 1)
+    path.write_text(text)
 
 
 def main():

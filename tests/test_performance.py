@@ -5,7 +5,7 @@ from pathlib import Path
 from unittest.mock import patch, Mock
 
 from benchmarks.performance import Monitor, timed_predict, validated_answers, save_gzip
-from benchmarks.performance_report import estimate, validate_cell, summarize
+from benchmarks.performance_report import estimate, validate_cell, summarize, homepage
 from benchmarks.performance_telemetry import cpu_delta
 from system1bench.common import sha, write
 
@@ -176,6 +176,13 @@ class PerformanceTests(unittest.TestCase):
                 self.assertAlmostEqual(summary['cells'][0]['batch_p50_ms']['median'], 45.)
                 self.assertAlmostEqual(summary['cells'][0]['requests_per_second']['median'], (25. + 20.) / 2)
                 self.assertEqual(summary['cells'][0]['reference_agreement']['median'], 1.)
+                (root / 'README.md').write_text('# Fixture\n\n## Run provenance\n')
+                homepage(summary)
+                first = (root / 'README.md').read_text()
+                self.assertEqual(first.count('| w |'), 4)
+                self.assertIn('45.00 [', first)
+                homepage(summary)
+                self.assertEqual((root / 'README.md').read_text(), first)
                 path = out / 'raw/round07/qwen3_8b/metadata.json'
                 from system1bench.common import read
                 meta = read(path)

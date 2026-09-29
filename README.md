@@ -16,6 +16,7 @@ workflow decisions, explicit out-of-scope intent detection, safety, long-context
 retrieval and actual option-order perturbations. Scores stay separate by source
 and reference quality. There is no blended “decision intelligence” score.
 
+- [Controlled speed results](docs/PERFORMANCE_RESULTS.en.md) · [timing protocol](docs/PERFORMANCE_PROTOCOL.md) · [performance audit](docs/PERFORMANCE_AUDIT.md)
 - [Results in English](docs/RESULTS.en.md) · [中文结果](docs/RESULTS.zh-CN.md)
 - [Dataset guide in English](docs/DATASETS.en.md) · [数据集中文解读](docs/DATASETS.zh-CN.md)
 - [Protocol and metrics](PROTOCOL.md) · [dataset suitability review](docs/DATASET_REVIEW.md)
@@ -125,6 +126,62 @@ Lower MAE is better; within-one agreement allows an error of one scale point.
 | Qwen3-8B | 0.6560 | 0.6482 | 90.80% |
 
 <!-- END GENERATED RESULTS -->
+
+<!-- BEGIN GENERATED PERFORMANCE -->
+## Controlled local decision speed — all workloads
+
+These are our own new measurements on one A100 80GB PCIe, using the existing four adapters. Each cell shows the median over eight rounds and its 95% bootstrap interval. Encoding and structured-answer construction are included; model loading, network/queue time and validation are excluded. The full [performance report](docs/PERFORMANCE_RESULTS.en.md) includes p95, reference agreement, memory, token counts and limits. See the [frozen protocol](docs/PERFORMANCE_PROTOCOL.md) and [raw records](performance/v1/raw).
+
+| Workload | Model | Batch 1 request p50 ms | Batch 8 requests/s | Batch 32 requests/s |
+|---|---|---:|---:|---:|
+| ag_news | Laya English | 10.38 [10.29, 18.35] | 441.20 [436.82, 444.37] | 573.63 [570.54, 582.44] |
+| ag_news | Laya Multilingual | 8.51 [8.46, 8.94] | 696.15 [690.33, 703.78] | 1037.98 [910.16, 1048.95] |
+| ag_news | Llama-3.1-8B-Instruct | 30.69 [30.39, 30.78] | 47.11 [46.67, 47.61] | 47.07 [46.89, 48.16] |
+| ag_news | Qwen3-8B | 30.96 [30.71, 31.02] | 46.46 [45.26, 47.51] | 47.25 [47.13, 47.79] |
+| boolq | Laya English | 10.30 [10.23, 10.32] | 257.19 [256.58, 261.75] | 249.67 [248.99, 255.97] |
+| boolq | Laya Multilingual | 8.55 [8.50, 8.71] | 448.91 [372.81, 457.76] | 456.62 [451.39, 482.04] |
+| boolq | Llama-3.1-8B-Instruct | 36.86 [36.53, 37.19] | 29.18 [29.00, 29.47] | 25.18 [25.15, 25.53] |
+| boolq | Qwen3-8B | 33.51 [33.34, 33.71] | 27.81 [27.55, 28.07] | 23.78 [23.69, 23.89] |
+| sst5 | Laya English | 10.27 [10.21, 10.41] | 516.73 [512.80, 520.98] | 805.83 [765.12, 823.88] |
+| sst5 | Laya Multilingual | 8.47 [8.38, 8.53] | 746.61 [715.84, 752.40] | 1305.71 [1286.94, 1318.23] |
+| sst5 | Llama-3.1-8B-Instruct | 29.20 [29.08, 29.31] | 54.06 [53.02, 54.85] | 57.68 [57.50, 58.33] |
+| sst5 | Qwen3-8B | 29.27 [29.12, 29.36] | 55.05 [54.60, 56.62] | 56.30 [56.12, 57.19] |
+| banking77 | Laya English | 12.66 [12.55, 12.74] | 165.13 [134.06, 168.60] | 180.98 [158.88, 185.87] |
+| banking77 | Laya Multilingual | 9.93 [9.81, 10.09] | 265.39 [257.80, 267.94] | 295.38 [292.77, 300.42] |
+| banking77 | Llama-3.1-8B-Instruct | 112.93 [111.15, 113.03] | 9.00 [8.99, 9.05] | 9.02 [9.00, 9.03] |
+| banking77 | Qwen3-8B | 119.91 [118.15, 120.11] | 8.41 [8.41, 8.47] | 8.44 [8.43, 8.46] |
+| massive_en | Laya English | 11.44 [11.35, 20.04] | 225.14 [221.28, 229.00] | 260.98 [205.78, 264.71] |
+| massive_en | Laya Multilingual | 9.50 [9.36, 13.45] | 357.15 [292.98, 364.11] | 420.73 [414.38, 432.53] |
+| massive_en | Llama-3.1-8B-Instruct | 91.18 [90.88, 91.29] | 12.02 [12.02, 12.06] | 12.25 [12.23, 12.26] |
+| massive_en | Qwen3-8B | 96.01 [95.87, 96.06] | 11.35 [11.31, 11.44] | 11.60 [11.58, 11.60] |
+| massive_zh | Laya English | 11.38 [11.34, 11.48] | 223.72 [218.93, 224.30] | 256.27 [249.63, 258.63] |
+| massive_zh | Laya Multilingual | 9.48 [9.34, 17.08] | 360.41 [248.90, 366.44] | 424.18 [417.61, 435.98] |
+| massive_zh | Llama-3.1-8B-Instruct | 91.15 [90.66, 91.19] | 12.02 [12.00, 12.03] | 12.31 [12.28, 12.32] |
+| massive_zh | Qwen3-8B | 95.66 [95.44, 95.81] | 11.37 [11.35, 11.39] | 11.64 [11.63, 11.67] |
+| clinc150_oos | Laya English | 21.37 [21.29, 21.68] | 58.55 [57.44, 58.76] | 61.65 [50.61, 62.48] |
+| clinc150_oos | Laya Multilingual | 13.60 [13.49, 13.77] | 101.92 [100.23, 102.75] | 109.08 [106.06, 110.01] |
+| clinc150_oos | Llama-3.1-8B-Instruct | 201.76 [201.59, 201.94] | 4.50 [4.50, 4.51] | 4.52 [4.50, 4.53] |
+| clinc150_oos | Qwen3-8B | 214.74 [214.46, 215.18] | 4.17 [4.17, 4.18] | 4.21 [4.21, 4.23] |
+| jev_laya_triage | Laya English | 13.89 [13.83, 19.89] | 121.58 [121.06, 122.84] | 124.05 [113.78, 125.68] |
+| jev_laya_triage | Laya Multilingual | 9.30 [9.27, 9.43] | 225.77 [197.01, 228.87] | 244.28 [241.82, 246.21] |
+| jev_laya_triage | Llama-3.1-8B-Instruct | 100.02 [99.51, 100.78] | 12.58 [12.46, 12.64] | 12.61 [12.55, 12.67] |
+| jev_laya_triage | Qwen3-8B | 102.95 [102.66, 103.92] | 12.08 [11.99, 12.27] | 12.39 [12.35, 12.46] |
+| needle_100 | Laya English | 11.96 [11.95, 12.00] | 234.66 [233.99, 235.23] | 269.75 [267.47, 270.78] |
+| needle_100 | Laya Multilingual | 9.08 [9.00, 12.76] | 404.35 [336.13, 405.09] | 488.97 [404.88, 493.09] |
+| needle_100 | Llama-3.1-8B-Instruct | 69.02 [68.65, 69.14] | 20.89 [20.86, 20.94] | 22.15 [22.14, 22.17] |
+| needle_100 | Qwen3-8B | 72.63 [72.45, 73.39] | 20.26 [20.23, 20.33] | 21.75 [21.72, 21.78] |
+| needle_1000 | Laya English | 34.79 [34.76, 34.83] | 39.37 [38.08, 39.49] | 41.13 [41.00, 41.22] |
+| needle_1000 | Laya Multilingual | 18.30 [18.26, 18.37] | 75.38 [75.24, 75.66] | 79.72 [79.02, 80.03] |
+| needle_1000 | Llama-3.1-8B-Instruct | 202.67 [202.39, 202.87] | 4.96 [4.95, 4.96] | 5.02 [5.00, 5.05] |
+| needle_1000 | Qwen3-8B | 214.47 [213.60, 214.78] | 4.65 [4.64, 4.66] | 4.69 [4.69, 4.70] |
+| needle_4000 | Laya English | 171.11 [170.28, 171.40] | 6.57 [6.55, 6.59] | 6.65 [6.63, 6.66] |
+| needle_4000 | Laya Multilingual | 92.94 [92.84, 93.04] | 12.50 [12.46, 12.53] | 12.56 [12.52, 12.57] |
+| needle_4000 | Llama-3.1-8B-Instruct | 705.78 [705.57, 706.11] | 1.15 [1.15, 1.15] | 1.16 [1.16, 1.16] |
+| needle_4000 | Qwen3-8B | 758.71 [757.50, 759.77] | 1.06 [1.06, 1.06] | 1.07 [1.07, 1.07] |
+
+Requests include all questions in a state. Fixed-batch throughput is completed requests divided by summed prediction time; it is not server capacity. No generated-token speed, optimal-serving-engine result, architecture-only speedup, or overall cross-task winner is claimed. Jev was not run.
+
+<!-- END GENERATED PERFORMANCE -->
 
 ## Run provenance
 

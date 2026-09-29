@@ -1,0 +1,102 @@
+{
+  "audit_skill": "experiment-audit",
+  "date": "2026-09-29",
+  "verdict": "PASS",
+  "overall_verdict": "pass",
+  "integrity_status": "pass",
+  "reason_code": "complete_matrix_reconciled",
+  "summary": "The complete controlled-performance matrix, raw hashes, decoded answers, telemetry rules, aggregate statistics, and published numeric claims reconciled without a blocking integrity defect.",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "auditor": "codex same-family reviewer",
+  "trace_path": ".aris/traces/experiment-audit/2026-09-28_performance/final/",
+  "audited_input_hashes": ".aris/traces/experiment-audit/2026-09-28_performance/final/audited_input_hashes.json",
+  "checks": {
+    "A_ground_truth_provenance": {
+      "status": "pass",
+      "details": "Frozen selection and references matched: seven dataset-provided strata, one explicitly labeled synthetic-teacher stratum, and three programmatic strata."
+    },
+    "B_score_normalization": {
+      "status": "pass",
+      "details": "No performance or agreement metric uses model-output statistics as its normalization denominator."
+    },
+    "C_result_existence_and_claims": {
+      "status": "pass",
+      "details": "All raw cells, hashes, answer decodes, aggregates, CSV rows, and published numeric rows matched."
+    },
+    "D_execution_reachability": {
+      "status": "pass",
+      "details": "Raw outputs prove the timed prediction, validation, audit, telemetry, and reporting paths executed."
+    },
+    "E_evidence_scope": {
+      "status": "pass_with_limits",
+      "details": "Evidence is limited to 11 fixed strata, four adapters, three batch sizes, eight rounds, one host, and a repeated fixed subset."
+    },
+    "F_evaluation_type": {
+      "status": "pass",
+      "classification": {
+        "real_gt_dataset_provided": [
+          "ag_news",
+          "boolq",
+          "sst5",
+          "banking77",
+          "massive_en",
+          "massive_zh",
+          "clinc150_oos"
+        ],
+        "synthetic_proxy_teacher_agreement": [
+          "jev_laya_triage"
+        ],
+        "simulation_programmatic_by_construction": [
+          "needle_100",
+          "needle_1000",
+          "needle_4000"
+        ]
+      }
+    }
+  },
+  "matrix": {
+    "blocks": 32,
+    "raw_cells": 1056,
+    "aggregate_cells": 132,
+    "measured_request_executions": 67584,
+    "measured_decisions": 98304,
+    "failures": 0
+  },
+  "telemetry": {
+    "foreign_gpu_process_observations": 0,
+    "isolated_measured_cpu_intervals_above_15_percent": 6,
+    "isolated_event_models": {
+      "multilingual": 5,
+      "llama31_8b_instruct": 1
+    },
+    "maximum_contaminated_streak": 1,
+    "rejection_streak": 2,
+    "measured_smt_intervals_above_15_percent": 0,
+    "qualification": "The frozen sustained-contention rejection rule passed; the host was not contention-free and affinity did not provide exclusive ownership."
+  },
+  "verification": {
+    "independent_assertions": 350872,
+    "unit_tests_passed": 27,
+    "ruff": "pass",
+    "reporter_replay": "pass_byte_identical"
+  },
+  "hashes": {
+    "manifest_sha256": "bf7b9d2f3008dbd03ad478a5bdb9a267116680b8580843871d792ffb0cedb1fb",
+    "run_contract_sha256": "4edfdb46563938014b444c36f759c3ea4a6753caf5061ef97721981cdabacb69",
+    "summary_sha256": "3015ccf5433c8e658066228ebe6586a36df3a55b799fcd1159238f7e5db29f68",
+    "metrics_csv_sha256": "4a08b20d72c47feeda260986278c4f133bc791ea7a9b612391c1079d7ac6ac2f"
+  },
+  "required_fixes": [],
+  "supported_claims": [
+    "Per-workload resident-model in-process state-to-structured-answer latency for the declared adapters and host.",
+    "Fixed-batch in-process throughput for batch sizes 8 and 32 under the declared protocol.",
+    "Reference agreement, memory, token ranges, and telemetry observations on the fixed selected subset."
+  ],
+  "unsupported_claims": [
+    "Generated-token or best-serving-engine performance.",
+    "Network latency, sustainable serving capacity, p99 guarantees, or MLPerf compliance.",
+    "Population accuracy, arbitrary-hardware generalization, exclusive host ownership, or an overall cross-task winner."
+  ],
+  "trace_availability": "local archive; not distributed in repository"
+}

@@ -1,0 +1,345 @@
+{
+  "status": "DONE",
+  "started_at": "2026-09-28T18:57:27.392149+00:00",
+  "model": "multilingual",
+  "round": 7,
+  "manifest_sha256": "bf7b9d2f3008dbd03ad478a5bdb9a267116680b8580843871d792ffb0cedb1fb",
+  "source_sha256": {
+    "benchmarks/performance.py": "43b3b64d1a1d15bd57c7fd07f88c6718bd3debd9d87d032aab5b6445353367d4",
+    "benchmarks/performance_telemetry.py": "4daa840094c0f220172e5840aed78cf71cd897a1dc305fe0c139af48f3fa5491",
+    "benchmarks/performance_contract.py": "1fc31cb0a37994bb7b654504f0b049eca8a7dba54c96074f7fac86b12f5522db",
+    "system1bench/common.py": "c820c2e908f3581d422ee7a8edbdc277f34df2c2bf0acb5f2966fc479c7019a7",
+    "system1bench/laya_adapter.py": "aa9bc97005b098e51d36771bd7d2a6d3e15289d67fc6b2d1bee711a6446aec3b",
+    "system1bench/llm_adapter.py": "88a9dbd4a57fd9b5f727180c5e2650c58632f0f01cbe320c7d3f6536d98a4e49"
+  },
+  "contract_sha256": "4edfdb46563938014b444c36f759c3ea4a6753caf5061ef97721981cdabacb69",
+  "environment": {
+    "python": "3.12.13",
+    "kernel": "7.0.0-30-generic",
+    "cpu_model": "INTEL(R) XEON(R) GOLD 6530",
+    "packages": {
+      "torch": "2.7.1+cu118",
+      "transformers": "5.16.1",
+      "laya": "0.3.20",
+      "numpy": "2.5.2",
+      "pyarrow": "25.0.1",
+      "huggingface-hub": "1.29.0",
+      "PyYAML": "6.0.3"
+    },
+    "torch_cuda": "11.8",
+    "cudnn_version": 90100,
+    "tf32_matmul": false,
+    "tf32_cudnn": true,
+    "cudnn_benchmark": false
+  },
+  "adapter": {
+    "adapter": "laya",
+    "model": "multilingual",
+    "repo": "convaiinnovations/laya",
+    "requested_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "model_files_sha256": {
+      "encoder/config.json": "83f6916d13ef0f556ac461f28308dc2bffa7ebeadee8ec9e2db5812020ea5bb4",
+      "model.safetensors": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+      "rl_agent_config.json": "25061739243b617ad88d1219ba6f8a9c86c5881ca28df024fa2d9b3b2fcc30c6",
+      "tokenizer/tokenizer.json": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f",
+      "tokenizer/tokenizer_config.json": "6c6b2d8e3c84ce0e671c129cd6b374b235d6f9863042a5836358d00a89bbb5a1"
+    },
+    "laya_source_sha256": {
+      "__init__.py": "25fd3fc8900785fd8d4b20b2642ef13c76afea36a840ef8a0103d6e108f0736c",
+      "agent.py": "1473ffd335a1becf55bf7aadde6d31f9d6be27862f5deaa5f4ebd3451fa154e3",
+      "cli.py": "e73e51da8f4f6fdc9ff8570f664b41bd2d656e0e2f91bb46c4d51bc2366972d6",
+      "common.py": "4ab41be6a4d9fdbad74eccf4f64c43e2c7404d227988d97ed8233ded8b182cb1",
+      "email.py": "17d147718e6111b6f702436978137006a6e46f13bd78eed8b8d90dad38ae4650",
+      "evals.py": "da66a10c64fcf45540cada1646a020db83cde885652477b65e6d65311b9b13c2",
+      "evals_cli.py": "a2d7f3454b3f87f2c7b01d7e9066978980e74e2b37ef5d2e82a81030bb58c15f",
+      "fast.py": "6339b285bdf76c862402e8a6ce72310d77a6d413fe819d6ecbd5ed665f990b2b",
+      "hooks.py": "83a53463c360f2209d49c906aad813b5de6c6fae763dd75d0fce39a69198fbd7",
+      "integrations/__init__.py": "43cc61d5c791f371e319a1874473f5e726fc204ff721ae1d94aa745220c93f4c",
+      "integrations/langchain.py": "b3f7267f3b7b1e6b2afa89c69f57959e80d8c424792d02d5d9295d728e647ee3",
+      "lang.py": "d6a234ee866c5f05ff622e70e78b48a5dc05c792058fb276535683573fac70b0",
+      "mcp/__init__.py": "3cddfbdb68ea7e25aaa46df3fd732a939d24b07ea2fbfbde2ba92a99af4b43d2",
+      "mcp/device.py": "eb3899a41696bc5548234e76e1fc15ef1125c657cfe227ecc9b6bdbd48d0b6b8",
+      "mcp/server.py": "87f8aa0671096b0bb4a51c2dc49b2db6356e46e39a2e0fe9c4227d7f3105fe5c",
+      "mcp/tools.py": "224a5b4cb8f19649eb8c46f0800e6e4fdd42fa33911b22210da31bc1c96abe86",
+      "onnx_agent.py": "1d5534ab5931dfd08e6aa59ca694d928973dc1fc760d1c1ef0880547e10a35aa",
+      "presets.py": "2a3370f587cae29696bfa487edcc51caf47a211518733fdb192cf6d4eddbf1ea",
+      "revisions.py": "2b9e64700b7ff11185fc1f1ee82bf14f35a3c874f4e1134fc8ae792519353fdc",
+      "router.py": "3e4a65b33f2d36076ac522945470d9ec10cfff97eb389b6ba1ad5f482ce8e079",
+      "serve.py": "72abe8b73480c9a9738946dfe9898e5240e8fb9d82d3d9054c267cc61c9829f6",
+      "shortlist.py": "3bf5397671b658602efd9071bea5c6e6e4ff2282a9b1d66487a5c0a018ad1ea1",
+      "structured.py": "d8aa56d4832eaf7804767b0194f7f50c139d4f261171079f60b27f4fc9cbbf8d",
+      "tl_kernels.py": "6d7897abce718499c93325144200999e153a3603f0ce83dd88e1065cf074f20a"
+    },
+    "python": "3.12.13",
+    "torch": "2.7.1+cu118",
+    "transformers": "5.16.1",
+    "gpu": "NVIDIA A100 80GB PCIe",
+    "dtype": "torch.bfloat16",
+    "amp_enabled": true,
+    "temperatures": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "configuration": {
+      "encoder": "jhu-clsp/mmBERT-base",
+      "head_layers": 2,
+      "max_len": 1024,
+      "head_max_len": 256,
+      "max_prefixes": 6,
+      "act_costs": {
+        "escalate": 0.5
+      },
+      "cost_wrong_act": 3.0,
+      "amp_dtype": "bf16",
+      "model_name": "rl-agent",
+      "temperature": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "temperature_by_options": {},
+      "training": {
+        "updates": 15987,
+        "epochs_completed": 4,
+        "hours": 4.97,
+        "world_size": 1,
+        "fine_tuned_from_checkpoint": false
+      }
+    }
+  },
+  "gpu_before": {
+    "uuid": "GPU-687aef3d-bc87-b344-36ca-6b9803ce6099",
+    "name": "NVIDIA A100 80GB PCIe",
+    "driver_version": "610.43.02",
+    "memory.total": "81920",
+    "memory.used": "15",
+    "utilization.gpu": "0",
+    "temperature.gpu": "51",
+    "clocks.sm": "1410",
+    "clocks.mem": "1512",
+    "power.draw": "73.64",
+    "power.limit": "300.00",
+    "pstate": "P0"
+  },
+  "cpu_affinity": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "thread_env": {
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "TOKENIZERS_PARALLELISM": "false"
+  },
+  "torch_num_threads": 4,
+  "cells": {
+    "massive_zh.batch1.json.gz": {
+      "sha256": "6c774a4b21f59d863f28a750887b0a96441e6fdbccbe36401806251acdc12872",
+      "seconds": 0.6014158907346427,
+      "requests": 64,
+      "decisions": 64
+    },
+    "ag_news.batch32.json.gz": {
+      "sha256": "8fc5c4c6d919502c9bce09905202da4d8fd1fec4e5ecea7b006ac9911b284f02",
+      "seconds": 0.0614583701826632,
+      "requests": 64,
+      "decisions": 64
+    },
+    "needle_4000.batch32.json.gz": {
+      "sha256": "e61a77b296af6acfc8d0217b5c4bee8778c0d602449a2f5dca8d1ffd278b1b57",
+      "seconds": 5.09814990311861,
+      "requests": 64,
+      "decisions": 128
+    },
+    "banking77.batch32.json.gz": {
+      "sha256": "186bed922fe7357db2293fac8a581d1418d024c281ae5b0c2defe1943c0cdd0a",
+      "seconds": 0.21734718512743711,
+      "requests": 64,
+      "decisions": 64
+    },
+    "massive_en.batch8.json.gz": {
+      "sha256": "c10e182caa7fa13cafb003a24f5b068ceb7f3513ea460fbe4bf03a5bb5d04b05",
+      "seconds": 0.177480970043689,
+      "requests": 64,
+      "decisions": 64
+    },
+    "needle_4000.batch8.json.gz": {
+      "sha256": "a402c6ba47fc21336cdcdd2e0fe7aa7f677f79be714c1f41a625ed96dd4cb850",
+      "seconds": 5.12169475061819,
+      "requests": 64,
+      "decisions": 128
+    },
+    "needle_1000.batch8.json.gz": {
+      "sha256": "edf5dc6bb6acb3f9052807a4c8350e9c7d6c742ca78dc7db2562099796f67669",
+      "seconds": 0.8506461135111749,
+      "requests": 64,
+      "decisions": 128
+    },
+    "needle_100.batch32.json.gz": {
+      "sha256": "73a22048e57fa238e82f631f9b672976a5380fba144f956a7701f9629aaa3563",
+      "seconds": 0.13050308404490352,
+      "requests": 64,
+      "decisions": 128
+    },
+    "massive_en.batch1.json.gz": {
+      "sha256": "fb4ad5b39a87f23ef562f5ed092c38d28c8f11454a65b5d87e154f0b8b6f996a",
+      "seconds": 0.6007366608828306,
+      "requests": 64,
+      "decisions": 64
+    },
+    "clinc150_oos.batch32.json.gz": {
+      "sha256": "7cec016d72ee113400f41aa906948fae9531705f98ac1c11b392e6db7f3261cb",
+      "seconds": 0.5887180240824819,
+      "requests": 64,
+      "decisions": 64
+    },
+    "boolq.batch1.json.gz": {
+      "sha256": "77f2c495554eb9ffa89d188f0dd59db416b4bdbbca36a708eb58f1fe0487a7ca",
+      "seconds": 0.5439262506552041,
+      "requests": 64,
+      "decisions": 64
+    },
+    "banking77.batch1.json.gz": {
+      "sha256": "8cbec1aee1d3b227c65035e03927c6eacebea0aa28a83e5916a89dbc9f728ae4",
+      "seconds": 0.62740692589432,
+      "requests": 64,
+      "decisions": 64
+    },
+    "massive_zh.batch8.json.gz": {
+      "sha256": "571f2999eeb4f843722b0bc50d448b29e1be4ecb81ef77af45b2eca5db83ad22",
+      "seconds": 0.1766883935779333,
+      "requests": 64,
+      "decisions": 64
+    },
+    "massive_en.batch32.json.gz": {
+      "sha256": "95ea03a3318208d65041013f74dcccee6acd624a0edf41ba5ed6ac635e7a6697",
+      "seconds": 0.15023652045056224,
+      "requests": 64,
+      "decisions": 64
+    },
+    "jev_laya_triage.batch32.json.gz": {
+      "sha256": "22db6c5237dfd3ed1d980b10056d056f268c1cd0b4865a9f5d45d938f44c48ec",
+      "seconds": 0.2646546671167016,
+      "requests": 64,
+      "decisions": 192
+    },
+    "boolq.batch8.json.gz": {
+      "sha256": "456defa542e69f3a0514b4279217cb66c9c26b1972123a9d81440f50695ad8ba",
+      "seconds": 0.13981146505102515,
+      "requests": 64,
+      "decisions": 64
+    },
+    "sst5.batch1.json.gz": {
+      "sha256": "0d6d2bb58353281b40f13829e5eb935af0e83dd2c7325023c924618bdbc075fe",
+      "seconds": 0.5304668731987476,
+      "requests": 64,
+      "decisions": 64
+    },
+    "jev_laya_triage.batch8.json.gz": {
+      "sha256": "19441758c84efe79b61e1088abd60b5dd6f4590a116fd3f8e3a25a0379078c7f",
+      "seconds": 0.28582859691232443,
+      "requests": 64,
+      "decisions": 192
+    },
+    "ag_news.batch1.json.gz": {
+      "sha256": "1ddf1d729c2a0c89c2ad1ba0a4c92ccedf09f1fd36a2e1a2ac3f054728a95840",
+      "seconds": 0.5400627045892179,
+      "requests": 64,
+      "decisions": 64
+    },
+    "sst5.batch32.json.gz": {
+      "sha256": "17ba054f5ae5e6c93daceb44854006b61369a9ede220646d3ca35d1381d3f5f6",
+      "seconds": 0.04927668673917651,
+      "requests": 64,
+      "decisions": 64
+    },
+    "needle_4000.batch1.json.gz": {
+      "sha256": "65044a59b447f0f5a8116159d8b48b3018d7b710adf9b8e15c7d078b3847b287",
+      "seconds": 5.915533073246479,
+      "requests": 64,
+      "decisions": 128
+    },
+    "needle_1000.batch32.json.gz": {
+      "sha256": "6b22e1abdab5b8c3a14a314e7297a02b34abbfde5455a95d92d10b598bd395e0",
+      "seconds": 0.8022854928858578,
+      "requests": 64,
+      "decisions": 128
+    },
+    "needle_100.batch8.json.gz": {
+      "sha256": "48773d5eba0b9599ba3de5bfa268274ecf0abc4c6b7b0f2f53ea73bc159cfc3d",
+      "seconds": 0.1579892006702721,
+      "requests": 64,
+      "decisions": 128
+    },
+    "ag_news.batch8.json.gz": {
+      "sha256": "320d4a173539ea9ef7cab00512eef44650a9b895dec4015186e9deed1c50fe9b",
+      "seconds": 0.09200264327228069,
+      "requests": 64,
+      "decisions": 64
+    },
+    "boolq.batch32.json.gz": {
+      "sha256": "70214dcf942416493e94f8edac6a210d8c303231706084a1ac5aecca6f2b40e7",
+      "seconds": 0.1406808658502996,
+      "requests": 64,
+      "decisions": 64
+    },
+    "clinc150_oos.batch1.json.gz": {
+      "sha256": "7715a6b1e3b7e0b501d2df59e003bf109069ef7a8f2d7c1d3c738d83820e8a0c",
+      "seconds": 0.8715210296213627,
+      "requests": 64,
+      "decisions": 64
+    },
+    "needle_100.batch1.json.gz": {
+      "sha256": "36ede09113ab0eeb26ff4d32e16b02eda817bd278b99db630ef0d085bcfe7844",
+      "seconds": 0.5757317766547203,
+      "requests": 64,
+      "decisions": 128
+    },
+    "banking77.batch8.json.gz": {
+      "sha256": "81ef8adf31defb90a8004c288be7b5beab37cd2086cd0054eff929ea25952913",
+      "seconds": 0.24193888483569026,
+      "requests": 64,
+      "decisions": 64
+    },
+    "jev_laya_triage.batch1.json.gz": {
+      "sha256": "6c2429b2e4eeb3356944dea433061bc0f3be0d2f4f64265666ef727ff7558aef",
+      "seconds": 0.5989680690690875,
+      "requests": 64,
+      "decisions": 192
+    },
+    "needle_1000.batch1.json.gz": {
+      "sha256": "de8ca75f1f0731858529e4fc6f25c0b6813744f21831cf742d7a03d76c55a690",
+      "seconds": 1.1698973886668682,
+      "requests": 64,
+      "decisions": 128
+    },
+    "sst5.batch8.json.gz": {
+      "sha256": "a2d262867fdcbec82b4ec8e850d9025f4b41c6e557c2270e1d747c21c5973453",
+      "seconds": 0.08521344093605876,
+      "requests": 64,
+      "decisions": 64
+    },
+    "clinc150_oos.batch8.json.gz": {
+      "sha256": "616123d12d2e93fdb8aa2d906e7ab83c9da7d4694b0e4b6d5fc7203ad652f140",
+      "seconds": 0.628313924651593,
+      "requests": 64,
+      "decisions": 64
+    },
+    "massive_zh.batch32.json.gz": {
+      "sha256": "d6bde2a5918d49de1a9fd1cbc126c4eefd8011f379a1ac183efa7e33f0aba3d4",
+      "seconds": 0.15002999734133482,
+      "requests": 64,
+      "decisions": 64
+    }
+  },
+  "finished_at": "2026-09-28T18:58:50.458849+00:00",
+  "telemetry_errors": [],
+  "monitor_cpu_affinity": [
+    24
+  ],
+  "telemetry_sha256": "4fc74ed3fce0f6ff1c11c8a5762079f6ec633e6d30c71b1c8079d4165d544038",
+  "input_audits_sha256": "0530a66e77704fa16598fbb9fe9c17ba559f2cc413be869bf870de194b81036a"
+}

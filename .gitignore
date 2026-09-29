@@ -8,3 +8,6 @@ __pycache__/
 *.tmp
 local_logs/
 .aris/
+performance/**/measurement_phase.json
+performance/**/telemetry_status.json
+performance/**/telemetry.log
