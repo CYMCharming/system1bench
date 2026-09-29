@@ -1,0 +1,28 @@
+\subsection{Fresh policy interventions and codebook controls}
+Table~\ref{tab:fresh} reports the original-state accuracies and joint original/counterfactual action success. The fresh diagnostic covers 96 base states per family, with eight matched variants. Figure~\ref{fig:confirmation} retains all six predeclared effects per model and policy, with simultaneous intervals within each six-effect family. The codebook experiment separates display order from answer-code identity for the two LLM adapters.
+\begin{table}[t]
+\centering\small
+\begin{tabular}{llrrrrr}
+\toprule
+Policy & Model & Action & Review & Severity & Majority & Joint \\
+\midrule
+Access & Laya EN & 34.4 & 44.8 & 43.8 & 34.4 & 2.1 \\
+Access & Laya Multi & 29.2 & 40.6 & 29.2 & 34.4 & 0.0 \\
+Access & Llama 8B & 34.4 & 40.6 & 68.8 & 34.4 & 0.0 \\
+Access & Qwen 8B & 66.7 & 53.1 & 79.2 & 34.4 & 46.9 \\
+Access & Jev 1.13 & 100.0 & 89.6 & 95.8 & 34.4 & 100.0 \\
+Refund & Laya EN & 25.0 & 77.1 & 31.2 & 25.0 & 0.0 \\
+Refund & Laya Multi & 25.0 & 74.0 & 31.2 & 25.0 & 0.0 \\
+Refund & Llama 8B & 33.3 & 74.0 & 59.4 & 25.0 & 0.0 \\
+Refund & Qwen 8B & 25.0 & 74.0 & 43.8 & 25.0 & 1.0 \\
+Refund & Jev 1.13 & 100.0 & 100.0 & 100.0 & 25.0 & 100.0 \\
+Routing & Laya EN & 71.9 & 69.8 & 35.4 & 25.0 & 28.1 \\
+Routing & Laya Multi & 24.0 & 63.5 & 33.3 & 25.0 & 0.0 \\
+Routing & Llama 8B & 25.0 & 63.5 & 59.4 & 25.0 & 0.0 \\
+Routing & Qwen 8B & 49.0 & 64.6 & 79.2 & 25.0 & 28.1 \\
+Routing & Jev 1.13 & 54.2 & 100.0 & 95.8 & 25.0 & 29.2 \\
+\bottomrule
+\end{tabular}
+\caption{Fresh policy reference accuracy (percent). Joint requires both original and one-field-counterfactual actions to be correct. Majority is the original action-label baseline. All rows have 96 paired base clusters; the complete machine-readable analysis includes pointwise cluster intervals and all reference-label distributions.}
+\label{tab:fresh}
+\end{table}

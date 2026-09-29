@@ -1,0 +1,18 @@
+{
+  "model": "jev-1.13.0",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "frozen_sha256": "a170c2aaa84bbc289aca43b296f9afa9bf996dbebbd01d2254747a9b8419d976",
+  "runner_sha256": "e915d685d4780f9409b8a72474ae8a55ee0d3241aa1b64a29ae42fa1a96dc555",
+  "common_sha256": "c820c2e908f3581d422ee7a8edbdc277f34df2c2bf0acb5f2966fc479c7019a7",
+  "workers": 6,
+  "max_request_starts_per_second": 8.0,
+  "price_usd_per_million_input_tokens": 0.042,
+  "max_accounted_usd": 1.0,
+  "attempts_per_request": 5,
+  "connect_timeout_seconds": 15,
+  "read_timeout_seconds": 90,
+  "client_proxy_used": false,
+  "full_payload_sent": true,
+  "server_tokenizer_available": false,
+  "comparison_track": "hosted_api_accuracy_and_client_latency"
+}

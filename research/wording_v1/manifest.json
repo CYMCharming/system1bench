@@ -1,0 +1,26 @@
+{
+  "protocol": "system1bench-routing-wording-v1",
+  "generator_sha256": "a40e3a82ca65288b16b69c531d0ea3d0e41c148e30cd40e0579afa8bd09547f5",
+  "frozen_sha256": "a170c2aaa84bbc289aca43b296f9afa9bf996dbebbd01d2254747a9b8419d976",
+  "requests_per_model": 384,
+  "decisions_per_model": 384,
+  "base_clusters": 96,
+  "seeds": [
+    404,
+    505,
+    606
+  ],
+  "cells_per_seed": {
+    "00": 8,
+    "01": 8,
+    "10": 8,
+    "11": 8
+  },
+  "primary_estimand": "EN explicit minus EN compact accuracy on XOR boolean cells",
+  "secondary_estimands": [
+    "EN overall accuracy difference",
+    "ZH explicit minus ZH compact on XOR cells",
+    "difference of EN/ZH wording effects on XOR cells"
+  ],
+  "uncertainty": "paired cluster bootstrap, stratified by generator seed and boolean cell, 10000 draws, seed 20260929"
+}

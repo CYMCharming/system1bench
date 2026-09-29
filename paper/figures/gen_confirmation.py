@@ -34,19 +34,29 @@ fig.legend([Line2D([], [], color=COLORS[m], marker=MARKERS[m], linestyle='none')
 fig.tight_layout(rect=(0, 0, 1, .94), h_pad=1.4)
 save(fig, 'fig_confirmation')
 
-fig, axes = plt.subplots(1, 2, figsize=(5.5, 2.8), sharey=True)
-for ax, model in zip(axes, ['llama31_8b_instruct', 'qwen3_8b']):
-    for j, family in enumerate(families):
+fig, axes = plt.subplots(3, 2, figsize=(5.5, 4.5), sharex=True, sharey=True)
+for j, family in enumerate(families):
+    for k, model in enumerate(['llama31_8b_instruct', 'qwen3_8b']):
+        ax = axes[j,k]
         r = next(r for r in d['codebook'] if r['model'] == model and r['family'] == family)
         values = [100*e['discordance']['estimate'] for e in r['contrasts']]
-        lo = [v-100*e['discordance']['ci95'][0] for v,e in zip(values,r['contrasts'])]
-        hi = [100*e['discordance']['ci95'][1]-v for v,e in zip(values,r['contrasts'])]
-        ax.errorbar(np.arange(4)+(j-1)*.08, values, yerr=[lo,hi], marker=['o','s','^'][j],
-                    color=['#0072B2','#D55E00','#009E73'][j], capsize=2, label=labels[j], markersize=4)
-    ax.set_title(names[model]); ax.set_ylim(-3, 104)
-    ax.set_xticks(range(4), ['Repeat', 'Display', 'Code', 'Both'], rotation=25)
-    ax.grid(axis='y', alpha=.15)
-axes[0].set_ylabel('Prediction flips (%)')
-axes[1].legend(frameon=False, fontsize=7, loc='upper right')
-fig.tight_layout()
+        low = [100*e['discordance']['ci95'][0] for e in r['contrasts']]
+        high = [100*e['discordance']['ci95'][1] for e in r['contrasts']]
+        color=COLORS[model]
+        for x,(v,lo,hi) in enumerate(zip(values,low,high)):
+            ax.plot([x,x],[lo,hi],color=color,lw=1.15,zorder=2)
+            ax.plot([x-.08,x+.08],[lo,lo],color=color,lw=.8,zorder=2)
+            ax.plot([x-.08,x+.08],[hi,hi],color=color,lw=.8,zorder=2)
+            ax.scatter(x,v,s=32,color=color,edgecolors='white',linewidths=.4,zorder=3)
+        ax.set_ylim(-4,104);ax.set_yticks([0,25,50,75,100])
+        ax.set_xticks(range(4),['Repeat','Display','Code','Both'])
+        ax.grid(axis='y',color='#E4E9EB',lw=.5)
+        ax.set_axisbelow(True)
+        ax.spines['top'].set_visible(False);ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False);ax.spines['bottom'].set_color('#A9B4B9')
+        if j==0: ax.set_title(names[model],weight='bold',fontsize=9)
+        if k==0: ax.set_ylabel(f'{labels[j]}\nFlip (%)',fontsize=8)
+        if k==1: ax.tick_params(axis='y',labelleft=False)
+        if j<2: ax.tick_params(axis='x',labelbottom=False)
+fig.subplots_adjust(left=.16,right=.98,top=.91,bottom=.13,hspace=.35,wspace=.18)
 save(fig, 'fig_codebook')

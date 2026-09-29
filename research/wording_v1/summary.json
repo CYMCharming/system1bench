@@ -1,0 +1,703 @@
+{
+  "protocol": "system1bench-routing-wording-v1",
+  "frozen_sha256": "a170c2aaa84bbc289aca43b296f9afa9bf996dbebbd01d2254747a9b8419d976",
+  "unit": "96 base-state clusters; 24 per boolean truth-table cell",
+  "bootstrap": "paired cluster bootstrap, stratified by generator seed and boolean cell, 10000 draws, seed 20260929",
+  "models": {
+    "english": {
+      "name": "Laya EN",
+      "truth_cells": {
+        "00": {
+          "en_compact": {
+            "correct": 20,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 17,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 12,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 12,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "01": {
+          "en_compact": {
+            "correct": 17,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 8,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 9,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 7,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "10": {
+          "en_compact": {
+            "correct": 18,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 12,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 9,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 5,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "11": {
+          "en_compact": {
+            "correct": 4,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 15,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 15,
+            "failed": 0,
+            "n": 24
+          }
+        }
+      },
+      "effects": {
+        "en_xor": {
+          "n": 48,
+          "estimate": -0.3125,
+          "ci95": [
+            -0.4583333333333333,
+            -0.16666666666666666
+          ],
+          "improved": 2,
+          "worsened": 17,
+          "unchanged": 29
+        },
+        "en_all": {
+          "n": 96,
+          "estimate": -0.07291666666666667,
+          "ci95": [
+            -0.17708333333333334,
+            0.03125
+          ],
+          "improved": 17,
+          "worsened": 24,
+          "unchanged": 55
+        },
+        "zh_xor": {
+          "n": 48,
+          "estimate": -0.125,
+          "ci95": [
+            -0.22916666666666666,
+            -0.041666666666666664
+          ],
+          "improved": 0,
+          "worsened": 6,
+          "unchanged": 42
+        },
+        "interaction_xor": {
+          "n": 48,
+          "estimate": -0.1875,
+          "ci95": [
+            -0.375,
+            0.0
+          ],
+          "improved": 7,
+          "worsened": 17,
+          "unchanged": 24
+        }
+      }
+    },
+    "multilingual": {
+      "name": "Laya Multi",
+      "truth_cells": {
+        "00": {
+          "en_compact": {
+            "correct": 13,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 18,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 15,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 14,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "01": {
+          "en_compact": {
+            "correct": 7,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 10,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 7,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 7,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "10": {
+          "en_compact": {
+            "correct": 5,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 15,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 9,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 7,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "11": {
+          "en_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 2,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          }
+        }
+      },
+      "effects": {
+        "en_xor": {
+          "n": 48,
+          "estimate": 0.2708333333333333,
+          "ci95": [
+            0.14583333333333334,
+            0.3958333333333333
+          ],
+          "improved": 13,
+          "worsened": 0,
+          "unchanged": 35
+        },
+        "en_all": {
+          "n": 96,
+          "estimate": 0.20833333333333334,
+          "ci95": [
+            0.13541666666666666,
+            0.2916666666666667
+          ],
+          "improved": 20,
+          "worsened": 0,
+          "unchanged": 76
+        },
+        "zh_xor": {
+          "n": 48,
+          "estimate": -0.041666666666666664,
+          "ci95": [
+            -0.10416666666666667,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 2,
+          "unchanged": 46
+        },
+        "interaction_xor": {
+          "n": 48,
+          "estimate": 0.3125,
+          "ci95": [
+            0.20833333333333334,
+            0.4375
+          ],
+          "improved": 15,
+          "worsened": 0,
+          "unchanged": 33
+        }
+      }
+    },
+    "llama31_8b_instruct": {
+      "name": "Llama 3.1 8B",
+      "truth_cells": {
+        "00": {
+          "en_compact": {
+            "correct": 10,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 13,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 12,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "01": {
+          "en_compact": {
+            "correct": 12,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 7,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 10,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "10": {
+          "en_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 4,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 4,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "11": {
+          "en_compact": {
+            "correct": 17,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          }
+        }
+      },
+      "effects": {
+        "en_xor": {
+          "n": 48,
+          "estimate": -0.020833333333333332,
+          "ci95": [
+            -0.16666666666666666,
+            0.125
+          ],
+          "improved": 7,
+          "worsened": 8,
+          "unchanged": 33
+        },
+        "en_all": {
+          "n": 96,
+          "estimate": 0.09375,
+          "ci95": [
+            -0.010416666666666666,
+            0.19791666666666666
+          ],
+          "improved": 20,
+          "worsened": 11,
+          "unchanged": 65
+        },
+        "zh_xor": {
+          "n": 48,
+          "estimate": 0.2916666666666667,
+          "ci95": [
+            0.16666666666666666,
+            0.4166666666666667
+          ],
+          "improved": 14,
+          "worsened": 0,
+          "unchanged": 34
+        },
+        "interaction_xor": {
+          "n": 48,
+          "estimate": -0.3125,
+          "ci95": [
+            -0.4583333333333333,
+            -0.16666666666666666
+          ],
+          "improved": 1,
+          "worsened": 13,
+          "unchanged": 34
+        }
+      }
+    },
+    "qwen3_8b": {
+      "name": "Qwen3 8B",
+      "truth_cells": {
+        "00": {
+          "en_compact": {
+            "correct": 13,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 18,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 18,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 18,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "01": {
+          "en_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 14,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 3,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 15,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "10": {
+          "en_compact": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 0,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 1,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 14,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "11": {
+          "en_compact": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 21,
+            "failed": 0,
+            "n": 24
+          }
+        }
+      },
+      "effects": {
+        "en_xor": {
+          "n": 48,
+          "estimate": 0.2916666666666667,
+          "ci95": [
+            0.20833333333333334,
+            0.375
+          ],
+          "improved": 14,
+          "worsened": 0,
+          "unchanged": 34
+        },
+        "en_all": {
+          "n": 96,
+          "estimate": 0.19791666666666666,
+          "ci95": [
+            0.13541666666666666,
+            0.2604166666666667
+          ],
+          "improved": 19,
+          "worsened": 0,
+          "unchanged": 77
+        },
+        "zh_xor": {
+          "n": 48,
+          "estimate": 0.5208333333333334,
+          "ci95": [
+            0.3958333333333333,
+            0.6458333333333334
+          ],
+          "improved": 25,
+          "worsened": 0,
+          "unchanged": 23
+        },
+        "interaction_xor": {
+          "n": 48,
+          "estimate": -0.22916666666666666,
+          "ci95": [
+            -0.375,
+            -0.08333333333333333
+          ],
+          "improved": 4,
+          "worsened": 15,
+          "unchanged": 29
+        }
+      }
+    },
+    "jev-1.13.0": {
+      "name": "Jev 1.13",
+      "truth_cells": {
+        "00": {
+          "en_compact": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 18,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 17,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "01": {
+          "en_compact": {
+            "correct": 3,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 7,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 7,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "10": {
+          "en_compact": {
+            "correct": 4,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 6,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 22,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 6,
+            "failed": 0,
+            "n": 24
+          }
+        },
+        "11": {
+          "en_compact": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "en_explicit": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_compact": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          },
+          "zh_explicit": {
+            "correct": 24,
+            "failed": 0,
+            "n": 24
+          }
+        }
+      },
+      "effects": {
+        "en_xor": {
+          "n": 48,
+          "estimate": 0.125,
+          "ci95": [
+            0.020833333333333332,
+            0.25
+          ],
+          "improved": 8,
+          "worsened": 2,
+          "unchanged": 38
+        },
+        "en_all": {
+          "n": 96,
+          "estimate": 0.0,
+          "ci95": [
+            -0.07291666666666667,
+            0.07291666666666667
+          ],
+          "improved": 8,
+          "worsened": 8,
+          "unchanged": 80
+        },
+        "zh_xor": {
+          "n": 48,
+          "estimate": -0.6875,
+          "ci95": [
+            -0.8125,
+            -0.5625
+          ],
+          "improved": 0,
+          "worsened": 33,
+          "unchanged": 15
+        },
+        "interaction_xor": {
+          "n": 48,
+          "estimate": 0.8125,
+          "ci95": [
+            0.7083333333333334,
+            0.9166666666666666
+          ],
+          "improved": 39,
+          "worsened": 0,
+          "unchanged": 9
+        }
+      }
+    }
+  }
+}

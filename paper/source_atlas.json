@@ -1,0 +1,29 @@
+{
+  "task_axes": [
+    {"id": "semantic", "label": "Semantic\nlabel"},
+    {"id": "routing", "label": "Intent /\nrouting"},
+    {"id": "evidence", "label": "Evidence\njudgment"},
+    {"id": "ordinal", "label": "Ordinal\njudgment"},
+    {"id": "safety", "label": "Safety /\nsecurity"},
+    {"id": "workflow", "label": "Workflow\naction"},
+    {"id": "rejection", "label": "Explicit\nrejection"},
+    {"id": "retrieval", "label": "Context\nretrieval"}
+  ],
+  "sources": [
+    {"name": "AG News", "domain": "News", "tasks": ["semantic"], "reference": "D", "suites": ["ag_news"]},
+    {"name": "Emotion", "domain": "Social text", "tasks": ["semantic"], "reference": "D", "suites": ["emotion"]},
+    {"name": "SST-5", "domain": "Reviews", "tasks": ["semantic", "ordinal"], "reference": "D", "suites": ["sst5", "sst5_choice"]},
+    {"name": "Banking77", "domain": "Banking support", "tasks": ["routing"], "reference": "D", "suites": ["banking77"]},
+    {"name": "MASSIVE", "domain": "Assistant commands", "tasks": ["routing"], "reference": "D", "suites": ["massive_en", "massive_zh"]},
+    {"name": "CLINC150/OOS", "domain": "Assistant intents", "tasks": ["routing", "rejection"], "reference": "D", "suites": ["clinc150_oos"]},
+    {"name": "BoolQ", "domain": "General QA", "tasks": ["evidence"], "reference": "D", "suites": ["boolq", "boolq_choice"]},
+    {"name": "XNLI", "domain": "Natural inference", "tasks": ["semantic", "evidence"], "reference": "D", "suites": ["xnli_en", "xnli_zh"]},
+    {"name": "TurtleBench", "domain": "Puzzle evidence", "tasks": ["evidence"], "reference": "D", "suites": ["turtlebench"]},
+    {"name": "Prompt injections", "domain": "Prompt security", "tasks": ["safety"], "reference": "D", "suites": ["prompt_injections"]},
+    {"name": "Aegis2 prompts", "domain": "Content safety", "tasks": ["safety"], "reference": "H", "suites": ["aegis2_prompt"]},
+    {"name": "Typed decisions", "domain": "Mixed enterprise", "tasks": ["workflow", "ordinal", "safety"], "reference": "T", "suites": ["typed_decisions"]},
+    {"name": "JevBench", "domain": "Mixed fixtures", "tasks": ["workflow", "ordinal", "evidence"], "reference": "A", "suites": ["jevbench_original", "jevbench_easy", "jevbench_hard"]},
+    {"name": "ReflexBench", "domain": "Product workflow", "tasks": ["workflow"], "reference": "A", "suites": ["reflexbench_reflex-public-choice-v1"]},
+    {"name": "Jev–Laya", "domain": "Mixed workflow", "tasks": ["routing", "evidence", "ordinal", "safety", "workflow", "retrieval"], "reference": "T/P", "suites": ["jev_laya_triage", "jev_laya_moderation", "jev_laya_routing", "jev_laya_claims", "jev_laya_reviews", "jev_laya_guard", "jev_laya_multilingual", "jev_laya_needle"]}
+  ]
+}

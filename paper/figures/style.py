@@ -7,12 +7,15 @@ import matplotlib.pyplot as plt
 
 ROOT=Path(__file__).resolve().parents[2]
 OUT=Path(__file__).resolve().parent
-COLORS={'english':'#0072B2','multilingual':'#009E73','llama31_8b_instruct':'#D55E00','qwen3_8b':'#CC79A7','jev-1.13.0':'#6A51A3'}
+COLORS={'english':'#176A8A','multilingual':'#3C8F82','llama31_8b_instruct':'#C26542','qwen3_8b':'#9A628A','jev-1.13.0':'#424C78'}
 MARKERS={'english':'o','multilingual':'s','llama31_8b_instruct':'^','qwen3_8b':'D','jev-1.13.0':'P'}
-plt.rcParams.update({'font.family':'serif','font.serif':['DejaVu Serif'],'font.size':9,'axes.labelsize':9,
-                     'xtick.labelsize':8,'ytick.labelsize':8,'legend.fontsize':8,'axes.spines.top':False,
-                     'axes.spines.right':False,'pdf.fonttype':42,'ps.fonttype':42,'svg.fonttype':'none',
-                     'savefig.dpi':300,'axes.linewidth':.6,'lines.linewidth':1.3,'figure.dpi':140})
+plt.rcParams.update({'font.family':'sans-serif','font.sans-serif':['DejaVu Sans'],'font.size':8.5,
+                     'axes.labelsize':8.5,'xtick.labelsize':7.5,'ytick.labelsize':7.5,
+                     'legend.fontsize':7.5,'axes.spines.top':False,'axes.spines.right':False,
+                     'pdf.fonttype':42,'ps.fonttype':42,'svg.fonttype':'none',
+                     'savefig.dpi':320,'axes.linewidth':.55,'lines.linewidth':1.2,'figure.dpi':150,
+                     'axes.edgecolor':'#42505B','text.color':'#24333D','axes.labelcolor':'#24333D',
+                     'xtick.color':'#56616A','ytick.color':'#56616A'})
 
 def data():return json.loads((ROOT/'research/insights.json').read_text())
 
