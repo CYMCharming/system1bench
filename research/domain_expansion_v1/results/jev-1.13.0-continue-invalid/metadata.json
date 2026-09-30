@@ -1,0 +1,69 @@
+{
+  "status": "DONE",
+  "started_at": "2026-09-29T16:23:11.886109+00:00",
+  "updated_at": "2026-09-29T16:24:40.698940+00:00",
+  "signature": {
+    "model": "jev-1.13.0",
+    "endpoint": "https://api.typesafe.ai/v1/systemone",
+    "frozen_sha256": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909",
+    "runner_sha256": "232c7b5196e66107821f81dcd792fb9a90591c1bdc009cdbb13ae6c126dd552e",
+    "common_sha256": "c820c2e908f3581d422ee7a8edbdc277f34df2c2bf0acb5f2966fc479c7019a7",
+    "workers": 8,
+    "max_request_starts_per_second": 8.0,
+    "price_usd_per_million_input_tokens": 0.042,
+    "max_accounted_usd": 5.0,
+    "attempts_per_request": 5,
+    "connect_timeout_seconds": 15,
+    "read_timeout_seconds": 90,
+    "continue_invalid_decision": true,
+    "client_proxy_used": false,
+    "full_payload_sent": true,
+    "server_tokenizer_available": false,
+    "comparison_track": "hosted_api_accuracy_and_client_latency"
+  },
+  "planned_requests": 792,
+  "completed_requests": 792,
+  "input_tokens": 1203567,
+  "accounted_cost_usd": 0.050549814000000005,
+  "transport_or_response_failed_requests": 0,
+  "finished_at": "2026-09-29T16:24:52.689631+00:00",
+  "suites": {
+    "contractnli_base": {
+      "sha256": "ff6467568f5056722826c85aff32da175671b3612562297c4ffcb913a0ca0992",
+      "requests": 144,
+      "decisions": 144,
+      "failures": 0
+    },
+    "contractnli_exact_repeat": {
+      "sha256": "115c84f65be266f5a356fd29590a9574334abb9ba6a07ee47614acfba2b0833f",
+      "requests": 144,
+      "decisions": 144,
+      "failures": 0
+    },
+    "contractnli_reversed_option_order": {
+      "sha256": "71429d22065710d0a33a83edea3023e403f60118f5ae8b55759de8707078308f",
+      "requests": 144,
+      "decisions": 144,
+      "failures": 0
+    },
+    "scifact_base": {
+      "sha256": "9bb981b16436f830ae1748f5c719573e4b3a2c23dd721313d0cf43186b1fa228",
+      "requests": 120,
+      "decisions": 120,
+      "failures": 0
+    },
+    "scifact_exact_repeat": {
+      "sha256": "946d6698051d640c765ccf29ee5fb7ee95e87d7088c82afb0d509194225eeca9",
+      "requests": 120,
+      "decisions": 120,
+      "failures": 0
+    },
+    "scifact_reversed_option_order": {
+      "sha256": "153d63dab69bc2d01ab7b00a1613121ae4776fe66a2dcc89be6ab662b4af3628",
+      "requests": 120,
+      "decisions": 120,
+      "failures": 0
+    }
+  },
+  "journal_sha256": "e9a59b5dea03012ea818bd404c535a1755b1557be81b800989c91daf583f0574"
+}

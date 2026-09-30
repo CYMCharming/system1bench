@@ -1,0 +1,75 @@
+{
+  "publication_status": "local_only",
+  "source": "Existing frozen v0.2 raw batch timing records; no new inference",
+  "timing_scope": "Synchronized adapter.predict wall time; excludes model loading, separate input audit and file writes; includes first-batch effects",
+  "throughput_formula": "total decisions or logical requests / sum of batch predict seconds",
+  "not_measured": [
+    "generated_tokens_per_second",
+    "controlled_batch1_latency",
+    "request_latency_p50_p95_p99",
+    "end_to_end_serving_latency",
+    "dedicated_device_steady_state_throughput"
+  ],
+  "models": [
+    {
+      "model": "english",
+      "display_name": "Laya English",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "configured_batch_size": 8,
+      "batches": 3041,
+      "logical_requests": 22934,
+      "decisions": 26450,
+      "synchronized_predict_seconds": 223.3125033969991,
+      "logical_requests_per_second": 102.69913081950695,
+      "decisions_per_second": 118.44388288898399,
+      "inference_failures": 0,
+      "metadata_file": "results/english/metadata.json",
+      "metadata_sha256": "01f0709beaaefc2835281b2126c2917d51830ca5bc44d2d04abd1272acf904cf"
+    },
+    {
+      "model": "multilingual",
+      "display_name": "Laya Multilingual",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "configured_batch_size": 8,
+      "batches": 3041,
+      "logical_requests": 22934,
+      "decisions": 26450,
+      "synchronized_predict_seconds": 129.10406108479947,
+      "logical_requests_per_second": 177.63964825967986,
+      "decisions_per_second": 204.8734933491119,
+      "inference_failures": 0,
+      "metadata_file": "results/multilingual/metadata.json",
+      "metadata_sha256": "afd9ee7ce5957e5021800cd21de632188a4078e763a570fe854f86cfb0d559d9"
+    },
+    {
+      "model": "llama31_8b_instruct",
+      "display_name": "Llama-3.1-8B-Instruct",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "configured_batch_size": 8,
+      "batches": 3041,
+      "logical_requests": 22934,
+      "decisions": 26450,
+      "synchronized_predict_seconds": 2251.2847781553864,
+      "logical_requests_per_second": 10.187071943333269,
+      "decisions_per_second": 11.748846817003791,
+      "inference_failures": 0,
+      "metadata_file": "results/llama31_8b_instruct/metadata.json",
+      "metadata_sha256": "7c4c70fffdb450e352e65251983408b26aae36cdde45ba877ca20bedacbb52f0"
+    },
+    {
+      "model": "qwen3_8b",
+      "display_name": "Qwen3-8B",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "configured_batch_size": 8,
+      "batches": 3041,
+      "logical_requests": 22934,
+      "decisions": 26450,
+      "synchronized_predict_seconds": 2375.4261970566586,
+      "logical_requests_per_second": 9.654688505337292,
+      "decisions_per_second": 11.134843942014973,
+      "inference_failures": 0,
+      "metadata_file": "results/qwen3_8b/metadata.json",
+      "metadata_sha256": "36a7cc368f488bbe48d85a5d2cd9cb08af0e27c5aa3de27482b5707407c2883e"
+    }
+  ]
+}

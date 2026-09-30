@@ -1,0 +1,141 @@
+{
+  "description": "Changed identical-prompt Qwen overlap cases; co-batch sets and raw adapter-code logit margins only; no causal batching claim",
+  "conditions": {
+    "base": [
+      {
+        "id": "scifact3-dev:628:24512064",
+        "old_batch_peer_ids": [
+          "scifact3-dev:613:9638032",
+          "scifact3-dev:619:20888849",
+          "scifact3-dev:623:17000834",
+          "scifact3-dev:628:24512064"
+        ],
+        "fresh_batch_peer_ids": [
+          "scifact3-dev:619:2565138",
+          "scifact3-dev:619:20888849",
+          "scifact3-dev:623:17000834",
+          "scifact3-dev:628:24512064"
+        ],
+        "same_ordered_batch": false,
+        "same_batch_members": false,
+        "old": {
+          "candidate_logits": [
+            42.75,
+            33.5,
+            43.25
+          ],
+          "top_two_margin": 0.5
+        },
+        "fresh": {
+          "candidate_logits": [
+            43.25,
+            33.5,
+            43.25
+          ],
+          "top_two_margin": 0.0
+        }
+      },
+      {
+        "id": "scifact3-dev:814:33387953",
+        "old_batch_peer_ids": [
+          "scifact3-dev:814:33387953",
+          "scifact3-dev:820:8646760",
+          "scifact3-dev:831:1897324",
+          "scifact3-dev:839:1469751"
+        ],
+        "fresh_batch_peer_ids": [
+          "scifact3-dev:808:36606083",
+          "scifact3-dev:811:19799455",
+          "scifact3-dev:814:33387953",
+          "scifact3-dev:820:8646760"
+        ],
+        "same_ordered_batch": false,
+        "same_batch_members": false,
+        "old": {
+          "candidate_logits": [
+            43.75,
+            33.0,
+            44.0
+          ],
+          "top_two_margin": 0.25
+        },
+        "fresh": {
+          "candidate_logits": [
+            44.5,
+            33.25,
+            44.25
+          ],
+          "top_two_margin": 0.25
+        }
+      }
+    ],
+    "reversed_option_order": [
+      {
+        "id": "scifact3-dev:198:2177022",
+        "old_batch_peer_ids": [
+          "scifact3-dev:185:18340282",
+          "scifact3-dev:198:2177022",
+          "scifact3-dev:208:13519661",
+          "scifact3-dev:212:22038539"
+        ],
+        "fresh_batch_peer_ids": [
+          "scifact3-dev:198:2177022",
+          "scifact3-dev:208:13519661",
+          "scifact3-dev:212:22038539",
+          "scifact3-dev:213:13625993"
+        ],
+        "same_ordered_batch": false,
+        "same_batch_members": false,
+        "old": {
+          "candidate_logits": [
+            40.0,
+            37.25,
+            40.5
+          ],
+          "top_two_margin": 0.5
+        },
+        "fresh": {
+          "candidate_logits": [
+            40.25,
+            36.75,
+            40.0
+          ],
+          "top_two_margin": 0.25
+        }
+      },
+      {
+        "id": "scifact3-dev:820:8646760",
+        "old_batch_peer_ids": [
+          "scifact3-dev:814:33387953",
+          "scifact3-dev:820:8646760",
+          "scifact3-dev:831:1897324",
+          "scifact3-dev:839:1469751"
+        ],
+        "fresh_batch_peer_ids": [
+          "scifact3-dev:808:36606083",
+          "scifact3-dev:811:19799455",
+          "scifact3-dev:814:33387953",
+          "scifact3-dev:820:8646760"
+        ],
+        "same_ordered_batch": false,
+        "same_batch_members": false,
+        "old": {
+          "candidate_logits": [
+            41.75,
+            32.25,
+            41.5
+          ],
+          "top_two_margin": 0.25
+        },
+        "fresh": {
+          "candidate_logits": [
+            41.75,
+            32.25,
+            42.0
+          ],
+          "top_two_margin": 0.25
+        }
+      }
+    ]
+  }
+}

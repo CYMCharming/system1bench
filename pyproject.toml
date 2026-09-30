@@ -19,3 +19,18 @@ include = ["system1bench*"]
 
 [tool.ruff.lint]
 select = ["E9", "F"]
+
+# These immutable research scripts are hash-bound in published experiment
+# manifests. Preserve their measured source bytes; unused imports are harmless.
+[tool.ruff.lint.per-file-ignores]
+"research/batch_context_v1/analyze.py" = ["F401"]
+"research/batch_context_v1/run.py" = ["F401"]
+"research/domain_expansion_v1/analyze.py" = ["F401"]
+"research/domain_expansion_v1/audit_inputs.py" = ["F401"]
+"research/model_expansion_v1/freeze.py" = ["F401"]
+"research/scifact3_census_v1/analyze.py" = ["F401"]
+"research/scifact3_census_v1/audit_inputs.py" = ["F401"]
+"research/scifact3_census_v1/compare_prior.py" = ["F401"]
+"research/scifact3_census_v1/human_noinfo_audit/validate_packet.py" = ["F401"]
+"research/scifact3_v1/audit_inputs.py" = ["F401"]
+"research/strong_baseline_v1/freeze.py" = ["F401"]

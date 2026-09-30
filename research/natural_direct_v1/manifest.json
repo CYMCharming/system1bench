@@ -1,0 +1,36 @@
+{
+  "frozen_sha256": "603e19056846d26c70df3ad10844708c3b60973b15693743784f6246e1bd3e2c",
+  "protocol_sha256": "5bce3c8a1c8284c0639367b340a8e861f6ceb40376001110c7c129592c3551ac",
+  "freeze_code_sha256": "4667c6ecf1b0bab9b63d3e8a63eef32eb35f80e9afdfc1dbd09250969df4d5fd",
+  "parser_code_sha256": "18d277b0b53b91e7856a0fa46069742d7348ac65cab0ce16fcdbb7d05208eb33",
+  "adapter_code_sha256": "88a9dbd4a57fd9b5f727180c5e2650c58632f0f01cbe320c7d3f6536d98a4e49",
+  "source_frozen_sha256": {
+    "legal": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909",
+    "science": "923647f1400c779159e3d062f01c920174427db3555fb0e9fecb7305bef6f169"
+  },
+  "source_manifest_sha256": {
+    "legal": "f242bcb839cf6995eebfd34abfff29e1a6889183a9beae924a2198a67d332940",
+    "science": "ab9607f9a59a5ef80b3021ce9f24d23cd4df8894f5a177f8ff4538e7733e2329"
+  },
+  "old_output_sha256": {
+    "legal/llama31_8b_instruct": "387bc685b61d253747c9422c0f0e17819d58f2a48bbffd24d245bb6f8e0013d1",
+    "legal/qwen3_8b": "7b79274b82c30671b07ef8a68645a8a2b01cd809f477f20763b4a11dd3c15d62",
+    "science/llama31_8b_instruct": "6d493afd747aa2d72f8e1c413c18d0cb7a2428a49b58bbacdea405de1e24b848",
+    "science/qwen3_8b": "15cc5fef6e2308025e42398334c94fd841e0b5a4c39111eaaebcc4e8207e758b"
+  },
+  "old_metadata_sha256": {
+    "legal/llama31_8b_instruct": "d8b8647a0c73819f0671502a4536a80dde05cb83ac370d735a4c339fdd3eef31",
+    "legal/qwen3_8b": "df06c2f803e2a648fc90c70a0733085612e7c460bf9071ee53f25a1ea9e576d1",
+    "science/llama31_8b_instruct": "1d9ceac0663edc6e2ab1ae4d2d914725cf9658347a6a6af69e83a8b3c97c2426",
+    "science/qwen3_8b": "7bed47e3778de94f424198a84857b433cb4e8f117d129cf73323cdc1f767aff0"
+  },
+  "case_counts": {
+    "legal": 144,
+    "science": 180
+  },
+  "cluster_counts": {
+    "legal": 91,
+    "science": 180
+  },
+  "generations_per_model": 324
+}

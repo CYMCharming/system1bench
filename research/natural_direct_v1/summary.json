@@ -1,0 +1,349 @@
+{
+  "version": "natural-direct-v1",
+  "frozen_sha256": "603e19056846d26c70df3ad10844708c3b60973b15693743784f6246e1bd3e2c",
+  "protocol_sha256": "5bce3c8a1c8284c0639367b340a8e861f6ceb40376001110c7c129592c3551ac",
+  "analysis_code_sha256": "8d63358b4c2adebfdf216b324e749f8e5e32126c383c5643a8a8b770855b5e9d",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20260930,
+    "unit": {
+      "legal": "source_contract",
+      "science": "source_claim"
+    },
+    "interval": "percentile_95"
+  },
+  "models": {
+    "llama31_8b_instruct": {
+      "domains": {
+        "legal": {
+          "n": 144,
+          "source_clusters": 91,
+          "code_logit_correct": 44,
+          "direct_correct": 44,
+          "direct_invalid": 0,
+          "prediction_flips": 0,
+          "corrections": 0,
+          "regressions": 0,
+          "metrics": {
+            "code_logit_accuracy_percent": 30.555555555555557,
+            "direct_accuracy_percent": 30.555555555555557,
+            "accuracy_delta_percent_points": 0.0,
+            "flip_percent": 0.0,
+            "corrected_percent": 0.0,
+            "regressed_percent": 0.0,
+            "invalid_percent": 0.0
+          },
+          "cluster_ci95": {
+            "code_logit_accuracy_percent": [
+              24.6240972556572,
+              36.36363636363637
+            ],
+            "direct_accuracy_percent": [
+              24.6240972556572,
+              36.36363636363637
+            ],
+            "accuracy_delta_percent_points": [
+              0.0,
+              0.0
+            ],
+            "flip_percent": [
+              0.0,
+              0.0
+            ],
+            "corrected_percent": [
+              0.0,
+              0.0
+            ],
+            "regressed_percent": [
+              0.0,
+              0.0
+            ],
+            "invalid_percent": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_gold": {
+            "Entailment": {
+              "n": 48,
+              "code_logit_correct": 43,
+              "direct_correct": 43,
+              "direct_invalid": 0
+            },
+            "Contradiction": {
+              "n": 48,
+              "code_logit_correct": 0,
+              "direct_correct": 0,
+              "direct_invalid": 0
+            },
+            "NotMentioned": {
+              "n": 48,
+              "code_logit_correct": 1,
+              "direct_correct": 1,
+              "direct_invalid": 0
+            }
+          },
+          "invalid_reasons": {}
+        },
+        "science": {
+          "n": 180,
+          "source_clusters": 180,
+          "code_logit_correct": 78,
+          "direct_correct": 78,
+          "direct_invalid": 0,
+          "prediction_flips": 0,
+          "corrections": 0,
+          "regressions": 0,
+          "metrics": {
+            "code_logit_accuracy_percent": 43.333333333333336,
+            "direct_accuracy_percent": 43.333333333333336,
+            "accuracy_delta_percent_points": 0.0,
+            "flip_percent": 0.0,
+            "corrected_percent": 0.0,
+            "regressed_percent": 0.0,
+            "invalid_percent": 0.0
+          },
+          "cluster_ci95": {
+            "code_logit_accuracy_percent": [
+              36.111111111111114,
+              50.55555555555556
+            ],
+            "direct_accuracy_percent": [
+              36.111111111111114,
+              50.55555555555556
+            ],
+            "accuracy_delta_percent_points": [
+              0.0,
+              0.0
+            ],
+            "flip_percent": [
+              0.0,
+              0.0
+            ],
+            "corrected_percent": [
+              0.0,
+              0.0
+            ],
+            "regressed_percent": [
+              0.0,
+              0.0
+            ],
+            "invalid_percent": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_gold": {
+            "NOINFO": {
+              "n": 60,
+              "code_logit_correct": 26,
+              "direct_correct": 26,
+              "direct_invalid": 0
+            },
+            "SUPPORT": {
+              "n": 60,
+              "code_logit_correct": 50,
+              "direct_correct": 50,
+              "direct_invalid": 0
+            },
+            "CONTRADICT": {
+              "n": 60,
+              "code_logit_correct": 2,
+              "direct_correct": 2,
+              "direct_invalid": 0
+            }
+          },
+          "invalid_reasons": {}
+        }
+      },
+      "equal_domain_macro_accuracy_delta_percent_points": 0.0,
+      "macro_cluster_ci95_percent_points": [
+        0.0,
+        0.0
+      ],
+      "provenance": {
+        "raw_path": "research/natural_direct_v1/results/llama31_8b_instruct/raw.jsonl",
+        "raw_sha256": "8b7d3268f771390328e9c8d09ace827c238c7d3eeaa3f237271f60bde43cb17a",
+        "inference_seconds": 49.4642644636333,
+        "generated_tokens": 648,
+        "prompt_tokens": 376123,
+        "historical": {
+          "legal": {
+            "path": "research/domain_expansion_v1/results/local/llama31_8b_instruct/contractnli_base.json.gz",
+            "sha256": "387bc685b61d253747c9422c0f0e17819d58f2a48bbffd24d245bb6f8e0013d1"
+          },
+          "science": {
+            "path": "research/scifact3_v1/results/local/llama31_8b_instruct/scifact3_base.json.gz",
+            "sha256": "6d493afd747aa2d72f8e1c413c18d0cb7a2428a49b58bbacdea405de1e24b848"
+          }
+        }
+      }
+    },
+    "qwen3_8b": {
+      "domains": {
+        "legal": {
+          "n": 144,
+          "source_clusters": 91,
+          "code_logit_correct": 65,
+          "direct_correct": 65,
+          "direct_invalid": 0,
+          "prediction_flips": 0,
+          "corrections": 0,
+          "regressions": 0,
+          "metrics": {
+            "code_logit_accuracy_percent": 45.138888888888886,
+            "direct_accuracy_percent": 45.138888888888886,
+            "accuracy_delta_percent_points": 0.0,
+            "flip_percent": 0.0,
+            "corrected_percent": 0.0,
+            "regressed_percent": 0.0,
+            "invalid_percent": 0.0
+          },
+          "cluster_ci95": {
+            "code_logit_accuracy_percent": [
+              37.06293706293706,
+              53.37837837837838
+            ],
+            "direct_accuracy_percent": [
+              37.06293706293706,
+              53.37837837837838
+            ],
+            "accuracy_delta_percent_points": [
+              0.0,
+              0.0
+            ],
+            "flip_percent": [
+              0.0,
+              0.0
+            ],
+            "corrected_percent": [
+              0.0,
+              0.0
+            ],
+            "regressed_percent": [
+              0.0,
+              0.0
+            ],
+            "invalid_percent": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_gold": {
+            "Entailment": {
+              "n": 48,
+              "code_logit_correct": 17,
+              "direct_correct": 17,
+              "direct_invalid": 0
+            },
+            "Contradiction": {
+              "n": 48,
+              "code_logit_correct": 0,
+              "direct_correct": 0,
+              "direct_invalid": 0
+            },
+            "NotMentioned": {
+              "n": 48,
+              "code_logit_correct": 48,
+              "direct_correct": 48,
+              "direct_invalid": 0
+            }
+          },
+          "invalid_reasons": {}
+        },
+        "science": {
+          "n": 180,
+          "source_clusters": 180,
+          "code_logit_correct": 104,
+          "direct_correct": 104,
+          "direct_invalid": 0,
+          "prediction_flips": 0,
+          "corrections": 0,
+          "regressions": 0,
+          "metrics": {
+            "code_logit_accuracy_percent": 57.77777777777778,
+            "direct_accuracy_percent": 57.77777777777778,
+            "accuracy_delta_percent_points": 0.0,
+            "flip_percent": 0.0,
+            "corrected_percent": 0.0,
+            "regressed_percent": 0.0,
+            "invalid_percent": 0.0
+          },
+          "cluster_ci95": {
+            "code_logit_accuracy_percent": [
+              50.55555555555556,
+              65.0
+            ],
+            "direct_accuracy_percent": [
+              50.55555555555556,
+              65.0
+            ],
+            "accuracy_delta_percent_points": [
+              0.0,
+              0.0
+            ],
+            "flip_percent": [
+              0.0,
+              0.0
+            ],
+            "corrected_percent": [
+              0.0,
+              0.0
+            ],
+            "regressed_percent": [
+              0.0,
+              0.0
+            ],
+            "invalid_percent": [
+              0.0,
+              0.0
+            ]
+          },
+          "by_gold": {
+            "NOINFO": {
+              "n": 60,
+              "code_logit_correct": 54,
+              "direct_correct": 54,
+              "direct_invalid": 0
+            },
+            "SUPPORT": {
+              "n": 60,
+              "code_logit_correct": 45,
+              "direct_correct": 45,
+              "direct_invalid": 0
+            },
+            "CONTRADICT": {
+              "n": 60,
+              "code_logit_correct": 5,
+              "direct_correct": 5,
+              "direct_invalid": 0
+            }
+          },
+          "invalid_reasons": {}
+        }
+      },
+      "equal_domain_macro_accuracy_delta_percent_points": 0.0,
+      "macro_cluster_ci95_percent_points": [
+        0.0,
+        0.0
+      ],
+      "provenance": {
+        "raw_path": "research/natural_direct_v1/results/qwen3_8b/raw.jsonl",
+        "raw_sha256": "9cee5e989b4f6a6d9f555524f6d06c748fc57a8af8e8e6959eca4106839e5c1e",
+        "inference_seconds": 54.128658095840365,
+        "generated_tokens": 648,
+        "prompt_tokens": 374556,
+        "historical": {
+          "legal": {
+            "path": "research/domain_expansion_v1/results/local/qwen3_8b/contractnli_base.json.gz",
+            "sha256": "7b79274b82c30671b07ef8a68645a8a2b01cd809f477f20763b4a11dd3c15d62"
+          },
+          "science": {
+            "path": "research/scifact3_v1/results/local/qwen3_8b/scifact3_base.json.gz",
+            "sha256": "15cc5fef6e2308025e42398334c94fd841e0b5a4c39111eaaebcc4e8207e758b"
+          }
+        }
+      }
+    }
+  }
+}

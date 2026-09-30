@@ -1,0 +1,19 @@
+{
+  "frozen_sha256": "923647f1400c779159e3d062f01c920174427db3555fb0e9fecb7305bef6f169",
+  "raw_source_reverified": true,
+  "request_hashes_verified": 720,
+  "selected_pairs": 180,
+  "label_counts": {
+    "NOINFO": 60,
+    "SUPPORT": 60,
+    "CONTRADICT": 60
+  },
+  "unique_claims": 180,
+  "unique_documents": 180,
+  "all_pairs_explicitly_cited": true,
+  "all_noinfo_pairs_have_no_evidence_entry": true,
+  "all_positive_pairs_have_consistent_evidence_labels": true,
+  "repeat_byte_identical": true,
+  "reverse_only_criteria_order": true,
+  "title_removed_only_state_title": true
+}

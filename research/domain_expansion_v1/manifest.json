@@ -1,0 +1,47 @@
+{
+  "protocol": "system1bench-domain-expansion-v1",
+  "prepared_sha256": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909",
+  "preparer_sha256": "a6bdfb963dc819509a5b87ef9f896edb76b83afd2abd6df83b02ad26a0b1e676",
+  "source_sha256": {
+    "contract-nli.zip": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "test.json": "460267b56052a2dc5aead98eb35eadef9e6734d5723d37b4a9790e410f812387",
+    "TERMS": "b86e5b9bd7d2c49fd0d60e1d0842b7f64746abc8b206451acbe9080027cc49c8",
+    "LICENSE": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "scifact-data.tar.gz": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "scifact/data/claims_dev.jsonl": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217",
+    "scifact/data/corpus.jsonl": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62"
+  },
+  "contractnli": {
+    "total_documents": 123,
+    "eligible_documents": 99,
+    "excluded_documents_over_16000_chars": 24,
+    "eligible_pairs": 1683,
+    "selected_pairs": 144,
+    "label_counts": {
+      "Entailment": 48,
+      "Contradiction": 48,
+      "NotMentioned": 48
+    },
+    "distinct_documents": 91,
+    "max_pairs_per_document": 2
+  },
+  "scifact": {
+    "total_claims": 300,
+    "annotated_positive_pairs": 209,
+    "selected_pairs": 120,
+    "distinct_claims": 120,
+    "label_counts": {
+      "CONTRADICT": 60,
+      "SUPPORT": 60
+    },
+    "no_information_pairs_included": 0
+  },
+  "planned_requests": 792,
+  "conditions": [
+    "base",
+    "exact_repeat",
+    "reversed_option_order"
+  ],
+  "selection": "SHA-256 seeded, source-label-balanced; no model outcomes inspected",
+  "controls": "Exact-repeat request is byte-identical; reversal changes only criteria insertion order"
+}

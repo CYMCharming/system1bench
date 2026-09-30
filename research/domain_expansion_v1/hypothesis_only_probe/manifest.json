@@ -1,0 +1,12 @@
+{
+  "protocol": "contractnli-hypothesis-only-shortcut-probe-v1",
+  "status": "frozen-before-probe-inference; post-hoc to the full-text experiment",
+  "frozen_sha256": "8f12ae6ec6859ca5a513622846acc8356cabd2bfb6475edc5d303dd2df5eacc2",
+  "preparer_sha256": "09fe1cbf2ce12328278489dcc19e8664b8203a764ad96627469f892937765aa6",
+  "source_frozen_sha256": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909",
+  "requests": 144,
+  "unique_payloads": 17,
+  "different_contracts_same_hypothesis_share_request": true,
+  "interpretation": "Post-hoc dataset-prior behavior probe. The original contract text is absent and the original official label is not inferable per case. Compare with the official-train hypothesis-ID prior; never rank as legal NLI accuracy.",
+  "inference_run": false
+}

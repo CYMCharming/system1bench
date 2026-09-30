@@ -1,0 +1,36 @@
+\section{Historical candidate controls and source detail}
+\label{app:historical-controls}
+The historical collection contains 28 main suites from 15 source collections, plus eight matched controls that reuse cases. A control is not an independent benchmark sample. Source-family labels, functions and reference types in Table~\ref{tab:taxonomy} are expanded in the suite-level artifact. The four order controls shown below use distinct denominators and never contribute to one pooled effect.
+
+\begin{table}[h]
+\centering\small
+\input{tables/order_summary}
+\caption{Matched candidate controls. Flip rates and accuracy differences are percentage points; reversal is compared with the corresponding same-order repeat.}
+\label{tab:order-appendix}
+\end{table}
+\begin{figure}[p]
+\centering\includegraphics[width=.96\linewidth]{figures/fig_order.pdf}
+\caption{Historical prediction and correctness transitions under candidate reversal. Source/control denominators are 100/100, 100/100, 36/18 and 95/95 decisions/source clusters; labels have distinct provenance. Whiskers are pointwise source-cluster intervals.}
+\label{fig:order-appendix}
+\end{figure}
+\clearpage
+
+\section{Natural-domain direct-code control}
+\label{app:natural-direct}
+On the same 144 ContractNLI and 180 three-class SciFact cases per model, we compared the historical one-pass candidate-code logit adapter with greedy direct code generation under the unchanged historical prompt. The strict parser accepts only one code for the whole response. All 648 generated responses are valid and reproduce the corresponding semantic labels exactly: Llama has 44/144 legal and 78/180 scientific cases correct under each adapter; Qwen has 65/144 and 104/180. Within each model/domain, the paired source-cluster accuracy difference is zero with bootstrap interval $[0,0]$, and no corrections or regressions occur. This controls a direct-prompt adapter discrepancy on these samples only. Raw responses, parsing and audit hashes are preserved in \texttt{research/natural\_direct\_v1/}.
+
+\section{Three-class scientific codebook follow-up}
+\label{app:scifact3-codebook-brief}
+This exploratory control reuses the same 180 distinct SciFact claim/document pairs as Section~\ref{sec:scifact3}. The source-pair IDs and references remain fixed. Two missing display-only and code-only cells were frozen before their inference, while the already inspected base and joint cells were reused after exact tokenized-prompt hash checks. All four Qwen cells used batch size four, the pinned weights/adapter, and identical BF16/SDPA execution; all 720 responses are valid. The joint cell has no exact top-logit ties, and native and common-semantic tie decoding coincide in every cell. Correct counts for base/display/code/joint are $104/114/114/101$; the interaction is $(101-114-114+104)/180=-12.8$ percentage points. A 10,000-draw paired percentile bootstrap over the 180 unique claims gives $[-19.4,-6.1]$ points. This follow-up was planned after the original three-class result was visible, although the new cells were frozen before inference; it is a selected-sample interface diagnostic rather than a preregistered population interaction. Protocol, source-only freeze and all cell outputs are in \texttt{research/scifact3\_codebook\_v1/}.
+
+\input{sections/submission_census_appendix}
+
+\input{sections/cross_domain}
+\input{sections/generative_baselines}
+\input{sections/operations}
+\input{sections/domain_codebook}
+\input{sections/appendix}
+
+\section{Prospective submission-readiness note}
+\label{app:readiness}
+This document is an internal, double-blind layout rehearsal, \emph{not} a NeurIPS 2026 submission; that cycle's deadline has passed. A future target year's format, page limit and official checklist must be checked afresh and completed with evidence. No public benchmark release, artifact-access review, or checklist compliance is claimed here. Before submission, an anonymized code/data artifact needs approved scope, upstream-license compliance and an access plan; the source-containing ContractNLI and SciFact freezes remain local under their respective redistribution notices. If the venue requires new-dataset metadata such as Croissant, that must also be prepared. Collaborator or independent human adjudication is still needed before claiming that cited-but-unannotated \textsc{NoInfo} pairs are truly neutral or that bilingual policy renderings are semantically equivalent. Hosted-model replication additionally depends on provider access and the stability of its returned version identifier.

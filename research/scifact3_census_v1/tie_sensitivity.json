@@ -1,0 +1,798 @@
+{
+  "version": "scifact3-census-tie-sensitivity-v1",
+  "status": "VERIFIED",
+  "scope": "fixed 339 dev cited-pair census",
+  "interpretation": "post-hoc offline decoder sensitivity; original native records retained",
+  "semantic_tie_priority": [
+    "SUPPORT",
+    "CONTRADICT",
+    "NOINFO"
+  ],
+  "summary_sha256": "3ae6a1c0d6a982684043747af87fed2baaa6ae9e125493a0401ef266fa380801",
+  "models": {
+    "llama31_8b_instruct": {
+      "n": 339,
+      "raw_sha256": {
+        "base": "c2be2429c32b0c899e369834253200cc95b53799de18c951621236dfadd5a888",
+        "exact_repeat": "2eb2d111a19c5f6437b54a8a1b7f73c8dd0deb8f9f023a6cd196d32822a5a423",
+        "reversed_option_order": "b3f3c3a16008ad2d7c37ab4eee827a301bf936c432834cbf61a8a2f88d9618bb",
+        "title_removed": "c238e8ea8609fea87bab24cfa9e3e54d049f5cd2d73f4a42dfce76f89f4003a3"
+      },
+      "ties": {
+        "base": {
+          "top_ties": 11,
+          "native_to_common_changes": 0,
+          "tied_cases": [
+            {
+              "id": "scifact3-dev:1:31715818",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:113:6157837",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:312:6173523",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:452:12804937",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "CONTRADICT"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:575:10300888",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:728:7521113",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:793:8551160",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "CONTRADICT",
+                "NOINFO"
+              ],
+              "native": "CONTRADICT",
+              "common": "CONTRADICT"
+            },
+            {
+              "id": "scifact3-dev:873:29025270",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:913:3203590",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1320:16284655",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1395:17717391",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            }
+          ]
+        },
+        "exact_repeat": {
+          "top_ties": 11,
+          "native_to_common_changes": 0,
+          "tied_cases": [
+            {
+              "id": "scifact3-dev:1:31715818",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:113:6157837",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:312:6173523",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:452:12804937",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "CONTRADICT"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:575:10300888",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:728:7521113",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:793:8551160",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "CONTRADICT",
+                "NOINFO"
+              ],
+              "native": "CONTRADICT",
+              "common": "CONTRADICT"
+            },
+            {
+              "id": "scifact3-dev:873:29025270",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:913:3203590",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1320:16284655",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1395:17717391",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            }
+          ]
+        },
+        "reversed_option_order": {
+          "top_ties": 7,
+          "native_to_common_changes": 7,
+          "tied_cases": [
+            {
+              "id": "scifact3-dev:51:45638119",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "NOINFO",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:100:4381486",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "SUPPORT",
+                "CONTRADICT"
+              ],
+              "native": "CONTRADICT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:415:6309659",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "SUPPORT",
+                "CONTRADICT"
+              ],
+              "native": "CONTRADICT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:593:19675911",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "SUPPORT",
+                "CONTRADICT"
+              ],
+              "native": "CONTRADICT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:598:25742130",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "NOINFO",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:887:18855191",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "NOINFO",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1278:11335781",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "NOINFO",
+              "common": "SUPPORT"
+            }
+          ]
+        },
+        "title_removed": {
+          "top_ties": 12,
+          "native_to_common_changes": 0,
+          "tied_cases": [
+            {
+              "id": "scifact3-dev:133:17934082",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:238:2251426",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:275:14819804",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:294:10874408",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:300:3553087",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:411:14924526",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:532:12991445",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:533:12991445",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:728:7521113",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1281:4387784",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1359:11614737",
+              "gold": "CONTRADICT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1395:17717391",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            }
+          ]
+        }
+      },
+      "native": {
+        "correct": {
+          "base": 182,
+          "exact_repeat": 182,
+          "reversed_option_order": 158,
+          "title_removed": 177
+        },
+        "by_gold_correct": {
+          "SUPPORT": {
+            "base": 120,
+            "exact_repeat": 120,
+            "reversed_option_order": 133,
+            "title_removed": 117
+          },
+          "CONTRADICT": {
+            "base": 2,
+            "exact_repeat": 2,
+            "reversed_option_order": 0,
+            "title_removed": 3
+          },
+          "NOINFO": {
+            "base": 60,
+            "exact_repeat": 60,
+            "reversed_option_order": 25,
+            "title_removed": 57
+          }
+        },
+        "base_relative_flips": {
+          "exact_repeat": 0,
+          "reversed_option_order": 73,
+          "title_removed": 33
+        },
+        "base_to_reversal": {
+          "SUPPORT": {
+            "SUPPORT": 234,
+            "CONTRADICT": 0,
+            "NOINFO": 0
+          },
+          "CONTRADICT": {
+            "SUPPORT": 3,
+            "CONTRADICT": 0,
+            "NOINFO": 0
+          },
+          "NOINFO": {
+            "SUPPORT": 67,
+            "CONTRADICT": 3,
+            "NOINFO": 32
+          }
+        }
+      },
+      "common_tie": {
+        "correct": {
+          "base": 182,
+          "exact_repeat": 182,
+          "reversed_option_order": 159,
+          "title_removed": 177
+        },
+        "by_gold_correct": {
+          "SUPPORT": {
+            "base": 120,
+            "exact_repeat": 120,
+            "reversed_option_order": 136,
+            "title_removed": 117
+          },
+          "CONTRADICT": {
+            "base": 2,
+            "exact_repeat": 2,
+            "reversed_option_order": 0,
+            "title_removed": 3
+          },
+          "NOINFO": {
+            "base": 60,
+            "exact_repeat": 60,
+            "reversed_option_order": 23,
+            "title_removed": 57
+          }
+        },
+        "base_relative_flips": {
+          "exact_repeat": 0,
+          "reversed_option_order": 77,
+          "title_removed": 33
+        },
+        "base_to_reversal": {
+          "SUPPORT": {
+            "SUPPORT": 234,
+            "CONTRADICT": 0,
+            "NOINFO": 0
+          },
+          "CONTRADICT": {
+            "SUPPORT": 3,
+            "CONTRADICT": 0,
+            "NOINFO": 0
+          },
+          "NOINFO": {
+            "SUPPORT": 74,
+            "CONTRADICT": 0,
+            "NOINFO": 28
+          }
+        }
+      },
+      "accuracy_change_due_to_common_tie": {
+        "base": 0,
+        "exact_repeat": 0,
+        "reversed_option_order": 1,
+        "title_removed": 0
+      },
+      "reversal_flip_change_due_to_common_tie": 4
+    },
+    "qwen3_8b": {
+      "n": 339,
+      "raw_sha256": {
+        "base": "8117972364c9dd47b05be79d9b76c5c5a7a888a35425031b9f7f8c9f310b62d5",
+        "exact_repeat": "d6e6e7285f02999f2fb5be165b8cc43e2414b732836a6e5e7b4939fb730cbfba",
+        "reversed_option_order": "b60a4670e59feeddb2aaa0e7439fcf31bde7eadcf24e3ee738129634b0fc65f3",
+        "title_removed": "12cc493c94a1402e1f4e7e7d14f148613abc271dc5de6f4d767c932c9be53de2"
+      },
+      "ties": {
+        "base": {
+          "top_ties": 3,
+          "native_to_common_changes": 0,
+          "tied_cases": [
+            {
+              "id": "scifact3-dev:514:16256507",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:628:24512064",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:921:1642727",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            }
+          ]
+        },
+        "exact_repeat": {
+          "top_ties": 3,
+          "native_to_common_changes": 0,
+          "tied_cases": [
+            {
+              "id": "scifact3-dev:514:16256507",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:628:24512064",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:921:1642727",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            }
+          ]
+        },
+        "reversed_option_order": {
+          "top_ties": 1,
+          "native_to_common_changes": 1,
+          "tied_cases": [
+            {
+              "id": "scifact3-dev:702:4350400",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "NOINFO",
+              "common": "SUPPORT"
+            }
+          ]
+        },
+        "title_removed": {
+          "top_ties": 2,
+          "native_to_common_changes": 0,
+          "tied_cases": [
+            {
+              "id": "scifact3-dev:237:4942718",
+              "gold": "NOINFO",
+              "tied_labels": [
+                "SUPPORT",
+                "NOINFO"
+              ],
+              "native": "SUPPORT",
+              "common": "SUPPORT"
+            },
+            {
+              "id": "scifact3-dev:1298:11718220",
+              "gold": "SUPPORT",
+              "tied_labels": [
+                "CONTRADICT",
+                "NOINFO"
+              ],
+              "native": "CONTRADICT",
+              "common": "CONTRADICT"
+            }
+          ]
+        }
+      },
+      "native": {
+        "correct": {
+          "base": 231,
+          "exact_repeat": 231,
+          "reversed_option_order": 220,
+          "title_removed": 232
+        },
+        "by_gold_correct": {
+          "SUPPORT": {
+            "base": 110,
+            "exact_repeat": 110,
+            "reversed_option_order": 127,
+            "title_removed": 110
+          },
+          "CONTRADICT": {
+            "base": 9,
+            "exact_repeat": 9,
+            "reversed_option_order": 25,
+            "title_removed": 10
+          },
+          "NOINFO": {
+            "base": 112,
+            "exact_repeat": 112,
+            "reversed_option_order": 68,
+            "title_removed": 112
+          }
+        },
+        "base_relative_flips": {
+          "exact_repeat": 0,
+          "reversed_option_order": 97,
+          "title_removed": 28
+        },
+        "base_to_reversal": {
+          "SUPPORT": {
+            "SUPPORT": 143,
+            "CONTRADICT": 0,
+            "NOINFO": 1
+          },
+          "CONTRADICT": {
+            "SUPPORT": 1,
+            "CONTRADICT": 10,
+            "NOINFO": 0
+          },
+          "NOINFO": {
+            "SUPPORT": 72,
+            "CONTRADICT": 23,
+            "NOINFO": 89
+          }
+        }
+      },
+      "common_tie": {
+        "correct": {
+          "base": 231,
+          "exact_repeat": 231,
+          "reversed_option_order": 219,
+          "title_removed": 232
+        },
+        "by_gold_correct": {
+          "SUPPORT": {
+            "base": 110,
+            "exact_repeat": 110,
+            "reversed_option_order": 127,
+            "title_removed": 110
+          },
+          "CONTRADICT": {
+            "base": 9,
+            "exact_repeat": 9,
+            "reversed_option_order": 25,
+            "title_removed": 10
+          },
+          "NOINFO": {
+            "base": 112,
+            "exact_repeat": 112,
+            "reversed_option_order": 67,
+            "title_removed": 112
+          }
+        },
+        "base_relative_flips": {
+          "exact_repeat": 0,
+          "reversed_option_order": 98,
+          "title_removed": 28
+        },
+        "base_to_reversal": {
+          "SUPPORT": {
+            "SUPPORT": 143,
+            "CONTRADICT": 0,
+            "NOINFO": 1
+          },
+          "CONTRADICT": {
+            "SUPPORT": 1,
+            "CONTRADICT": 10,
+            "NOINFO": 0
+          },
+          "NOINFO": {
+            "SUPPORT": 73,
+            "CONTRADICT": 23,
+            "NOINFO": 88
+          }
+        }
+      },
+      "accuracy_change_due_to_common_tie": {
+        "base": 0,
+        "exact_repeat": 0,
+        "reversed_option_order": -1,
+        "title_removed": 0
+      },
+      "reversal_flip_change_due_to_common_tie": 1
+    }
+  }
+}

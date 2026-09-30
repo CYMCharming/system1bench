@@ -1,0 +1,454 @@
+{
+  "analysis": "contractnli-model-blind-shortcut-audit-v1",
+  "input_sha256": {
+    "contract_archive": "e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+    "official_train_member": "dbceb356cd6203b35b27be94a5fa85e499a81c34c42c89ad53060b39f0257ba5",
+    "official_test_member": "460267b56052a2dc5aead98eb35eadef9e6734d5723d37b4a9790e410f812387",
+    "frozen": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909"
+  },
+  "grain": "one official document--hypothesis annotation; frozen base has 144 unique pairs on 91 contracts",
+  "split_exact_overlap": {
+    "id": 0,
+    "url": 0,
+    "file_name": 0,
+    "exact_text_sha256": 0
+  },
+  "length_threshold_chars": 16000,
+  "eligibility_by_document_type": [
+    {
+      "document_type": "search-pdf",
+      "all_documents": 76,
+      "eligible_documents": 69,
+      "excluded_documents": 7,
+      "exclusion_rate": 0.09210526315789473,
+      "selected_documents": 64,
+      "selected_pairs": 104,
+      "all_median_chars": 8299.5,
+      "all_min_chars": 1231,
+      "all_max_chars": 41779,
+      "eligible_median_chars": 7685
+    },
+    {
+      "document_type": "sec-html",
+      "all_documents": 23,
+      "eligible_documents": 10,
+      "excluded_documents": 13,
+      "exclusion_rate": 0.5652173913043478,
+      "selected_documents": 8,
+      "selected_pairs": 14,
+      "all_median_chars": 16383,
+      "all_min_chars": 5048,
+      "all_max_chars": 40554,
+      "eligible_median_chars": 10773.5
+    },
+    {
+      "document_type": "sec-text",
+      "all_documents": 24,
+      "eligible_documents": 20,
+      "excluded_documents": 4,
+      "exclusion_rate": 0.16666666666666666,
+      "selected_documents": 19,
+      "selected_pairs": 26,
+      "all_median_chars": 9297.0,
+      "all_min_chars": 1606,
+      "all_max_chars": 21514,
+      "eligible_median_chars": 8386.5
+    }
+  ],
+  "label_mix": {
+    "full_test": {
+      "Entailment": 968,
+      "Contradiction": 220,
+      "NotMentioned": 903
+    },
+    "eligible_test": {
+      "Entailment": 748,
+      "Contradiction": 178,
+      "NotMentioned": 757
+    },
+    "excluded_test": {
+      "Entailment": 220,
+      "Contradiction": 42,
+      "NotMentioned": 146
+    },
+    "selected": {
+      "Entailment": 48,
+      "Contradiction": 48,
+      "NotMentioned": 48
+    }
+  },
+  "train_hypothesis_prior": {
+    "full_test": {
+      "correct": 1379,
+      "n": 2091,
+      "accuracy": 0.6594930655188905,
+      "confusion_gold_by_prediction": {
+        "Entailment": {
+          "Entailment": 757,
+          "Contradiction": 39,
+          "NotMentioned": 172
+        },
+        "Contradiction": {
+          "Entailment": 40,
+          "Contradiction": 118,
+          "NotMentioned": 62
+        },
+        "NotMentioned": {
+          "Entailment": 310,
+          "Contradiction": 89,
+          "NotMentioned": 504
+        }
+      }
+    },
+    "eligible_test": {
+      "correct": 1102,
+      "n": 1683,
+      "accuracy": 0.6547831253713606,
+      "confusion_gold_by_prediction": {
+        "Entailment": {
+          "Entailment": 596,
+          "Contradiction": 25,
+          "NotMentioned": 127
+        },
+        "Contradiction": {
+          "Entailment": 33,
+          "Contradiction": 92,
+          "NotMentioned": 53
+        },
+        "NotMentioned": {
+          "Entailment": 262,
+          "Contradiction": 81,
+          "NotMentioned": 414
+        }
+      }
+    },
+    "excluded_test": {
+      "correct": 277,
+      "n": 408,
+      "accuracy": 0.678921568627451,
+      "confusion_gold_by_prediction": {
+        "Entailment": {
+          "Entailment": 161,
+          "Contradiction": 14,
+          "NotMentioned": 45
+        },
+        "Contradiction": {
+          "Entailment": 7,
+          "Contradiction": 26,
+          "NotMentioned": 9
+        },
+        "NotMentioned": {
+          "Entailment": 48,
+          "Contradiction": 8,
+          "NotMentioned": 90
+        }
+      }
+    },
+    "selected": {
+      "correct": 82,
+      "n": 144,
+      "accuracy": 0.5694444444444444,
+      "confusion_gold_by_prediction": {
+        "Entailment": {
+          "Entailment": 38,
+          "Contradiction": 2,
+          "NotMentioned": 8
+        },
+        "Contradiction": {
+          "Entailment": 10,
+          "Contradiction": 22,
+          "NotMentioned": 16
+        },
+        "NotMentioned": {
+          "Entailment": 16,
+          "Contradiction": 10,
+          "NotMentioned": 22
+        }
+      },
+      "ci95_document_cluster": [
+        0.4930555555555556,
+        0.6433566433566433
+      ]
+    }
+  },
+  "global_train_majority_label": "Entailment",
+  "global_train_majority_selected_correct": 48,
+  "selected_test_in_sample_id_majority_ceiling": 100,
+  "selected_test_leave_one_item": {
+    "expected_correct_uniform_tie": 92.5,
+    "n": 144,
+    "expected_accuracy_uniform_tie": 0.6423611111111112,
+    "tied_cases": 13,
+    "unique_majority_cases": 131,
+    "unique_majority_correct": 86,
+    "unseen_hypothesis_cases": 0
+  },
+  "selected_test_leave_one_document": {
+    "expected_correct_uniform_tie": 92.5,
+    "n": 144,
+    "expected_accuracy_uniform_tie": 0.6423611111111112,
+    "tied_cases": 13,
+    "unique_majority_cases": 131,
+    "unique_majority_correct": 86,
+    "unseen_hypothesis_cases": 0
+  },
+  "selected_test_leaveout_predictions_identical": true,
+  "hypotheses": [
+    {
+      "hypothesis_id": "nda-1",
+      "train_label_counts": {
+        "Entailment": 91,
+        "Contradiction": 112,
+        "NotMentioned": 220
+      },
+      "train_majority": "NotMentioned",
+      "selected_label_counts": {
+        "Entailment": 1,
+        "Contradiction": 8,
+        "NotMentioned": 2
+      },
+      "selected_pairs": 11
+    },
+    {
+      "hypothesis_id": "nda-10",
+      "train_label_counts": {
+        "Entailment": 159,
+        "Contradiction": 2,
+        "NotMentioned": 262
+      },
+      "train_majority": "NotMentioned",
+      "selected_label_counts": {
+        "Entailment": 2,
+        "Contradiction": 0,
+        "NotMentioned": 1
+      },
+      "selected_pairs": 3
+    },
+    {
+      "hypothesis_id": "nda-11",
+      "train_label_counts": {
+        "Entailment": 59,
+        "Contradiction": 1,
+        "NotMentioned": 363
+      },
+      "train_majority": "NotMentioned",
+      "selected_label_counts": {
+        "Entailment": 0,
+        "Contradiction": 0,
+        "NotMentioned": 2
+      },
+      "selected_pairs": 2
+    },
+    {
+      "hypothesis_id": "nda-12",
+      "train_label_counts": {
+        "Entailment": 263,
+        "Contradiction": 0,
+        "NotMentioned": 160
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 3,
+        "Contradiction": 0,
+        "NotMentioned": 2
+      },
+      "selected_pairs": 5
+    },
+    {
+      "hypothesis_id": "nda-13",
+      "train_label_counts": {
+        "Entailment": 311,
+        "Contradiction": 0,
+        "NotMentioned": 112
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 5,
+        "Contradiction": 0,
+        "NotMentioned": 2
+      },
+      "selected_pairs": 7
+    },
+    {
+      "hypothesis_id": "nda-15",
+      "train_label_counts": {
+        "Entailment": 327,
+        "Contradiction": 0,
+        "NotMentioned": 96
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 5,
+        "Contradiction": 0,
+        "NotMentioned": 3
+      },
+      "selected_pairs": 8
+    },
+    {
+      "hypothesis_id": "nda-16",
+      "train_label_counts": {
+        "Entailment": 181,
+        "Contradiction": 1,
+        "NotMentioned": 241
+      },
+      "train_majority": "NotMentioned",
+      "selected_label_counts": {
+        "Entailment": 2,
+        "Contradiction": 0,
+        "NotMentioned": 4
+      },
+      "selected_pairs": 6
+    },
+    {
+      "hypothesis_id": "nda-17",
+      "train_label_counts": {
+        "Entailment": 91,
+        "Contradiction": 76,
+        "NotMentioned": 256
+      },
+      "train_majority": "NotMentioned",
+      "selected_label_counts": {
+        "Entailment": 1,
+        "Contradiction": 8,
+        "NotMentioned": 6
+      },
+      "selected_pairs": 15
+    },
+    {
+      "hypothesis_id": "nda-18",
+      "train_label_counts": {
+        "Entailment": 93,
+        "Contradiction": 0,
+        "NotMentioned": 330
+      },
+      "train_majority": "NotMentioned",
+      "selected_label_counts": {
+        "Entailment": 2,
+        "Contradiction": 0,
+        "NotMentioned": 7
+      },
+      "selected_pairs": 9
+    },
+    {
+      "hypothesis_id": "nda-19",
+      "train_label_counts": {
+        "Entailment": 300,
+        "Contradiction": 11,
+        "NotMentioned": 112
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 5,
+        "Contradiction": 1,
+        "NotMentioned": 4
+      },
+      "selected_pairs": 10
+    },
+    {
+      "hypothesis_id": "nda-2",
+      "train_label_counts": {
+        "Entailment": 23,
+        "Contradiction": 309,
+        "NotMentioned": 91
+      },
+      "train_majority": "Contradiction",
+      "selected_label_counts": {
+        "Entailment": 0,
+        "Contradiction": 18,
+        "NotMentioned": 2
+      },
+      "selected_pairs": 20
+    },
+    {
+      "hypothesis_id": "nda-20",
+      "train_label_counts": {
+        "Entailment": 118,
+        "Contradiction": 194,
+        "NotMentioned": 111
+      },
+      "train_majority": "Contradiction",
+      "selected_label_counts": {
+        "Entailment": 2,
+        "Contradiction": 4,
+        "NotMentioned": 8
+      },
+      "selected_pairs": 14
+    },
+    {
+      "hypothesis_id": "nda-3",
+      "train_label_counts": {
+        "Entailment": 270,
+        "Contradiction": 4,
+        "NotMentioned": 149
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 1,
+        "Contradiction": 0,
+        "NotMentioned": 1
+      },
+      "selected_pairs": 2
+    },
+    {
+      "hypothesis_id": "nda-4",
+      "train_label_counts": {
+        "Entailment": 364,
+        "Contradiction": 7,
+        "NotMentioned": 52
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 6,
+        "Contradiction": 0,
+        "NotMentioned": 0
+      },
+      "selected_pairs": 6
+    },
+    {
+      "hypothesis_id": "nda-5",
+      "train_label_counts": {
+        "Entailment": 345,
+        "Contradiction": 13,
+        "NotMentioned": 65
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 6,
+        "Contradiction": 0,
+        "NotMentioned": 2
+      },
+      "selected_pairs": 8
+    },
+    {
+      "hypothesis_id": "nda-7",
+      "train_label_counts": {
+        "Entailment": 259,
+        "Contradiction": 111,
+        "NotMentioned": 53
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 4,
+        "Contradiction": 9,
+        "NotMentioned": 0
+      },
+      "selected_pairs": 13
+    },
+    {
+      "hypothesis_id": "nda-8",
+      "train_label_counts": {
+        "Entailment": 276,
+        "Contradiction": 0,
+        "NotMentioned": 147
+      },
+      "train_majority": "Entailment",
+      "selected_label_counts": {
+        "Entailment": 3,
+        "Contradiction": 0,
+        "NotMentioned": 2
+      },
+      "selected_pairs": 5
+    }
+  ],
+  "interpretation": "The official-train hypothesis prior diagnoses label predictability without reading the contract; it is supervised and not a fair comparison to zero-shot model outputs. Selected-test leave-out uses other test labels and is only a leakage/difficulty diagnostic. The sample is class-balanced by construction and 16k-filtered."
+}

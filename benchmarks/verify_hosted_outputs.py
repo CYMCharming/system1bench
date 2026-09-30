@@ -18,7 +18,10 @@ def verify():
     root = ROOT/'api_results/jev-1.13.0'
     meta, contract = read(root/'metadata.json'), read(root/'contract.json')
     assert meta['status']=='DONE' and meta['signature']==contract
-    assert sha(ROOT/'benchmarks/jev_api.py')==contract['runner_sha256']
+    # Current clients evolve; historical measurements remain bound to the
+    # exact source bytes that made them, not whatever client is current today.
+    candidates = [ROOT/'benchmarks/jev_api.py', root/'runner_archive/jev_api.py']
+    assert any(path.is_file() and sha(path)==contract['runner_sha256'] for path in candidates)
     assert sha(root/'requests.jsonl')==meta['journal_sha256']
     records = [json.loads(line) for line in (root/'requests.jsonl').read_text().splitlines()]
     calls = {(r['suite'],r['id']):r for r in records}

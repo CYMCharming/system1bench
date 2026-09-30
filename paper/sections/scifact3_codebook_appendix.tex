@@ -1,0 +1,80 @@
+\subsection{SciFact3 codebook audit and decoder sensitivity}
+\label{app:scifact3-codebook}
+The exploratory four-cell diagnostic in Section~\ref{sec:scifact3-codebook}
+uses exactly the 180 previously selected, class-balanced SciFact3
+claim--cited-abstract pairs. There is one pair per source claim and cited
+document. The observed base and joint-reversal records were reused by
+immutable file hashes. Display-only and code-only requests were frozen
+before those missing cells were run; there was no SciFact3 factorial pilot
+or amendment. Before new inference, every reused prompt matched its original
+token sequence and length under the pinned tokenizer; checkpoint-file,
+chat-template, adapter, case/request, and batch-size-four hashes matched.
+The only model-facing user payload fields are \texttt{state},
+\texttt{question\_type}, \texttt{instructions}, and \texttt{candidates}.
+The state necessarily contains claim, paper title, and cited abstract, but
+not reference labels, source split, group, or source identifiers.
+
+\begin{table}[!h]
+\centering
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Model & Decoder & Base & Display only & Code only & Both \\
+\midrule
+Llama 3.1 8B & native & 78 (---) & 61 (51) & 71 (85) & 69 (42) \\
+              & common tie & 78 (---) & 61 (51) & 71 (85) & 68 (46) \\
+Qwen3 8B & native & 104 (---) & 114 (30) & 114 (18) & 101 (60) \\
+         & common tie & 104 (---) & 114 (30) & 114 (18) & 101 (60) \\
+\bottomrule
+\end{tabular}
+\caption{Correct predictions out of 180; parentheses show semantic
+prediction flips relative to base. Native retains the original historical
+decoder, whereas common tie applies the fixed SUPPORT--CONTRADICT--NOINFO
+semantic priority to all four cells. Invalid counts are zero in every cell.}
+\label{tab:scifact3-codebook-audit}
+\end{table}
+
+Exact maximum-logit ties in base/display/code/both number $6/1/11/6$ for
+Llama and $1/6/1/0$ for Qwen. Relative to native decoding, common tie changes
+only six Llama joint-reversal decisions; the other seven model--cell
+combinations are unchanged. Repeating the original base execution produced
+zero prediction flips for either model. An independent standard-library
+replay verified the SHA-256 of all eight original/new gzip result files,
+reconstructed all four message and candidate-assignment hashes per case,
+and recovered every native/common accuracy count and full base-to-cell
+transition matrix directly from raw stored probabilities. It also checked
+all reference and source-group associations without emitting source text.
+
+\begin{table}[!h]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Qwen3 reference class & Base & Display only & Code only & Both \\
+\midrule
+SUPPORT & 45/60 & 48/60 & 50/60 & 53/60 \\
+CONTRADICT & 5/60 & 18/60 & 12/60 & 18/60 \\
+NOINFO & 54/60 & 48/60 & 52/60 & 30/60 \\
+\bottomrule
+\end{tabular}
+\caption{Qwen3 correct counts by operational reference label under the
+common tie decoder (identical here to native decoding). The NOINFO reference
+means no annotated evidence in the selected cited abstract, not evidence
+of absence in the full paper or literature.}
+\label{tab:scifact3-codebook-class}
+\end{table}
+
+For the descriptive accuracy interaction
+$(\mathrm{both}-\mathrm{code})-(\mathrm{display}-\mathrm{base})$,
+the Qwen estimate is $-12.8$ percentage points with a pointwise 95\%
+percentile interval $[-19.4,-6.1]$; Llama under common tie is $+7.8$
+points $[-1.1,+16.7]$. Both intervals use 10,000 paired bootstrap draws
+with seed 20260930, resampling source claims and retaining all four matched
+decisions together. Because each selected claim contributes only one pair,
+claim-cluster and case resampling coincide here. These are exploratory
+post-hoc-to-the-existing-outcomes, unadjusted, selected-sample intervals;
+they are neither population-prevalence estimates nor neural-mechanism
+identification. The full protocol, frozen ID/hash manifest, original raw
+results and replay code are under
+\texttt{research/scifact3\_codebook\_v1/}; no upstream abstract text is
+duplicated in its freeze.

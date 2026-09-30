@@ -1,0 +1,191 @@
+{
+  "frozen_sha256": "923647f1400c779159e3d062f01c920174427db3555fb0e9fecb7305bef6f169",
+  "summary_sha256": "4533b55ea3c1d67711cd2d0a33fed0c92ad75f4c299870fd61b305da9572c35f",
+  "independently_recomputed_models": [
+    "english",
+    "multilingual",
+    "llama31_8b_instruct",
+    "qwen3_8b",
+    "jev-1.13.0"
+  ],
+  "raw_count_and_confusion_checks": "all matched",
+  "v1_two_class_selected_pairs": 120,
+  "v2_three_class_selected_pairs": 180,
+  "selected_pair_overlap_by_label": {
+    "SUPPORT": 28,
+    "CONTRADICT": 55,
+    "NOINFO": 0
+  },
+  "systems": {
+    "english": {
+      "SUPPORT": {
+        "n": 60,
+        "base_correct": 56,
+        "robust_correct": 56,
+        "reverse_flip": 2,
+        "repeat_flip": 0,
+        "title_flip": 11
+      },
+      "CONTRADICT": {
+        "n": 60,
+        "base_correct": 5,
+        "robust_correct": 3,
+        "reverse_flip": 4,
+        "repeat_flip": 0,
+        "title_flip": 25
+      },
+      "NOINFO": {
+        "n": 60,
+        "base_correct": 20,
+        "robust_correct": 12,
+        "reverse_flip": 10,
+        "repeat_flip": 0,
+        "title_flip": 24
+      },
+      "all": {
+        "n": 180,
+        "base_correct": 81,
+        "robust_correct": 71,
+        "reverse_flip": 16,
+        "repeat_flip": 0,
+        "title_flip": 60
+      }
+    },
+    "multilingual": {
+      "SUPPORT": {
+        "n": 60,
+        "base_correct": 48,
+        "robust_correct": 45,
+        "reverse_flip": 10,
+        "repeat_flip": 0,
+        "title_flip": 21
+      },
+      "CONTRADICT": {
+        "n": 60,
+        "base_correct": 16,
+        "robust_correct": 9,
+        "reverse_flip": 13,
+        "repeat_flip": 0,
+        "title_flip": 20
+      },
+      "NOINFO": {
+        "n": 60,
+        "base_correct": 9,
+        "robust_correct": 5,
+        "reverse_flip": 15,
+        "repeat_flip": 0,
+        "title_flip": 27
+      },
+      "all": {
+        "n": 180,
+        "base_correct": 73,
+        "robust_correct": 59,
+        "reverse_flip": 38,
+        "repeat_flip": 0,
+        "title_flip": 68
+      }
+    },
+    "llama31_8b_instruct": {
+      "SUPPORT": {
+        "n": 60,
+        "base_correct": 50,
+        "robust_correct": 50,
+        "reverse_flip": 10,
+        "repeat_flip": 0,
+        "title_flip": 2
+      },
+      "CONTRADICT": {
+        "n": 60,
+        "base_correct": 2,
+        "robust_correct": 0,
+        "reverse_flip": 17,
+        "repeat_flip": 0,
+        "title_flip": 4
+      },
+      "NOINFO": {
+        "n": 60,
+        "base_correct": 26,
+        "robust_correct": 11,
+        "reverse_flip": 15,
+        "repeat_flip": 0,
+        "title_flip": 12
+      },
+      "all": {
+        "n": 180,
+        "base_correct": 78,
+        "robust_correct": 61,
+        "reverse_flip": 42,
+        "repeat_flip": 0,
+        "title_flip": 18
+      }
+    },
+    "qwen3_8b": {
+      "SUPPORT": {
+        "n": 60,
+        "base_correct": 45,
+        "robust_correct": 45,
+        "reverse_flip": 8,
+        "repeat_flip": 0,
+        "title_flip": 5
+      },
+      "CONTRADICT": {
+        "n": 60,
+        "base_correct": 5,
+        "robust_correct": 5,
+        "reverse_flip": 28,
+        "repeat_flip": 0,
+        "title_flip": 7
+      },
+      "NOINFO": {
+        "n": 60,
+        "base_correct": 54,
+        "robust_correct": 30,
+        "reverse_flip": 24,
+        "repeat_flip": 0,
+        "title_flip": 4
+      },
+      "all": {
+        "n": 180,
+        "base_correct": 104,
+        "robust_correct": 80,
+        "reverse_flip": 60,
+        "repeat_flip": 0,
+        "title_flip": 16
+      }
+    },
+    "jev-1.13.0": {
+      "SUPPORT": {
+        "n": 60,
+        "base_correct": 48,
+        "robust_correct": 48,
+        "reverse_flip": 0,
+        "repeat_flip": 0,
+        "title_flip": 0
+      },
+      "CONTRADICT": {
+        "n": 60,
+        "base_correct": 55,
+        "robust_correct": 55,
+        "reverse_flip": 0,
+        "repeat_flip": 0,
+        "title_flip": 0
+      },
+      "NOINFO": {
+        "n": 60,
+        "base_correct": 45,
+        "robust_correct": 45,
+        "reverse_flip": 0,
+        "repeat_flip": 2,
+        "title_flip": 1
+      },
+      "all": {
+        "n": 180,
+        "base_correct": 148,
+        "robust_correct": 148,
+        "reverse_flip": 0,
+        "repeat_flip": 2,
+        "title_flip": 1
+      }
+    }
+  }
+}

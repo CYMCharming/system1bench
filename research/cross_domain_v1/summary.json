@@ -1,0 +1,2778 @@
+{
+  "analysis": "cross-domain-error-complementarity-v1",
+  "population": "28 frozen main suites; five paired systems; one typed decision per row",
+  "intervals": "pointwise descriptive 95% percentile cluster bootstrap by source/state group within suite; 5000 draws; no cross-suite inference",
+  "seed": 20260930,
+  "bootstrap_draws": 5000,
+  "models": [
+    "english",
+    "multilingual",
+    "llama31_8b_instruct",
+    "qwen3_8b",
+    "jev-1.13.0"
+  ],
+  "model_names": {
+    "english": "Laya EN",
+    "multilingual": "Laya Multi",
+    "llama31_8b_instruct": "Llama 3.1 8B",
+    "qwen3_8b": "Qwen3 8B",
+    "jev-1.13.0": "Jev 1.13"
+  },
+  "definitions": {
+    "best_single": "maximum observed accuracy among the five systems on this suite; same-data selected, descriptive",
+    "oracle": "fraction with at least one of five correct outputs; reference-aware selector upper bound, not a deployable router",
+    "oracle_headroom": "oracle minus best_single; recompute the maximum within each bootstrap draw",
+    "majority_coverage": "fraction with at least three identical valid labels among the fixed five systems",
+    "majority_risk": "error fraction among strict-majority-covered decisions; undefined when no majority",
+    "majority_yield": "correct strict-majority decisions divided by all decisions; unanswered decisions do not contribute",
+    "majority_yield_minus_best": "majority_yield minus same-sample best single-system accuracy; different coverage and not a matched selective-risk comparison",
+    "unanimous_wrong": "fraction where all five return the identical wrong valid label"
+  },
+  "input_hashes": {
+    "protocol_manifest.json": "625cfbda10b414083a2a5fa7353eaa08fec55caf6c2989e8b6be5625d2e5aa6d",
+    "paper/source_atlas.json": "a7c2af7d216fca20d1df72020d41bf4f610545f18688e49eabc4b3e45a8b054f",
+    "results/english/ag_news.json.gz": "055005d15446bb5f7f3e04f4104797f5184f190749425c3d4e40e896a26a1eb3",
+    "results/multilingual/ag_news.json.gz": "2b418a04ae270352b9cbd4ac9d70f983a6855bfbed9e2a0b46a80496fc4bac22",
+    "results/llama31_8b_instruct/ag_news.json.gz": "bd733c7885cba1c89c3a5920bd399fe205c5f6df571320f84c7c0a301b167c4f",
+    "results/qwen3_8b/ag_news.json.gz": "62d2173721020e7595dff59c1705b20e07033aeb076e766af61a50cb24808f59",
+    "api_results/jev-1.13.0/ag_news.json.gz": "aec5728b1ee8417d9b015d066563a3dd45a15c03e42873ae32b7fac9e9b6f5dc",
+    "results/english/emotion.json.gz": "2943c1f7d9523f57c9157a8db345271d028296febab026cfd7b1e1d14c0a1005",
+    "results/multilingual/emotion.json.gz": "a5fccf42ded998a9ac60ca966f5ab5258692d90af7ca9a79a9c2dbe05f2264ec",
+    "results/llama31_8b_instruct/emotion.json.gz": "dcf5a20765c46f04318780df7bad8a57e7290898832578d1b8f4f277dedf40ab",
+    "results/qwen3_8b/emotion.json.gz": "682d18b36624d9729e6b4031256db46c78afebbb3622f36187c328bda63865e6",
+    "api_results/jev-1.13.0/emotion.json.gz": "b4845579452efee50654664b5d5ac0e60dbf00390beeee74991d3d7d124d2e57",
+    "results/english/banking77.json.gz": "8a90e08a0849d9c8604dc760ec222c67dea911a5cef63afb6f36ad5fda86103e",
+    "results/multilingual/banking77.json.gz": "855406e877f2be3f5058f3e01870c58890627353595bda8d1f6a01806e11f9ce",
+    "results/llama31_8b_instruct/banking77.json.gz": "b2e6644369a3d4d62d986e149d306d6d7b7c0b8987d2091904cec256c12a21d8",
+    "results/qwen3_8b/banking77.json.gz": "06be1e100cc3fe38ecfe5c70f7a77a27be28db01f611e3a5a7c00224c91ec223",
+    "api_results/jev-1.13.0/banking77.json.gz": "13530f6da8cce24c8c375bd0f1e62597194607250102b9fdd7d52bb7ec403990",
+    "results/english/boolq.json.gz": "6cec49866a2cc4bc1304efb8eb2d5b5009ff844b998731161457100752c9d5c4",
+    "results/multilingual/boolq.json.gz": "efcd005b3877115abf39147cd079b8d6d2945f7236d06d13cb1fce0326c650db",
+    "results/llama31_8b_instruct/boolq.json.gz": "9013dca2e3007267c2e3288a24cb1053476fe5bc981419fb206d5eb922f81202",
+    "results/qwen3_8b/boolq.json.gz": "0cde5018224f9c28309ffaab1f6d816383b65bbacd9042d85c79e148e32069d6",
+    "api_results/jev-1.13.0/boolq.json.gz": "146b0eed6880999bc412be92afbd08399b2ec3fb85937c4fc7ff577fb56de3a3",
+    "results/english/boolq_choice.json.gz": "dd5b3512c9c7732ce1462003edf590565d8dfcda5f588140989f3627f4cd6574",
+    "results/multilingual/boolq_choice.json.gz": "c50b56a6bef96ff8b833f54550bb935e394acbb8206c035eac05ea2009139549",
+    "results/llama31_8b_instruct/boolq_choice.json.gz": "f4ad3b63ecb07cd858050606580dfcff98041aaa31152ecaa489dd0747148934",
+    "results/qwen3_8b/boolq_choice.json.gz": "907cf687c85decc3feb700035a82b833b5615742f664edad1a8348ec5f02bd62",
+    "api_results/jev-1.13.0/boolq_choice.json.gz": "c9071d5fe93af4aec1287c2f727cdfb1b5b61cfd181b2c4fc0e225d077a63ba3",
+    "results/english/sst5.json.gz": "f589af7002e232db279204a13ef8d6b3c28fba1ecb88e04dbb471a1c459cffce",
+    "results/multilingual/sst5.json.gz": "6a8d4cedf8001fa176957f4435b8ae96fe4ff76b0c6d7a3b22608bf488f9e8ae",
+    "results/llama31_8b_instruct/sst5.json.gz": "ed5c787d7624e34c4888dde93eac4d5b933b480fb4e8c300331b39346e9eff40",
+    "results/qwen3_8b/sst5.json.gz": "03238aca0a77a58948873b978ac94cb9521e66caaca459138066f88b56cfa05a",
+    "api_results/jev-1.13.0/sst5.json.gz": "8a890f64c86f2d4159fd0d888aeb8cea02263fbe2282c11360dac474e448fa92",
+    "results/english/sst5_choice.json.gz": "6b285f0c61a61bb2258c0d7d82b170162aaa4eeffd9c1a64ee348328aa702b03",
+    "results/multilingual/sst5_choice.json.gz": "2e3d83a61bd17eeeac607875367328c857b7f00d815a6aebbd9a9ea8a5c4be69",
+    "results/llama31_8b_instruct/sst5_choice.json.gz": "24cd330321fcf5807f86bace8430184dec19a898c13658603c07169d7392229c",
+    "results/qwen3_8b/sst5_choice.json.gz": "a1fe5834ddf25a688d910a3777959267a5bae624bcc67ebe0f0cdf5dc13e3bc1",
+    "api_results/jev-1.13.0/sst5_choice.json.gz": "ee0c6436539e846e4ccf4f5be42135c6ee35785cc45acdbc0e6f851e73e81994",
+    "results/english/xnli_en.json.gz": "bc252284b62c2e728d62d64804c2e4daae5ac037bd7c6859892118febe1cf875",
+    "results/multilingual/xnli_en.json.gz": "7b8a2a2de26db9419b7fb25ce83755d8d5a77dc292f715a66ccaee205a1891da",
+    "results/llama31_8b_instruct/xnli_en.json.gz": "6bda7f91b341855e92f622768cd2b4b1509e5371a07bbc4a35d5aed23fd88611",
+    "results/qwen3_8b/xnli_en.json.gz": "2cf3c048a5df6020b4b1007932d0bfbd0dac291591cc20f5a811611e93313e2c",
+    "api_results/jev-1.13.0/xnli_en.json.gz": "2b9017164ade339456861b74eb3cdf9a922609fe21e40633e00c67607e57b0e0",
+    "results/english/xnli_zh.json.gz": "c4910b3a1d4af10c083e3f566edf89b4af4f48196ad140c03ffeed307624b615",
+    "results/multilingual/xnli_zh.json.gz": "188bccca2c5efbbe4774c5a8f5ef84fab260327abd0345de3c57ee4eade62f20",
+    "results/llama31_8b_instruct/xnli_zh.json.gz": "461003a487d0cf20af1f7df1c74eda94762d5a5e6dd524163160eebf32c9a56f",
+    "results/qwen3_8b/xnli_zh.json.gz": "479ee7f2218c58a65f11e17107bdaf12b3bbf4a691d918d6f62ddeada0d8d525",
+    "api_results/jev-1.13.0/xnli_zh.json.gz": "3fd4caade2d424c6f6091134f04300164ef15f17d3ab3c935c73b35751cd78f8",
+    "results/english/massive_en.json.gz": "ec80f304cec01409a9d13c17611fbbab5defdc90b4167b8ff7c406e323703000",
+    "results/multilingual/massive_en.json.gz": "d8b407d54d39afb77dbca39306f4695e2dc66a8bded67bbcd8e42e5ce5e0271d",
+    "results/llama31_8b_instruct/massive_en.json.gz": "8f882cd7d0703f741822e3b9e38248dec407d61185ae6b56c12c2cd8ea876dd5",
+    "results/qwen3_8b/massive_en.json.gz": "73975aff42bee9c263da546768c935078ea0ae6cf2307588cde3cc2690c9c4d6",
+    "api_results/jev-1.13.0/massive_en.json.gz": "0ff472b56565b5339625a018a0429ab01049028e256afac604a55959662e6fde",
+    "results/english/massive_zh.json.gz": "b705155788bf81bbb8d5719d9b79b8b575ae4e21620e85dca3a7eba8cb38c3c8",
+    "results/multilingual/massive_zh.json.gz": "c74563e9356d9a0801f33996599db7be1634ea30c112c18c7e71da47f999abdf",
+    "results/llama31_8b_instruct/massive_zh.json.gz": "86fa0c29fb56b659e7a4505eb6edcf1243d8029f571d03c837f40a07dec91a28",
+    "results/qwen3_8b/massive_zh.json.gz": "8393913d64fab93240e08da72adc5cce297c8dac10c02551b9107f9e11f1782e",
+    "api_results/jev-1.13.0/massive_zh.json.gz": "93f034e5dce78123182ca83517f7359b46eb2e969fe0f48221f8e6000d754b0a",
+    "results/english/prompt_injections.json.gz": "80f079df094a5410f4916c8e138003672b6c6d579024a5720e1918a3325db812",
+    "results/multilingual/prompt_injections.json.gz": "d5ae857e5202a165d5ea9c7cfaa971486c394a76fda2df23b8ea9c84d25460a6",
+    "results/llama31_8b_instruct/prompt_injections.json.gz": "66ecfd3aedb14adfdd5e17355d1300c78f122b684e69963da4630ef2b75ea495",
+    "results/qwen3_8b/prompt_injections.json.gz": "1bc50fbd61c0ed9a986d3e038de95a6a7fd275de668bf399cc997c3ba38f198f",
+    "api_results/jev-1.13.0/prompt_injections.json.gz": "6cce540a5fff6fcdb786e6535ee2f379a719e7f6c82d11e829194d1f8c1355ff",
+    "results/english/typed_decisions.json.gz": "59729d7039811f8451e5e95ae1f1c124fcbdd8734bb41e6be23b62f4438fa3f6",
+    "results/multilingual/typed_decisions.json.gz": "404f3813261a64cd58cbf57481d5db7be57dac5bc7dc69ccd0f5588186205646",
+    "results/llama31_8b_instruct/typed_decisions.json.gz": "4899d4fd5f3575e4a1c7fac4d4b9ca20f8b7f716dc22d088c559e75167c36ead",
+    "results/qwen3_8b/typed_decisions.json.gz": "af80744049a1d983a98e250adbc4234d0920d66d129ef9530b5cf00fa0331d97",
+    "api_results/jev-1.13.0/typed_decisions.json.gz": "03000bd75175dd747458bc0899f0379374ce6cd27223c46ac30e30db28f6c6a1",
+    "results/english/jevbench_original.json.gz": "29e354eb8cb7192a7f8a24523dd22c810c5729f448825512473a6b391a668043",
+    "results/multilingual/jevbench_original.json.gz": "fc28ef41c0503138ea9d8a56ecff475fada19a212b993e30f051c8a8e907130d",
+    "results/llama31_8b_instruct/jevbench_original.json.gz": "0b49786d1bb4b0223f8357fccff10b00f1859231bea572770d16569b86740ebd",
+    "results/qwen3_8b/jevbench_original.json.gz": "6acbfd6d40280b7819a6f284cf132d20def6a4bbb759b3f70a736d32f884a204",
+    "api_results/jev-1.13.0/jevbench_original.json.gz": "0b8ed63139bf2014357848e2088c55808c8ba7902a19e85dd9ba143788f0f531",
+    "results/english/jevbench_easy.json.gz": "6d3f5478bc12d8c01f9c068f2db939e31267b6b65b298cd130395e73e233f4a3",
+    "results/multilingual/jevbench_easy.json.gz": "34ed86f326acf9f7a08e505135cda7a266effbcd634b985c8cd020c3a8a7c45f",
+    "results/llama31_8b_instruct/jevbench_easy.json.gz": "ee1966876584acbc0fcb0fc245483890895912ff22cfbd8315878e97bbc6d2aa",
+    "results/qwen3_8b/jevbench_easy.json.gz": "3777b3ba1417c7a2292b2127e89d073f051196c7c78ad8931ca75cb4aef88cf1",
+    "api_results/jev-1.13.0/jevbench_easy.json.gz": "732d45514b0ba1ed83b5ed52d845fe0406b7a13512be1f77a49437f10b1b571f",
+    "results/english/jevbench_hard.json.gz": "8148eae57e66c672f5490afc8ff35a4ef0335505723eee60fbfeacb83bb9a760",
+    "results/multilingual/jevbench_hard.json.gz": "13bfb5a118bdd7c42f106a1fa5d9e918ab6e0ff537cfb82d46e522a500618e39",
+    "results/llama31_8b_instruct/jevbench_hard.json.gz": "8f7938513a924137c84589e65f791c2c92a506b3bc6da22b59b202cca89aefad",
+    "results/qwen3_8b/jevbench_hard.json.gz": "2453b74b8d01fe50f363f4526eafd0f9520777ae34a3699eb74e478960877d9d",
+    "api_results/jev-1.13.0/jevbench_hard.json.gz": "5c91aaedd7a48b62643a3e1cf504b9383e5eb6b7fa96a9a72859ae5919643e59",
+    "results/english/reflexbench_reflex-public-choice-v1.json.gz": "679a00f4df41fe43aa5b9adc37c0c76140949c6a5ed92cb67e4e074412b0f436",
+    "results/multilingual/reflexbench_reflex-public-choice-v1.json.gz": "a2d30db80ede63408fd3e8dc37fad28def669bfcd880f958f7460a65956cca3a",
+    "results/llama31_8b_instruct/reflexbench_reflex-public-choice-v1.json.gz": "0024da210036ba395a7634087ae771bc5da00843dbf7f3bdc0edbd5e6bdc97d7",
+    "results/qwen3_8b/reflexbench_reflex-public-choice-v1.json.gz": "1d398fb7023775e928f810a6d559854e26a31a0f2e8bbd33820d89930177ecb1",
+    "api_results/jev-1.13.0/reflexbench_reflex-public-choice-v1.json.gz": "b8d1f21267c5c7b9459a8b6fd2ff7b5d56b8c25b9d04898462f38bd6e3f150b9",
+    "results/english/jev_laya_triage.json.gz": "8525275b813c6f7d13fe14f302c2c28e363924bae310251f808d60bbbc15fb57",
+    "results/multilingual/jev_laya_triage.json.gz": "7224e41094a3eefe33388021d5c128028cae6cd43d3f8b38bf4835b64f3097f5",
+    "results/llama31_8b_instruct/jev_laya_triage.json.gz": "7a044bae6615cfa13be6e8920ee66b8207e69dbe8115d40f4e23ae1fd4773447",
+    "results/qwen3_8b/jev_laya_triage.json.gz": "ee89a3928e2f629536f71827765c5b3a3dff89bacd04d1f789cc792b06f01513",
+    "api_results/jev-1.13.0/jev_laya_triage.json.gz": "1451c4b4e189d57f3a696470ff24f7ab9c1c388780276aac0534fdd0b9f1c4ef",
+    "results/english/jev_laya_moderation.json.gz": "24c4f5664947d91366a18749af1176b3385a3ee41fdcd7610b9af29afbbf30f7",
+    "results/multilingual/jev_laya_moderation.json.gz": "35fb5eb7895a20ef01c4c6214c8dde834214d2ff050bcea326138747a19e7129",
+    "results/llama31_8b_instruct/jev_laya_moderation.json.gz": "dd80686bfcd9da37aa0c0114298fdfe540f42c8a7192e4a7d39a8bab4bb421bd",
+    "results/qwen3_8b/jev_laya_moderation.json.gz": "e10c8bf1552f4ae6ecee11e64396b4f5adb6140f166a88fcbd2bc00f22a0cdce",
+    "api_results/jev-1.13.0/jev_laya_moderation.json.gz": "9d320795911f49c64b2bef29044b9908967d4f360dc73b9ef5c375818ea5194e",
+    "results/english/jev_laya_routing.json.gz": "8e7b3dbcea6660dca5362aa162fd90aaa5e5b28240bf9469676db02465c43b98",
+    "results/multilingual/jev_laya_routing.json.gz": "13f331cc0178398f0c9158d77ad4d70c761e7aadcdd43a1d98c5663c71ced7be",
+    "results/llama31_8b_instruct/jev_laya_routing.json.gz": "e02744d8377413e84f1a5618ac8318e3161f868ba6df1c46228bbfa9a4c62198",
+    "results/qwen3_8b/jev_laya_routing.json.gz": "e9fc02d5667675822cfa2a63cb0ab0eb64dcee52b5c72cd17932b5b0be7e542b",
+    "api_results/jev-1.13.0/jev_laya_routing.json.gz": "99318f6781544dc616f2a34303b6fa13bc8731bca20f2f8def20fe050c6ea1b4",
+    "results/english/jev_laya_claims.json.gz": "2da13c60ce84e943593d2aec2f422036559752fce75aff114adfd7d4958fb43e",
+    "results/multilingual/jev_laya_claims.json.gz": "f8fe9cef4a852e973b19440594d5c1a5098caff7974cc8909a40522d019b24e8",
+    "results/llama31_8b_instruct/jev_laya_claims.json.gz": "1869b46d61f7be01b08ef42b895aa49dfcb3dc38417dee626ad27e60468efca0",
+    "results/qwen3_8b/jev_laya_claims.json.gz": "44012f1a492a1e7e82caca43c63033885cc9241ae1d6f9fbf5a4864ea7d20d61",
+    "api_results/jev-1.13.0/jev_laya_claims.json.gz": "03b9f667064677b2a2be2083947d9cf336295a33cd74cad3feda565662391a3b",
+    "results/english/jev_laya_reviews.json.gz": "08d168b97f275ea844aec0939a1009e6caefdd346e4f0b447ea866e983abb66b",
+    "results/multilingual/jev_laya_reviews.json.gz": "aaf0422a02f53ccfcb64de7be546ba7a30b09d0bef7c0623f4f0cd5b64ff5dbd",
+    "results/llama31_8b_instruct/jev_laya_reviews.json.gz": "e39735de91290e7e4dee6ccbe53c5cc3303c95182f8c55aa18a1ac72e5bc12ff",
+    "results/qwen3_8b/jev_laya_reviews.json.gz": "9f83d6139ed9e499be415309c7e2fad123edad52b3bba40725dea8a5129dadbc",
+    "api_results/jev-1.13.0/jev_laya_reviews.json.gz": "96a500144d675b4fb4a6fe28380403d69718c39cd1c3974c4a5bd72fb185d920",
+    "results/english/jev_laya_guard.json.gz": "39b25e5dcf9bb377d8774484cf1134521ee1f2a5d8ec10c1114329c7e07c55ca",
+    "results/multilingual/jev_laya_guard.json.gz": "855e05b5cc858f2458b8529114ce3517a8f2cb0e7fa92c811ef8021bb6819ee0",
+    "results/llama31_8b_instruct/jev_laya_guard.json.gz": "72ce38c03460727fb8f6c3c00e17d21749c3be6b815eec6f92c1e86bcab38f75",
+    "results/qwen3_8b/jev_laya_guard.json.gz": "8635880ea34df33cbb03ac8f7b64e840b1dec7ab6006a969bc4e151d85dbfb09",
+    "api_results/jev-1.13.0/jev_laya_guard.json.gz": "fb8118ba07538815ad2d9495465718d8328640c53440ba32dfcb7062c52c2d05",
+    "results/english/jev_laya_multilingual.json.gz": "5b94fed0b58452b79705da329b93ea7c60601f207a2e333636529f98245f3421",
+    "results/multilingual/jev_laya_multilingual.json.gz": "a4e26d7f7799b41d25b72aae5ccae21499bd750ddef267b4eaf9d41f0458357d",
+    "results/llama31_8b_instruct/jev_laya_multilingual.json.gz": "26996601e5df1ced97d4358559751def008330b44851c907ef87685cbe7f7a50",
+    "results/qwen3_8b/jev_laya_multilingual.json.gz": "6f97b909dc3eb7b65d0a02e22650f1f33a1579d56eb43e4ce60bf2f3e12f128a",
+    "api_results/jev-1.13.0/jev_laya_multilingual.json.gz": "97653a90d9d73c1f5a85214474c4abafe1c4cb88630c849cfca25d94536a4706",
+    "results/english/jev_laya_needle.json.gz": "f9a0d1d665522fecd1a28e88cbb0f545bfc41964103931c3821d2adbadc54861",
+    "results/multilingual/jev_laya_needle.json.gz": "76a8752af41b3f659d193b25e4ccad3b20791fda44458acd996f96a0ed475feb",
+    "results/llama31_8b_instruct/jev_laya_needle.json.gz": "18a19fc30edae5f17db46da45f5bda3eeef054087d387c2cb461127bbb244f45",
+    "results/qwen3_8b/jev_laya_needle.json.gz": "c79f5a54a43bc9744bea774fd2cc2d9de6c08d3180f223dda13a012c8414227c",
+    "api_results/jev-1.13.0/jev_laya_needle.json.gz": "54a12c77c785c8c4937f28bcb38e9d19564bcf898d81ae8f26bf6dca2e22be5e",
+    "results/english/clinc150_oos.json.gz": "b91361b0d5143aebe90484df31907478ddfbc537b58d3cd3fc6c9280f7a81c2b",
+    "results/multilingual/clinc150_oos.json.gz": "249696a7b40174066f87d92d26dd5cb10ad4bd4e03d03d05e281d46ef9623c8c",
+    "results/llama31_8b_instruct/clinc150_oos.json.gz": "8b15e0ae75132770e09947c9083138ae28df35607e6ead8c2c7cd13e896cca12",
+    "results/qwen3_8b/clinc150_oos.json.gz": "3d8dd3fce8cb270b6a7f0e177a7e2d86e32be5d0d4a0e0a9bbd40082048e4cc0",
+    "api_results/jev-1.13.0/clinc150_oos.json.gz": "858d0b50bdac4f675308c248550ea19f68c07df667ed8f5c9787ac5dc68beb56",
+    "results/english/turtlebench.json.gz": "603dfa483abef5a9e48399299c4fd2c9fa97b895e75a52e10b5c14a7f2f5b718",
+    "results/multilingual/turtlebench.json.gz": "63ff416167e8ef75c04bfbf5305a97464a18d4488411c8232ce5b398e750b2a7",
+    "results/llama31_8b_instruct/turtlebench.json.gz": "af1686c92ff63d05caa278778dbf8392b965935bd73c5762d6ec6dcbed9a0f63",
+    "results/qwen3_8b/turtlebench.json.gz": "632b65e2875689dc502bac09dcc7b1e246fe1745807fd1406532eccf99d017c6",
+    "api_results/jev-1.13.0/turtlebench.json.gz": "7d22f3ae08a7187d9a7e07ee4e3f4938a3a044b7f7f47847de87b678ecae830e",
+    "results/english/aegis2_prompt.json.gz": "e3fdde9f20a352db9d79f9cb20930453f9bbacb1b39fd79bcfdad5b538fec823",
+    "results/multilingual/aegis2_prompt.json.gz": "cacfa14b2975e5dbdb5d17e80be6dbdd5240ad371891e4bbc46cf35ca08d98fb",
+    "results/llama31_8b_instruct/aegis2_prompt.json.gz": "f2db5bc4d3c3a0e7cdca127e51e8b4d01fdfc2b0fd5946018f988400893e83c8",
+    "results/qwen3_8b/aegis2_prompt.json.gz": "5f448cc216776af98c05997f778500ecd53d7ccb495d91982aebb051ec4be7f8",
+    "api_results/jev-1.13.0/aegis2_prompt.json.gz": "39300f06265a8e29966f242490234dbeb5e9b168d22d40b5049a5301bd9546ba"
+  },
+  "suites": [
+    {
+      "suite": "ag_news",
+      "source": "AG News",
+      "domain": "News",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "semantic"
+      ],
+      "best_single": {
+        "estimate": 0.943,
+        "ci95": [
+          0.929,
+          0.957
+        ]
+      },
+      "oracle": {
+        "estimate": 0.976,
+        "ci95": [
+          0.966,
+          0.985
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.03300000000000003,
+        "ci95": [
+          0.02300000000000002,
+          0.04399999999999993
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.994,
+        "ci95": [
+          0.989,
+          0.998
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.08148893360160966,
+        "ci95": [
+          0.06477569049012825,
+          0.09859154929577464
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.019,
+        "ci95": [
+          0.011,
+          0.028
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.913,
+        "ci95": [
+          0.895,
+          0.93
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.029999999999999916,
+        "ci95": [
+          -0.04599999999999993,
+          -0.014000000000000012
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.943,
+        "multilingual": 0.924,
+        "llama31_8b_instruct": 0.889,
+        "qwen3_8b": 0.868,
+        "jev-1.13.0": 0.886
+      },
+      "best_model": "Laya EN",
+      "correct_model_count_distribution": {
+        "0": 24,
+        "1": 20,
+        "2": 43,
+        "3": 47,
+        "4": 67,
+        "5": 799
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 994,
+      "majority_error_count": 81,
+      "all_five_wrong_count": 24,
+      "all_five_correct_count": 799,
+      "unanimous_wrong_count": 19
+    },
+    {
+      "suite": "emotion",
+      "source": "Emotion",
+      "domain": "Social text",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "semantic"
+      ],
+      "best_single": {
+        "estimate": 0.591,
+        "ci95": [
+          0.568,
+          0.6240249999999996
+        ]
+      },
+      "oracle": {
+        "estimate": 0.782,
+        "ci95": [
+          0.756,
+          0.807
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.19100000000000006,
+        "ci95": [
+          0.16400000000000003,
+          0.20699999999999996
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.903,
+        "ci95": [
+          0.885,
+          0.921
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.36212624584717606,
+        "ci95": [
+          0.33040614709110866,
+          0.39293901055301345
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.087,
+        "ci95": [
+          0.07,
+          0.105
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.576,
+        "ci95": [
+          0.546,
+          0.607
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.015000000000000013,
+        "ci95": [
+          -0.040000000000000036,
+          -0.0020000000000000018
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.591,
+        "multilingual": 0.53,
+        "llama31_8b_instruct": 0.505,
+        "qwen3_8b": 0.548,
+        "jev-1.13.0": 0.59
+      },
+      "best_model": "Laya EN",
+      "correct_model_count_distribution": {
+        "0": 218,
+        "1": 106,
+        "2": 100,
+        "3": 137,
+        "4": 148,
+        "5": 291
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 903,
+      "majority_error_count": 327,
+      "all_five_wrong_count": 218,
+      "all_five_correct_count": 291,
+      "unanimous_wrong_count": 87
+    },
+    {
+      "suite": "banking77",
+      "source": "Banking77",
+      "domain": "Banking support",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "routing"
+      ],
+      "best_single": {
+        "estimate": 0.799,
+        "ci95": [
+          0.774,
+          0.823
+        ]
+      },
+      "oracle": {
+        "estimate": 0.855,
+        "ci95": [
+          0.832,
+          0.876
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.05599999999999994,
+        "ci95": [
+          0.04200000000000004,
+          0.07099999999999995
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.816,
+        "ci95": [
+          0.791,
+          0.84
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.17524509803921567,
+        "ci95": [
+          0.1498158249336558,
+          0.20191187620623105
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.025,
+        "ci95": [
+          0.016,
+          0.035
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.673,
+        "ci95": [
+          0.644,
+          0.702
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.126,
+        "ci95": [
+          -0.14900000000000002,
+          -0.10400000000000009
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.553,
+        "multilingual": 0.512,
+        "llama31_8b_instruct": 0.541,
+        "qwen3_8b": 0.668,
+        "jev-1.13.0": 0.799
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 145,
+        "1": 82,
+        "2": 100,
+        "3": 176,
+        "4": 222,
+        "5": 275
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 816,
+      "majority_error_count": 143,
+      "all_five_wrong_count": 145,
+      "all_five_correct_count": 275,
+      "unanimous_wrong_count": 25
+    },
+    {
+      "suite": "boolq",
+      "source": "BoolQ",
+      "domain": "General QA",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "evidence"
+      ],
+      "best_single": {
+        "estimate": 0.926,
+        "ci95": [
+          0.909,
+          0.942
+        ]
+      },
+      "oracle": {
+        "estimate": 0.99,
+        "ci95": [
+          0.983,
+          0.996
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.06399999999999995,
+        "ci95": [
+          0.04999999999999993,
+          0.07999999999999996
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.113,
+        "ci95": [
+          0.094,
+          0.133
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.01,
+        "ci95": [
+          0.004,
+          0.017
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.887,
+        "ci95": [
+          0.867,
+          0.906
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.039000000000000035,
+        "ci95": [
+          -0.05900000000000005,
+          -0.020000000000000018
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.846,
+        "multilingual": 0.777,
+        "llama31_8b_instruct": 0.648,
+        "qwen3_8b": 0.835,
+        "jev-1.13.0": 0.926
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 10,
+        "1": 28,
+        "2": 75,
+        "3": 154,
+        "4": 273,
+        "5": 460
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 1000,
+      "majority_error_count": 113,
+      "all_five_wrong_count": 10,
+      "all_five_correct_count": 460,
+      "unanimous_wrong_count": 10
+    },
+    {
+      "suite": "boolq_choice",
+      "source": "BoolQ",
+      "domain": "General QA",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "evidence"
+      ],
+      "best_single": {
+        "estimate": 0.922,
+        "ci95": [
+          0.905,
+          0.938
+        ]
+      },
+      "oracle": {
+        "estimate": 0.989,
+        "ci95": [
+          0.982,
+          0.995
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.06699999999999995,
+        "ci95": [
+          0.051999999999999935,
+          0.08299999999999996
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.105,
+        "ci95": [
+          0.086,
+          0.125
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.011,
+        "ci95": [
+          0.005,
+          0.018
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.895,
+        "ci95": [
+          0.875,
+          0.914
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.027000000000000024,
+        "ci95": [
+          -0.04600000000000004,
+          -0.009000000000000008
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.836,
+        "multilingual": 0.774,
+        "llama31_8b_instruct": 0.687,
+        "qwen3_8b": 0.833,
+        "jev-1.13.0": 0.922
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 11,
+        "1": 16,
+        "2": 78,
+        "3": 164,
+        "4": 267,
+        "5": 464
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 1000,
+      "majority_error_count": 105,
+      "all_five_wrong_count": 11,
+      "all_five_correct_count": 464,
+      "unanimous_wrong_count": 11
+    },
+    {
+      "suite": "sst5",
+      "source": "SST-5",
+      "domain": "Reviews",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "semantic",
+        "ordinal"
+      ],
+      "best_single": {
+        "estimate": 0.565,
+        "ci95": [
+          0.534,
+          0.595
+        ]
+      },
+      "oracle": {
+        "estimate": 0.788,
+        "ci95": [
+          0.761,
+          0.812
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.2230000000000001,
+        "ci95": [
+          0.19800000000000006,
+          0.249
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.72,
+        "ci95": [
+          0.692,
+          0.7470249999999996
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.4444444444444444,
+        "ci95": [
+          0.40750913446391934,
+          0.4818435754189944
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.015,
+        "ci95": [
+          0.008,
+          0.023
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.4,
+        "ci95": [
+          0.369,
+          0.43
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.16499999999999992,
+        "ci95": [
+          -0.19200000000000006,
+          -0.13800000000000007
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.346,
+        "multilingual": 0.295,
+        "llama31_8b_instruct": 0.32,
+        "qwen3_8b": 0.457,
+        "jev-1.13.0": 0.565
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 212,
+        "1": 204,
+        "2": 184,
+        "3": 231,
+        "4": 127,
+        "5": 42
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 720,
+      "majority_error_count": 320,
+      "all_five_wrong_count": 212,
+      "all_five_correct_count": 42,
+      "unanimous_wrong_count": 15
+    },
+    {
+      "suite": "sst5_choice",
+      "source": "SST-5",
+      "domain": "Reviews",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "semantic",
+        "ordinal"
+      ],
+      "best_single": {
+        "estimate": 0.559,
+        "ci95": [
+          0.529,
+          0.589
+        ]
+      },
+      "oracle": {
+        "estimate": 0.873,
+        "ci95": [
+          0.852,
+          0.893
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.31399999999999995,
+        "ci95": [
+          0.28500000000000003,
+          0.344
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.786,
+        "ci95": [
+          0.761,
+          0.811
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.42748091603053434,
+        "ci95": [
+          0.3934832178485429,
+          0.46144042232277527
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.031,
+        "ci95": [
+          0.021,
+          0.042
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.45,
+        "ci95": [
+          0.421,
+          0.48
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.10900000000000004,
+        "ci95": [
+          -0.13599999999999995,
+          -0.08197500000000033
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.496,
+        "multilingual": 0.356,
+        "llama31_8b_instruct": 0.422,
+        "qwen3_8b": 0.439,
+        "jev-1.13.0": 0.559
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 127,
+        "1": 201,
+        "2": 222,
+        "3": 243,
+        "4": 137,
+        "5": 70
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 786,
+      "majority_error_count": 336,
+      "all_five_wrong_count": 127,
+      "all_five_correct_count": 70,
+      "unanimous_wrong_count": 31
+    },
+    {
+      "suite": "xnli_en",
+      "source": "XNLI",
+      "domain": "Natural inference",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "semantic",
+        "evidence"
+      ],
+      "best_single": {
+        "estimate": 0.86,
+        "ci95": [
+          0.846,
+          0.883
+        ]
+      },
+      "oracle": {
+        "estimate": 0.984,
+        "ci95": [
+          0.976,
+          0.991
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.124,
+        "ci95": [
+          0.10199999999999998,
+          0.137
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.971,
+        "ci95": [
+          0.96,
+          0.981
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.101956745623069,
+        "ci95": [
+          0.08358917685359547,
+          0.12099276111685625
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.01,
+        "ci95": [
+          0.004,
+          0.017
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.872,
+        "ci95": [
+          0.851,
+          0.892
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": 0.01200000000000001,
+        "ci95": [
+          -0.010000000000000009,
+          0.02400000000000002
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.86,
+        "multilingual": 0.817,
+        "llama31_8b_instruct": 0.462,
+        "qwen3_8b": 0.787,
+        "jev-1.13.0": 0.859
+      },
+      "best_model": "Laya EN",
+      "correct_model_count_distribution": {
+        "0": 16,
+        "1": 35,
+        "2": 77,
+        "3": 174,
+        "4": 416,
+        "5": 282
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 971,
+      "majority_error_count": 99,
+      "all_five_wrong_count": 16,
+      "all_five_correct_count": 282,
+      "unanimous_wrong_count": 10
+    },
+    {
+      "suite": "xnli_zh",
+      "source": "XNLI",
+      "domain": "Natural inference",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "zh",
+      "task_tags": [
+        "semantic",
+        "evidence"
+      ],
+      "best_single": {
+        "estimate": 0.743,
+        "ci95": [
+          0.722,
+          0.771
+        ]
+      },
+      "oracle": {
+        "estimate": 0.955,
+        "ci95": [
+          0.942,
+          0.968
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.21199999999999997,
+        "ci95": [
+          0.18599999999999994,
+          0.23099999999999998
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.922,
+        "ci95": [
+          0.905,
+          0.938
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.20281995661605207,
+        "ci95": [
+          0.17791771191373765,
+          0.22878785319356648
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.016,
+        "ci95": [
+          0.009,
+          0.024
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.735,
+        "ci95": [
+          0.708,
+          0.762
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.008000000000000007,
+        "ci95": [
+          -0.03500000000000003,
+          0.01100000000000001
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.615,
+        "multilingual": 0.743,
+        "llama31_8b_instruct": 0.405,
+        "qwen3_8b": 0.691,
+        "jev-1.13.0": 0.736
+      },
+      "best_model": "Laya Multi",
+      "correct_model_count_distribution": {
+        "0": 45,
+        "1": 83,
+        "2": 137,
+        "3": 248,
+        "4": 346,
+        "5": 141
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 922,
+      "majority_error_count": 187,
+      "all_five_wrong_count": 45,
+      "all_five_correct_count": 141,
+      "unanimous_wrong_count": 16
+    },
+    {
+      "suite": "massive_en",
+      "source": "MASSIVE",
+      "domain": "Assistant commands",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "routing"
+      ],
+      "best_single": {
+        "estimate": 0.775,
+        "ci95": [
+          0.748,
+          0.8
+        ]
+      },
+      "oracle": {
+        "estimate": 0.857,
+        "ci95": [
+          0.835,
+          0.879
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.08199999999999996,
+        "ci95": [
+          0.06499999999999995,
+          0.09999999999999998
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.735,
+        "ci95": [
+          0.708,
+          0.762
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.1510204081632653,
+        "ci95": [
+          0.12550593774155014,
+          0.17795484727755645
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.014,
+        "ci95": [
+          0.007,
+          0.022
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.624,
+        "ci95": [
+          0.593,
+          0.654
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.15100000000000002,
+        "ci95": [
+          -0.17700000000000005,
+          -0.125
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.541,
+        "multilingual": 0.423,
+        "llama31_8b_instruct": 0.572,
+        "qwen3_8b": 0.663,
+        "jev-1.13.0": 0.775
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 143,
+        "1": 120,
+        "2": 113,
+        "3": 160,
+        "4": 172,
+        "5": 292
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 735,
+      "majority_error_count": 111,
+      "all_five_wrong_count": 143,
+      "all_five_correct_count": 292,
+      "unanimous_wrong_count": 14
+    },
+    {
+      "suite": "massive_zh",
+      "source": "MASSIVE",
+      "domain": "Assistant commands",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "zh",
+      "task_tags": [
+        "routing"
+      ],
+      "best_single": {
+        "estimate": 0.76,
+        "ci95": [
+          0.733,
+          0.786
+        ]
+      },
+      "oracle": {
+        "estimate": 0.831,
+        "ci95": [
+          0.808,
+          0.854
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.07099999999999995,
+        "ci95": [
+          0.05499999999999994,
+          0.08699999999999997
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.668,
+        "ci95": [
+          0.639,
+          0.697
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.15419161676646706,
+        "ci95": [
+          0.12665543421105005,
+          0.18195494470120255
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.008,
+        "ci95": [
+          0.003,
+          0.014
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.565,
+        "ci95": [
+          0.534,
+          0.596
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.19500000000000006,
+        "ci95": [
+          -0.22099999999999997,
+          -0.16900000000000004
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.304,
+        "multilingual": 0.332,
+        "llama31_8b_instruct": 0.535,
+        "qwen3_8b": 0.626,
+        "jev-1.13.0": 0.76
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 169,
+        "1": 136,
+        "2": 130,
+        "3": 249,
+        "4": 166,
+        "5": 150
+      },
+      "n_decisions": 1000,
+      "n_state_clusters": 1000,
+      "majority_covered_count": 668,
+      "majority_error_count": 103,
+      "all_five_wrong_count": 169,
+      "all_five_correct_count": 150,
+      "unanimous_wrong_count": 8
+    },
+    {
+      "suite": "prompt_injections",
+      "source": "Prompt injections",
+      "domain": "Prompt security",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "safety"
+      ],
+      "best_single": {
+        "estimate": 0.7672413793103449,
+        "ci95": [
+          0.6982758620689655,
+          0.8448275862068966
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9827586206896551,
+        "ci95": [
+          0.9568965517241379,
+          1.0
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.21551724137931028,
+        "ci95": [
+          0.14655172413793105,
+          0.2844827586206897
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.28448275862068967,
+        "ci95": [
+          0.20689655172413793,
+          0.3706896551724138
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.017241379310344827,
+        "ci95": [
+          0.0,
+          0.04310344827586207
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.7155172413793104,
+        "ci95": [
+          0.6293103448275862,
+          0.7931034482758621
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.051724137931034475,
+        "ci95": [
+          -0.10344827586206895,
+          -0.008620689655172376
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.7068965517241379,
+        "multilingual": 0.5775862068965517,
+        "llama31_8b_instruct": 0.6293103448275862,
+        "qwen3_8b": 0.6379310344827587,
+        "jev-1.13.0": 0.7672413793103449
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 2,
+        "1": 17,
+        "2": 14,
+        "3": 16,
+        "4": 43,
+        "5": 24
+      },
+      "n_decisions": 116,
+      "n_state_clusters": 116,
+      "majority_covered_count": 116,
+      "majority_error_count": 33,
+      "all_five_wrong_count": 2,
+      "all_five_correct_count": 24,
+      "unanimous_wrong_count": 2
+    },
+    {
+      "suite": "typed_decisions",
+      "source": "Typed decisions",
+      "domain": "Mixed enterprise",
+      "reference_code": "T",
+      "reference": "synthetic_teacher",
+      "collection_reference_code": "T",
+      "language": "en",
+      "task_tags": [
+        "workflow",
+        "ordinal",
+        "safety"
+      ],
+      "best_single": {
+        "estimate": 0.739,
+        "ci95": [
+          0.7165,
+          0.76
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9125,
+        "ci95": [
+          0.8995,
+          0.925
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.1735,
+        "ci95": [
+          0.15699999999999992,
+          0.1915
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.7915,
+        "ci95": [
+          0.775,
+          0.8075
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.3569172457359444,
+        "ci95": [
+          0.3270952715715349,
+          0.3871788797890389
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.007,
+        "ci95": [
+          0.0035,
+          0.0105
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.509,
+        "ci95": [
+          0.4815,
+          0.536
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.22999999999999998,
+        "ci95": [
+          -0.257,
+          -0.2025
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.3635,
+        "multilingual": 0.349,
+        "llama31_8b_instruct": 0.512,
+        "qwen3_8b": 0.555,
+        "jev-1.13.0": 0.739
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 175,
+        "1": 328,
+        "2": 479,
+        "3": 521,
+        "4": 297,
+        "5": 200
+      },
+      "n_decisions": 2000,
+      "n_state_clusters": 400,
+      "majority_covered_count": 1583,
+      "majority_error_count": 565,
+      "all_five_wrong_count": 175,
+      "all_five_correct_count": 200,
+      "unanimous_wrong_count": 14
+    },
+    {
+      "suite": "jevbench_original",
+      "source": "JevBench",
+      "domain": "Mixed fixtures",
+      "reference_code": "A",
+      "reference": "authored_or_AI_reviewed",
+      "collection_reference_code": "A",
+      "language": "en",
+      "task_tags": [
+        "workflow",
+        "ordinal",
+        "evidence"
+      ],
+      "best_single": {
+        "estimate": 0.9861111111111112,
+        "ci95": [
+          0.9583333333333334,
+          1.0
+        ]
+      },
+      "oracle": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.01388888888888884,
+        "ci95": [
+          0.0,
+          0.04166666666666663
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.9722222222222222,
+        "ci95": [
+          0.9166666666666666,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.07142857142857142,
+        "ci95": [
+          0.0,
+          0.16176470588235295
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.9027777777777778,
+        "ci95": [
+          0.7916666666666666,
+          0.9861111111111112
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.08333333333333337,
+        "ci95": [
+          -0.19444444444444442,
+          0.0
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.7083333333333334,
+        "multilingual": 0.4166666666666667,
+        "llama31_8b_instruct": 0.75,
+        "qwen3_8b": 0.8333333333333334,
+        "jev-1.13.0": 0.9861111111111112
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 0,
+        "1": 2,
+        "2": 5,
+        "3": 23,
+        "4": 25,
+        "5": 17
+      },
+      "n_decisions": 72,
+      "n_state_clusters": 36,
+      "majority_covered_count": 70,
+      "majority_error_count": 5,
+      "all_five_wrong_count": 0,
+      "all_five_correct_count": 17,
+      "unanimous_wrong_count": 0
+    },
+    {
+      "suite": "jevbench_easy",
+      "source": "JevBench",
+      "domain": "Mixed fixtures",
+      "reference_code": "A",
+      "reference": "authored_or_AI_reviewed",
+      "collection_reference_code": "A",
+      "language": "en",
+      "task_tags": [
+        "workflow",
+        "ordinal",
+        "evidence"
+      ],
+      "best_single": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "oracle": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "majority_yield": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.9583333333333334,
+        "multilingual": 0.8958333333333334,
+        "llama31_8b_instruct": 1.0,
+        "qwen3_8b": 1.0,
+        "jev-1.13.0": 1.0
+      },
+      "best_model": "Llama 3.1 8B",
+      "correct_model_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 7,
+        "5": 41
+      },
+      "n_decisions": 48,
+      "n_state_clusters": 48,
+      "majority_covered_count": 48,
+      "majority_error_count": 0,
+      "all_five_wrong_count": 0,
+      "all_five_correct_count": 41,
+      "unanimous_wrong_count": 0
+    },
+    {
+      "suite": "jevbench_hard",
+      "source": "JevBench",
+      "domain": "Mixed fixtures",
+      "reference_code": "A",
+      "reference": "authored_or_AI_reviewed",
+      "collection_reference_code": "A",
+      "language": "en",
+      "task_tags": [
+        "workflow",
+        "ordinal",
+        "evidence"
+      ],
+      "best_single": {
+        "estimate": 0.7207207207207207,
+        "ci95": [
+          0.6306306306306306,
+          0.8018018018018018
+        ]
+      },
+      "oracle": {
+        "estimate": 0.8468468468468469,
+        "ci95": [
+          0.7747747747747747,
+          0.9099099099099099
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.12612612612612617,
+        "ci95": [
+          0.07184684684684686,
+          0.18918918918918926
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.8198198198198198,
+        "ci95": [
+          0.7477477477477478,
+          0.8918918918918919
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.5714285714285714,
+        "ci95": [
+          0.46875,
+          0.6739130434782609
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.07207207207207207,
+        "ci95": [
+          0.02702702702702703,
+          0.12612612612612611
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.35135135135135137,
+        "ci95": [
+          0.26126126126126126,
+          0.44144144144144143
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.3693693693693693,
+        "ci95": [
+          -0.4684684684684685,
+          -0.27027027027027023
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.2972972972972973,
+        "multilingual": 0.32432432432432434,
+        "llama31_8b_instruct": 0.34234234234234234,
+        "qwen3_8b": 0.46846846846846846,
+        "jev-1.13.0": 0.7207207207207207
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 17,
+        "1": 19,
+        "2": 36,
+        "3": 16,
+        "4": 15,
+        "5": 8
+      },
+      "n_decisions": 111,
+      "n_state_clusters": 111,
+      "majority_covered_count": 91,
+      "majority_error_count": 52,
+      "all_five_wrong_count": 17,
+      "all_five_correct_count": 8,
+      "unanimous_wrong_count": 8
+    },
+    {
+      "suite": "reflexbench_reflex-public-choice-v1",
+      "source": "ReflexBench",
+      "domain": "Product workflow",
+      "reference_code": "A",
+      "reference": "authored_or_AI_reviewed",
+      "collection_reference_code": "A",
+      "language": "en",
+      "task_tags": [
+        "workflow"
+      ],
+      "best_single": {
+        "estimate": 0.9368421052631579,
+        "ci95": [
+          0.8842105263157894,
+          0.9789473684210527
+        ]
+      },
+      "oracle": {
+        "estimate": 0.968421052631579,
+        "ci95": [
+          0.9263157894736842,
+          1.0
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.03157894736842104,
+        "ci95": [
+          0.0,
+          0.0736842105263158
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.8631578947368421,
+        "ci95": [
+          0.7894736842105263,
+          0.9263157894736842
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.15853658536585366,
+        "ci95": [
+          0.08433734939759036,
+          0.24390243902439024
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.7263157894736842,
+        "ci95": [
+          0.631578947368421,
+          0.8105263157894737
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.21052631578947367,
+        "ci95": [
+          -0.2947368421052632,
+          -0.12631578947368416
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.5894736842105263,
+        "multilingual": 0.4631578947368421,
+        "llama31_8b_instruct": 0.6,
+        "qwen3_8b": 0.8421052631578947,
+        "jev-1.13.0": 0.9368421052631579
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 3,
+        "1": 2,
+        "2": 21,
+        "3": 16,
+        "4": 31,
+        "5": 22
+      },
+      "n_decisions": 95,
+      "n_state_clusters": 95,
+      "majority_covered_count": 82,
+      "majority_error_count": 13,
+      "all_five_wrong_count": 3,
+      "all_five_correct_count": 22,
+      "unanimous_wrong_count": 0
+    },
+    {
+      "suite": "jev_laya_triage",
+      "source": "Jev–Laya",
+      "domain": "Mixed workflow",
+      "reference_code": "T",
+      "reference": "synthetic_teacher",
+      "collection_reference_code": "T/P",
+      "language": "en",
+      "task_tags": [
+        "routing",
+        "evidence",
+        "ordinal",
+        "safety",
+        "workflow",
+        "retrieval"
+      ],
+      "best_single": {
+        "estimate": 0.9001996007984032,
+        "ci95": [
+          0.8782435129740519,
+          0.9221556886227545
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9341317365269461,
+        "ci95": [
+          0.9141716566866267,
+          0.9540918163672655
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.03393213572854292,
+        "ci95": [
+          0.019960079840319334,
+          0.04990019960079839
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.9680638722554891,
+        "ci95": [
+          0.9520958083832335,
+          0.9820359281437125
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.177319587628866,
+        "ci95": [
+          0.1489795918367347,
+          0.2065439672801636
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.007984031936127744,
+        "ci95": [
+          0.001996007984031936,
+          0.015968063872255488
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.7964071856287425,
+        "ci95": [
+          0.7664670658682635,
+          0.8243512974051896
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.10379241516966076,
+        "ci95": [
+          -0.1337325349301397,
+          -0.07584830339321358
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.624750499001996,
+        "multilingual": 0.5568862275449101,
+        "llama31_8b_instruct": 0.7564870259481038,
+        "qwen3_8b": 0.8003992015968064,
+        "jev-1.13.0": 0.9001996007984032
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 33,
+        "1": 28,
+        "2": 41,
+        "3": 81,
+        "4": 120,
+        "5": 198
+      },
+      "n_decisions": 501,
+      "n_state_clusters": 167,
+      "majority_covered_count": 485,
+      "majority_error_count": 86,
+      "all_five_wrong_count": 33,
+      "all_five_correct_count": 198,
+      "unanimous_wrong_count": 4
+    },
+    {
+      "suite": "jev_laya_moderation",
+      "source": "Jev–Laya",
+      "domain": "Mixed workflow",
+      "reference_code": "T",
+      "reference": "synthetic_teacher",
+      "collection_reference_code": "T/P",
+      "language": "en",
+      "task_tags": [
+        "routing",
+        "evidence",
+        "ordinal",
+        "safety",
+        "workflow",
+        "retrieval"
+      ],
+      "best_single": {
+        "estimate": 0.9272300469483568,
+        "ci95": [
+          0.903755868544601,
+          0.9483568075117371
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9765258215962441,
+        "ci95": [
+          0.9624413145539906,
+          0.9882629107981221
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.04929577464788737,
+        "ci95": [
+          0.030516431924882625,
+          0.068075117370892
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.9859154929577465,
+        "ci95": [
+          0.9741784037558685,
+          0.9953051643192489
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.07380952380952381,
+        "ci95": [
+          0.052132701421800945,
+          0.09929078014184398
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.002347417840375587,
+        "ci95": [
+          0.0,
+          0.007042253521126761
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.9131455399061033,
+        "ci95": [
+          0.8849765258215962,
+          0.9389671361502347
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.014084507042253502,
+        "ci95": [
+          -0.039906103286385,
+          0.011737089201877882
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.6784037558685446,
+        "multilingual": 0.4835680751173709,
+        "llama31_8b_instruct": 0.8896713615023474,
+        "qwen3_8b": 0.7746478873239436,
+        "jev-1.13.0": 0.9272300469483568
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 10,
+        "1": 11,
+        "2": 16,
+        "3": 120,
+        "4": 149,
+        "5": 120
+      },
+      "n_decisions": 426,
+      "n_state_clusters": 142,
+      "majority_covered_count": 420,
+      "majority_error_count": 31,
+      "all_five_wrong_count": 10,
+      "all_five_correct_count": 120,
+      "unanimous_wrong_count": 1
+    },
+    {
+      "suite": "jev_laya_routing",
+      "source": "Jev–Laya",
+      "domain": "Mixed workflow",
+      "reference_code": "T",
+      "reference": "synthetic_teacher",
+      "collection_reference_code": "T/P",
+      "language": "en",
+      "task_tags": [
+        "routing",
+        "evidence",
+        "ordinal",
+        "safety",
+        "workflow",
+        "retrieval"
+      ],
+      "best_single": {
+        "estimate": 0.8880778588807786,
+        "ci95": [
+          0.8613138686131386,
+          0.9148418491484185
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9708029197080292,
+        "ci95": [
+          0.9537712895377128,
+          0.9854014598540146
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.08272506082725062,
+        "ci95": [
+          0.058394160583941646,
+          0.10705596107055959
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.9197080291970803,
+        "ci95": [
+          0.8929440389294404,
+          0.9440389294403893
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.18518518518518517,
+        "ci95": [
+          0.14397905759162305,
+          0.2281280788177338
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.012165450121654502,
+        "ci95": [
+          0.0024330900243309003,
+          0.024330900243309004
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.7493917274939172,
+        "ci95": [
+          0.7055352798053528,
+          0.7931873479318735
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.13868613138686137,
+        "ci95": [
+          -0.18248175182481752,
+          -0.097323600973236
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.6423357664233577,
+        "multilingual": 0.5109489051094891,
+        "llama31_8b_instruct": 0.6131386861313869,
+        "qwen3_8b": 0.8369829683698297,
+        "jev-1.13.0": 0.8880778588807786
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 12,
+        "1": 29,
+        "2": 62,
+        "3": 74,
+        "4": 110,
+        "5": 124
+      },
+      "n_decisions": 411,
+      "n_state_clusters": 137,
+      "majority_covered_count": 378,
+      "majority_error_count": 70,
+      "all_five_wrong_count": 12,
+      "all_five_correct_count": 124,
+      "unanimous_wrong_count": 5
+    },
+    {
+      "suite": "jev_laya_claims",
+      "source": "Jev–Laya",
+      "domain": "Mixed workflow",
+      "reference_code": "T",
+      "reference": "synthetic_teacher",
+      "collection_reference_code": "T/P",
+      "language": "en",
+      "task_tags": [
+        "routing",
+        "evidence",
+        "ordinal",
+        "safety",
+        "workflow",
+        "retrieval"
+      ],
+      "best_single": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "oracle": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.9933333333333333,
+        "ci95": [
+          0.9833333333333333,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.02348993288590604,
+        "ci95": [
+          0.006688963210702341,
+          0.046822742474916385
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.97,
+        "ci95": [
+          0.9433333333333334,
+          0.99
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.030000000000000027,
+        "ci95": [
+          -0.05666666666666664,
+          -0.010000000000000009
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.9,
+        "multilingual": 0.8,
+        "llama31_8b_instruct": 0.6166666666666667,
+        "qwen3_8b": 0.9866666666666667,
+        "jev-1.13.0": 1.0
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 9,
+        "3": 25,
+        "4": 132,
+        "5": 134
+      },
+      "n_decisions": 300,
+      "n_state_clusters": 150,
+      "majority_covered_count": 298,
+      "majority_error_count": 7,
+      "all_five_wrong_count": 0,
+      "all_five_correct_count": 134,
+      "unanimous_wrong_count": 0
+    },
+    {
+      "suite": "jev_laya_reviews",
+      "source": "Jev–Laya",
+      "domain": "Mixed workflow",
+      "reference_code": "T",
+      "reference": "synthetic_teacher",
+      "collection_reference_code": "T/P",
+      "language": "en",
+      "task_tags": [
+        "routing",
+        "evidence",
+        "ordinal",
+        "safety",
+        "workflow",
+        "retrieval"
+      ],
+      "best_single": {
+        "estimate": 0.8766666666666667,
+        "ci95": [
+          0.85,
+          0.9100833333333321
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9566666666666667,
+        "ci95": [
+          0.9333333333333333,
+          0.98
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.07999999999999996,
+        "ci95": [
+          0.050000000000000044,
+          0.09999999999999998
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.96,
+        "ci95": [
+          0.9366666666666666,
+          0.98
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.125,
+        "ci95": [
+          0.09059233449477352,
+          0.1609700192261474
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.02,
+        "ci95": [
+          0.006666666666666667,
+          0.03666666666666667
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.84,
+        "ci95": [
+          0.8033333333333333,
+          0.8766666666666667
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.036666666666666736,
+        "ci95": [
+          -0.06666666666666665,
+          -0.019999999999999907
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.7066666666666667,
+        "multilingual": 0.42333333333333334,
+        "llama31_8b_instruct": 0.83,
+        "qwen3_8b": 0.87,
+        "jev-1.13.0": 0.8766666666666667
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 13,
+        "1": 14,
+        "2": 21,
+        "3": 58,
+        "4": 88,
+        "5": 106
+      },
+      "n_decisions": 300,
+      "n_state_clusters": 150,
+      "majority_covered_count": 288,
+      "majority_error_count": 36,
+      "all_five_wrong_count": 13,
+      "all_five_correct_count": 106,
+      "unanimous_wrong_count": 6
+    },
+    {
+      "suite": "jev_laya_guard",
+      "source": "Jev–Laya",
+      "domain": "Mixed workflow",
+      "reference_code": "T",
+      "reference": "synthetic_teacher",
+      "collection_reference_code": "T/P",
+      "language": "en",
+      "task_tags": [
+        "routing",
+        "evidence",
+        "ordinal",
+        "safety",
+        "workflow",
+        "retrieval"
+      ],
+      "best_single": {
+        "estimate": 0.9383561643835616,
+        "ci95": [
+          0.910958904109589,
+          0.9623287671232876
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9931506849315068,
+        "ci95": [
+          0.9828767123287672,
+          1.0
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.0547945205479452,
+        "ci95": [
+          0.03082191780821919,
+          0.0821917808219178
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.9691780821917808,
+        "ci95": [
+          0.9486301369863014,
+          0.9863013698630136
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.1413427561837456,
+        "ci95": [
+          0.09859154929577464,
+          0.18572055137844604
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.003424657534246575,
+        "ci95": [
+          0.0,
+          0.010273972602739725
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.8321917808219178,
+        "ci95": [
+          0.7842465753424658,
+          0.8801369863013698
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.10616438356164382,
+        "ci95": [
+          -0.15068493150684936,
+          -0.06506849315068486
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.6061643835616438,
+        "multilingual": 0.3321917808219178,
+        "llama31_8b_instruct": 0.8801369863013698,
+        "qwen3_8b": 0.8321917808219178,
+        "jev-1.13.0": 0.9383561643835616
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 2,
+        "1": 13,
+        "2": 34,
+        "3": 81,
+        "4": 86,
+        "5": 76
+      },
+      "n_decisions": 292,
+      "n_state_clusters": 146,
+      "majority_covered_count": 283,
+      "majority_error_count": 40,
+      "all_five_wrong_count": 2,
+      "all_five_correct_count": 76,
+      "unanimous_wrong_count": 1
+    },
+    {
+      "suite": "jev_laya_multilingual",
+      "source": "Jev–Laya",
+      "domain": "Mixed workflow",
+      "reference_code": "T",
+      "reference": "synthetic_teacher",
+      "collection_reference_code": "T/P",
+      "language": "mixed",
+      "task_tags": [
+        "routing",
+        "evidence",
+        "ordinal",
+        "safety",
+        "workflow",
+        "retrieval"
+      ],
+      "best_single": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "oracle": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.9921875,
+        "ci95": [
+          0.98046875,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.007874015748031496,
+        "ci95": [
+          0.0,
+          0.019762845849802372
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.984375,
+        "ci95": [
+          0.96875,
+          0.99609375
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.015625,
+        "ci95": [
+          -0.03125,
+          -0.00390625
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.578125,
+        "multilingual": 0.625,
+        "llama31_8b_instruct": 0.9453125,
+        "qwen3_8b": 0.984375,
+        "jev-1.13.0": 1.0
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 0,
+        "1": 0,
+        "2": 4,
+        "3": 60,
+        "4": 90,
+        "5": 102
+      },
+      "n_decisions": 256,
+      "n_state_clusters": 128,
+      "majority_covered_count": 254,
+      "majority_error_count": 2,
+      "all_five_wrong_count": 0,
+      "all_five_correct_count": 102,
+      "unanimous_wrong_count": 0
+    },
+    {
+      "suite": "jev_laya_needle",
+      "source": "Jev–Laya",
+      "domain": "Mixed workflow",
+      "reference_code": "P",
+      "reference": "programmatic",
+      "collection_reference_code": "T/P",
+      "language": "en",
+      "task_tags": [
+        "routing",
+        "evidence",
+        "ordinal",
+        "safety",
+        "workflow",
+        "retrieval"
+      ],
+      "best_single": {
+        "estimate": 0.9522222222222222,
+        "ci95": [
+          0.8955555555555555,
+          0.9988888888888889
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9555555555555556,
+        "ci95": [
+          0.9022222222222223,
+          1.0
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.0033333333333334103,
+        "ci95": [
+          0.0,
+          0.00666666666666671
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.9977777777777778,
+        "ci95": [
+          0.9944444444444445,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.21269487750556793,
+        "ci95": [
+          0.13014460511679643,
+          0.3010033444816054
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.044444444444444446,
+        "ci95": [
+          0.0,
+          0.09777777777777778
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.7855555555555556,
+        "ci95": [
+          0.6977777777777778,
+          0.8688888888888889
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.16666666666666663,
+        "ci95": [
+          -0.23777777777777775,
+          -0.10111111111111115
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.5022222222222222,
+        "multilingual": 0.47444444444444445,
+        "llama31_8b_instruct": 0.7788888888888889,
+        "qwen3_8b": 0.8777777777777778,
+        "jev-1.13.0": 0.9522222222222222
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 40,
+        "1": 49,
+        "2": 104,
+        "3": 215,
+        "4": 135,
+        "5": 357
+      },
+      "n_decisions": 900,
+      "n_state_clusters": 25,
+      "majority_covered_count": 898,
+      "majority_error_count": 191,
+      "all_five_wrong_count": 40,
+      "all_five_correct_count": 357,
+      "unanimous_wrong_count": 40
+    },
+    {
+      "suite": "clinc150_oos",
+      "source": "CLINC150/OOS",
+      "domain": "Assistant intents",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "routing",
+        "rejection"
+      ],
+      "best_single": {
+        "estimate": 0.895090909090909,
+        "ci95": [
+          0.8869045454545454,
+          0.9030954545454545
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9676363636363636,
+        "ci95": [
+          0.9630863636363637,
+          0.9721818181818181
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.07254545454545458,
+        "ci95": [
+          0.06581818181818189,
+          0.07945454545454544
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.8336363636363636,
+        "ci95": [
+          0.8238181818181818,
+          0.8432727272727273
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.0955288985823337,
+        "ci95": [
+          0.08703161878046085,
+          0.10428131333999122
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.0023636363636363638,
+        "ci95": [
+          0.0012727272727272728,
+          0.0036363636363636364
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.754,
+        "ci95": [
+          0.7421818181818182,
+          0.7652727272727273
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.14109090909090904,
+        "ci95": [
+          -0.15109090909090905,
+          -0.1312681818181818
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.5572727272727273,
+        "multilingual": 0.6476363636363637,
+        "llama31_8b_instruct": 0.552,
+        "qwen3_8b": 0.6778181818181818,
+        "jev-1.13.0": 0.895090909090909
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 178,
+        "1": 388,
+        "2": 787,
+        "3": 1306,
+        "4": 1771,
+        "5": 1070
+      },
+      "n_decisions": 5500,
+      "n_state_clusters": 5500,
+      "majority_covered_count": 4585,
+      "majority_error_count": 438,
+      "all_five_wrong_count": 178,
+      "all_five_correct_count": 1070,
+      "unanimous_wrong_count": 13
+    },
+    {
+      "suite": "turtlebench",
+      "source": "TurtleBench",
+      "domain": "Puzzle evidence",
+      "reference_code": "D",
+      "reference": "dataset_provided",
+      "collection_reference_code": "D",
+      "language": "en",
+      "task_tags": [
+        "evidence"
+      ],
+      "best_single": {
+        "estimate": 0.7402088772845953,
+        "ci95": [
+          0.686386238186019,
+          0.7908592807219822
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9399477806788512,
+        "ci95": [
+          0.9228111078401446,
+          0.9559839064649243
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.19973890339425593,
+        "ci95": [
+          0.15389700130378098,
+          0.2508719207474688
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 0.758485639686684,
+        "ci95": [
+          0.7321097267174458,
+          0.7869340484523432
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.40619621342512907,
+        "ci95": [
+          0.34584346441361224,
+          0.4652079883736166
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.012402088772845953,
+        "ci95": [
+          0.004881439851322752,
+          0.021150219981415617
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.45039164490861616,
+        "ci95": [
+          0.41008057051023944,
+          0.4924452493261456
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.2898172323759791,
+        "ci95": [
+          -0.3461793061406356,
+          -0.23017880172145225
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.4262402088772846,
+        "multilingual": 0.4164490861618799,
+        "llama31_8b_instruct": 0.4216710182767624,
+        "qwen3_8b": 0.44190600522193213,
+        "jev-1.13.0": 0.7402088772845953
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 92,
+        "1": 390,
+        "2": 360,
+        "3": 281,
+        "4": 250,
+        "5": 159
+      },
+      "n_decisions": 1532,
+      "n_state_clusters": 32,
+      "majority_covered_count": 1162,
+      "majority_error_count": 472,
+      "all_five_wrong_count": 92,
+      "all_five_correct_count": 159,
+      "unanimous_wrong_count": 19
+    },
+    {
+      "suite": "aegis2_prompt",
+      "source": "Aegis2 prompts",
+      "domain": "Content safety",
+      "reference_code": "H",
+      "reference": "human_prompt_annotation",
+      "collection_reference_code": "H",
+      "language": "en",
+      "task_tags": [
+        "safety"
+      ],
+      "best_single": {
+        "estimate": 0.8241701244813278,
+        "ci95": [
+          0.8071519237130294,
+          0.840956340956341
+        ]
+      },
+      "oracle": {
+        "estimate": 0.9844398340248963,
+        "ci95": [
+          0.9787231280793619,
+          0.9896426721905748
+        ]
+      },
+      "oracle_headroom": {
+        "estimate": 0.16026970954356856,
+        "ci95": [
+          0.14440993788819878,
+          0.17705088265835922
+        ]
+      },
+      "majority_coverage": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "majority_risk": {
+        "estimate": 0.2598547717842324,
+        "ci95": [
+          0.24055822758093381,
+          0.27987584066218313
+        ]
+      },
+      "unanimous_wrong": {
+        "estimate": 0.015560165975103735,
+        "ci95": [
+          0.010357327809425169,
+          0.021276871920638072
+        ]
+      },
+      "majority_yield": {
+        "estimate": 0.7401452282157677,
+        "ci95": [
+          0.7201241593378168,
+          0.7594417724190662
+        ]
+      },
+      "majority_yield_minus_best": {
+        "estimate": -0.08402489626556009,
+        "ci95": [
+          -0.10466456887914753,
+          -0.06382978723404253
+        ]
+      },
+      "model_accuracy": {
+        "english": 0.495850622406639,
+        "multilingual": 0.5705394190871369,
+        "llama31_8b_instruct": 0.6680497925311203,
+        "qwen3_8b": 0.7266597510373444,
+        "jev-1.13.0": 0.8241701244813278
+      },
+      "best_model": "Jev 1.13",
+      "correct_model_count_distribution": {
+        "0": 30,
+        "1": 127,
+        "2": 344,
+        "3": 482,
+        "4": 652,
+        "5": 293
+      },
+      "n_decisions": 1928,
+      "n_state_clusters": 1915,
+      "majority_covered_count": 1928,
+      "majority_error_count": 501,
+      "all_five_wrong_count": 30,
+      "all_five_correct_count": 293,
+      "unanimous_wrong_count": 30
+    }
+  ]
+}

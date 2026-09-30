@@ -1,0 +1,21 @@
+{
+  "frozen_sha256": "0e6fa35d5e31df31f483478dec043f3e5362d6d1551d0b88e7b0bb910ac821f5",
+  "source_frozen_sha256": "923647f1400c779159e3d062f01c920174427db3555fb0e9fecb7305bef6f169",
+  "source_manifest_sha256": "ab9607f9a59a5ef80b3021ce9f24d23cd4df8894f5a177f8ff4538e7733e2329",
+  "freeze_code_sha256": "8dac609bf5f2bc379f10153a2119d24e8699ab772adef5c205fd9156fd979a96",
+  "protocol_sha256": "b15b23fc9ea6e21d18a765b6e1efad34ae8708759882acf1569e5fb1765a7da3",
+  "existing_output_sha256": {
+    "llama31_8b_instruct/base": "6d493afd747aa2d72f8e1c413c18d0cb7a2428a49b58bbacdea405de1e24b848",
+    "llama31_8b_instruct/both": "3c2bcef8750852c40b6804be1b9afcecd08ce02e65147901e85658649d1ed0e8",
+    "qwen3_8b/base": "15cc5fef6e2308025e42398334c94fd841e0b5a4c39111eaaebcc4e8207e758b",
+    "qwen3_8b/both": "294fa8ae454652cfc0f6c3b112e5c7adf5736b1b7cbe96f0c1ff1ec0e40fbd67"
+  },
+  "source_metadata_sha256": {
+    "llama31_8b_instruct": "1d9ceac0663edc6e2ab1ae4d2d914725cf9658347a6a6af69e83a8b3c97c2426",
+    "qwen3_8b": "7bed47e3778de94f424198a84857b433cb4e8f117d129cf73323cdc1f767aff0"
+  },
+  "cases": 180,
+  "claim_groups": 180,
+  "new_decisions_per_model": 360,
+  "batch_size": 4
+}

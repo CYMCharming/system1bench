@@ -1,0 +1,16 @@
+{
+  "version": "domain-codebook-batch4-amendment",
+  "amendment_sha256": "0e31d2d497eafc1db6cd578d929805356484e20e715a75f8fa2c640d7d877ece",
+  "corrected_runner_sha256": "d3bb033af6f40ae9e8a74849599f7bf63d849f54ea75a87297c3ae9a371bf95e",
+  "base_protocol_sha256": "345c75cd0cff1d6310b569dfb39384fa1f9bcb2c9d5e0f880ba4825989a34d01",
+  "frozen_sha256": "7b2b1117005187df5c5f2e4c071b68444700bcc160b17b8809a26efc39a310ac",
+  "source_frozen_sha256": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909",
+  "source_metadata_sha256": {
+    "llama31_8b_instruct": "d8b8647a0c73819f0671502a4536a80dde05cb83ac370d735a4c339fdd3eef31",
+    "qwen3_8b": "df06c2f803e2a648fc90c70a0733085612e7c460bf9071ee53f25a1ea9e576d1"
+  },
+  "original_batch_size": 4,
+  "corrected_batch_size": 4,
+  "cases": 144,
+  "document_groups": 91
+}

@@ -1,0 +1,43 @@
+% Prospective E&D-format draft for internal review. NeurIPS 2026 is closed;
+% verify the target year's rules before any future submission.
+\documentclass{article}
+\usepackage[eandd]{neurips_2026}
+\makeatletter
+\renewcommand{\@noticestring}{Prospective internal venue-format draft; not submitted.}
+\makeatother
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs,graphicx,url,microtype}
+\usepackage{natbib}
+\usepackage{placeins,float}
+\usepackage[hypertexnames=false]{hyperref}
+\hypersetup{hidelinks}
+
+\title{System1Bench: Reference-Aware Paired Audits of Typed Decisions Across Domains}
+\author{Anonymous Authors}
+
+\begin{document}
+\maketitle
+\begin{center}
+\vspace{-1.0em}\small\emph{Prospective venue-format draft for internal review; not a NeurIPS 2026 submission.}
+\end{center}
+\begin{abstract}
+\input{sections/submission_abstract}
+\end{abstract}
+
+\input{sections/submission_intro}
+\input{sections/submission_design}
+\input{sections/submission_results}
+\input{sections/submission_natural}
+\input{sections/submission_scifact3}
+\input{sections/submission_codebook}
+\input{sections/submission_boundaries}
+\FloatBarrier
+\label{submission-main-end}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\clearpage
+\appendix
+\input{sections/submission_appendix}
+\end{document}

@@ -18,3 +18,16 @@ paper/*.fdb_latexmk
 paper/*.fls
 paper/*.log
 paper/*.out
+research/domain_expansion_v1/frozen.json
+research/domain_expansion_v1/results/jev-1.13.0/
+research/scifact3_v1/frozen.json
+research/natural_direct_v1/results/*/raw.jsonl
+research/scifact3_census_v1/frozen.json
+research/model_expansion_v1/frozen.json
+research/domain_codebook_v1/frozen.json
+research/scifact3_codebook_v1/frozen.json
+research/strong_baseline_v1/frozen.json
+research/natural_direct_v1/frozen.json
+research/domain_expansion_v1/hypothesis_only_probe/frozen.json
+refine-logs/
+*.premeasurement-draft

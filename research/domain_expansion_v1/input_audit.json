@@ -1,0 +1,36 @@
+{
+  "frozen_sha256": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909",
+  "requests": 792,
+  "systems": {
+    "laya_en": {
+      "complete": 792,
+      "state_shortened": 0,
+      "option_shortened": 0,
+      "instruction_shortened": 0,
+      "mask_sanitized": 0,
+      "max_state_tokens": 3389,
+      "max_head_tokens": 92
+    },
+    "laya_multilingual": {
+      "complete": 792,
+      "state_shortened": 0,
+      "option_shortened": 0,
+      "instruction_shortened": 0,
+      "mask_sanitized": 0,
+      "max_state_tokens": 3212,
+      "max_head_tokens": 82
+    },
+    "llama31_8b_instruct": {
+      "complete": 792,
+      "over_limit": 0,
+      "max_prompt_tokens": 3429,
+      "context_limit": 32768
+    },
+    "qwen3_8b": {
+      "complete": 792,
+      "over_limit": 0,
+      "max_prompt_tokens": 3431,
+      "context_limit": 32768
+    }
+  }
+}

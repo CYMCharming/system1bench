@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="500.886pt" height="254.833697pt" viewBox="0 0 500.886 254.833697" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-30T01:12:24.607852</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 254.833697 
+L 500.886 254.833697 
+L 500.886 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 64.611 132.5226 
+L 139.166217 132.5226 
+L 139.166217 74.4438 
+L 64.611 74.4438 
+z
+" clip-path="url(#pf91a1f8e81)" style="fill: #e8efed; stroke: #d8e2e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 149.889913 132.5226 
+L 224.44513 132.5226 
+L 224.44513 74.4438 
+L 149.889913 74.4438 
+z
+" clip-path="url(#pf91a1f8e81)" style="fill: #e0ebe9; stroke: #d8e2e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 64.611 200.8506 
+L 139.166217 200.8506 
+L 139.166217 142.7718 
+L 64.611 142.7718 
+z
+" clip-path="url(#pf91a1f8e81)" style="fill: #e3edeb; stroke: #d8e2e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 149.889913 200.8506 
+L 224.44513 200.8506 
+L 224.44513 142.7718 
+L 149.889913 142.7718 
+z
+" clip-path="url(#pf91a1f8e81)" style="fill: #d7e6e4; stroke: #d8e2e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 5.886 57.3618 
+L 237.211435 57.3618 
+" clip-path="url(#pf91a1f8e81)" style="fill: none; stroke: #b86342; stroke-width: 1.45; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: start; fill: #b86342" x="5.886" y="47.567959" transform="rotate(-0 5.886 47.567959)">Llama 3.1 8B</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="101.888609" y="68.431356" transform="rotate(-0 101.888609 68.431356)">ORIGINAL MAP</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="187.167522" y="68.431356" transform="rotate(-0 187.167522 68.431356)">REVERSED MAP</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; fill: #607079" transform="translate(9.971217 101.1731)">Original</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; fill: #607079" transform="translate(9.971217 111.3471)">list</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="101.888609" y="97.235094" transform="rotate(-0 101.888609 97.235094)">30.6%</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="101.888609" y="111.3847" transform="rotate(-0 101.888609 111.3847)">44 / 144 correct</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="101.888609" y="125.940756" transform="rotate(-0 101.888609 125.940756)">REFERENCE</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="187.167522" y="97.235094" transform="rotate(-0 187.167522 97.235094)">34.7%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="187.167522" y="111.3847" transform="rotate(-0 187.167522 111.3847)">50 / 144 correct</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="187.167522" y="125.940756" transform="rotate(-0 187.167522 125.940756)">125 SWITCHES</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; fill: #607079" transform="translate(9.971217 169.5011)">Reversed</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; fill: #607079" transform="translate(9.971217 179.6751)">list</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="101.888609" y="165.563094" transform="rotate(-0 101.888609 165.563094)">33.3%</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="101.888609" y="179.7127" transform="rotate(-0 101.888609 179.7127)">48 / 144 correct</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="101.888609" y="194.268756" transform="rotate(-0 101.888609 194.268756)">6 SWITCHES</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="187.167522" y="165.563094" transform="rotate(-0 187.167522 165.563094)">39.6%</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="187.167522" y="179.7127" transform="rotate(-0 187.167522 179.7127)">57 / 144 correct</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="187.167522" y="194.268756" transform="rotate(-0 187.167522 194.268756)">54 SWITCHES</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_6">
+    <path d="M 320.391 132.5226 
+L 394.946217 132.5226 
+L 394.946217 74.4438 
+L 320.391 74.4438 
+z
+" clip-path="url(#p0a10e882ca)" style="fill: #cde1df; stroke: #d8e2e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 405.669913 132.5226 
+L 480.22513 132.5226 
+L 480.22513 74.4438 
+L 405.669913 74.4438 
+z
+" clip-path="url(#p0a10e882ca)" style="fill: #d0e2e0; stroke: #d8e2e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 320.391 200.8506 
+L 394.946217 200.8506 
+L 394.946217 142.7718 
+L 320.391 142.7718 
+z
+" clip-path="url(#p0a10e882ca)" style="fill: #bdd8d6; stroke: #d8e2e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 405.669913 200.8506 
+L 480.22513 200.8506 
+L 480.22513 142.7718 
+L 405.669913 142.7718 
+z
+" clip-path="url(#p0a10e882ca)" style="fill: #b5d4d2; stroke: #d8e2e2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 261.666 57.3618 
+L 492.991435 57.3618 
+" clip-path="url(#p0a10e882ca)" style="fill: none; stroke: #8a5c8e; stroke-width: 1.45; stroke-linecap: round"/>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5c8e" x="261.666" y="47.567959" transform="rotate(-0 261.666 47.567959)">Qwen3 8B</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="357.668609" y="68.431356" transform="rotate(-0 357.668609 68.431356)">ORIGINAL MAP</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="442.947522" y="68.431356" transform="rotate(-0 442.947522 68.431356)">REVERSED MAP</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; fill: #607079" transform="translate(265.751217 101.1731)">Original</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; fill: #607079" transform="translate(265.751217 111.3471)">list</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="357.668609" y="97.235094" transform="rotate(-0 357.668609 97.235094)">45.1%</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="357.668609" y="111.3847" transform="rotate(-0 357.668609 111.3847)">65 / 144 correct</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="357.668609" y="125.940756" transform="rotate(-0 357.668609 125.940756)">REFERENCE</text>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="442.947522" y="97.235094" transform="rotate(-0 442.947522 97.235094)">43.8%</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="442.947522" y="111.3847" transform="rotate(-0 442.947522 111.3847)">63 / 144 correct</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="442.947522" y="125.940756" transform="rotate(-0 442.947522 125.940756)">10 SWITCHES</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; fill: #607079" transform="translate(265.751217 169.5011)">Reversed</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; fill: #607079" transform="translate(265.751217 179.6751)">list</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="357.668609" y="165.563094" transform="rotate(-0 357.668609 165.563094)">54.2%</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="357.668609" y="179.7127" transform="rotate(-0 357.668609 179.7127)">78 / 144 correct</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="357.668609" y="194.268756" transform="rotate(-0 357.668609 194.268756)">36 SWITCHES</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 14.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="442.947522" y="165.563094" transform="rotate(-0 442.947522 165.563094)">58.3%</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #23343c" x="442.947522" y="179.7127" transform="rotate(-0 442.947522 179.7127)">84 / 144 correct</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 7.1px; font-family: 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #607079" x="442.947522" y="194.268756" transform="rotate(-0 442.947522 194.268756)">69 SWITCHES</text>
+   </g>
+  </g>
+  <g id="line2d_3">
+   <path d="M 5.886 227.7 
+L 496.566 227.7 
+" style="fill: none; stroke: #d8e2e2; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="text_35">
+   <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: start; fill: #607079" x="4.32" y="10.39875" transform="rotate(-0 4.32 10.39875)">CANDIDATE INTERFACE  /  ORTHOGONAL CONTROL</text>
+  </g>
+  <g id="text_36">
+   <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans', sans-serif; text-anchor: start; fill: #23343c" x="4.32" y="27.600769" transform="rotate(-0 4.32 27.600769)">The same reversal conceals different adapter responses</text>
+  </g>
+  <g id="text_37">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans', sans-serif; text-anchor: start; fill: #607079" x="4.32" y="38.78115" transform="rotate(-0 4.32 38.78115)">144 matched legal cases per model  ·  accuracy and label switches use a common semantic tie-break</text>
+  </g>
+  <g id="text_38">
+   <text style="font-size: 7.7px; font-family: 'DejaVu Sans', sans-serif; text-anchor: start; fill: #23343c" x="5.886" y="239.548319" transform="rotate(-0 5.886 239.548319)">NATIVE HISTORICAL JOINT: Llama 59/144 correct, 66 switches  ·  Qwen 83/144 correct, 64 switches</text>
+  </g>
+  <g id="text_39">
+   <text style="font-size: 7.5px; font-family: 'DejaVu Sans', sans-serif; text-anchor: start; fill: #607079" x="5.886" y="248.953931" transform="rotate(-0 5.886 248.953931)">Grid re-decodes tied top logits with one fixed label priority (post-hoc sensitivity); source outputs are unchanged.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf91a1f8e81">
+   <rect x="5.886" y="47.682" width="234.9" height="170.82"/>
+  </clipPath>
+  <clipPath id="p0a10e882ca">
+   <rect x="261.666" y="47.682" width="234.9" height="170.82"/>
+  </clipPath>
+ </defs>
+</svg>

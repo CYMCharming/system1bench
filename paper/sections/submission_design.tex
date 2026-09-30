@@ -1,0 +1,34 @@
+\section{A source-stratified paired design}
+\label{sec:design}
+\paragraph{Typed workload and reference.}
+Each case supplies state $s_i$ and a question map $Q_i$ containing an instruction, a typed output primitive and, where appropriate, named candidates or an ordinal rubric. The primitives are finite \emph{choice}, binary probability (\texttt{noul}), and ordered \emph{score}. Only state and questions are sent to a model; labels, source IDs and other metadata remain outside the inference payload. Table~\ref{tab:taxonomy} separates historical source families from the two independent natural-domain extensions. Function tags overlap, and source labels, authored cases, synthetic teachers and executable policies are distinct reference standards. In particular, agreement with a teacher is not independently established correctness.
+
+\begin{table}[H]
+\centering\scriptsize
+\begin{tabular}{@{}p{.21\linewidth}p{.54\linewidth}p{.18\linewidth}@{}}
+\toprule
+Stratum & Source collections and typed functions & Reference \\
+\midrule
+Historical semantic/evidence & AG News, Emotion, SST-5, BoolQ, XNLI, TurtleBench; classification, evidence, ordinal judgment & Dataset labels \\
+Historical routing/rejection & Banking77, MASSIVE, CLINC150/OOS; intent, action or explicit rejection & Dataset labels \\
+Historical safety/workflow & Prompt Injections, Aegis2, Typed Decisions, JevBench, ReflexBench, Jev--Laya; safety, workflow, retrieval & Dataset, human, authored, teacher or program \\
+External legal & ContractNLI; NDA--hypothesis inference & Dataset labels \\
+External science & SciFact; claim--cited-abstract relation & Evidence labels / absence proxy \\
+\bottomrule
+\end{tabular}
+\caption{Fifteen historical collections (first three rows) and two separately frozen external sources (last two). Functions are not exclusive; the table classifies workloads, not system quality. Full suite-level mapping and source provenance appear in the supplement.}
+\label{tab:taxonomy}
+\end{table}
+
+\paragraph{Paired quantities.}
+Let $y_i$ denote the reference and $\hat y_i^{(a)}$ the canonicalized prediction under condition $a$, counting invalid answers as incorrect. Write $c_i^{(a)}=\mathbf 1[\hat y_i^{(a)}=y_i]$. For original $o$ and intervention $v$, the accuracy change, prediction discordance, correctness turnover and robust-correct rate are
+\begin{align}
+\Delta &= n^{-1}\textstyle\sum_i(c_i^{(v)}-c_i^{(o)}), &
+D &= n^{-1}\textstyle\sum_i\mathbf 1[\hat y_i^{(v)}\ne\hat y_i^{(o)}],\\
+T &= (N_{01}+N_{10})/n, &
+J &= n^{-1}\textstyle\sum_i c_i^{(o)}c_i^{(v)}.
+\end{align}
+Here $N_{01}$ and $N_{10}$ count incorrect-to-correct and correct-to-incorrect transitions. Thus $\Delta=(N_{01}-N_{10})/n$ can vanish while $T$ is large; $D$ additionally records changes between two incorrect labels. A byte-identical repeat estimates observed execution variation, not by itself a causal order effect. We preserve case identities so all comparisons are paired.
+
+\paragraph{Systems and interventions.}
+We compare Laya English and Multilingual native typed heads, two fixed 8B instruction models (Llama 3.1 and Qwen3) using distinct single-token answer-code logits, and hosted Jev 1.13 \citep{layamodel,jevdocs}. The candidate-code probabilities are conditional on that code set, not calibrated equivalents of native head probabilities. Historical order and encoding contrasts are exploratory because their outputs preceded this analysis. The fresh executable diagnostic fixes 288 base states across three policy families, with same-request, order, language, distractor, paraphrase, encoding and one-field fact controls; a separate codebook run independently varies display order and answer-code identity. The legal/scientific diagnostic freezes 144 ContractNLI and 120 SciFact source pairs, each in base, exact-repeat and reversed-candidate conditions. Each contrast changes the declared interface, not the source reference. We use paired source/state-cluster bootstrap intervals (10,000 draws) and distinguish pointwise exploratory intervals from the within-family simultaneous policy intervals. Full seeds, exact request hashes, raw predictions and input-completeness checks are retained in a companion analysis artifact; reviewer access and upstream-license compliance still require an approved plan.

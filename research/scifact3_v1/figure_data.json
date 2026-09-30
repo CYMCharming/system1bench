@@ -1,0 +1,81 @@
+{
+  "source_frozen_sha256": "923647f1400c779159e3d062f01c920174427db3555fb0e9fecb7305bef6f169",
+  "model": "qwen3_8b",
+  "n": 180,
+  "n_per_reference_label": 60,
+  "reference_candidate_pairs": {
+    "CONTRADICT": 71,
+    "NOINFO": 130,
+    "SUPPORT": 138
+  },
+  "per_class": {
+    "SUPPORT": {
+      "base_correct": 45,
+      "reverse_correct": 53,
+      "delta_pp": 13.333333333333334,
+      "delta_ci95_pp": [
+        5.0,
+        21.666666666666668
+      ]
+    },
+    "CONTRADICT": {
+      "base_correct": 5,
+      "reverse_correct": 18,
+      "delta_pp": 21.666666666666668,
+      "delta_ci95_pp": [
+        11.666666666666666,
+        31.666666666666664
+      ]
+    },
+    "NOINFO": {
+      "base_correct": 54,
+      "reverse_correct": 30,
+      "delta_pp": -40.0,
+      "delta_ci95_pp": [
+        -53.333333333333336,
+        -28.333333333333332
+      ]
+    }
+  },
+  "transition_base_to_reverse": {
+    "SUPPORT": {
+      "SUPPORT": 67,
+      "CONTRADICT": 0,
+      "NOINFO": 0
+    },
+    "CONTRADICT": {
+      "SUPPORT": 0,
+      "CONTRADICT": 6,
+      "NOINFO": 0
+    },
+    "NOINFO": {
+      "SUPPORT": 42,
+      "CONTRADICT": 18,
+      "NOINFO": 47
+    }
+  },
+  "base_prediction_marginal": {
+    "SUPPORT": 67,
+    "CONTRADICT": 6,
+    "NOINFO": 107
+  },
+  "reverse_prediction_marginal": {
+    "SUPPORT": 109,
+    "CONTRADICT": 24,
+    "NOINFO": 47
+  },
+  "overall_base_correct": 104,
+  "overall_reverse_correct": 101,
+  "overall_delta_pp": -1.6666666666666667,
+  "overall_delta_ci95_pp": [
+    -7.777777777777778,
+    4.444444444444445
+  ],
+  "reverse_prediction_flips": 60,
+  "exact_repeat_prediction_flips": 0,
+  "invalid_base": 0,
+  "invalid_reverse": 0,
+  "source_summary_sha256": "4533b55ea3c1d67711cd2d0a33fed0c92ad75f4c299870fd61b305da9572c35f",
+  "source_case_level_sha256": "4adabda9ff402e93c55ac59e2e20940e06d9bc7cb98891d345ce743951507b4b",
+  "source_manifest_sha256": "ab9607f9a59a5ef80b3021ce9f24d23cd4df8894f5a177f8ff4538e7733e2329"
+}

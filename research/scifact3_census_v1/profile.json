@@ -1,0 +1,34 @@
+{
+  "claims": 300,
+  "corpus_documents": 5183,
+  "cited_pair_occurrences": 340,
+  "valid_cited_pairs": 339,
+  "label_pairs": {
+    "CONTRADICT": 71,
+    "NOINFO": 130,
+    "SUPPORT": 138
+  },
+  "claims_without_positive_evidence": 112,
+  "claims_with_both_positive_and_noinfo": 13,
+  "claims_with_any_citation": 300,
+  "unique_claims_by_label": {
+    "SUPPORT": 124,
+    "CONTRADICT": 64,
+    "NOINFO": 125
+  },
+  "unique_docs_by_label": {
+    "SUPPORT": 131,
+    "CONTRADICT": 69,
+    "NOINFO": 107
+  },
+  "claims_with_multiple_label_types": 13,
+  "docs_with_multiple_label_types": 22,
+  "problems": {
+    "duplicate_cited_ids": {
+      "count": 1,
+      "examples": [
+        1245
+      ]
+    }
+  }
+}

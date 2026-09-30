@@ -31,11 +31,12 @@ def now():
 
 
 class Client:
-    def __init__(self, credential, rate=15, max_usd=10):
+    def __init__(self, credential, rate=15, max_usd=10, continue_invalid_decision=False):
         self.key = Path(credential).read_text().strip()
         if not self.key:
             raise ValueError('Empty credential')
         self.rate, self.max_usd = rate, max_usd
+        self.continue_invalid_decision = continue_invalid_decision
         self.lock = threading.Lock()
         self.next_start, self.tokens = 0.0, 0
         self.local = threading.local()
@@ -80,14 +81,22 @@ class Client:
                         raise ValueError('ModelVersionMismatch')
                     if set(body.get('answers', {})) != set(case['questions']):
                         raise ValueError('AnswerSetMismatch')
+                    invalid_decision = False
                     for qid, q in case['questions'].items():
                         if body['answers'][qid].get('type') != q['type']:
                             raise ValueError('AnswerTypeMismatch')
-                        decode(q, body['answers'][qid])
+                        try:
+                            decode(q, body['answers'][qid])
+                        except (ValueError, KeyError, TypeError):
+                            if not self.continue_invalid_decision:
+                                raise
+                            invalid_decision = True
                     if usage is None or not isinstance(usage.get('input_tokens'), int) or usage['input_tokens'] < 0:
                         raise ValueError('MissingUsage')
                     response = {k: body[k] for k in ['model', 'answers', 'usage']}
-                    error = None
+                    # Preserve malformed answers as failures. In diagnostic runs they
+                    # should not suppress every later, unrelated request.
+                    error = 'InvalidDecision' if invalid_decision else None
                 else:
                     error = 'HTTP_' + str(status)
                     if status in {401, 402, 403} or 300 <= status < 400:
@@ -156,6 +165,8 @@ def main():
     p.add_argument('--workers', type=int, default=12)
     p.add_argument('--rate', type=float, default=15)
     p.add_argument('--max-usd', type=float, default=10)
+    p.add_argument('--continue-invalid-decision', action='store_true',
+                   help='Record malformed typed answers as invalid and continue the batch')
     args = p.parse_args()
     frozen_path, root = ROOT / args.frozen, ROOT / args.output
     frozen = read(frozen_path)
@@ -167,6 +178,7 @@ def main():
                      workers=args.workers, max_request_starts_per_second=args.rate,
                      price_usd_per_million_input_tokens=0.042, max_accounted_usd=args.max_usd,
                      attempts_per_request=5, connect_timeout_seconds=15, read_timeout_seconds=90,
+                     continue_invalid_decision=args.continue_invalid_decision,
                      client_proxy_used=bool(os.environ.get('https_proxy') or os.environ.get('HTTPS_PROXY')),
                      full_payload_sent=True, server_tokenizer_available=False,
                      comparison_track='hosted_api_accuracy_and_client_latency')
@@ -184,7 +196,8 @@ def main():
     for r in records:
         if r['request_sha256'] != wanted[r['suite'], r['id']]['request_sha256']:
             raise ValueError('Saved input changed')
-    client = Client(args.credential_file, args.rate, args.max_usd)
+    client = Client(args.credential_file, args.rate, args.max_usd,
+                    continue_invalid_decision=args.continue_invalid_decision)
     client.tokens = sum((a.get('usage') or {}).get('input_tokens', 0) for r in records for a in r['attempts'])
     meta_path = root / 'metadata.json'
     started = read(meta_path)['started_at'] if meta_path.exists() else now()

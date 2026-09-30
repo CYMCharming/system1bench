@@ -1,0 +1,153 @@
+{
+  "signature": {
+    "protocol_sha256": "f242bcb839cf6995eebfd34abfff29e1a6889183a9beae924a2198a67d332940",
+    "prepared_sha256": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909",
+    "source_code_sha256": {
+      "system1bench/__init__.py": "26bccfd0dfbc9c32e8d50a978881bcfe27f67976733212ec884eafd544eeaac0",
+      "system1bench/base_prepare.py": "c59c682e01781e44b97173e90b1fa3ebb790459754980b563d02122d24c52b47",
+      "system1bench/common.py": "c820c2e908f3581d422ee7a8edbdc277f34df2c2bf0acb5f2966fc479c7019a7",
+      "system1bench/download.py": "e64737d2e95fcf20ad3bf1382385f7abe7db19e0fe46a6c0e9151a41dc7ac754",
+      "system1bench/jev_laya_tasks.py": "683d5ae8fc93662466b05b69f576ee9a2f1fd00ab8c75308246aa80d963414c3",
+      "system1bench/laya_adapter.py": "aa9bc97005b098e51d36771bd7d2a6d3e15289d67fc6b2d1bee711a6446aec3b",
+      "system1bench/llm_adapter.py": "88a9dbd4a57fd9b5f727180c5e2650c58632f0f01cbe320c7d3f6536d98a4e49",
+      "system1bench/prepare.py": "967d6049ecd0550d6eda01eb690a1ebb275d88c4b389e3dd3e1dd866a52d3b6d",
+      "system1bench/run.py": "7f2a23aa6473f0e4edde5a8eb1f0fae00edacd4ba0a66a5c0a485bda531f289e",
+      "benchmarks/run_frozen.py": "c70bca34c5034a2e4797683be28ecfd16be57a483e13c9b7a0199ed11b8cc0a3"
+    },
+    "model": {
+      "adapter": "laya",
+      "model": "english",
+      "repo": "convaiinnovations/laya",
+      "requested_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+      "model_files_sha256": {
+        "encoder/config.json": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979",
+        "model.safetensors": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+        "rl_agent_config.json": "ae287b56bbcf5f8c4f4541ae9dfd00c914c4c48b940b8398c3058af37ba92bbd",
+        "tokenizer/tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+        "tokenizer/tokenizer_config.json": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "laya_source_sha256": {
+        "__init__.py": "25fd3fc8900785fd8d4b20b2642ef13c76afea36a840ef8a0103d6e108f0736c",
+        "agent.py": "1473ffd335a1becf55bf7aadde6d31f9d6be27862f5deaa5f4ebd3451fa154e3",
+        "cli.py": "e73e51da8f4f6fdc9ff8570f664b41bd2d656e0e2f91bb46c4d51bc2366972d6",
+        "common.py": "4ab41be6a4d9fdbad74eccf4f64c43e2c7404d227988d97ed8233ded8b182cb1",
+        "email.py": "17d147718e6111b6f702436978137006a6e46f13bd78eed8b8d90dad38ae4650",
+        "evals.py": "da66a10c64fcf45540cada1646a020db83cde885652477b65e6d65311b9b13c2",
+        "evals_cli.py": "a2d7f3454b3f87f2c7b01d7e9066978980e74e2b37ef5d2e82a81030bb58c15f",
+        "fast.py": "6339b285bdf76c862402e8a6ce72310d77a6d413fe819d6ecbd5ed665f990b2b",
+        "hooks.py": "83a53463c360f2209d49c906aad813b5de6c6fae763dd75d0fce39a69198fbd7",
+        "integrations/__init__.py": "43cc61d5c791f371e319a1874473f5e726fc204ff721ae1d94aa745220c93f4c",
+        "integrations/langchain.py": "b3f7267f3b7b1e6b2afa89c69f57959e80d8c424792d02d5d9295d728e647ee3",
+        "lang.py": "d6a234ee866c5f05ff622e70e78b48a5dc05c792058fb276535683573fac70b0",
+        "mcp/__init__.py": "3cddfbdb68ea7e25aaa46df3fd732a939d24b07ea2fbfbde2ba92a99af4b43d2",
+        "mcp/device.py": "eb3899a41696bc5548234e76e1fc15ef1125c657cfe227ecc9b6bdbd48d0b6b8",
+        "mcp/server.py": "87f8aa0671096b0bb4a51c2dc49b2db6356e46e39a2e0fe9c4227d7f3105fe5c",
+        "mcp/tools.py": "224a5b4cb8f19649eb8c46f0800e6e4fdd42fa33911b22210da31bc1c96abe86",
+        "onnx_agent.py": "1d5534ab5931dfd08e6aa59ca694d928973dc1fc760d1c1ef0880547e10a35aa",
+        "presets.py": "2a3370f587cae29696bfa487edcc51caf47a211518733fdb192cf6d4eddbf1ea",
+        "revisions.py": "2b9e64700b7ff11185fc1f1ee82bf14f35a3c874f4e1134fc8ae792519353fdc",
+        "router.py": "3e4a65b33f2d36076ac522945470d9ec10cfff97eb389b6ba1ad5f482ce8e079",
+        "serve.py": "72abe8b73480c9a9738946dfe9898e5240e8fb9d82d3d9054c267cc61c9829f6",
+        "shortlist.py": "3bf5397671b658602efd9071bea5c6e6e4ff2282a9b1d66487a5c0a018ad1ea1",
+        "structured.py": "d8aa56d4832eaf7804767b0194f7f50c139d4f261171079f60b27f4fc9cbbf8d",
+        "tl_kernels.py": "6d7897abce718499c93325144200999e153a3603f0ce83dd88e1065cf074f20a"
+      },
+      "python": "3.12.13",
+      "torch": "2.7.1+cu118",
+      "transformers": "5.16.1",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "dtype": "torch.bfloat16",
+      "amp_enabled": true,
+      "temperatures": [
+        1.6369030475616455,
+        1.2514300346374512,
+        1.983399510383606
+      ],
+      "configuration": {
+        "encoder": "answerdotai/ModernBERT-large",
+        "head_layers": 2,
+        "max_len": 512,
+        "head_max_len": 192,
+        "max_prefixes": 6,
+        "act_costs": {
+          "escalate": 0.5
+        },
+        "cost_wrong_act": 3.0,
+        "amp_dtype": "bf16",
+        "model_name": "rl-agent",
+        "temperature": [
+          1.6369030475616455,
+          1.2514300346374512,
+          1.983399510383606
+        ],
+        "temperature_by_options": {
+          "choice:3-5": 1.7601518630981445,
+          "choice:6-10": 1.0000158548355103,
+          "score:3-5": 1.2514300346374512,
+          "noul:2": 1.983399510383606,
+          "choice:11+": 0.10058280825614929,
+          "choice:2": 1.9063563346862793
+        },
+        "training": {
+          "updates": 7313,
+          "epochs_completed": 1,
+          "hours": 1.96,
+          "world_size": 1,
+          "fine_tuned_from_checkpoint": true
+        }
+      }
+    },
+    "batch_size": 2,
+    "budget": {
+      "max_len": 8192,
+      "head_max_len": 4096
+    }
+  },
+  "status": "DONE",
+  "started_at": "2026-09-29T16:25:43.404321+00:00",
+  "suites": {
+    "contractnli_base": {
+      "sha256": "5ea13826c3ed396ead5dab6cfed3c4c5700326f2d2de193456b44810d864d3d6",
+      "requests": 144,
+      "decisions": 144,
+      "errors": 0,
+      "inference_seconds": 5.5841394774615765
+    },
+    "contractnli_exact_repeat": {
+      "sha256": "76053f3bbaf95793bab68dbd0d969038ffed9b712679d72944be2782fda7708f",
+      "requests": 144,
+      "decisions": 144,
+      "errors": 0,
+      "inference_seconds": 5.37486925534904
+    },
+    "contractnli_reversed_option_order": {
+      "sha256": "afe969a1052fb2eceef31fe259817095a22436fd73081443240bede6c61a945b",
+      "requests": 144,
+      "decisions": 144,
+      "errors": 0,
+      "inference_seconds": 5.376166199333966
+    },
+    "scifact_base": {
+      "sha256": "56d75b3c8eac31591e90697e1838c194d03e1b769f03230a4061ef7f2007da67",
+      "requests": 120,
+      "decisions": 120,
+      "errors": 0,
+      "inference_seconds": 1.2651337664574385
+    },
+    "scifact_exact_repeat": {
+      "sha256": "e7b55cd2c18bb58eacaab1d95eadb44491e12316b4f371de3b9fd2395f583a56",
+      "requests": 120,
+      "decisions": 120,
+      "errors": 0,
+      "inference_seconds": 1.2600886346772313
+    },
+    "scifact_reversed_option_order": {
+      "sha256": "f598b2aa31389dd389889e483c7a9f1fa682d06f2c9ccdfe1703371da1a3f768",
+      "requests": 120,
+      "decisions": 120,
+      "errors": 0,
+      "inference_seconds": 1.261376143898815
+    }
+  },
+  "finished_at": "2026-09-29T16:26:04.823570+00:00"
+}

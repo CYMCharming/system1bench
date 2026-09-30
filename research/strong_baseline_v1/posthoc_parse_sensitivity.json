@@ -1,0 +1,141 @@
+{
+  "llama31_8b_instruct": {
+    "status": "POST_HOC_PARSER_SENSITIVITY_NOT_PRIMARY",
+    "invalid": 3,
+    "recovered": 0,
+    "recovered_correct": 0,
+    "primary_correct": 145,
+    "permissive_correct": 145,
+    "denominator": 212,
+    "invalid_rows": [
+      {
+        "suite": "massive_zh",
+        "id": "massive_zh:286",
+        "reason": "max_tokens_without_valid_final",
+        "code": null,
+        "recovered_prediction": null,
+        "recovered_correct": null,
+        "primary_prediction": null
+      },
+      {
+        "suite": "jevbench_hard",
+        "id": "hard-opus-c-temporal_numeric-03",
+        "reason": "max_tokens_without_valid_final",
+        "code": null,
+        "recovered_prediction": null,
+        "recovered_correct": null,
+        "primary_prediction": null
+      },
+      {
+        "suite": "jevbench_hard",
+        "id": "hard-opus-a-long_policy-04",
+        "reason": "max_tokens_without_valid_final",
+        "code": null,
+        "recovered_prediction": null,
+        "recovered_correct": null,
+        "primary_prediction": null
+      }
+    ]
+  },
+  "qwen3_8b": {
+    "status": "POST_HOC_PARSER_SENSITIVITY_NOT_PRIMARY",
+    "invalid": 10,
+    "recovered": 8,
+    "recovered_correct": 6,
+    "primary_correct": 153,
+    "permissive_correct": 159,
+    "denominator": 212,
+    "invalid_rows": [
+      {
+        "suite": "massive_zh",
+        "id": "massive_zh:2797",
+        "reason": "unparseable",
+        "code": null,
+        "recovered_prediction": null,
+        "recovered_correct": null,
+        "primary_prediction": null
+      },
+      {
+        "suite": "massive_zh",
+        "id": "massive_zh:2328",
+        "reason": "unparseable",
+        "code": null,
+        "recovered_prediction": null,
+        "recovered_correct": null,
+        "primary_prediction": null
+      },
+      {
+        "suite": "clinc150_oos",
+        "id": "clinc:4879",
+        "reason": "unparseable",
+        "code": "AQ",
+        "recovered_prediction": "oos",
+        "recovered_correct": true,
+        "primary_prediction": null
+      },
+      {
+        "suite": "boolq_choice",
+        "id": "boolq:3238",
+        "reason": "unparseable",
+        "code": "B",
+        "recovered_prediction": "B",
+        "recovered_correct": true,
+        "primary_prediction": null
+      },
+      {
+        "suite": "boolq_choice",
+        "id": "boolq:3129",
+        "reason": "unparseable",
+        "code": "A",
+        "recovered_prediction": "A",
+        "recovered_correct": true,
+        "primary_prediction": null
+      },
+      {
+        "suite": "boolq_choice",
+        "id": "boolq:1747",
+        "reason": "unparseable",
+        "code": "A",
+        "recovered_prediction": "A",
+        "recovered_correct": true,
+        "primary_prediction": null
+      },
+      {
+        "suite": "boolq_choice",
+        "id": "boolq:225",
+        "reason": "unparseable",
+        "code": "A",
+        "recovered_prediction": "A",
+        "recovered_correct": true,
+        "primary_prediction": null
+      },
+      {
+        "suite": "xnli_en",
+        "id": "xnli_en:2498",
+        "reason": "unparseable",
+        "code": "B",
+        "recovered_prediction": "neutral",
+        "recovered_correct": false,
+        "primary_prediction": null
+      },
+      {
+        "suite": "jevbench_hard",
+        "id": "hard-opus-a-long_policy-04",
+        "reason": "unparseable",
+        "code": "C",
+        "recovered_prediction": "department_head",
+        "recovered_correct": false,
+        "primary_prediction": null
+      },
+      {
+        "suite": "jev_laya_needle",
+        "id": "needle-14-4000-end",
+        "reason": "unparseable",
+        "code": "C",
+        "recovered_prediction": "repair",
+        "recovered_correct": true,
+        "primary_prediction": null
+      }
+    ]
+  }
+}

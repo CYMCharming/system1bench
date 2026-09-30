@@ -1,0 +1,33 @@
+# Natural-domain expansion v1: pre-inference protocol
+
+This experiment adds two substantively different domains to System1Bench under the **same paired perturbation protocol**. It evaluates a model plus typed-decision adapter, not an end-to-end legal or scientific workflow. The frozen file is `research/domain_expansion_v1/frozen.json`; its SHA-256, preparer SHA-256, source hashes, deterministic selection and exact request count are bound in `manifest.json`. The preparer refuses to overwrite a freeze. Raw source archives are kept in the ignored `data/external/domain_expansion_v1/` directory and should be obtained from the original owners, not copied from this repository. The reconstructed `frozen.json` itself contains substantial upstream text and is also ignored by Git; see [third-party attribution](DATA_LICENSES.md).
+
+## Source and reference scope
+
+- **Legal contract inference:** [ContractNLI](https://github.com/stanfordnlp/contract-nli), official `test.json` (123 contracts, 17 hypotheses). The dataset is made available under CC BY 4.0; its included `TERMS` and `LICENSE` are hashed in the manifest. A case shows the **complete, unmodified NDA text** and one official hypothesis; the official `Entailment`, `Contradiction`, or `NotMentioned` annotation is the reference. This is document-level NLI, not legal advice or contract drafting.
+- **Scientific evidence inference:** [SciFact](https://github.com/allenai/scifact), official labeled development claims and abstract corpus. A case shows a claim, cited paper title, and **complete abstract**. Only claim--cited-document pairs with an official positive `SUPPORT` or `CONTRADICT` evidence annotation are eligible; no unannotated pair is presumed `NOINFO`. Evidence sentence indices are **not** shown to the model. This is claim--abstract relation prediction, not document retrieval or complete fact checking. The project gives CC BY 4.0 for claims/annotations and ODC-By 1.0 for the abstract corpus; follow the upstream license notices when redistributing source text.
+
+The source annotations are reference labels, not independently re-adjudicated ground truth. We therefore use “reference-correct” rather than “objectively correct”, keep legal and scientific domains separate, and never pool their percentages as an estimated population prevalence.
+
+## Model-blind selection, fixed before inference
+
+Selection seed: `system1bench-domain-expansion-v1-20260930`. All ranks are SHA-256 of this seed and a source-specific stable ID; no model result enters selection.
+
+- ContractNLI: retain the 99 of 123 test contracts with at most 16,000 characters so full input is feasible under all adapters. Of 1,683 eligible document--hypothesis pairs, choose 48 per official label, at most two pairs per contract and at most one contract per label: 144 pairs spanning 91 contracts. This deliberately balanced diagnostic sample does **not** reflect natural legal label prevalence, and the long-document exclusion limits external validity. The length cap disproportionately excludes SEC-HTML contracts, and the 17 repeated hypothesis IDs induce a strong label prior; the [model-blind shortcut audit](SHORTCUT_AUDIT.en.md) quantifies both.
+- SciFact: from 209 official positive claim--cited-abstract pairs, choose 60 `SUPPORT` and 60 `CONTRADICT`, at most one pair per claim: 120 pairs spanning 120 claims. `NOINFO` and retrieval errors are outside scope. This deliberately balanced diagnostic sample does **not** reflect natural citation prevalence.
+
+Each of 264 source pairs appears under three conditions, for **792 requests per system**:
+
+1. `base`: source text and candidate order as frozen.
+2. `exact_repeat`: byte-identical API request to estimate repeat noise, especially for the hosted system.
+3. `reversed_option_order`: same state, instructions, option meanings and reference label; only criteria insertion order changes. For the two code-likelihood LLM adapters, this also changes the code--label mapping, so this experiment alone identifies **adapter/interface sensitivity**, not a pure semantic order effect. The separate orthogonal code/display experiment in the main paper is needed for decomposition.
+
+Predictions are paired by stable case ID. The predeclared primary outcomes per source/system are base reference accuracy, reference accuracy after reversal, reference-correct stability (correct in both base and reversal), correction (`wrong -> right`), regression (`right -> wrong`), unconditional prediction flip, and excess flip above exact-repeat. Report invalid/error rates and complete-payload coverage separately. Use contract-level and claim-level clustered percentile bootstrap for uncertainty; the exact repeat and reverse share the same source cluster. Report label-specific results because both samples were artificially balanced. A cross-source macro summary is descriptive and gives equal weight to the two source strata, not to their items or presumed prevalence.
+
+No prompt search, failure-driven re-sampling, or label repair is allowed after inference. If an adapter cannot process full input, flag the case and do not treat a truncated prediction as complete. The CPU-only pre-run audit checks actual Laya token construction and both LLM chat templates: it found all 792 requests complete on all four local adapters; maximum Laya state tokens are 3,389 (English) and 3,212 (multilingual), maximum LLM prompt length is 3,431, versus 8,192 and 32,768 respective limits. Hosted Jev server tokenization is unavailable, so its full-payload claim refers to the HTTP request body, not a verified server context window.
+
+## Comparability and failure boundaries
+
+Use the existing exact model snapshots and frozen adapters. The Laya systems emit native choice probabilities, the two LLMs emit constrained first-token code likelihoods, and Jev emits hosted typed-decision probabilities. Accuracy and flip/turnover compare selected labels on identical requests; probability calibration, latency and energy are **not** claimed comparable across these adapters. The paired reverse condition is a mechanical interface intervention with unchanged option semantics; it is not a paraphrase-equivalence study.
+
+The main paper may call this an independently sourced, cross-domain paired *diagnostic*, but not claim that it establishes general performance on all legal reasoning or scientific fact-checking, nor that it is the first cross-domain benchmark. In particular, [JevAdvBench](https://arxiv.org/html/2609.31142) already studies typed perturbations and same-request repeats; our distinct evidence is multi-adapter, independent reference-labeled source data and joint stability/correctness analysis.

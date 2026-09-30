@@ -15,6 +15,8 @@ controls. It covers semantic classification, bilingual inference, structured
 workflow decisions, explicit out-of-scope intent detection, safety, long-context
 retrieval and actual option-order perturbations. Scores stay separate by source
 and reference quality. There is no blended “decision intelligence” score.
+An independently frozen legal/scientific extension is reported separately from
+this historical 15-source matrix.
 
 - [Controlled speed results](docs/PERFORMANCE_RESULTS.en.md) · [timing protocol](docs/PERFORMANCE_PROTOCOL.md) · [performance audit](docs/PERFORMANCE_AUDIT.md)
 - [Results in English](docs/RESULTS.en.md) · [中文结果](docs/RESULTS.zh-CN.md)
@@ -26,6 +28,8 @@ and reference quality. There is no blended “decision intelligence” score.
 - [Source pins](sources.json) · [additional source pins](external_sources.json)
 - [Jev API results](docs/JEV_RESULTS.en.md) · [hosted execution deviations](research/JEV_RUN_LOG.md)
 - [Research insights](research/INSIGHTS.en.md) · [fresh policy results](research/CONFIRMATION_RESULTS.en.md) · [研究进展与启发（中文）](research/RESEARCH_PROGRESS.zh-CN.md)
+- [Natural-domain paired protocol](research/domain_expansion_v1/PROTOCOL.md) · [legal/science results](research/domain_expansion_v1/RESULTS.en.md) · [third-party data attribution](research/domain_expansion_v1/DATA_LICENSES.md)
+- [Generative-baseline protocol](research/strong_baseline_v1/PROTOCOL.md) · [cross-domain complementarity](research/cross_domain_v1/RESULTS.en.md)
 
 ## Beyond aggregate accuracy
 

@@ -1,0 +1,23 @@
+{
+  "protocol": "batch-context-v1",
+  "prepared_at": "2026-09-30T10:49:02.894089+00:00",
+  "protocol_sha256": "05b30dae3330cfe2252ab5f050a61b84c5d0c04e0b6db8892a0821eef068a385",
+  "schedule_sha256": "686fda1a014597d99fd064d5495ddd6f3e27f065f0e615d9ff148bd78535570a",
+  "runner_sha256": "672f5fab2b0693e1b1f3cb7f87012770d5674de06a86d5840c11cfbeb47bcdf7",
+  "adapter_sha256": "88a9dbd4a57fd9b5f727180c5e2650c58632f0f01cbe320c7d3f6536d98a4e49",
+  "source_frozen_sha256": "c8f401b20bc8bbe731b8c3cae932dc992d837c176c1844ff801dac8f2a74b082",
+  "source_manifest_sha256": "b23d37d10b8a09a3e9b487e11e0be32c0a1c5c2ea4c36a14a2794ca52519f6c3",
+  "conditions": [
+    "base",
+    "reversed_option_order"
+  ],
+  "plans": [
+    "original4",
+    "repeat4",
+    "within_reverse4",
+    "shuffled4",
+    "singleton"
+  ],
+  "pairs": 339,
+  "requests_per_model": 3390
+}

@@ -1,0 +1,62 @@
+{
+  "protocol": "system1bench-scifact3-v1",
+  "source_sha256": {
+    "scifact-data.tar.gz": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+    "claims_dev.jsonl": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217",
+    "corpus.jsonl": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62"
+  },
+  "preparer_sha256": "1af0614a849166857fc61132501b4eb1d6885ff0dbb2082d0c8ccd003eaeec8a",
+  "profiler_sha256": "8cd95a209697d5f3d342390464154e0d8dce09a5098f9f06f2533700abe9ae87",
+  "source_profile": {
+    "claims": 300,
+    "corpus_documents": 5183,
+    "cited_pair_occurrences": 340,
+    "valid_cited_pairs": 339,
+    "label_pairs": {
+      "CONTRADICT": 71,
+      "NOINFO": 130,
+      "SUPPORT": 138
+    },
+    "claims_without_positive_evidence": 112,
+    "claims_with_both_positive_and_noinfo": 13,
+    "claims_with_any_citation": 300,
+    "unique_claims_by_label": {
+      "SUPPORT": 124,
+      "CONTRADICT": 64,
+      "NOINFO": 125
+    },
+    "unique_docs_by_label": {
+      "SUPPORT": 131,
+      "CONTRADICT": 69,
+      "NOINFO": 107
+    },
+    "claims_with_multiple_label_types": 13,
+    "docs_with_multiple_label_types": 22,
+    "problems": {
+      "duplicate_cited_ids": {
+        "count": 1,
+        "examples": [
+          1245
+        ]
+      }
+    }
+  },
+  "selection": "SHA-256 seeded rank; scarcity-first CONTRADICT, SUPPORT, NOINFO; unique claim ID and document ID globally; no model outcomes inspected",
+  "selected_pairs": 180,
+  "label_counts": {
+    "NOINFO": 60,
+    "SUPPORT": 60,
+    "CONTRADICT": 60
+  },
+  "distinct_claims": 180,
+  "distinct_documents": 180,
+  "conditions": [
+    "base",
+    "exact_repeat",
+    "reversed_option_order",
+    "title_removed"
+  ],
+  "planned_requests": 720,
+  "controls": "Repeat request identical; reversal changes only criteria insertion order; title removal deletes only state.paper_title",
+  "prepared_sha256": "923647f1400c779159e3d062f01c920174427db3555fb0e9fecb7305bef6f169"
+}

@@ -15,10 +15,10 @@ class JevAPITests(unittest.TestCase):
         c['request_sha256'] = digest(request(c))
         return c
 
-    def execute(self, responses):
+    def execute(self, responses, continue_invalid_decision=False):
         with tempfile.TemporaryDirectory() as d:
             f = Path(d) / 'credential'; f.write_text('test-key-not-real')
-            c = Client(f, rate=100000)
+            c = Client(f, rate=100000, continue_invalid_decision=continue_invalid_decision)
             s = Mock(); s.post.side_effect = responses
             with patch.object(c, 'session', return_value=s), patch('benchmarks.jev_api.time.sleep'):
                 r = c.predict(('toy', self.case()))
@@ -42,6 +42,18 @@ class JevAPITests(unittest.TestCase):
     def test_invalid_probability_is_not_scored(self):
         r, c = self.execute([self.response(p=1.1)])
         self.assertTrue(c.stop.is_set()); self.assertEqual(r['error'], 'ResponseValidationError')
+
+    def test_diagnostic_run_retains_invalid_decision_without_stopping(self):
+        r, c = self.execute([self.response(p=1.1)], continue_invalid_decision=True)
+        self.assertFalse(c.stop.is_set())
+        self.assertEqual(r['error'], 'InvalidDecision')
+        self.assertEqual(r['response']['answers']['q']['noul'], 1.1)
+        self.assertEqual(c.tokens, 10)
+
+    def test_diagnostic_run_still_stops_on_model_drift(self):
+        r, c = self.execute([self.response(model='different-version')], continue_invalid_decision=True)
+        self.assertTrue(c.stop.is_set())
+        self.assertEqual(r['error'], 'ResponseValidationError')
 
     def test_auth_failure_stops_without_logging_body(self):
         r, c = self.execute([self.response(401)])

@@ -1,0 +1,380 @@
+{
+  "audit_skill": "experiment-audit",
+  "audit_focus": "dataset_construct_and_label_validity",
+  "verdict": "WARN",
+  "reason_code": "mixed_construct_validity_and_verified_label_conflicts",
+  "summary": "The 15 sources support source-separated static typed-decision diagnostics, but not a blended decision-accuracy claim. Reference quality is mixed; TurtleBench and Aegis each contain an exact-input label conflict, and typed-decisions contains underdetermined targets plus rubric/factor inconsistencies.",
+  "publication_status": "local_only",
+  "publication_note": "Local review artifact; no GitHub upload was performed.",
+  "protocol_change_policy": "Recommendations that alter grouping, exclusion, or scoring apply only to a future versioned protocol. They do not retroactively change v0.2 frozen inputs, raw results, metrics, or scores.",
+  "trace_path": ".aris/traces/experiment-audit/2026-09-28_dataset_validity/",
+  "agent_id": "/root/dataset_validity_review",
+  "verdict_id": "/root/dataset_validity_review",
+  "executor_model": "gpt-6-astra",
+  "executor_family": "openai",
+  "reviewer_model": "gpt-5.6-sol",
+  "reviewer_family": "openai",
+  "reviewer_reasoning": "ultra",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "generated_at": "2026-09-28T14:33:48Z",
+  "date": "2026-09-28",
+  "auditor": "gpt-5.6-sol-ultra",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "commit_at_review_start": "37b29bdd36891dcdb8aa9860a0528f3388d1d615",
+  "scope": {
+    "source_count": 15,
+    "suite_count": 36,
+    "models_rerun": false,
+    "frozen_inputs_modified": false,
+    "existing_results_modified": false,
+    "historical_105800_row_result_audit_repeated": false,
+    "full_mechanical_checks": [
+      "gold_candidate_coverage",
+      "source_to_frozen_state_question_gold_reconstruction",
+      "exact_state_duplicate_and_conflict_detection",
+      "dependency_group_enumeration"
+    ],
+    "semantic_review": "fixed_sample_only"
+  },
+  "sampling": {
+    "seed": "system1bench-dataset-validity-2026-09-28-v1",
+    "ranking": "ascending SHA256(seed|source-or-stratum|case-id)",
+    "review_units": 286,
+    "bilingual_pair_units": 24,
+    "no_sample_rate_extrapolation": true,
+    "counts": {
+      "ag_news": 12,
+      "emotion": 12,
+      "banking77": 12,
+      "boolq": 12,
+      "sst5": 12,
+      "xnli_pairs": 12,
+      "massive_pairs": 12,
+      "prompt_injections": 20,
+      "typed_decisions": 20,
+      "jevbench": 24,
+      "reflexbench": 20,
+      "jev_laya": 40,
+      "clinc": 24,
+      "turtlebench": 24,
+      "aegis2_prompt": 30
+    },
+    "trace_files": [
+      ".aris/traces/experiment-audit/2026-09-28_dataset_validity/audit_samples.py",
+      ".aris/traces/experiment-audit/2026-09-28_dataset_validity/fixed_samples.full.json",
+      ".aris/traces/experiment-audit/2026-09-28_dataset_validity/fixed_samples.compact.md"
+    ]
+  },
+  "full_mechanical_results": {
+    "candidate_coverage_failure_count": 0,
+    "source_to_frozen_reconstruction_mismatch_count": 0,
+    "aegis_exact_raw_prompt_duplicate_excess": 13,
+    "aegis_exact_raw_prompt_conflict_groups": 1,
+    "turtle_exact_state_duplicate_excess": 18,
+    "turtle_exact_state_conflict_groups": 1,
+    "turtle_story_groups": 32,
+    "turtle_max_story_rows": 100,
+    "jev_laya_needle_content_groups": 25,
+    "jev_laya_variants_per_needle": 18,
+    "jevbench_two_question_shared_state_groups": 36
+  },
+  "verified_issues": [
+    {
+      "id": "DV-001",
+      "severity": "high",
+      "source": "turtlebench",
+      "type": "exact_visible_input_label_conflict",
+      "case_ids": ["484", "832"],
+      "labels": ["Incorrect", "Unknown"],
+      "scope": "1 conflict group among 18 exact duplicate groups",
+      "claim_impact": "Three-class accuracy is not accuracy against noise-free gold until the group is adjudicated or excluded in a future protocol."
+    },
+    {
+      "id": "DV-002",
+      "severity": "high",
+      "source": "aegis2_prompt",
+      "type": "exact_raw_prompt_human_label_conflict",
+      "case_ids": [
+        "8e226f8cfe5a4edf879babebebc6d91d",
+        "92abced2c4764af1a2b5af235fa00bd4"
+      ],
+      "labels": ["safe", "unsafe"],
+      "scope": "1 conflict group among 13 exact raw-prompt duplicate groups",
+      "claim_impact": "First-occurrence deduplication is a sensitivity analysis, not ground-truth adjudication."
+    },
+    {
+      "id": "DV-003",
+      "severity": "high",
+      "source": "typed_decisions",
+      "type": "teacher_reference_underdetermination_and_rubric_inconsistency",
+      "case_ids": [
+        "invoice_processing_000021",
+        "invoice_processing_000027",
+        "invoice_processing_000042",
+        "invoice_processing_000062",
+        "invoice_processing_000064",
+        "invoice_processing_000092",
+        "agent_trace_observability_000052"
+      ],
+      "full_counts": {
+        "decisions": 2000,
+        "gold_confidence_below_0_5": 936,
+        "gold_confidence_equal_0_5": 38,
+        "duplicate_submission_cases": 17,
+        "duplicate_gold_false": 6,
+        "duplicate_disposition_not_reject": 12,
+        "agent_trace_rows": 100,
+        "outcome_argmax_mismatch_to_factor_rubric_mapping": 53
+      },
+      "claim_impact": "Suitable for exploratory synthetic-teacher agreement only; unsupported as a correctness ground truth."
+    }
+  ],
+  "source_assessments": [
+    {
+      "source": "ag_news",
+      "status": "PASS",
+      "reference_type": "dataset_provided",
+      "recommended_track": "auxiliary_semantic_control",
+      "supported_construct": "four-way news topic classification",
+      "limitations": ["not action quality", "known Laya training-task-family overlap"],
+      "reviewed_ids": ["ag_news:940", "ag_news:5138"]
+    },
+    {
+      "source": "emotion",
+      "status": "WARN",
+      "reference_type": "dataset_provided_weak_or_distant_annotation",
+      "recommended_track": "auxiliary_semantic_control",
+      "supported_construct": "six-way short-text emotion label agreement",
+      "limitations": ["subjective single-label boundary", "not psychological diagnosis"],
+      "reviewed_ids": ["emotion:984", "emotion:480"]
+    },
+    {
+      "source": "banking77",
+      "status": "PASS",
+      "reference_type": "dataset_provided",
+      "recommended_track": "core_static_intent_routing",
+      "supported_construct": "closed-set 77-way banking intent routing",
+      "limitations": ["short utterance intent ambiguity", "no workflow execution"],
+      "reviewed_ids": ["banking77:541", "banking77:1432"]
+    },
+    {
+      "source": "boolq",
+      "status": "WARN",
+      "reference_type": "dataset_provided_validation_labels",
+      "recommended_track": "core_passage_conditioned_binary_reading",
+      "supported_construct": "passage-conditioned yes/no judgment",
+      "limitations": ["public test gold unavailable", "known Laya training-task-family overlap"],
+      "reviewed_ids": ["boolq:1102", "boolq:1380"]
+    },
+    {
+      "source": "sst5",
+      "status": "WARN",
+      "reference_type": "dataset_provided_ordinal",
+      "recommended_track": "auxiliary_ordinal_semantic_control",
+      "supported_construct": "five-level sentiment agreement",
+      "limitations": ["subjective adjacent-class boundary", "exact accuracy is incomplete without MAE and within-one"],
+      "reviewed_ids": ["sst5:1564", "sst5:1500"]
+    },
+    {
+      "source": "xnli",
+      "status": "WARN",
+      "reference_type": "dataset_provided",
+      "recommended_track": "core_or_auxiliary_static_nli",
+      "supported_construct": "three-way NLI and paired English-Chinese consistency",
+      "limitations": ["Chinese translation artifacts", "public-data contamination unknown"],
+      "reviewed_indices": [2540, 3068, 1964]
+    },
+    {
+      "source": "massive",
+      "status": "WARN",
+      "reference_type": "dataset_provided",
+      "recommended_track": "core_closed_set_multilingual_intent_routing",
+      "supported_construct": "60-option multilingual assistant intent routing",
+      "limitations": ["test observes 59 classes", "Chinese is localized rather than literal translation"],
+      "reviewed_indices": [2270, 2819, 2250]
+    },
+    {
+      "source": "prompt_injections",
+      "status": "WARN",
+      "correctness_track_status": "FAIL",
+      "reference_type": "dataset_provided_policy_label",
+      "recommended_track": "exploratory_policy_agreement",
+      "supported_construct": "agreement with the source's narrow LEGIT/INJECTION boundary",
+      "limitations": ["ordinary instructions can be labeled injection", "not a production attack-detection ground truth"],
+      "reviewed_ids": ["prompt_injections:38", "prompt_injections:79"]
+    },
+    {
+      "source": "typed_decisions",
+      "status": "WARN",
+      "correctness_track_status": "FAIL",
+      "reference_type": "synthetic_teacher",
+      "recommended_track": "exploratory_synthetic_teacher_agreement",
+      "supported_construct": "agreement with a small teacher's repeated samples",
+      "limitations": ["936/2000 low-confidence gold decisions", "some targets need hidden facts", "verified rubric/factor inconsistencies"],
+      "reviewed_ids": ["invoice_processing_000027", "agent_trace_observability_000052"]
+    },
+    {
+      "source": "jevbench",
+      "status": "WARN",
+      "reference_type": "authored_or_AI_reviewed",
+      "recommended_track": "split_by_tier",
+      "supported_construct": "native typed static decisions",
+      "limitations": ["hard tier is AI-authored and AI-reviewed", "top-label adaptation does not reproduce probability proper scoring"],
+      "subtrack_recommendations": {
+        "original": "core",
+        "easy": "core",
+        "hard": "exploratory_AI_reviewed",
+        "probability_cases": "top_label_only"
+      },
+      "reviewed_ids": ["original-routing-05-1", "easy-tool_selection-00", "hard-opus-a-probability-04"]
+    },
+    {
+      "source": "reflexbench",
+      "status": "PASS",
+      "reference_type": "authored_or_AI_reviewed_development_fixture",
+      "recommended_track": "auxiliary_product_regression_control",
+      "supported_construct": "candidate mapping and product-policy regression",
+      "limitations": ["public development fixtures", "not independent held-out correctness"],
+      "reviewed_ids": ["public-choice-v1-execution-failure-classification-synthetic-permission-denied"]
+    },
+    {
+      "source": "jev_laya",
+      "status": "WARN",
+      "reference_type": "synthetic_teacher_and_programmatic",
+      "recommended_track": "split_by_task",
+      "supported_construct": "synthetic policy agreement and explicit-fact retrieval",
+      "limitations": ["generation and blind relabel use the same gpt-5.5 model", "categorical disagreement filtering", "ordinal disagreements retained within one point"],
+      "subtrack_recommendations": {
+        "needle": "narrow_programmatic_retrieval_control",
+        "claims_categorical": "synthetic_agreement",
+        "multilingual_categorical": "synthetic_agreement",
+        "ordinal_tasks": "teacher_or_policy_agreement_only"
+      },
+      "reviewed_ids": ["triage-0034", "reviews-0074", "needle-02-1000-start"]
+    },
+    {
+      "source": "clinc150_oos",
+      "status": "PASS",
+      "reference_type": "dataset_provided",
+      "recommended_track": "core_explicit_oos_intent_classification",
+      "supported_construct": "closed-ontology 150-intent classification with an explicit OOS option",
+      "limitations": ["artificial OOS distribution", "not general abstention or refusal"],
+      "reviewed_ids": ["clinc:5226", "clinc:2908"]
+    },
+    {
+      "source": "turtlebench",
+      "status": "WARN",
+      "correctness_track_status": "FAIL",
+      "reference_type": "dataset_provided",
+      "recommended_track": "exploratory_contextual_reasoning_after_adjudication",
+      "supported_construct": "story-conditioned three-way guess classification",
+      "limitations": ["one exact-state label conflict", "Incorrect versus Unknown is open-world-sensitive", "only 32 story groups"],
+      "reviewed_ids": ["484", "832", "1369", "1282", "132"]
+    },
+    {
+      "source": "aegis2_prompt",
+      "status": "WARN",
+      "reference_type": "human_prompt_annotation",
+      "recommended_track": "human_policy_agreement_auxiliary",
+      "supported_construct": "agreement with the specified prompt-safety taxonomy",
+      "limitations": ["one exact raw-prompt human-label conflict", "policy and context dependent", "not production-safety capability"],
+      "reviewed_ids": [
+        "8e226f8cfe5a4edf879babebebc6d91d",
+        "92abced2c4764af1a2b5af235fa00bd4",
+        "b4ba0d10eff04c9d8182b7eee78a8d24"
+      ]
+    }
+  ],
+  "checks": {
+    "A_ground_truth_provenance": {
+      "status": "WARN",
+      "details": "No evaluated-model output was silently used as gold, but provenance spans dataset, human policy, synthetic teacher, AI-authored/reviewed, and programmatic references; verified conflicts exist."
+    },
+    "B_score_normalization": {
+      "status": "PASS",
+      "details": "Accuracy is direct reference-label correctness. No model-output-dependent max/min/mean rescaling was found."
+    },
+    "C_result_file_existence": {
+      "status": "PASS",
+      "scope": "bounded",
+      "details": "Frozen inputs, metadata, raw result files, summary, and metrics exist and are protocol-bound. This audit did not repeat the separate 105,800-row numeric reconciliation."
+    },
+    "D_dead_code_detection": {
+      "status": "WARN",
+      "scope": "bounded",
+      "details": "The metric/report paths relevant to this validity audit are reachable; a new whole-repository dead-code proof was not performed."
+    },
+    "E_scope_assessment": {
+      "status": "WARN",
+      "details": "Coverage is useful for source-separated static diagnosis but does not establish general decision intelligence, interaction success, utility, production safety, or decontaminated generalization."
+    },
+    "F_evaluation_type_classification": {
+      "status": "PASS",
+      "types": [
+        "real_gt",
+        "human_eval",
+        "synthetic_proxy",
+        "authored_or_AI_reviewed",
+        "programmatic",
+        "dataset_policy_label"
+      ]
+    }
+  },
+  "claim_impacts": [
+    {
+      "claim": "System1Bench provides source-separated static typed-decision diagnostics.",
+      "impact": "supported"
+    },
+    {
+      "claim": "Scores are accuracy or agreement against each declared source reference.",
+      "impact": "supported_with_reference_quality_qualifier"
+    },
+    {
+      "claim": "The 15 sources define one general decision-accuracy score or ranking.",
+      "impact": "unsupported"
+    },
+    {
+      "claim": "The benchmark measures real-world optimal actions, interactive agent success, or production safety.",
+      "impact": "unsupported"
+    },
+    {
+      "claim": "Public-data results are contamination-free.",
+      "impact": "unsupported"
+    }
+  ],
+  "future_versioned_protocol_recommendations": [
+    "Keep sources and reference-quality tracks separate; do not create blended accuracy.",
+    "Move typed-decisions, prompt-injections, and TurtleBench out of a noise-free correctness track.",
+    "Exclude or separately report the TurtleBench and Aegis exact-input conflict groups after protocol versioning.",
+    "Split JevBench original/easy from hard and describe probability cases as top-label only.",
+    "Report Jev-Laya needle separately and cluster its 450 variants by 25 needle contents.",
+    "Require observable target-determining state and independent labels before promoting typed-decisions to correctness evaluation.",
+    "Report bilingual paired consistency alongside per-language accuracy and disclose translation/localization effects."
+  ],
+  "audited_input_hashes": {
+    "PROTOCOL.md": "sha256:7aede99ae6819b7f19621bc98c248666948a9ca39379d8bfc59d001539376e60",
+    "docs/DATASET_REVIEW.md": "sha256:e0e7b5663ffa07a4683728065dad6b320a5002e0093b1ab42543cda3e668a6f4",
+    "sources.json": "sha256:9010f2c63508f5782351e2b21645ef5086d09a316d8ee7585d5bdebed36eaa4c",
+    "external_sources.json": "sha256:639975032dc3f6f120825f028689989b975c19ecdfff9cbd84b9bf38b101f4ff",
+    "protocol_manifest.json": "sha256:625cfbda10b414083a2a5fa7353eaa08fec55caf6c2989e8b6be5625d2e5aa6d",
+    "data/frozen.json": "sha256:5baf87ce9010d8229ea1a39722b865fb5ecc20db3c981e97f51a4baae3653be4",
+    "system1bench/base_prepare.py": "sha256:c59c682e01781e44b97173e90b1fa3ebb790459754980b563d02122d24c52b47",
+    "system1bench/prepare.py": "sha256:967d6049ecd0550d6eda01eb690a1ebb275d88c4b389e3dd3e1dd866a52d3b6d",
+    "system1bench/common.py": "sha256:c820c2e908f3581d422ee7a8edbdc277f34df2c2bf0acb5f2966fc479c7019a7",
+    "system1bench/metrics.py": "sha256:5ab6df99518666cff524a3e56718cf6878e1e110af46dcb8f39cc713d939fd88",
+    "system1bench/report.py": "sha256:562d21d484e71ca920c19b2c1514e0505df5d05a5fbeb3207222fb18adc90d20",
+    "results/summary.json": "sha256:9ab27a1b6ec4f81f2b81e7af775d626c0498c727e18ebc55f224c14e91aafbc4",
+    "results/metrics.csv": "sha256:61a1da071989e82e8f696dbf700801c4f23826f742f073210fdff273443a1c87",
+    ".aris/traces/experiment-audit/2026-09-28_dataset_validity/audit_samples.py": "sha256:94adc9e075b42d4194c0380a587876e236bd676f03033d5919ce6038c536f4c1",
+    ".aris/traces/experiment-audit/2026-09-28_dataset_validity/structural_checks.json": "sha256:5d583f3143fd1f5c170ae27baff4ba4de39035f6c887a936d2657711baf0a865",
+    ".aris/traces/experiment-audit/2026-09-28_dataset_validity/fixed_samples.full.json": "sha256:b5fdd2535a713591352ccc9d4e46dfec0516283e32d0efb600a44074262776e9",
+    ".aris/traces/experiment-audit/2026-09-28_dataset_validity/typed_consistency.json": "sha256:ea141a96425b020a38f4bb32120c730147cd3ce003c1f9888ec452c84735dcca"
+  },
+  "audited_input_hash_manifest": {
+    "path": ".aris/traces/experiment-audit/2026-09-28_dataset_validity/audited_input_hashes.json",
+    "sha256": "88ceb22e1cb9af8f6092cca26069eba17df1b92b0c7aa82c0df97fb2bf04f772",
+    "note": "The trace-local manifest contains the complete per-file hash list, including all source rows and pinned upstream evidence consumed by the audit."
+  }
+}

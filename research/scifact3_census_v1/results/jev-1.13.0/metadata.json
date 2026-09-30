@@ -1,0 +1,57 @@
+{
+  "status": "DONE",
+  "started_at": "2026-09-29T18:00:03.432281+00:00",
+  "updated_at": "2026-09-29T18:02:46.132468+00:00",
+  "signature": {
+    "model": "jev-1.13.0",
+    "endpoint": "https://api.typesafe.ai/v1/systemone",
+    "frozen_sha256": "c8f401b20bc8bbe731b8c3cae932dc992d837c176c1844ff801dac8f2a74b082",
+    "runner_sha256": "232c7b5196e66107821f81dcd792fb9a90591c1bdc009cdbb13ae6c126dd552e",
+    "common_sha256": "c820c2e908f3581d422ee7a8edbdc277f34df2c2bf0acb5f2966fc479c7019a7",
+    "workers": 8,
+    "max_request_starts_per_second": 8.0,
+    "price_usd_per_million_input_tokens": 0.042,
+    "max_accounted_usd": 5.0,
+    "attempts_per_request": 5,
+    "connect_timeout_seconds": 15,
+    "read_timeout_seconds": 90,
+    "continue_invalid_decision": true,
+    "client_proxy_used": false,
+    "full_payload_sent": true,
+    "server_tokenizer_available": false,
+    "comparison_track": "hosted_api_accuracy_and_client_latency"
+  },
+  "planned_requests": 1356,
+  "completed_requests": 1356,
+  "input_tokens": 1110946,
+  "accounted_cost_usd": 0.04665973200000001,
+  "transport_or_response_failed_requests": 1,
+  "finished_at": "2026-09-29T18:02:53.206644+00:00",
+  "suites": {
+    "scifact3_base": {
+      "sha256": "5ea7b0bf558b0e754415a5c04c118df1c4b33f5c83297b770b73498f9f534bae",
+      "requests": 339,
+      "decisions": 339,
+      "failures": 0
+    },
+    "scifact3_exact_repeat": {
+      "sha256": "3ba5d7cedc6936df4de77a4c6fcccf543824d31cb4fea7addef06624f919f6d5",
+      "requests": 339,
+      "decisions": 339,
+      "failures": 0
+    },
+    "scifact3_reversed_option_order": {
+      "sha256": "19b34d57845c6de57801cd87ddceeb4c07c8b6858a84ace5945d92289d67d9d7",
+      "requests": 339,
+      "decisions": 339,
+      "failures": 0
+    },
+    "scifact3_title_removed": {
+      "sha256": "07c0ecbaaf78076b82b5f9e1fb41724799e0659358dba8d061ff71457a0a22d6",
+      "requests": 339,
+      "decisions": 339,
+      "failures": 1
+    }
+  },
+  "journal_sha256": "b1d16a6498b6102cf9290fcf6a9698b5065d7d9337cc4cbd661f6b7fadb93e63"
+}

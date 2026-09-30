@@ -1,0 +1,51 @@
+{
+  "status": "DONE",
+  "started_at": "2026-09-29T17:31:57.373216+00:00",
+  "expected": 324,
+  "signature": {
+    "model": "llama31_8b_instruct",
+    "model_files_sha256": {
+      "config.json": "29e4c210b0d6ac178b16b2a255a568bdb23b581e50ca1ef6a6d071dd85704e6e",
+      "configuration.json": "a78221ae93dd8977b26fcd1d106fa5ad7e7f1fd3a7d93bfd9d6fba5ed00ec4d2",
+      "generation_config.json": "189fb0c0d7fd8a527db217c0a60a0e013f0394cd8800f9697a666a9e75e5f7fd",
+      "model-00001-of-00004.safetensors": "2b1879f356aed350030bb40eb45ad362c89d9891096f79a3ab323d3ba5607668",
+      "model-00002-of-00004.safetensors": "09d433f650646834a83c580877bd60c6d1f88f7755305c12576b5c7058f9af15",
+      "model-00003-of-00004.safetensors": "fc1cdddd6bfa91128d6e94ee73d0ce62bfcdb7af29e978ddcab30c66ae9ea7fa",
+      "model-00004-of-00004.safetensors": "92ecfe1a2414458b4821ac8c13cf8cb70aed66b5eea8dc5ad9eeb4ff309d6d7b",
+      "model.safetensors.index.json": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+      "special_tokens_map.json": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+      "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+      "tokenizer_config.json": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424"
+    },
+    "chat_template_sha256": "ca5b86f15c19b53c24ff18228849e06ffb677b952d85171c66d9b720d924f9bb",
+    "frozen_sha256": "603e19056846d26c70df3ad10844708c3b60973b15693743784f6246e1bd3e2c",
+    "protocol_sha256": "5bce3c8a1c8284c0639367b340a8e861f6ceb40376001110c7c129592c3551ac",
+    "runner_sha256": "1e8552c9e6b3878f8769d4288c4236ebf3b3d42dc0f1055e022c4d936123e00d",
+    "parser_code_sha256": "18d277b0b53b91e7856a0fa46069742d7348ac65cab0ce16fcdbb7d05208eb33",
+    "adapter_code_sha256": "88a9dbd4a57fd9b5f727180c5e2650c58632f0f01cbe320c7d3f6536d98a4e49",
+    "old_output_sha256": {
+      "legal/llama31_8b_instruct": "387bc685b61d253747c9422c0f0e17819d58f2a48bbffd24d245bb6f8e0013d1",
+      "legal/qwen3_8b": "7b79274b82c30671b07ef8a68645a8a2b01cd809f477f20763b4a11dd3c15d62",
+      "science/llama31_8b_instruct": "6d493afd747aa2d72f8e1c413c18d0cb7a2428a49b58bbacdea405de1e24b848",
+      "science/qwen3_8b": "15cc5fef6e2308025e42398334c94fd841e0b5a4c39111eaaebcc4e8207e758b"
+    },
+    "decoding": "greedy_direct_code",
+    "parser": "whole_response_exact_code",
+    "batch_size": 4,
+    "max_new_tokens": 16,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "seed": 0,
+    "torch": "2.7.1+cu118",
+    "transformers": "5.16.1",
+    "python": "3.12.13",
+    "gpu": "NVIDIA A100 80GB PCIe"
+  },
+  "finished_at": "2026-09-29T17:32:49.606038+00:00",
+  "raw_sha256": "8b7d3268f771390328e9c8d09ace827c238c7d3eeaa3f237271f60bde43cb17a",
+  "count": 324,
+  "invalid": 0,
+  "generated_tokens": 648,
+  "prompt_tokens": 376123,
+  "synchronized_inference_seconds": 49.4642644636333
+}
