@@ -6,8 +6,10 @@
 for models that turn a supplied state into typed `choice`, `noul` and `score`
 decisions.
 
-**Our measured systems are Laya English, Laya Multilingual,
+**The historical full-matrix systems are Laya English, Laya Multilingual,
 Llama-3.1-8B-Instruct, Qwen3-8B and the pinned Jev 1.13.0 API.**
+**The new controlled expansion adds Kev-0.8B, Kev-4B, Kev-9B,
+NanoJev (unified games) and Qwen3.5-9B.**
 “Jev-style” describes the interface/task category, not a shared architecture.
 
 System1Bench combines 15 public source datasets/collections into 36 suites and
@@ -30,6 +32,41 @@ this historical 15-source matrix.
 - [Research insights](research/INSIGHTS.en.md) · [fresh policy results](research/CONFIRMATION_RESULTS.en.md) · [研究进展与启发（中文）](research/RESEARCH_PROGRESS.zh-CN.md)
 - [Natural-domain paired protocol](research/domain_expansion_v1/PROTOCOL.md) · [legal/science results](research/domain_expansion_v1/RESULTS.en.md) · [third-party data attribution](research/domain_expansion_v1/DATA_LICENSES.md)
 - [Generative-baseline protocol](research/strong_baseline_v1/PROTOCOL.md) · [cross-domain complementarity](research/cross_domain_v1/RESULTS.en.md)
+
+## New official-model expansion
+
+Five new pinned models completed **24,525 new decisions**, with complete inputs
+and zero invalid outputs, on executable refund/access/routing rules, ContractNLI
+and the cited SciFact three-label panel. An additional **6,912 new decisions**
+compare Kev-4B and Kev-9B on previously unused policy states. This is a separate
+controlled extension: the five new models have **not** yet rerun every row of the
+historical 15-source matrix below. Historical same-payload comparisons are reused
+with explicit source receipts, not counted as new inference.
+
+- [中文结果与边界](research/model_expansion_v1/RESULTS.zh-CN.md) · [English results](research/model_expansion_v1/RESULTS.en.md)
+- [结果驱动的论文 ideas（直白版）](research/model_expansion_v1/IDEAS.zh-CN.md)
+- [Model identities, coverage and reproduction](docs/MODEL_EXPANSION.zh-CN.md)
+- [New-seed replication: all six effects](research/model_expansion_replication_v1/RESULTS.en.md)
+- [Input/model pins](research/model_expansion_v1/manifest.json) · [independent validation](research/model_expansion_v1/verification.json)
+- [Same-payload historical context and receipts](research/model_expansion_v1/historical_context.json)
+
+![Five-model workload-specific accuracy](paper/figures/fig_model_expansion_accuracy.png)
+
+A stable answer may be stably wrong. On scientific evidence, NanoJev has zero
+reversal flips but **213/339 wrong-and-stable** predictions. Its game-specialized
+checkpoint makes this an out-of-domain transfer diagnostic, not a general-quality
+verdict. Qwen3.5 has **283/339** base agreements vs Kev-4B's **274/339**, but
+**250/339** vs **265/339** correct-and-stable reversal pairs; the sample ranking
+changes, without a statistically secure superiority claim.
+
+![Prospective policy replication](paper/figures/fig_model_expansion_replication.png)
+
+On new routing pairs, Kev-4B gets both actions correct in **68/96** cases, Kev-9B
+in **56/96**. Refund joint success instead improves **82/96 → 96/96**. Routing's
+pointwise interval excludes zero, but its six-effect guarded interval reaches
+zero. These are checkpoint-specific workload shifts, not a causal size law;
+training histories differ. Qwen uses direct code likelihood, thinking off.
+See the reports for every head, class, confidence slice and counterexample.
 
 ## Beyond aggregate accuracy
 

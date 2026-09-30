@@ -1,0 +1,566 @@
+{
+  "summary_sha256": "e5d41c336b93bcf16c4522c8ea5ea91cc02d176febf188f192ce391e4f000ef9",
+  "verification_sha256": "b2327b898907a3c903d63fc344302caca1eebd29261c4b4ed130b7b7ef2dd336",
+  "generator_sha256": "aa4e96597d5416673bb1e6915f1f845a826a54cff225a23e08e9d5ab7b3e9554",
+  "accuracy": [
+    {
+      "model": "kev_08b",
+      "panel": "refund/action",
+      "n": 96,
+      "accuracy": 56.25,
+      "ci": [
+        46.875,
+        65.625
+      ]
+    },
+    {
+      "model": "kev_4b",
+      "panel": "refund/action",
+      "n": 96,
+      "accuracy": 87.5,
+      "ci": [
+        81.22395833333334,
+        93.75
+      ]
+    },
+    {
+      "model": "kev_9b",
+      "panel": "refund/action",
+      "n": 96,
+      "accuracy": 100.0,
+      "ci": [
+        100.0,
+        100.0
+      ]
+    },
+    {
+      "model": "nanojev",
+      "panel": "refund/action",
+      "n": 96,
+      "accuracy": 25.0,
+      "ci": [
+        16.666666666666664,
+        33.33333333333333
+      ]
+    },
+    {
+      "model": "qwen35_9b",
+      "panel": "refund/action",
+      "n": 96,
+      "accuracy": 72.91666666666666,
+      "ci": [
+        63.541666666666664,
+        81.25
+      ]
+    },
+    {
+      "model": "kev_08b",
+      "panel": "access/action",
+      "n": 96,
+      "accuracy": 66.66666666666666,
+      "ci": [
+        57.291666666666664,
+        76.04166666666666
+      ]
+    },
+    {
+      "model": "kev_4b",
+      "panel": "access/action",
+      "n": 96,
+      "accuracy": 96.875,
+      "ci": [
+        92.70833333333334,
+        100.0
+      ]
+    },
+    {
+      "model": "kev_9b",
+      "panel": "access/action",
+      "n": 96,
+      "accuracy": 98.95833333333334,
+      "ci": [
+        96.875,
+        100.0
+      ]
+    },
+    {
+      "model": "nanojev",
+      "panel": "access/action",
+      "n": 96,
+      "accuracy": 34.375,
+      "ci": [
+        25.0,
+        43.75
+      ]
+    },
+    {
+      "model": "qwen35_9b",
+      "panel": "access/action",
+      "n": 96,
+      "accuracy": 89.58333333333334,
+      "ci": [
+        83.33333333333334,
+        94.79166666666666
+      ]
+    },
+    {
+      "model": "kev_08b",
+      "panel": "routing/action",
+      "n": 96,
+      "accuracy": 76.04166666666666,
+      "ci": [
+        67.70833333333334,
+        84.375
+      ]
+    },
+    {
+      "model": "kev_4b",
+      "panel": "routing/action",
+      "n": 96,
+      "accuracy": 81.25,
+      "ci": [
+        72.91666666666666,
+        88.54166666666666
+      ]
+    },
+    {
+      "model": "kev_9b",
+      "panel": "routing/action",
+      "n": 96,
+      "accuracy": 70.83333333333334,
+      "ci": [
+        61.458333333333336,
+        80.20833333333334
+      ]
+    },
+    {
+      "model": "nanojev",
+      "panel": "routing/action",
+      "n": 96,
+      "accuracy": 25.0,
+      "ci": [
+        16.666666666666664,
+        33.33333333333333
+      ]
+    },
+    {
+      "model": "qwen35_9b",
+      "panel": "routing/action",
+      "n": 96,
+      "accuracy": 89.58333333333334,
+      "ci": [
+        83.33333333333334,
+        95.83333333333334
+      ]
+    },
+    {
+      "model": "kev_08b",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "accuracy": 48.61111111111111,
+      "ci": [
+        40.136054421768705,
+        57.14285714285714
+      ]
+    },
+    {
+      "model": "kev_4b",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "accuracy": 65.97222222222221,
+      "ci": [
+        58.78378378378378,
+        73.18840579710145
+      ]
+    },
+    {
+      "model": "kev_9b",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "accuracy": 70.13888888888889,
+      "ci": [
+        62.83783783783784,
+        77.37288771122888
+      ]
+    },
+    {
+      "model": "nanojev",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "accuracy": 31.944444444444443,
+      "ci": [
+        25.899280575539567,
+        37.59049461177118
+      ]
+    },
+    {
+      "model": "qwen35_9b",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "accuracy": 75.69444444444444,
+      "ci": [
+        68.70748299319727,
+        82.6676691729323
+      ]
+    },
+    {
+      "model": "kev_08b",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "accuracy": 49.557522123893804,
+      "ci": [
+        43.96551724137931,
+        54.90810844356183
+      ]
+    },
+    {
+      "model": "kev_4b",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "accuracy": 80.8259587020649,
+      "ci": [
+        76.50602409638554,
+        84.85737600678253
+      ]
+    },
+    {
+      "model": "kev_9b",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "accuracy": 80.53097345132744,
+      "ci": [
+        75.98784194528876,
+        84.85714285714285
+      ]
+    },
+    {
+      "model": "nanojev",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "accuracy": 37.16814159292036,
+      "ci": [
+        31.714111498257836,
+        42.899453941120605
+      ]
+    },
+    {
+      "model": "qwen35_9b",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "accuracy": 83.48082595870207,
+      "ci": [
+        79.14083755668177,
+        87.5008852691218
+      ]
+    }
+  ],
+  "stability": [
+    {
+      "model": "kev_08b",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "correct_stable": 40.27777777777778,
+      "wrong_stable": 45.83333333333333,
+      "changed": 13.88888888888889,
+      "correct_stable_ci": [
+        32.393859560239136,
+        48.571931589537215
+      ]
+    },
+    {
+      "model": "kev_4b",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "correct_stable": 63.19444444444444,
+      "wrong_stable": 28.47222222222222,
+      "changed": 8.333333333333332,
+      "correct_stable_ci": [
+        56.16438356164384,
+        70.4225352112676
+      ]
+    },
+    {
+      "model": "kev_9b",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "correct_stable": 69.44444444444444,
+      "wrong_stable": 25.0,
+      "changed": 5.555555555555555,
+      "correct_stable_ci": [
+        62.0,
+        76.69224430940363
+      ]
+    },
+    {
+      "model": "nanojev",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "correct_stable": 31.944444444444443,
+      "wrong_stable": 68.05555555555556,
+      "changed": 0.0,
+      "correct_stable_ci": [
+        25.899280575539567,
+        37.59049461177118
+      ]
+    },
+    {
+      "model": "qwen35_9b",
+      "panel": "contractnli/answer",
+      "n": 144,
+      "correct_stable": 68.75,
+      "wrong_stable": 18.055555555555554,
+      "changed": 13.194444444444445,
+      "correct_stable_ci": [
+        61.18421052631579,
+        76.05633802816901
+      ]
+    },
+    {
+      "model": "kev_08b",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "correct_stable": 39.52802359882006,
+      "wrong_stable": 30.08849557522124,
+      "changed": 30.383480825958703,
+      "correct_stable_ci": [
+        34.146341463414636,
+        45.07462686567164
+      ]
+    },
+    {
+      "model": "kev_4b",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "correct_stable": 78.17109144542773,
+      "wrong_stable": 18.289085545722713,
+      "changed": 3.5398230088495577,
+      "correct_stable_ci": [
+        73.63603425559947,
+        82.44086779448621
+      ]
+    },
+    {
+      "model": "kev_9b",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "correct_stable": 77.5811209439528,
+      "wrong_stable": 16.519174041297934,
+      "changed": 5.899705014749262,
+      "correct_stable_ci": [
+        72.8795637257412,
+        82.15324370889452
+      ]
+    },
+    {
+      "model": "nanojev",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "correct_stable": 37.16814159292036,
+      "wrong_stable": 62.83185840707964,
+      "changed": 0.0,
+      "correct_stable_ci": [
+        31.714111498257836,
+        42.899453941120605
+      ]
+    },
+    {
+      "model": "qwen35_9b",
+      "panel": "scifact3/answer",
+      "n": 339,
+      "correct_stable": 73.74631268436578,
+      "wrong_stable": 14.454277286135694,
+      "changed": 11.799410029498524,
+      "correct_stable_ci": [
+        68.562874251497,
+        78.42609242157084
+      ]
+    }
+  ],
+  "replication_summary_sha256": "37217b8796f9302b2a79f5e575fd0fdca6d305567b81c2d38332e6c4c4705c6b",
+  "replication_verification_sha256": "800a8aa2ab5107aead5c558acf5a60946ccaeed6856e4d781f78a630c38514d1",
+  "replication": [
+    {
+      "family": "refund",
+      "endpoint": "base_action",
+      "discovery": {
+        "n": 96,
+        "common_valid": 96,
+        "left_correct": 84,
+        "right_correct": 96,
+        "delta": 0.125,
+        "ci": [
+          0.0625,
+          0.18776041666666288
+        ]
+      },
+      "replication": {
+        "n": 96,
+        "left_correct": 87,
+        "right_correct": 96,
+        "wins": 9,
+        "losses": 0,
+        "ties": 87,
+        "delta": 0.09375,
+        "ci95": [
+          0.041666666666666664,
+          0.15625
+        ],
+        "ci_family_guard": [
+          0.020833333333333332,
+          0.17708333333333334
+        ]
+      }
+    },
+    {
+      "family": "access",
+      "endpoint": "base_action",
+      "discovery": {
+        "n": 96,
+        "common_valid": 96,
+        "left_correct": 93,
+        "right_correct": 95,
+        "delta": 0.020833333333333332,
+        "ci": [
+          -0.020833333333333332,
+          0.0625
+        ]
+      },
+      "replication": {
+        "n": 96,
+        "left_correct": 89,
+        "right_correct": 90,
+        "wins": 5,
+        "losses": 4,
+        "ties": 87,
+        "delta": 0.010416666666666666,
+        "ci95": [
+          -0.052083333333333336,
+          0.07291666666666667
+        ],
+        "ci_family_guard": [
+          -0.07291666666666667,
+          0.09375
+        ]
+      }
+    },
+    {
+      "family": "routing",
+      "endpoint": "base_action",
+      "discovery": {
+        "n": 96,
+        "common_valid": 96,
+        "left_correct": 78,
+        "right_correct": 68,
+        "delta": -0.10416666666666667,
+        "ci": [
+          -0.1875,
+          -0.020833333333333332
+        ]
+      },
+      "replication": {
+        "n": 96,
+        "left_correct": 75,
+        "right_correct": 64,
+        "wins": 4,
+        "losses": 15,
+        "ties": 77,
+        "delta": -0.11458333333333333,
+        "ci95": [
+          -0.19791666666666666,
+          -0.03125
+        ],
+        "ci_family_guard": [
+          -0.23958333333333334,
+          0.0
+        ]
+      }
+    },
+    {
+      "family": "refund",
+      "endpoint": "counterfactual_joint",
+      "discovery": {
+        "n": 96,
+        "delta": 0.14583333333333334,
+        "ci": [
+          0.08333333333333333,
+          0.21875
+        ]
+      },
+      "replication": {
+        "n": 96,
+        "left_correct": 82,
+        "right_correct": 96,
+        "wins": 14,
+        "losses": 0,
+        "ties": 82,
+        "delta": 0.14583333333333334,
+        "ci95": [
+          0.08333333333333333,
+          0.21875
+        ],
+        "ci_family_guard": [
+          0.0625,
+          0.25
+        ]
+      }
+    },
+    {
+      "family": "access",
+      "endpoint": "counterfactual_joint",
+      "discovery": {
+        "n": 96,
+        "delta": 0.10416666666666667,
+        "ci": [
+          0.03125,
+          0.17708333333333334
+        ]
+      },
+      "replication": {
+        "n": 96,
+        "left_correct": 79,
+        "right_correct": 89,
+        "wins": 15,
+        "losses": 5,
+        "ties": 76,
+        "delta": 0.10416666666666667,
+        "ci95": [
+          0.020833333333333332,
+          0.19791666666666666
+        ],
+        "ci_family_guard": [
+          -0.010416666666666666,
+          0.22916666666666666
+        ]
+      }
+    },
+    {
+      "family": "routing",
+      "endpoint": "counterfactual_joint",
+      "discovery": {
+        "n": 96,
+        "delta": -0.20833333333333334,
+        "ci": [
+          -0.3125,
+          -0.10416666666666667
+        ]
+      },
+      "replication": {
+        "n": 96,
+        "left_correct": 68,
+        "right_correct": 56,
+        "wins": 6,
+        "losses": 18,
+        "ties": 72,
+        "delta": -0.125,
+        "ci95": [
+          -0.21875,
+          -0.03125
+        ],
+        "ci_family_guard": [
+          -0.2604166666666667,
+          0.0
+        ]
+      }
+    }
+  ]
+}

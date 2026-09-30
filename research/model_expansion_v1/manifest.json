@@ -1,0 +1,61 @@
+{
+  "protocol": "system1bench-model-expansion-v1",
+  "prepared_sha256": "2d13abec9e0dfd6c528cf6fca5cd47d46bf232ab4502f1e1a1f9b8a9e3699ae5",
+  "source_sha256": {
+    "research/confirmation_v1/frozen.json": "c5419322dc2824e3868cee3074d6adc1d9b46b7e80237cdf0db92d4e65d6c338",
+    "research/domain_expansion_v1/frozen.json": "e99c54ab7e15ee7430f8c646917daf73846dcc34cdf9916ba741cbe00eb3e909",
+    "research/scifact3_census_v1/frozen.json": "c8f401b20bc8bbe731b8c3cae932dc992d837c176c1844ff801dac8f2a74b082"
+  },
+  "protocol_sha256": "18b3b6cd998806ff591f9dd054fa23707a26f7d00b2eed23341054680d5f84b4",
+  "preparer_sha256": "278c766b1642ab30a4469d74203b8a6fa2735d186eb60fc506bb35c33f52ffd9",
+  "model_pins": {
+    "kev_08b": {
+      "repo": "jaredpalmer/kev-0.8b",
+      "revision": "9a45d25eb2ab761841196625383fa1dff0e56c1e",
+      "base_repo": "Qwen/Qwen3.5-0.8B-Base",
+      "base_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "temperature": 2.3510958125672174,
+      "version_selection": "existing immutable official cache snapshot; not claimed latest"
+    },
+    "kev_4b": {
+      "repo": "jaredpalmer/kev-4b",
+      "revision": "139fdd94f1b6a6ad80cc15e08fcb99cac885a101",
+      "base_repo": "Qwen/Qwen3.5-4B-Base",
+      "base_revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+      "temperature": 2.406050072164233,
+      "version_selection": "existing immutable official cache snapshot; not claimed latest"
+    },
+    "kev_9b": {
+      "repo": "jaredpalmer/kev-9b",
+      "revision": "2629c06a5aeb0feb3b9783bafed17ed8f39ecf5c",
+      "base_repo": "Qwen/Qwen3.5-9B-Base",
+      "base_revision": "68c46c4b3498877f3ef123c856ecfde50c39f404",
+      "temperature": 2.2973967099940698,
+      "version_selection": "existing immutable official cache snapshot; not claimed latest"
+    },
+    "nanojev": {
+      "repo": "C-Tianyu/NanoJev",
+      "revision": "047b927b30882a1138fc504821b82ac145a4b81a",
+      "version_selection": "existing immutable official cache snapshot; not claimed latest"
+    },
+    "qwen35_9b": {
+      "repo": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "version_selection": "official main pinned by verified-TLS metadata before inference"
+    }
+  },
+  "planned_requests_per_model": 2601,
+  "planned_decisions_per_model": 4905,
+  "suite_requests": {
+    "policy_refund": 384,
+    "policy_access": 384,
+    "policy_routing": 384,
+    "contractnli_base": 144,
+    "contractnli_exact_repeat": 144,
+    "contractnli_reversed_option_order": 144,
+    "scifact3_base": 339,
+    "scifact3_exact_repeat": 339,
+    "scifact3_reversed_option_order": 339
+  },
+  "outcome_selection": false
+}

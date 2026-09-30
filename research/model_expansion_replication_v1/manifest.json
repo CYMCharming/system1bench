@@ -1,0 +1,36 @@
+{
+  "protocol": "system1bench-model-expansion-replication-v1",
+  "prepared_sha256": "ea637db58520909a2dc833b75d8ee04b63ef0c545c51f9e201a5ec979a573d1f",
+  "protocol_sha256": "9c0c776de0115c80ec9bd0af8bef48c747ea33c996a3735470f36f70a1d23c7d",
+  "preparer_sha256": "2de0bd69c3ab58e1bf9ae504a633a60243401ad932838cdb6e50eae211fc2d3c",
+  "canonical_generator_sha256": "3e235f23b8de7b72e9bedc8628cb19aa279ef4c9387bc0a87c43a914ae75ae8b",
+  "discovery_prepared_sha256": "2d13abec9e0dfd6c528cf6fca5cd47d46bf232ab4502f1e1a1f9b8a9e3699ae5",
+  "seeds": [
+    404,
+    505,
+    606
+  ],
+  "model_pins": {
+    "kev_4b": {
+      "repo": "jaredpalmer/kev-4b",
+      "revision": "139fdd94f1b6a6ad80cc15e08fcb99cac885a101",
+      "base_repo": "Qwen/Qwen3.5-4B-Base",
+      "base_revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+      "temperature": 2.406050072164233,
+      "version_selection": "existing immutable official cache snapshot; not claimed latest"
+    },
+    "kev_9b": {
+      "repo": "jaredpalmer/kev-9b",
+      "revision": "2629c06a5aeb0feb3b9783bafed17ed8f39ecf5c",
+      "base_repo": "Qwen/Qwen3.5-9B-Base",
+      "base_revision": "68c46c4b3498877f3ef123c856ecfde50c39f404",
+      "temperature": 2.2973967099940698,
+      "version_selection": "existing immutable official cache snapshot; not claimed latest"
+    }
+  },
+  "planned_requests_per_model": 1152,
+  "planned_decisions_per_model": 3456,
+  "base_states_per_family": 96,
+  "prior_state_overlap": 0,
+  "selection": "New fixed seeds, balanced actions; exclude discovery state/parameter matches, no new model outputs inspected"
+}
