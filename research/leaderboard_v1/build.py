@@ -27,8 +27,10 @@ def read(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 def sha(path):
-    with path.open('rb') as f:
-        return hashlib.file_digest(f,'sha256').hexdigest()
+    content=path.read_bytes()
+    if path.suffix in {'.md','.py','.json','.jsonl','.csv','.svg','.yml','.yaml'}:
+        content=content.replace(b'\r\n',b'\n')
+    return hashlib.sha256(content).hexdigest()
 
 def write(path,obj):
     path.write_text(json.dumps(obj,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')

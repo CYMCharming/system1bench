@@ -1,7 +1,9 @@
 """Publication-ready static rankings; every mark derives from scores.json."""
 from pathlib import Path
+import os
 import sys
 
+os.environ['SOURCE_DATE_EPOCH']='1790899200'  # 2026-10-02 UTC; stable PDF/SVG metadata.
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -25,6 +27,7 @@ plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10.5,'axes.edgecolo
     'axes.linewidth':.7,'text.color':INK,'axes.labelcolor':INK,'xtick.color':MUTED,
     'ytick.color':INK,'figure.facecolor':'white','savefig.facecolor':'white',
     'pdf.fonttype':42,'ps.fonttype':42,'svg.fonttype':'none'})
+plt.rcParams['svg.hashsalt']='system1bench-leaderboard-v1'
 
 def mix(color,amount):
     return tuple((1-amount)*np.ones(3)+amount*np.array(to_rgb(color)))
@@ -41,7 +44,8 @@ def save(fig,name):
     paths=[]
     for ext in ('pdf','svg','png'):
         path=OUT/(name+'.'+ext)
-        fig.savefig(path,dpi=320,bbox_inches='tight',pad_inches=.13)
+        metadata={'Date':'2026-10-02'} if ext=='svg' else None
+        fig.savefig(path,dpi=320,bbox_inches='tight',pad_inches=.13,metadata=metadata)
         if ext=='svg':
             path.write_text('\n'.join(s.rstrip() for s in path.read_text().splitlines())+'\n')
         paths.append(path)

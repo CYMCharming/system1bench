@@ -55,3 +55,8 @@ thinking is off; no generative reasoning ceiling is established. NanoJev is a
 game-specialized release, making these out-of-domain results especially
 limited. Hosted Jev tokenization is not independently verified. There is no
 controlled cross-model speed claim.
+
+Published SHA-256 receipts for text inputs and outputs use UTF-8 bytes with
+CRLF line endings normalized to LF. Binary inputs and figures use raw bytes.
+This permits a Windows checkout with Git automatic line-ending conversion to
+verify the same published content as the Linux research host.

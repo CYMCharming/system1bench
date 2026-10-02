@@ -1,25 +1,25 @@
 {
-  "scores_sha256": "47f5ecce9bf8075d5e7477bf0eb3c35dca981b62b3385cd587502bf93052a474",
-  "generator_sha256": "7dd121ec8b90ab5694e3a8ffc15bc7cd7c28bcb9ffd34b9537038f85526a3158",
+  "scores_sha256": "c796b20138a169cb500ebce0138d38e3330070f6644030534c9b4a9616e3e2f0",
+  "generator_sha256": "5acfac64fec1a5355b4f241d2cff00067c191100ceae69aed047acc3a2dc7180",
   "output_files_sha256": {
     "overview": {
-      "fig_leaderboard_overview.pdf": "20f1bf0b105cefa3e87f1e59e99d22ad219ce8e315ac02f058ed0816be7798eb",
-      "fig_leaderboard_overview.svg": "d4fbb3a587c3ced4d5fa4f6d1594cc8b87d1b946c48f34cd6b17753cfe2dfdfe",
+      "fig_leaderboard_overview.pdf": "388b0ac7e2d7dce0d4b2e295427eb5922912b607142c914beaf2248c11691baf",
+      "fig_leaderboard_overview.svg": "bb354617e264a79aaa9cd784f4cc594ee882669e24c2b3b64ec3737594eac372",
       "fig_leaderboard_overview.png": "bd3a050ae4dadb843f1e0aa8c50a1c74984f23cc5e74118239de142438b01047"
     },
     "domains": {
-      "fig_leaderboard_domains.pdf": "754dc9220bfef21be414c17b07d5dfd4b81eb9bd84c61389e374a41cd527e2cb",
-      "fig_leaderboard_domains.svg": "b3367f987b62a9cc749bc14e97dd0ba42dd053892092086d68979865d6267f12",
+      "fig_leaderboard_domains.pdf": "e90ab3487a1fc087402c957554e13df7a075e0bd38680731647f8cfebd5d519f",
+      "fig_leaderboard_domains.svg": "90692cdce29840f25400c03548e8e46eba150b36c3ac0032a2f7160306612d4e",
       "fig_leaderboard_domains.png": "04ba845309ef4c17350515b32b5ae9581b8dca0c1d5dd4ab7b36288f70d760b1"
     },
     "heads": {
-      "fig_leaderboard_heads.pdf": "6325421fdb24eb9af999e4da63ccb5680db3fa3dd99109427aed3abbd73bd281",
-      "fig_leaderboard_heads.svg": "99b763153679093ae401e435778ef3ed38d2e6662982814af51dd80c4a2b2731",
+      "fig_leaderboard_heads.pdf": "b6e3c27e032b40f60d2eb8070c51edf90a8f3a98501f6387dcad821c6fb95678",
+      "fig_leaderboard_heads.svg": "3000616e1e9d9284289e7abf64be0316d353586fd776d113d443ee0d0b786d9f",
       "fig_leaderboard_heads.png": "db8b2d1099fb56617a6a39901dab1eaf5ee537d3ee39c291fee9b33e15b3882c"
     },
     "robustness": {
-      "fig_leaderboard_robustness.pdf": "59c85908937d8573363758dbf3b6bd77fc4c82403c654d57aa8e2b9c9f2e61da",
-      "fig_leaderboard_robustness.svg": "986b16e277249e1d537cbd16782bb8456d1a59f80b0eb46e0387ed1fcc44d74c",
+      "fig_leaderboard_robustness.pdf": "bfca4a6267977b71de76d4c0fd4cee296a4cf3359f8c48e9e32622ebc2173f42",
+      "fig_leaderboard_robustness.svg": "bdd45016f930b2058dd26af5a9eb952c2fc1f444e5b90a8892c4da192bea247e",
       "fig_leaderboard_robustness.png": "17ef99ef7a4bd6ba24a10fa7f596e471d85ccafb8bca6933bfe05cb0b59104d5"
     }
   },

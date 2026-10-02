@@ -5,9 +5,9 @@
   "matched_decisions_per_model": 4905,
   "rankings": 14,
   "figure_files": 12,
-  "verifier_sha256": "0df0240b050c55217101f12614f380299141da2493284a804115896d48fa86a5",
-  "scores_sha256": "47f5ecce9bf8075d5e7477bf0eb3c35dca981b62b3385cd587502bf93052a474",
+  "verifier_sha256": "fa565319126838d63ea322106a58a32c8a2491baf0f0fa86fc2067eae0a53b81",
+  "scores_sha256": "c796b20138a169cb500ebce0138d38e3330070f6644030534c9b4a9616e3e2f0",
   "rankings_csv_sha256": "b24ce0a9caaa07afab7ab07ce258de8cade21495cf03c3bdac2190320697b605",
   "report_sha256": "40006abb4ee52124785ce2c7f736028b96874f7534b8cbda3190f20e24061d2e",
-  "figure_manifest_sha256": "8f994ee3bc6fd11fa6bbc73e176da4600bc108947b31f5c07cc69c7ee39b1dbb"
+  "figure_manifest_sha256": "a521d77a947780a858f7d69e23fcf432f6241712fc4b316fc8a0792a90edca6f"
 }

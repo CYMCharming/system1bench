@@ -1,7 +1,7 @@
 {
   "protocol": "system1bench-ten-model-leaderboard-v1",
-  "protocol_sha256": "8027b84e12c2ee3f1a62a81c68f99c3495fc7fac4b6b6710af89d759b80d5d4c",
-  "builder_sha256": "c21c8dd94f6e75282e452a05171c81d350223f90e78456396b79fceaf8590be9",
+  "protocol_sha256": "f98898c441ecca15579b5cc854a4efb6246970fbf1a160ec7a0a7e6be8aef4aa",
+  "builder_sha256": "3f365d2bdccd78e27d23b244b050ab68567447ee5c2c19e2b57ebba9f883d074",
   "source_sha256": {
     "historical_context.json": "2282f8b6b2270aecc4e1bbecedd3f35268ce515b101dfca5ce955c2d89a8eda1",
     "model_expansion_summary.json": "e5d41c336b93bcf16c4522c8ea5ea91cc02d176febf188f192ce391e4f000ef9",

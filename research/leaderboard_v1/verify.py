@@ -23,7 +23,10 @@ def load(path):
 
 
 def digest(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    content = path.read_bytes()
+    if path.suffix in {".md", ".py", ".json", ".jsonl", ".csv", ".svg", ".yml", ".yaml"}:
+        content = content.replace(b"\r\n", b"\n")
+    return hashlib.sha256(content).hexdigest()
 
 
 def near(actual, expected):
