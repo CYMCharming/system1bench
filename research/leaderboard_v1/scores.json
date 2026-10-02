@@ -1,0 +1,1271 @@
+{
+  "protocol": "system1bench-ten-model-leaderboard-v1",
+  "protocol_sha256": "8027b84e12c2ee3f1a62a81c68f99c3495fc7fac4b6b6710af89d759b80d5d4c",
+  "builder_sha256": "c21c8dd94f6e75282e452a05171c81d350223f90e78456396b79fceaf8590be9",
+  "source_sha256": {
+    "historical_context.json": "2282f8b6b2270aecc4e1bbecedd3f35268ce515b101dfca5ce955c2d89a8eda1",
+    "model_expansion_summary.json": "e5d41c336b93bcf16c4522c8ea5ea91cc02d176febf188f192ce391e4f000ef9",
+    "model_expansion_verification.json": "b2327b898907a3c903d63fc344302caca1eebd29261c4b4ed130b7b7ef2dd336"
+  },
+  "matched_decisions_per_model": 4905,
+  "models": {
+    "english": {
+      "label": "Laya English",
+      "interface": "decision_interface",
+      "origin": "historical_reused",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 33,
+          "n": 96,
+          "score": 0.34375
+        },
+        "routing": {
+          "correct": 69,
+          "n": 96,
+          "score": 0.71875
+        },
+        "policy_action": {
+          "correct": 126,
+          "n": 288,
+          "score": 0.4375
+        },
+        "legal": {
+          "correct": 56,
+          "n": 144,
+          "score": 0.3888888888888889
+        },
+        "science": {
+          "correct": 171,
+          "n": 339,
+          "score": 0.504424778761062
+        },
+        "action_head": {
+          "correct": 126,
+          "n": 288,
+          "score": 0.4375
+        },
+        "review_head": {
+          "correct": 184,
+          "n": 288,
+          "score": 0.6388888888888888
+        },
+        "severity_head": {
+          "correct": 106,
+          "n": 288,
+          "score": 0.3680555555555556
+        },
+        "all_heads": {
+          "correct": 32,
+          "n": 288,
+          "score": 0.1111111111111111
+        },
+        "policy_counterfactual": {
+          "correct": 29,
+          "n": 288,
+          "score": 0.10069444444444445
+        },
+        "natural_reversal": {
+          "score": 0.4126413470993117,
+          "components": {
+            "legal": {
+              "correct": 53,
+              "n": 144,
+              "score": 0.3680555555555556
+            },
+            "science": {
+              "correct": 155,
+              "n": 339,
+              "score": 0.45722713864306785
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.443604555883317,
+          "ci95": [
+            0.4102465363829256,
+            0.4761933832674341
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.4411627335299902
+        }
+      }
+    },
+    "multilingual": {
+      "label": "Laya Multilingual",
+      "interface": "decision_interface",
+      "origin": "historical_reused",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 28,
+          "n": 96,
+          "score": 0.2916666666666667
+        },
+        "routing": {
+          "correct": 23,
+          "n": 96,
+          "score": 0.23958333333333334
+        },
+        "policy_action": {
+          "correct": 75,
+          "n": 288,
+          "score": 0.2604166666666667
+        },
+        "legal": {
+          "correct": 49,
+          "n": 144,
+          "score": 0.3402777777777778
+        },
+        "science": {
+          "correct": 150,
+          "n": 339,
+          "score": 0.4424778761061947
+        },
+        "action_head": {
+          "correct": 75,
+          "n": 288,
+          "score": 0.2604166666666667
+        },
+        "review_head": {
+          "correct": 171,
+          "n": 288,
+          "score": 0.59375
+        },
+        "severity_head": {
+          "correct": 90,
+          "n": 288,
+          "score": 0.3125
+        },
+        "all_heads": {
+          "correct": 23,
+          "n": 288,
+          "score": 0.0798611111111111
+        },
+        "policy_counterfactual": {
+          "correct": 0,
+          "n": 288,
+          "score": 0.0
+        },
+        "natural_reversal": {
+          "score": 0.3375737463126844,
+          "components": {
+            "legal": {
+              "correct": 42,
+              "n": 144,
+              "score": 0.2916666666666667
+            },
+            "science": {
+              "correct": 130,
+              "n": 339,
+              "score": 0.3834808259587021
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.34772410685021304,
+          "ci95": [
+            0.3148346380306405,
+            0.38150650342941483
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.3128011307767945
+        }
+      }
+    },
+    "llama31_8b_instruct": {
+      "label": "Llama-3.1-8B",
+      "interface": "direct_llm",
+      "origin": "historical_reused",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 32,
+          "n": 96,
+          "score": 0.3333333333333333
+        },
+        "access": {
+          "correct": 33,
+          "n": 96,
+          "score": 0.34375
+        },
+        "routing": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "policy_action": {
+          "correct": 89,
+          "n": 288,
+          "score": 0.3090277777777778
+        },
+        "legal": {
+          "correct": 44,
+          "n": 144,
+          "score": 0.3055555555555556
+        },
+        "science": {
+          "correct": 182,
+          "n": 339,
+          "score": 0.5368731563421829
+        },
+        "action_head": {
+          "correct": 89,
+          "n": 288,
+          "score": 0.3090277777777778
+        },
+        "review_head": {
+          "correct": 171,
+          "n": 288,
+          "score": 0.59375
+        },
+        "severity_head": {
+          "correct": 180,
+          "n": 288,
+          "score": 0.625
+        },
+        "all_heads": {
+          "correct": 38,
+          "n": 288,
+          "score": 0.13194444444444445
+        },
+        "policy_counterfactual": {
+          "correct": 0,
+          "n": 288,
+          "score": 0.0
+        },
+        "natural_reversal": {
+          "score": 0.3284476401179941,
+          "components": {
+            "legal": {
+              "correct": 33,
+              "n": 144,
+              "score": 0.22916666666666666
+            },
+            "science": {
+              "correct": 145,
+              "n": 339,
+              "score": 0.4277286135693215
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.38381882989183874,
+          "ci95": [
+            0.350314927060029,
+            0.4163333221735177
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.35390240904621434
+        }
+      }
+    },
+    "qwen3_8b": {
+      "label": "Qwen3-8B",
+      "interface": "direct_llm",
+      "origin": "historical_reused",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 64,
+          "n": 96,
+          "score": 0.6666666666666666
+        },
+        "routing": {
+          "correct": 47,
+          "n": 96,
+          "score": 0.4895833333333333
+        },
+        "policy_action": {
+          "correct": 135,
+          "n": 288,
+          "score": 0.46875
+        },
+        "legal": {
+          "correct": 65,
+          "n": 144,
+          "score": 0.4513888888888889
+        },
+        "science": {
+          "correct": 231,
+          "n": 339,
+          "score": 0.6814159292035398
+        },
+        "action_head": {
+          "correct": 135,
+          "n": 288,
+          "score": 0.46875
+        },
+        "review_head": {
+          "correct": 184,
+          "n": 288,
+          "score": 0.6388888888888888
+        },
+        "severity_head": {
+          "correct": 194,
+          "n": 288,
+          "score": 0.6736111111111112
+        },
+        "all_heads": {
+          "correct": 67,
+          "n": 288,
+          "score": 0.2326388888888889
+        },
+        "policy_counterfactual": {
+          "correct": 73,
+          "n": 288,
+          "score": 0.2534722222222222
+        },
+        "natural_reversal": {
+          "score": 0.45141961651917406,
+          "components": {
+            "legal": {
+              "correct": 51,
+              "n": 144,
+              "score": 0.3541666666666667
+            },
+            "science": {
+              "correct": 186,
+              "n": 339,
+              "score": 0.5486725663716814
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.5338516060308095,
+          "ci95": [
+            0.4980686097205295,
+            0.5708505146295304
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.5078109636184858
+        }
+      }
+    },
+    "jev-1.13.0": {
+      "label": "Jev 1.13.0 API",
+      "interface": "decision_interface",
+      "origin": "historical_reused",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "access": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "routing": {
+          "correct": 52,
+          "n": 96,
+          "score": 0.5416666666666666
+        },
+        "policy_action": {
+          "correct": 244,
+          "n": 288,
+          "score": 0.8472222222222222
+        },
+        "legal": {
+          "correct": 111,
+          "n": 144,
+          "score": 0.7708333333333334
+        },
+        "science": {
+          "correct": 291,
+          "n": 339,
+          "score": 0.8584070796460177
+        },
+        "action_head": {
+          "correct": 244,
+          "n": 288,
+          "score": 0.8472222222222222
+        },
+        "review_head": {
+          "correct": 278,
+          "n": 288,
+          "score": 0.9652777777777778
+        },
+        "severity_head": {
+          "correct": 280,
+          "n": 288,
+          "score": 0.9722222222222222
+        },
+        "all_heads": {
+          "correct": 228,
+          "n": 288,
+          "score": 0.7916666666666666
+        },
+        "policy_counterfactual": {
+          "correct": 220,
+          "n": 288,
+          "score": 0.7638888888888888
+        },
+        "natural_reversal": {
+          "score": 0.7977814650934121,
+          "components": {
+            "legal": {
+              "correct": 107,
+              "n": 144,
+              "score": 0.7430555555555556
+            },
+            "science": {
+              "correct": 289,
+              "n": 339,
+              "score": 0.8525073746312685
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.8254875450671911,
+          "ci95": [
+            0.7941993420722927,
+            0.8550427007357582
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.8341814159292035
+        }
+      }
+    },
+    "kev_08b": {
+      "label": "Kev-0.8B",
+      "interface": "decision_interface",
+      "origin": "new_measured",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 54,
+          "n": 96,
+          "score": 0.5625
+        },
+        "access": {
+          "correct": 64,
+          "n": 96,
+          "score": 0.6666666666666666
+        },
+        "routing": {
+          "correct": 73,
+          "n": 96,
+          "score": 0.7604166666666666
+        },
+        "policy_action": {
+          "correct": 191,
+          "n": 288,
+          "score": 0.6631944444444444
+        },
+        "legal": {
+          "correct": 70,
+          "n": 144,
+          "score": 0.4861111111111111
+        },
+        "science": {
+          "correct": 168,
+          "n": 339,
+          "score": 0.49557522123893805
+        },
+        "action_head": {
+          "correct": 191,
+          "n": 288,
+          "score": 0.6631944444444444
+        },
+        "review_head": {
+          "correct": 192,
+          "n": 288,
+          "score": 0.6666666666666666
+        },
+        "severity_head": {
+          "correct": 120,
+          "n": 288,
+          "score": 0.4166666666666667
+        },
+        "all_heads": {
+          "correct": 60,
+          "n": 288,
+          "score": 0.20833333333333334
+        },
+        "policy_counterfactual": {
+          "correct": 97,
+          "n": 288,
+          "score": 0.3368055555555556
+        },
+        "natural_reversal": {
+          "score": 0.3990290068829892,
+          "components": {
+            "legal": {
+              "correct": 58,
+              "n": 144,
+              "score": 0.4027777777777778
+            },
+            "science": {
+              "correct": 134,
+              "n": 339,
+              "score": 0.3952802359882006
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.5482935922648312,
+          "ci95": [
+            0.5097296310387976,
+            0.585566597860793
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.5942539331366765
+        }
+      }
+    },
+    "kev_4b": {
+      "label": "Kev-4B",
+      "interface": "decision_interface",
+      "origin": "new_measured",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 84,
+          "n": 96,
+          "score": 0.875
+        },
+        "access": {
+          "correct": 93,
+          "n": 96,
+          "score": 0.96875
+        },
+        "routing": {
+          "correct": 78,
+          "n": 96,
+          "score": 0.8125
+        },
+        "policy_action": {
+          "correct": 255,
+          "n": 288,
+          "score": 0.8854166666666666
+        },
+        "legal": {
+          "correct": 95,
+          "n": 144,
+          "score": 0.6597222222222222
+        },
+        "science": {
+          "correct": 274,
+          "n": 339,
+          "score": 0.8082595870206489
+        },
+        "action_head": {
+          "correct": 255,
+          "n": 288,
+          "score": 0.8854166666666666
+        },
+        "review_head": {
+          "correct": 242,
+          "n": 288,
+          "score": 0.8402777777777778
+        },
+        "severity_head": {
+          "correct": 189,
+          "n": 288,
+          "score": 0.65625
+        },
+        "all_heads": {
+          "correct": 145,
+          "n": 288,
+          "score": 0.5034722222222222
+        },
+        "policy_counterfactual": {
+          "correct": 241,
+          "n": 288,
+          "score": 0.8368055555555556
+        },
+        "natural_reversal": {
+          "score": 0.7068276794493609,
+          "components": {
+            "legal": {
+              "correct": 91,
+              "n": 144,
+              "score": 0.6319444444444444
+            },
+            "science": {
+              "correct": 265,
+              "n": 339,
+              "score": 0.7817109144542773
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.7844661586365126,
+          "ci95": [
+            0.7548825796162193,
+            0.8158839270178802
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.8248463618485742
+        }
+      }
+    },
+    "kev_9b": {
+      "label": "Kev-9B",
+      "interface": "decision_interface",
+      "origin": "new_measured",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "access": {
+          "correct": 95,
+          "n": 96,
+          "score": 0.9895833333333334
+        },
+        "routing": {
+          "correct": 68,
+          "n": 96,
+          "score": 0.7083333333333334
+        },
+        "policy_action": {
+          "correct": 259,
+          "n": 288,
+          "score": 0.8993055555555556
+        },
+        "legal": {
+          "correct": 101,
+          "n": 144,
+          "score": 0.7013888888888888
+        },
+        "science": {
+          "correct": 273,
+          "n": 339,
+          "score": 0.8053097345132744
+        },
+        "action_head": {
+          "correct": 259,
+          "n": 288,
+          "score": 0.8993055555555556
+        },
+        "review_head": {
+          "correct": 223,
+          "n": 288,
+          "score": 0.7743055555555556
+        },
+        "severity_head": {
+          "correct": 234,
+          "n": 288,
+          "score": 0.8125
+        },
+        "all_heads": {
+          "correct": 169,
+          "n": 288,
+          "score": 0.5868055555555556
+        },
+        "policy_counterfactual": {
+          "correct": 245,
+          "n": 288,
+          "score": 0.8506944444444444
+        },
+        "natural_reversal": {
+          "score": 0.7351278269419862,
+          "components": {
+            "legal": {
+              "correct": 100,
+              "n": 144,
+              "score": 0.6944444444444444
+            },
+            "science": {
+              "correct": 263,
+              "n": 339,
+              "score": 0.775811209439528
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.8020013929859062,
+          "ci95": [
+            0.7713708673052941,
+            0.8330769804966933
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.840923058013766
+        }
+      }
+    },
+    "nanojev": {
+      "label": "NanoJev",
+      "interface": "decision_interface",
+      "origin": "new_measured",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 33,
+          "n": 96,
+          "score": 0.34375
+        },
+        "routing": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "policy_action": {
+          "correct": 81,
+          "n": 288,
+          "score": 0.28125
+        },
+        "legal": {
+          "correct": 46,
+          "n": 144,
+          "score": 0.3194444444444444
+        },
+        "science": {
+          "correct": 126,
+          "n": 339,
+          "score": 0.37168141592920356
+        },
+        "action_head": {
+          "correct": 81,
+          "n": 288,
+          "score": 0.28125
+        },
+        "review_head": {
+          "correct": 171,
+          "n": 288,
+          "score": 0.59375
+        },
+        "severity_head": {
+          "correct": 92,
+          "n": 288,
+          "score": 0.3194444444444444
+        },
+        "all_heads": {
+          "correct": 22,
+          "n": 288,
+          "score": 0.0763888888888889
+        },
+        "policy_counterfactual": {
+          "correct": 0,
+          "n": 288,
+          "score": 0.0
+        },
+        "natural_reversal": {
+          "score": 0.345562930186824,
+          "components": {
+            "legal": {
+              "correct": 46,
+              "n": 144,
+              "score": 0.3194444444444444
+            },
+            "science": {
+              "correct": 126,
+              "n": 339,
+              "score": 0.37168141592920356
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.324125286791216,
+          "ci95": [
+            0.2928072713787588,
+            0.3563181060172533
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.3069751720747296
+        }
+      }
+    },
+    "qwen35_9b": {
+      "label": "Qwen3.5-9B",
+      "interface": "direct_llm",
+      "origin": "new_measured",
+      "decisions": 4905,
+      "errors": 0,
+      "metrics": {
+        "refund": {
+          "correct": 70,
+          "n": 96,
+          "score": 0.7291666666666666
+        },
+        "access": {
+          "correct": 86,
+          "n": 96,
+          "score": 0.8958333333333334
+        },
+        "routing": {
+          "correct": 86,
+          "n": 96,
+          "score": 0.8958333333333334
+        },
+        "policy_action": {
+          "correct": 242,
+          "n": 288,
+          "score": 0.8402777777777778
+        },
+        "legal": {
+          "correct": 109,
+          "n": 144,
+          "score": 0.7569444444444444
+        },
+        "science": {
+          "correct": 283,
+          "n": 339,
+          "score": 0.8348082595870207
+        },
+        "action_head": {
+          "correct": 242,
+          "n": 288,
+          "score": 0.8402777777777778
+        },
+        "review_head": {
+          "correct": 222,
+          "n": 288,
+          "score": 0.7708333333333334
+        },
+        "severity_head": {
+          "correct": 181,
+          "n": 288,
+          "score": 0.6284722222222222
+        },
+        "all_heads": {
+          "correct": 113,
+          "n": 288,
+          "score": 0.3923611111111111
+        },
+        "policy_counterfactual": {
+          "correct": 228,
+          "n": 288,
+          "score": 0.7916666666666666
+        },
+        "natural_reversal": {
+          "score": 0.7124815634218289,
+          "components": {
+            "legal": {
+              "correct": 99,
+              "n": 144,
+              "score": 0.6875
+            },
+            "science": {
+              "correct": 250,
+              "n": 339,
+              "score": 0.7374631268436578
+            }
+          }
+        },
+        "overall_domain_equal": {
+          "score": 0.8106768272697477,
+          "ci95": [
+            0.7790994020347797,
+            0.8409093649476931
+          ]
+        },
+        "overall_task_equal": {
+          "score": 0.8225172074729598
+        }
+      }
+    }
+  },
+  "rankings": {
+    "refund": {
+      "english": 7,
+      "multilingual": 7,
+      "llama31_8b_instruct": 6,
+      "qwen3_8b": 7,
+      "jev-1.13.0": 1,
+      "kev_08b": 5,
+      "kev_4b": 3,
+      "kev_9b": 1,
+      "nanojev": 7,
+      "qwen35_9b": 4
+    },
+    "access": {
+      "english": 7,
+      "multilingual": 10,
+      "llama31_8b_instruct": 7,
+      "qwen3_8b": 5,
+      "jev-1.13.0": 1,
+      "kev_08b": 5,
+      "kev_4b": 3,
+      "kev_9b": 2,
+      "nanojev": 7,
+      "qwen35_9b": 4
+    },
+    "routing": {
+      "english": 4,
+      "multilingual": 10,
+      "llama31_8b_instruct": 8,
+      "qwen3_8b": 7,
+      "jev-1.13.0": 6,
+      "kev_08b": 3,
+      "kev_4b": 2,
+      "kev_9b": 5,
+      "nanojev": 8,
+      "qwen35_9b": 1
+    },
+    "policy_action": {
+      "english": 7,
+      "multilingual": 10,
+      "llama31_8b_instruct": 8,
+      "qwen3_8b": 6,
+      "jev-1.13.0": 3,
+      "kev_08b": 5,
+      "kev_4b": 2,
+      "kev_9b": 1,
+      "nanojev": 9,
+      "qwen35_9b": 4
+    },
+    "legal": {
+      "english": 7,
+      "multilingual": 8,
+      "llama31_8b_instruct": 10,
+      "qwen3_8b": 6,
+      "jev-1.13.0": 1,
+      "kev_08b": 5,
+      "kev_4b": 4,
+      "kev_9b": 3,
+      "nanojev": 9,
+      "qwen35_9b": 2
+    },
+    "science": {
+      "english": 7,
+      "multilingual": 9,
+      "llama31_8b_instruct": 6,
+      "qwen3_8b": 5,
+      "jev-1.13.0": 1,
+      "kev_08b": 8,
+      "kev_4b": 3,
+      "kev_9b": 4,
+      "nanojev": 10,
+      "qwen35_9b": 2
+    },
+    "action_head": {
+      "english": 7,
+      "multilingual": 10,
+      "llama31_8b_instruct": 8,
+      "qwen3_8b": 6,
+      "jev-1.13.0": 3,
+      "kev_08b": 5,
+      "kev_4b": 2,
+      "kev_9b": 1,
+      "nanojev": 9,
+      "qwen35_9b": 4
+    },
+    "review_head": {
+      "english": 6,
+      "multilingual": 8,
+      "llama31_8b_instruct": 8,
+      "qwen3_8b": 6,
+      "jev-1.13.0": 1,
+      "kev_08b": 5,
+      "kev_4b": 2,
+      "kev_9b": 3,
+      "nanojev": 8,
+      "qwen35_9b": 4
+    },
+    "severity_head": {
+      "english": 8,
+      "multilingual": 10,
+      "llama31_8b_instruct": 6,
+      "qwen3_8b": 3,
+      "jev-1.13.0": 1,
+      "kev_08b": 7,
+      "kev_4b": 4,
+      "kev_9b": 2,
+      "nanojev": 9,
+      "qwen35_9b": 5
+    },
+    "all_heads": {
+      "english": 8,
+      "multilingual": 9,
+      "llama31_8b_instruct": 7,
+      "qwen3_8b": 5,
+      "jev-1.13.0": 1,
+      "kev_08b": 6,
+      "kev_4b": 3,
+      "kev_9b": 2,
+      "nanojev": 10,
+      "qwen35_9b": 4
+    },
+    "policy_counterfactual": {
+      "english": 7,
+      "multilingual": 8,
+      "llama31_8b_instruct": 8,
+      "qwen3_8b": 6,
+      "jev-1.13.0": 4,
+      "kev_08b": 5,
+      "kev_4b": 2,
+      "kev_9b": 1,
+      "nanojev": 8,
+      "qwen35_9b": 3
+    },
+    "natural_reversal": {
+      "english": 6,
+      "multilingual": 9,
+      "llama31_8b_instruct": 10,
+      "qwen3_8b": 5,
+      "jev-1.13.0": 1,
+      "kev_08b": 7,
+      "kev_4b": 4,
+      "kev_9b": 2,
+      "nanojev": 8,
+      "qwen35_9b": 3
+    },
+    "overall_domain_equal": {
+      "english": 7,
+      "multilingual": 9,
+      "llama31_8b_instruct": 8,
+      "qwen3_8b": 6,
+      "jev-1.13.0": 1,
+      "kev_08b": 5,
+      "kev_4b": 4,
+      "kev_9b": 3,
+      "nanojev": 10,
+      "qwen35_9b": 2
+    },
+    "overall_task_equal": {
+      "english": 7,
+      "multilingual": 9,
+      "llama31_8b_instruct": 8,
+      "qwen3_8b": 6,
+      "jev-1.13.0": 2,
+      "kev_08b": 5,
+      "kev_4b": 3,
+      "kev_9b": 1,
+      "nanojev": 10,
+      "qwen35_9b": 4
+    }
+  },
+  "bootstrap": {
+    "resamples": 5000,
+    "seed": 20261002,
+    "unit": "policy state / legal document / science claim",
+    "interval": "pointwise descriptive paired-cluster 95% percentile"
+  },
+  "historical_file_receipts": {
+    "english": [
+      [
+        "research/confirmation_v1/results/english/policy_refund.json.gz",
+        "6205b50ea6a481a0387d2f8057f08ae6ddea0cb4473f4d1dd2fce9596ac04212"
+      ],
+      [
+        "research/confirmation_v1/results/english/policy_access.json.gz",
+        "364a4adfc560fed15508ae8d25d0bf5694c9880da8b8d5579091e410affdaf4f"
+      ],
+      [
+        "research/confirmation_v1/results/english/policy_routing.json.gz",
+        "cdc7ce3593696c8dda94321ad8dec29c23053441b204597d33af892d0a55abf2"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/english/contractnli_base.json.gz",
+        "5ea13826c3ed396ead5dab6cfed3c4c5700326f2d2de193456b44810d864d3d6"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/english/contractnli_exact_repeat.json.gz",
+        "76053f3bbaf95793bab68dbd0d969038ffed9b712679d72944be2782fda7708f"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/english/contractnli_reversed_option_order.json.gz",
+        "afe969a1052fb2eceef31fe259817095a22436fd73081443240bede6c61a945b"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/english/scifact3_base.json.gz",
+        "3de6e613a7a9651233f7faaae797131aadac9ff2e9edfc309c7ccac58076fe3a"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/english/scifact3_exact_repeat.json.gz",
+        "de75d39e5d5737b73a19efa1072458fa1edd02bc79114f6477864e3d317c8ada"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/english/scifact3_reversed_option_order.json.gz",
+        "297e4cb02259ee273194de63ed619123516bc4808c2fcf2ff344723848cb87de"
+      ]
+    ],
+    "multilingual": [
+      [
+        "research/confirmation_v1/results/multilingual/policy_refund.json.gz",
+        "0a8acf822b712011822e448f03935fa46d5be9aa5634fe54f96842493df4e105"
+      ],
+      [
+        "research/confirmation_v1/results/multilingual/policy_access.json.gz",
+        "6173c1a4e646cb2abd9a8f3cc85dab76846d6dfcecdd59aa59933d2fec69fd9e"
+      ],
+      [
+        "research/confirmation_v1/results/multilingual/policy_routing.json.gz",
+        "bf6aaf1d69c62273f417cd714af6ef05f7aa83495cadd9b09ebaf1f70d947c2d"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/multilingual/contractnli_base.json.gz",
+        "5ec118f58262c3402dd3fbcc8d1d32e51a9c7e940849020b437cb316bc25013c"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/multilingual/contractnli_exact_repeat.json.gz",
+        "787b30209f0c7f7b0d15b65151773f0a41fc98e9b7a6d23b8998ee6e80608f8d"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/multilingual/contractnli_reversed_option_order.json.gz",
+        "e1b3249719ceab5871eb04116e183de4ab6e5521c67e422f16b932cc723557a3"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/multilingual/scifact3_base.json.gz",
+        "45fcb7f3ebb8f8c6a4495f38688bc200ae3c114a54a5cd7ad07639770f528e83"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/multilingual/scifact3_exact_repeat.json.gz",
+        "608a0d43630ade5dc7d34e9f52865a197ef9b6656d44b2cb2077c616f7e63ce0"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/multilingual/scifact3_reversed_option_order.json.gz",
+        "f8e6dc98421ec95a4f576012b58c974ce00469e516531df2906d167ce607a6db"
+      ]
+    ],
+    "llama31_8b_instruct": [
+      [
+        "research/confirmation_v1/results/llama31_8b_instruct/policy_refund.json.gz",
+        "5f90a9e5b23e5e9491db3475be221af6ec82c03922ad9d4c83b86824453cc7b3"
+      ],
+      [
+        "research/confirmation_v1/results/llama31_8b_instruct/policy_access.json.gz",
+        "486142e2f811b885d489d56ccc5cb4e97105c2617445fe4296dc61089e217b31"
+      ],
+      [
+        "research/confirmation_v1/results/llama31_8b_instruct/policy_routing.json.gz",
+        "347e55228859ad77abcf216b5c84aa3b55317826337871a0285924460a7146f9"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/llama31_8b_instruct/contractnli_base.json.gz",
+        "387bc685b61d253747c9422c0f0e17819d58f2a48bbffd24d245bb6f8e0013d1"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/llama31_8b_instruct/contractnli_exact_repeat.json.gz",
+        "dc464ed89bbf14db581a3241eee143fb11270ee26206299df8600d8f1b02eb48"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/llama31_8b_instruct/contractnli_reversed_option_order.json.gz",
+        "b3c2c49e541a59a87c73c26c85a636d9e28e5c7f5e8bd48c709cb7692ea6aa2f"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/llama31_8b_instruct/scifact3_base.json.gz",
+        "c2be2429c32b0c899e369834253200cc95b53799de18c951621236dfadd5a888"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/llama31_8b_instruct/scifact3_exact_repeat.json.gz",
+        "2eb2d111a19c5f6437b54a8a1b7f73c8dd0deb8f9f023a6cd196d32822a5a423"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/llama31_8b_instruct/scifact3_reversed_option_order.json.gz",
+        "b3f3c3a16008ad2d7c37ab4eee827a301bf936c432834cbf61a8a2f88d9618bb"
+      ]
+    ],
+    "qwen3_8b": [
+      [
+        "research/confirmation_v1/results/qwen3_8b/policy_refund.json.gz",
+        "7e1f0b1d40f0dc613456e551c87c14f6b1ca4fe19fe2311b1f881e0024c5fe45"
+      ],
+      [
+        "research/confirmation_v1/results/qwen3_8b/policy_access.json.gz",
+        "41b2e4f1f784b0ae9359d1830079d1e171ca4ea9bfcd5fdbc4fbffcf3c0d5a88"
+      ],
+      [
+        "research/confirmation_v1/results/qwen3_8b/policy_routing.json.gz",
+        "d3741aff94c09a61aadf569dfb1b707a6dff8681631d3c0fbe0e67b91580bd32"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/qwen3_8b/contractnli_base.json.gz",
+        "7b79274b82c30671b07ef8a68645a8a2b01cd809f477f20763b4a11dd3c15d62"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/qwen3_8b/contractnli_exact_repeat.json.gz",
+        "513d708efd55e57276bb9697d83e655e0024fd6f77b35cf8b528cc40f2bffe97"
+      ],
+      [
+        "research/domain_expansion_v1/results/local/qwen3_8b/contractnli_reversed_option_order.json.gz",
+        "267b6f2ff4c62e734e5b541aad6a087a4e870967e0758810bd8077b254c9a73c"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/qwen3_8b/scifact3_base.json.gz",
+        "8117972364c9dd47b05be79d9b76c5c5a7a888a35425031b9f7f8c9f310b62d5"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/qwen3_8b/scifact3_exact_repeat.json.gz",
+        "d6e6e7285f02999f2fb5be165b8cc43e2414b732836a6e5e7b4939fb730cbfba"
+      ],
+      [
+        "research/scifact3_census_v1/results/local/qwen3_8b/scifact3_reversed_option_order.json.gz",
+        "b60a4670e59feeddb2aaa0e7439fcf31bde7eadcf24e3ee738129634b0fc65f3"
+      ]
+    ],
+    "jev-1.13.0": [
+      [
+        "research/confirmation_v1/api/jev-1.13.0/policy_refund.json.gz",
+        "6ea83d4d1d578ee43f4b114f68d85bdaaaf6cf88df8bb0fa634ff7037d466a7c"
+      ],
+      [
+        "research/confirmation_v1/api/jev-1.13.0/policy_access.json.gz",
+        "58affde3e3a223624d8c769008d816992f69582feb86965f71d64812eee90fea"
+      ],
+      [
+        "research/confirmation_v1/api/jev-1.13.0/policy_routing.json.gz",
+        "290e95c91f37a30c92df117462685ff84267eae08774ffd3d3840018aef7e1aa"
+      ],
+      [
+        "research/domain_expansion_v1/results/jev-1.13.0-continue-invalid/contractnli_base.json.gz",
+        "ff6467568f5056722826c85aff32da175671b3612562297c4ffcb913a0ca0992"
+      ],
+      [
+        "research/domain_expansion_v1/results/jev-1.13.0-continue-invalid/contractnli_exact_repeat.json.gz",
+        "115c84f65be266f5a356fd29590a9574334abb9ba6a07ee47614acfba2b0833f"
+      ],
+      [
+        "research/domain_expansion_v1/results/jev-1.13.0-continue-invalid/contractnli_reversed_option_order.json.gz",
+        "71429d22065710d0a33a83edea3023e403f60118f5ae8b55759de8707078308f"
+      ],
+      [
+        "research/scifact3_census_v1/results/jev-1.13.0/scifact3_base.json.gz",
+        "5ea7b0bf558b0e754415a5c04c118df1c4b33f5c83297b770b73498f9f534bae"
+      ],
+      [
+        "research/scifact3_census_v1/results/jev-1.13.0/scifact3_exact_repeat.json.gz",
+        "3ba5d7cedc6936df4de77a4c6fcccf543824d31cb4fea7addef06624f919f6d5"
+      ],
+      [
+        "research/scifact3_census_v1/results/jev-1.13.0/scifact3_reversed_option_order.json.gz",
+        "19b34d57845c6de57801cd87ddceeb4c07c8b6858a84ace5945d92289d67d9d7"
+      ]
+    ]
+  }
+}

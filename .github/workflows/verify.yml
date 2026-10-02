@@ -20,6 +20,7 @@ jobs:
       - run: python research/diagnose_policy.py
       - run: python research/model_expansion_v1/verify.py --check-only --public-only
       - run: python research/model_expansion_replication_v1/verify.py --check-only --public-only
+      - run: python research/leaderboard_v1/verify.py
       - run: python benchmarks/performance_report.py --root performance/v1
       - run: git diff --exit-code -- results/summary.json results/metrics.csv docs/RESULTS.zh-CN.md README.md
       - run: git diff --exit-code -- performance/v1/summary.json performance/v1/metrics.csv docs/PERFORMANCE_RESULTS.en.md

@@ -50,3 +50,15 @@ The proposed manuscript framing is **"Reliable decisions must know when to
 stay and when to switch"**. Novelty, natural-data validity, strong reasoning
 baselines and prospective constrained-routing benefit remain open empirical
 requirements, not achievements implied by these measurements.
+
+The [ten-model leaderboard](../research/leaderboard_v1/REPORT.zh-CN.md) adds
+a transparent presentation of all five historical and five expanded models on
+the exact same 4,905 decisions per system. On its post-hoc three-domain equal
+index, Jev API leads with 82.5%; on a five-task equal-weight sensitivity
+index, Kev-9B leads with 84.1%. This rank change is a warning against treating
+one aggregate as a universal winner. The domain, primitive-head, correct-and-
+stable reversal and decisive-fact-update panels remain separate, with complete
+counts, paired uncertainty and reference-quality limitations. The four
+reproducible leaderboard figures are `fig_leaderboard_overview`,
+`fig_leaderboard_domains`, `fig_leaderboard_heads` and
+`fig_leaderboard_robustness` under `paper/figures/`.

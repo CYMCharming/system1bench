@@ -33,6 +33,29 @@ this historical 15-source matrix.
 - [Natural-domain paired protocol](research/domain_expansion_v1/PROTOCOL.md) · [legal/science results](research/domain_expansion_v1/RESULTS.en.md) · [third-party data attribution](research/domain_expansion_v1/DATA_LICENSES.md)
 - [Generative-baseline protocol](research/strong_baseline_v1/PROTOCOL.md) · [cross-domain complementarity](research/cross_domain_v1/RESULTS.en.md)
 
+## Ten-model leaderboards
+
+The [ten-model leaderboard](research/leaderboard_v1/REPORT.zh-CN.md) ranks the
+five historical and five newly evaluated systems on exactly the same **4,905
+decisions per model**. Its descriptive three-domain index equally weights
+executable policy actions, ContractNLI labels and cited SciFact labels; it is
+not a replacement for the separate-source historical benchmark. Jev 1.13.0
+API leads this sample index at **82.5%**, followed by Qwen3.5-9B (**81.1%**)
+and Kev-9B (**80.2%**). If the three individual policies and two natural tasks
+instead receive equal weight, **Kev-9B leads at 84.1%**. Domain-specific
+rankings and the reference-quality caveats matter more than either single rank.
+
+![Ten-model leaderboard with exact task scores](paper/figures/fig_leaderboard_overview.png)
+
+- [All domain and capability rankings (中文)](research/leaderboard_v1/REPORT.zh-CN.md)
+  · [downloadable CSV](research/leaderboard_v1/rankings.csv)
+  · [exact scores and intervals](research/leaderboard_v1/scores.json)
+- [Ranking and uncertainty protocol](research/leaderboard_v1/PROTOCOL.md)
+  · [independent source-to-score verification](research/leaderboard_v1/verification.json)
+- [Domain panels](paper/figures/fig_leaderboard_domains.png)
+  · [decision-head panels](paper/figures/fig_leaderboard_heads.png)
+  · [stability and counterfactual panels](paper/figures/fig_leaderboard_robustness.png)
+
 ## New official-model expansion
 
 Five new pinned models completed **24,525 new decisions**, with complete inputs
