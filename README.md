@@ -10,6 +10,8 @@ decisions.
 Llama-3.1-8B-Instruct, Qwen3-8B and the pinned Jev 1.13.0 API.**
 **The new controlled expansion adds Kev-0.8B, Kev-4B, Kev-9B,
 NanoJev (unified games) and Qwen3.5-9B.**
+**The follow-up extension adds Kev-27B v2 and official Qwen3.5-0.8B/4B
+and Qwen3.8-27B checkpoints on the same frozen requests.**
 “Jev-style” describes the interface/task category, not a shared architecture.
 
 System1Bench combines 15 public source datasets/collections into 36 suites and
@@ -33,7 +35,39 @@ this historical 15-source matrix.
 - [Natural-domain paired protocol](research/domain_expansion_v1/PROTOCOL.md) · [legal/science results](research/domain_expansion_v1/RESULTS.en.md) · [third-party data attribution](research/domain_expansion_v1/DATA_LICENSES.md)
 - [Generative-baseline protocol](research/strong_baseline_v1/PROTOCOL.md) · [cross-domain complementarity](research/cross_domain_v1/RESULTS.en.md)
 
-## Ten-model leaderboards
+## Fourteen-model follow-up leaderboard
+
+The [fourteen-model follow-up](research/leaderboard_v2/REPORT.zh-CN.md)
+retains the original ten results and adds four independently measured,
+revision-pinned checkpoints. Every model has the same 4,905 typed decisions
+from 2,601 requests; the [new run verification](research/model_expansion_v2/verification.json)
+replays exact case, gold-label and request-hash matches. The three-domain
+index remains a descriptive navigation aid, while the separate domain and
+robustness rankings preserve source-reference differences.
+
+![Fourteen-model leaderboard with exact domain scores](paper/figures/fig_leaderboard_v2_overview.png)
+
+- [All ranked categories (中文)](research/leaderboard_v2/REPORT.zh-CN.md)
+  · [CSV](research/leaderboard_v2/rankings.csv)
+  · [scores and intervals](research/leaderboard_v2/scores.json)
+  · [independent verification](research/leaderboard_v2/verification.json)
+- [Three domains](paper/figures/fig_leaderboard_v2_domains.png)
+  · [decision heads](paper/figures/fig_leaderboard_v2_heads.png)
+  · [stability and factual response](paper/figures/fig_leaderboard_v2_robustness.png)
+  · [same-size Kev–Qwen contrasts](paper/figures/fig_leaderboard_v2_paired.png)
+  · [27B error overlap and oracle ceiling](paper/figures/fig_leaderboard_v2_overlap.png)
+- [New model identities and protocol](research/model_expansion_v2/PROTOCOL.md)
+  · [same-size paired results](research/model_expansion_v2/RESULTS.zh-CN.md)
+  · [ranking definitions](research/leaderboard_v2/PROTOCOL.md)
+
+Kev-27B v2 starts from the already post-trained Qwen3.8-27B base, whereas
+the smaller Kev bases are Qwen3.5-Base. Kev-9B in the earlier leaderboard is
+an older pinned release. Differences are measured on the same prompts but
+are **not** controlled causal effects of size or model architecture. Qwen
+uses direct candidate-code likelihood with thinking off; its generative
+reasoning ceiling is outside this evaluation.
+
+## Ten-model leaderboards (archived snapshot)
 
 The [ten-model leaderboard](research/leaderboard_v1/REPORT.zh-CN.md) ranks the
 five historical and five newly evaluated systems on exactly the same **4,905

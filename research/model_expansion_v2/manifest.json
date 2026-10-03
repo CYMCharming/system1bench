@@ -1,0 +1,33 @@
+{
+  "protocol": "system1bench-model-expansion-v2",
+  "prepared_sha256": "2d13abec9e0dfd6c528cf6fca5cd47d46bf232ab4502f1e1a1f9b8a9e3699ae5",
+  "previous_manifest_sha256": "a699350d483bcfe80ad987aad8b698a9c86fd4c48db00c28822b91540c6b823a",
+  "protocol_sha256": "82c102fe14d9412f78163b424dacbe8f0c87f812dbeeb2f900801aea7b91a4c8",
+  "adapter_sha256": "87ffacb58bf18fb47d9be4ec3cb022eca637ce906d77a9e6f3de860855e6aee8",
+  "runner_sha256": "866e0e19a80ca65e32ad34639fc80be3ce3abf013d47dfc1ff18df07f913115b",
+  "shared_adapter_sha256": "3c5ddaf183920869f8a880b1e2961dd5ad1bc9582ffc2598177de14f8ebf0416",
+  "model_pins": {
+    "kev_27b": {
+      "repo": "jaredpalmer/kev-27b",
+      "revision": "af0e6d551bdc2cc724f3e9d7a8bee1cd4fb8f7bf",
+      "base_repo": "Qwen/Qwen3.8-27B",
+      "base_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+    },
+    "qwen35_08b": {
+      "repo": "Qwen/Qwen3.5-0.8B",
+      "revision": "2fc06364715b967f1860aea9cf38778875588b17"
+    },
+    "qwen35_4b": {
+      "repo": "Qwen/Qwen3.5-4B",
+      "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+    },
+    "qwen38_27b": {
+      "repo": "Qwen/Qwen3.8-27B",
+      "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+    }
+  },
+  "planned_requests_per_model": 2601,
+  "planned_decisions_per_model": 4905,
+  "source_type": "the already frozen model_expansion_v1 panel",
+  "outcome_selection": false
+}

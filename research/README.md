@@ -8,6 +8,12 @@ This snapshot distinguishes three evidence classes:
 
 Original raw artifacts are retained, including invalid hosted replies. The [execution log](JEV_RUN_LOG.md) records protocol deviations and conditional sensitivity analyses. No blended leaderboard score is defined. Human construct/bilingual validation has not been performed; same-family automated reviews are provisional.
 
+The [fourteen-model follow-up leaderboard](leaderboard_v2/REPORT.zh-CN.md)
+is a separate, post-hoc presentation of the frozen policy/legal/scientific
+extension, not a blended score for the historical 15-source benchmark. Its
+[four new model runs](model_expansion_v2/RESULTS.zh-CN.md) are independently
+hash-verified and keep the original ten-model snapshot intact.
+
 ## Reproduce from public outputs on CPU
 
 From the repository root, after installing the base package:

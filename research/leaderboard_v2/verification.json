@@ -1,0 +1,13 @@
+{
+  "protocol": "system1bench-fourteen-model-leaderboard-v2",
+  "status": "PASS",
+  "models": 14,
+  "matched_decisions_per_model": 4905,
+  "rankings": 14,
+  "figure_files": 18,
+  "verifier_sha256": "fb433b391ed0689b2f74d70f993037bb88b8ff2b42344e0006f439d6328ba956",
+  "scores_sha256": "81e5702fd744edcaa7520b5cc52ded7526c2c104a426c9a32249565bfc4bd279",
+  "rankings_csv_sha256": "eebdeb6dba40501696df0c46eb6d8478d60d363a60ff5c18584fcf32e3a9ea06",
+  "report_sha256": "3eb07dccbd8dd9c077a891e473b03d5c7deaa260783e5ada51e5e5c063225e2b",
+  "figure_manifest_sha256": "5e6315ba6eecaf11d11fe58820ebfecf2c72e96f9d761fac06e7933960613236"
+}

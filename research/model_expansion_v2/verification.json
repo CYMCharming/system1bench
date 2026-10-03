@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "12d871e6a605fef40cf9fff121b28984c178939d0c915abbf114b9bde1487fb9",
+  "verifier_sha256": "ad63d9d4c3c08206e1bd96301260cda439a846eabd0c870e88492c0da5c48dd9",
+  "models": {
+    "kev_27b": {
+      "refund/action": 96,
+      "refund/review": 96,
+      "refund/severity": 96,
+      "access/action": 96,
+      "access/review": 96,
+      "access/severity": 95,
+      "routing/action": 96,
+      "routing/review": 96,
+      "routing/severity": 94,
+      "contractnli/answer": 116,
+      "scifact3/answer": 285
+    },
+    "qwen35_08b": {
+      "refund/action": 24,
+      "refund/review": 25,
+      "refund/severity": 31,
+      "access/action": 50,
+      "access/review": 57,
+      "access/severity": 46,
+      "routing/action": 24,
+      "routing/review": 35,
+      "routing/severity": 32,
+      "contractnli/answer": 44,
+      "scifact3/answer": 138
+    },
+    "qwen35_4b": {
+      "refund/action": 53,
+      "refund/review": 31,
+      "refund/severity": 42,
+      "access/action": 76,
+      "access/review": 62,
+      "access/severity": 59,
+      "routing/action": 55,
+      "routing/review": 37,
+      "routing/severity": 62,
+      "contractnli/answer": 86,
+      "scifact3/answer": 225
+    },
+    "qwen38_27b": {
+      "refund/action": 74,
+      "refund/review": 77,
+      "refund/severity": 78,
+      "access/action": 93,
+      "access/review": 53,
+      "access/severity": 53,
+      "routing/action": 78,
+      "routing/review": 76,
+      "routing/severity": 63,
+      "contractnli/answer": 112,
+      "scifact3/answer": 285
+    }
+  },
+  "summary_sha256": "ce69a45c88f86a120a07f09cf3ab618df59fb458123e0e4e06fd7e76d22faf0b",
+  "source_text_reconstructed_on_research_host": true
+}

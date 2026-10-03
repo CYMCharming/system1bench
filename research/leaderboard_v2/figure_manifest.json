@@ -1,0 +1,37 @@
+{
+  "scores_sha256": "81e5702fd744edcaa7520b5cc52ded7526c2c104a426c9a32249565bfc4bd279",
+  "generator_sha256": "0764fb690368a8a3468e1dc7cb415d5ed21b41dfa0f40288bf039af99e125ab8",
+  "output_files_sha256": {
+    "overview": {
+      "fig_leaderboard_v2_overview.pdf": "cbf27d27e044c8eaa0fa4108c9a544b5be55a722c4c29c1310ec65add2f09e52",
+      "fig_leaderboard_v2_overview.svg": "cd2ea259439f16590d1b835b7a6fa6eb436ae1d496dc72e64de5475dea9968d5",
+      "fig_leaderboard_v2_overview.png": "f45ffa129ec5d09eb3246ae4a76686b2175a0e56a5b6b0b939d6f3a598ea50a3"
+    },
+    "domains": {
+      "fig_leaderboard_v2_domains.pdf": "83ffd186ed58cd73dcb01e9a53c6f2e4611db92c18ada941ed34302e3820b161",
+      "fig_leaderboard_v2_domains.svg": "529d03530a0002346b228c4222176b3a8d004acec037d630596881cb1a4c28f6",
+      "fig_leaderboard_v2_domains.png": "c1aba49b09acc7a7bd14cb7313d06ed8fa6ab764089a4141afe11f127fec0274"
+    },
+    "heads": {
+      "fig_leaderboard_v2_heads.pdf": "bacb041015525dee5c2d9a61be76d63f33fc0a6d0b37871d1abe1b0c8d09a319",
+      "fig_leaderboard_v2_heads.svg": "2bbdb79ecd4e871c1b56279a1b27b8cd9bd7e90db3fc903915d859028b888f4e",
+      "fig_leaderboard_v2_heads.png": "edf06b06dd7ff5eab6dc8974b0610071383551ed2dc42c8d424ce0270306834a"
+    },
+    "robustness": {
+      "fig_leaderboard_v2_robustness.pdf": "264b21f3534c909d991d2365adfb4994dfde62daa58132104ff996ef28c0e00d",
+      "fig_leaderboard_v2_robustness.svg": "1e88a81e92c82f14468fb15a5b53d9abecf4312c03cee67d8347c2143a6aa95e",
+      "fig_leaderboard_v2_robustness.png": "e0bc4446ff61f6cdaf88145c9ccd075dc3d5ce30f03ad0366bcb433a32297eca"
+    },
+    "paired": {
+      "fig_leaderboard_v2_paired.pdf": "dbf8a1aeab2bda0805179b60186351491e402807af1c19c34952c73873e5cabc",
+      "fig_leaderboard_v2_paired.svg": "ec956d1574db8555909d528d1a067b75ff6c2fbf8247011dfd59565ddd52f5a6",
+      "fig_leaderboard_v2_paired.png": "58c08223c27a3b84c7969f1c39878cd4c0857f896e130baabfc8a7fb6850f3a0"
+    },
+    "overlap": {
+      "fig_leaderboard_v2_overlap.pdf": "bdc3e4efd1d3348705807ef1448f263d8a1db28b7529de942584935fb4bac658",
+      "fig_leaderboard_v2_overlap.svg": "04f1082863379a4ce2756642e6136823feac4163b8bd2836918166c3c6baf055",
+      "fig_leaderboard_v2_overlap.png": "ddb9bf301bda9fb15ba6fe615f4effb988261b7a1755b1358685ead64bb80ee8"
+    }
+  },
+  "scope": "Six source-backed PDF/SVG/PNG figures; ranked panels, matched-size contrasts and error overlap"
+}

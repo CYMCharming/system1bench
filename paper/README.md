@@ -1,5 +1,10 @@
 # System1Bench paper drafts
 
+The [Kev-27B and Qwen expansion addendum](MODEL_EXPANSION_V2_ADDENDUM.md)
+records the latest fourteen-model results and six new paper-ready figure sets.
+It is separate from the older PDF drafts below, which do not yet include these
+measurements.
+
 `main.tex` is the extended research preprint, with detailed experiments and appendices; it is not trimmed to a conference main-text limit. `submission.tex` is a separate, compact, anonymous *prospective* E&D-style draft whose main text is checked against a nine-page limit. It uses the NeurIPS 2026 `[eandd]` style only as an internal layout rehearsal. The 2026 deadline has passed: neither PDF is a submitted or accepted paper, and a future venue's instructions must be rechecked.
 
 The evidence has distinct sampling and reference scopes: 15 historical source collections (28 main suites and eight case-reusing controls), 288 fresh executable-policy states, 144 selected ContractNLI document–hypothesis pairs, 120 positive-evidence SciFact claim–cited-abstract pairs, and a separately frozen *follow-up* of 180 three-class SciFact cited pairs. The follow-up was designed after the two-class scope gap was observed but before its own inference. A subsequent post-hoc same-source census reran all five systems on all 339 eligible three-class cited pairs; its 159-pair complement to the balanced selection is not an independent holdout. The NoInfo source convention means a cited abstract lacks annotated evidence; it is not an independently adjudicated negative. Percentages from unlike references and samples are not pooled into a leaderboard. Protocols, analyses and source notes reside in `../research/domain_expansion_v1/`, `../research/scifact3_v1/`, `../research/scifact3_census_v1/`, `../research/scifact3_codebook_v1/`, `../research/natural_direct_v1/` and the other named study directories.
