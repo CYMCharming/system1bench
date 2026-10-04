@@ -1,0 +1,73 @@
+{
+  "status": "DONE",
+  "signature": {
+    "model": {
+      "model": "startlux_9b",
+      "checkpoint": {
+        "repo": "startlux-models/StartLux-Decision-9B",
+        "revision": "342aad64840be8eee314455428a5a775f18ef547"
+      },
+      "python": "3.12.13",
+      "torch": "2.7.1+cu118",
+      "transformers": "5.17.0",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "seed": 0,
+      "dtype": "bfloat16",
+      "context_limit": 32768,
+      "truncation": false,
+      "text_only": true,
+      "batch_requests": 1,
+      "controlled_speed_measurement": false,
+      "adapter": "startlux_official_native",
+      "temperature_by_type": {
+        "noul": 1.7238,
+        "choice": 1.2294,
+        "score": 1.2937
+      },
+      "vendor_commit": "0e7a2e81b9c92756e26d8edd843a44d50e362669",
+      "cuda_graphs": false,
+      "images": false,
+      "prefix_cache_across_requests": false,
+      "allow_slow_kernel_fallback": true,
+      "fast_kernels_active": false,
+      "model_files_sha256": {
+        "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+        "config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+        "decision_config.json": "6d2c7f71c195e32a45b6775aa9e9a9daae2755372801a8873c70c1d555f75db3",
+        "model-00001-of-00004.safetensors": "3859c7fae5ebf0e3084bbd5b73441fae603c3e99d71857f1a3dd30dc71b337ba",
+        "model-00002-of-00004.safetensors": "174d7129f1fc201f0c59fd19ae279fee713f7b075e1e1f923f46cc9e8ffae327",
+        "model-00003-of-00004.safetensors": "a171da631dc3c5bfed8d680104e8ecfab1342d0f67ccd644eac46f76d65e38bf",
+        "model-00004-of-00004.safetensors": "84f232563d1e578687c8e5c5ca30c5d117f26bb4d2b52b708a3308a63a224faf",
+        "model.safetensors.index.json": "d90d4db17bd8afdbef88db7a84ff65cc056a49b8db450a583f3621284e776ec6",
+        "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+        "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+        "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+        "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+      },
+      "vendor_code_sha256": {
+        "startlux_decision/__init__.py": "9610d06f4f732c9bb6bf0a1556fec3a1b5c1ab71712f9b508c26efcf0ff2bed5",
+        "startlux_decision/check.py": "807392d143b873b981400b36e6bf9540863e46f594b31373aa300a86186505b0",
+        "startlux_decision/gguf_server.py": "332ee5e0f0b11e6870ef1fec866694e86d5894b6747562126722ffc13dc02897",
+        "startlux_decision/jevfmt.py": "160ea01fd85a8f8fa1f1412dbd6c33bbfbb0eae7bcc8d8aa4e398256dce5c2b7",
+        "startlux_decision/mlx_int8.py": "f97ef34043ada73bc16abb56f67ecea0cb74464fdbc30d3a224f33813a010888",
+        "startlux_decision/mlx_model.py": "1f5578afcfe9f0ace1e8ff5f0caa5f7e4daf551f824d96d84d063c0ba2e6a3db",
+        "startlux_decision/model.py": "06a1bf602a9a5e4df6ac80f9f767cef91059ca2c789ad47cf318f839964c8125",
+        "startlux_decision/server.py": "bcdd2a35dfb69d49659f9675017fe101b2c032d7cb72d328ddce28556e875779"
+      }
+    },
+    "manifest_sha256": "4177142262ce0044d7db49e9ddf009fb44d628ed494af6da61f8ca96645b5a61",
+    "frozen_sha256": "2d13abec9e0dfd6c528cf6fca5cd47d46bf232ab4502f1e1a1f9b8a9e3699ae5",
+    "runner_sha256": "197650f243ba98d7c1ff377fa987b4a525a9df9490431205292a6b4414c0171c",
+    "adapter_sha256": "bb7faf113557ff2fe2048211d4e087783cf37148504d36f1d094731360ed3dd2",
+    "shared_adapter_sha256": "3c5ddaf183920869f8a880b1e2961dd5ad1bc9582ffc2598177de14f8ebf0416",
+    "expansion_adapter_sha256": "87ffacb58bf18fb47d9be4ec3cb022eca637ce906d77a9e6f3de860855e6aee8",
+    "panel": "main"
+  },
+  "expected": 4905,
+  "started_at": "2026-10-04T13:37:30.473378+00:00",
+  "count": 4905,
+  "errors": 0,
+  "finished_at": "2026-10-04T13:51:17.067370+00:00",
+  "raw_sha256": "e9bd300dd7a3a43bd0dec10f5cb357410c6795be081ebf55c36b48143dfe1888"
+}

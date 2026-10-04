@@ -1,0 +1,79 @@
+{
+  "reason": "CRUX gold had a constant visible option ID. Final all-source reruns blind identity independently of order; same cases, quotas, model cohort and meanings.",
+  "excluded_pre_blinding_runs": {
+    "startlux_4b": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "raw_sha256": "a6319faff38d308d76fd0212f9b9dcbd1d0ea2e1e40616326148e7cd923cff01"
+    },
+    "jev": {
+      "count": 1152,
+      "errors": {
+        "None": 1150,
+        "InvalidDecision": 1,
+        "invalid_output:ValueError": 1
+      },
+      "raw_sha256": "4eb6678fa0b7ae31aa23c040ca8c2d21c7b61b87b61fa9e9df7ccc840109f0f4"
+    },
+    "intern_4b": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "raw_sha256": "a0831acf195e661615596a6b5d5b86796ea4ff9969aea3a99cefefd70d95879a"
+    },
+    "startlux_27b": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "raw_sha256": "3f80ad56b90dcbec9e683110c829c222e3f7946be55ba1c87f7cbf0887147c39"
+    },
+    "startlux_9b": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "raw_sha256": "9d134acc57af6f57c337d7770ccc2e351b52bfadec35af1a64e9c0652e6025c7"
+    },
+    "kev_08b": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "raw_sha256": "08788b0c271a6a0c6fbbdf30abb033134e801882f6919d3ac9d1d8df5de6171a"
+    },
+    "kev_4b": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "raw_sha256": "42ee043eb076a70462e2ba250d69843edc437dde0d76e3c6d13b86534354bd15"
+    },
+    "qwen35_08b": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "raw_sha256": "5e1ed8dc36f1d248d0118811aff57d6e59cc12a5d08715b50b1faa1c2d808644"
+    },
+    "qwen35_4b": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "raw_sha256": "bf745e2f916d79f671fac74cbc33d2a0bd996e2733cd7f0e8bce530e6b5981fa"
+    },
+    "kev_9b": {
+      "count": 609,
+      "errors": {
+        "None": 609
+      },
+      "raw_sha256": "0048ae7397a1fcfdb825ef11b02fa6354f184ac28f6085f4529146410261584f"
+    }
+  },
+  "selection_changed": false,
+  "all_transfer_models_rerun": true
+}

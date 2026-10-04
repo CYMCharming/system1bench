@@ -1,0 +1,27 @@
+{
+  "status": "DONE",
+  "signature": {
+    "model": {
+      "model": "jev-1.13.0",
+      "adapter": "jev_official_hosted",
+      "client_payload_complete": true,
+      "server_tokenization_verified": false,
+      "controlled_speed_measurement": false,
+      "probability_processing": "historical client 0.02 mass tolerance; normalize rounded outputs; retain reported values",
+      "task_prediction": "validated official reported choice; distribution argmax retained separately"
+    },
+    "manifest_sha256": "f2039091ad2015a03656f855e1f83b6a1634713888515ad5a2584073a4506c7a",
+    "frozen_sha256": "702d60ec1e1a433b0256bc0f1e50189033338a3b91c34b17e60d1cf65baa436e",
+    "runner_sha256": "55edb03705cad723dae6c132400956dd90d82b904a34ede3d4080dbbfad76765",
+    "adapter_sha256": "bb7faf113557ff2fe2048211d4e087783cf37148504d36f1d094731360ed3dd2",
+    "shared_adapter_sha256": "3c5ddaf183920869f8a880b1e2961dd5ad1bc9582ffc2598177de14f8ebf0416",
+    "expansion_adapter_sha256": "87ffacb58bf18fb47d9be4ec3cb022eca637ce906d77a9e6f3de860855e6aee8",
+    "panel": "transfer"
+  },
+  "expected": 1152,
+  "started_at": "2026-10-04T14:40:22.344184+00:00",
+  "count": 1152,
+  "errors": 3,
+  "finished_at": "2026-10-04T14:49:33.324621+00:00",
+  "raw_sha256": "8dca5fe8815e60512425bd500b0b91671a4a3ea24d2eef7b22e158f73f41dcdc"
+}

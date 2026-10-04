@@ -1,0 +1,124 @@
+{
+  "seed": 20261004,
+  "sources": {
+    "cladder.zip": {
+      "url": "https://raw.githubusercontent.com/causalNLP/cladder/3d2d1169b4b939a09048a6a75956c8972a93cc38/data/cladder-v1.zip",
+      "sha256": "9fdae052b1ebe4ee6a19fdfb3e1eb88a381c7345df394cea524bcce97e2349b3",
+      "size": 7168720
+    },
+    "cladder_LICENSE": {
+      "url": "https://raw.githubusercontent.com/causalNLP/cladder/3d2d1169b4b939a09048a6a75956c8972a93cc38/LICENSE",
+      "sha256": "5729188929e6873096ebe9623ae6ecb2164cb5d0acec10805cb4a463ff8fd05a",
+      "size": 1087
+    },
+    "finentity.json": {
+      "url": "https://raw.githubusercontent.com/yixuantt/FinEntity/3b6cedc5485b669c2ed168f1d949f517636eb7b8/data/FinEntity.json",
+      "sha256": "3208667de69383120b0380aebeaabe360669eda72269c33e1c8b09d63df55463",
+      "size": 710430
+    },
+    "finentity_README.md": {
+      "url": "https://raw.githubusercontent.com/yixuantt/FinEntity/3b6cedc5485b669c2ed168f1d949f517636eb7b8/readme.md",
+      "sha256": "e910c284c16c41a44fb308979f544f63158f5c2ba121edd727037593df8d296d",
+      "size": 5727
+    },
+    "cruxeval.jsonl": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/cruxeval/190faf16d175b5847b0af05d937872b1fb395942/data/cruxeval.jsonl",
+      "sha256": "8368b81047dc5014e4caf5a2f97604eff7644e0ecd7415e3ceeb184bbc2e0c96",
+      "size": 186873
+    },
+    "crux_generations.json": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/cruxeval/190faf16d175b5847b0af05d937872b1fb395942/samples/model_generations/sample_codellama-7b_temp0.2_output/generations.json",
+      "sha256": "e0a70dc1b041212d17b41e28e3184c23662401fead1212b0b6748677f74ee412",
+      "size": 401809
+    },
+    "crux_flags.json": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/cruxeval/190faf16d175b5847b0af05d937872b1fb395942/samples/evaluation_results/sample_scored_codellama-7b_temp0.2_output.json",
+      "sha256": "2b3095f6e8642c32e8a074abb626c13374a64a4dce4e2b4ab6a9ec72c46d6ae2",
+      "size": 395875
+    },
+    "crux_LICENSE": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/cruxeval/190faf16d175b5847b0af05d937872b1fb395942/LICENSE",
+      "sha256": "055ca9e3fa33562173156e02e2350ceff4089deab480b368a849b6bc04f09719",
+      "size": 1061
+    },
+    "when2call.jsonl": {
+      "url": "https://huggingface.co/datasets/nvidia/When2Call/resolve/0582f7749df63a96fdc3070932e83e72396ace53/test/when2call_test_mcq.jsonl",
+      "sha256": "8c3694e583eeeb8dbc297e6cd90da70efc68efa4b6adb7227523e828c6b7b14c",
+      "size": 20424385
+    },
+    "when2call_README.md": {
+      "url": "https://huggingface.co/datasets/nvidia/When2Call/resolve/0582f7749df63a96fdc3070932e83e72396ace53/README.md",
+      "sha256": "14217217ba73b9421b5c8ac9b35b0c210836212ea007b65ec866513fdb67aa75",
+      "size": 5038
+    },
+    "pilot_inputs.jsonl": {
+      "url": "https://raw.githubusercontent.com/InternLM/Intern-Decision/3572c8a68b5df5dafe02d0e093989ba8ec0183bc/benchmarks/known-distribution-pilot-v1/inputs.jsonl",
+      "sha256": "54a2c97dffd972aa0c2ca0ba9386d79a63e369a1bd4f6913ed533ae32f0aff91",
+      "size": 68612
+    },
+    "pilot_references.jsonl": {
+      "url": "https://raw.githubusercontent.com/InternLM/Intern-Decision/3572c8a68b5df5dafe02d0e093989ba8ec0183bc/benchmarks/known-distribution-pilot-v1/references.jsonl",
+      "sha256": "2aed5e4ac334a4caa234bf784796008a6d2be285619564bbc01df3dc7d765eb6",
+      "size": 60994
+    }
+  },
+  "reports": {
+    "cladder": {
+      "source_count": 10112,
+      "selected": 144,
+      "strata": {
+        "2:no": 24,
+        "2:yes": 24,
+        "3:no": 24,
+        "1:no": 24,
+        "3:yes": 24,
+        "1:yes": 24
+      }
+    },
+    "cruxeval": {
+      "source_count": 800,
+      "eligible": 570,
+      "excluded": {
+        "no_distinct_literal_distractor": 230
+      },
+      "selected": 128,
+      "candidate_counts": {
+        "7": 5,
+        "10": 1,
+        "4": 23,
+        "2": 56,
+        "3": 28,
+        "5": 8,
+        "6": 5,
+        "8": 2
+      }
+    },
+    "finentity": {
+      "documents": 979,
+      "eligible": 2057,
+      "issues": {
+        "invalid_span_or_label": 70,
+        "duplicate_span": 2,
+        "conflicting_span": 2
+      },
+      "selected": 128,
+      "distinct_documents": 128
+    },
+    "when2call": {
+      "source_count": 3652,
+      "source_gold_classes": {
+        "cannot_answer": 1295,
+        "request_for_info": 1062,
+        "tool_call": 1295
+      },
+      "selected": 128,
+      "distinct_problem_groups": 128
+    }
+  },
+  "pilot": {
+    "cases": 96,
+    "paired_settings": 48
+  },
+  "coverage": "Focused samples/adaptations; not native benchmark reproduction",
+  "training_overlap": "StartLux declares ContractNLI train usage; absence from declared list does not establish contamination-free data."
+}

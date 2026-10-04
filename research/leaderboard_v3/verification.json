@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "models": 18,
+  "matched_decisions": 88290,
+  "previous_scores_unchanged": 14,
+  "new_main_counts_independently_replayed": 19620,
+  "transfer_models": 13,
+  "pilot_losses_independently_recomputed": true,
+  "csv_cells": 252,
+  "figure_files": 42,
+  "verifier_sha256": "2b19b8cd3168b68deac8aacd5907fef366cf3eefba863575b7c1dff1ecde8532",
+  "limitations": "Numerical/source binding validation, not a new independent label adjudication or causal training study."
+}

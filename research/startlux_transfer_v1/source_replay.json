@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "decisions": 1152,
+  "source_adaptation_replayed": true,
+  "semantic_frozen_digest": "c008db4afe7ed8eda86c36eefb677bed790570c089efc0df90b983df1a66894c",
+  "line_endings": "File bytes may differ by build platform; all ordered request hashes and parsed frozen records agree.",
+  "checker_sha256": "204925323cbf8ff1f2068c90ef52e4c791a7957ee62462724ee43d5de271ba11"
+}

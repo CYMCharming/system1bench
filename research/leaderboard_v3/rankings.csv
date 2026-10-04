@@ -1,0 +1,253 @@
+metric,rank,model,score_pct,correct,n,ci95_low_pct,ci95_high_pct,training_overlap
+refund,1,jev-1.13.0,100.0,96,96,,,not established
+refund,1,kev_9b,100.0,96,96,,,not established
+refund,1,kev_27b,100.0,96,96,,,not established
+refund,1,startlux_4b,100.0,96,96,,,ContractNLI train split declared
+refund,1,startlux_9b,100.0,96,96,,,ContractNLI train split declared
+refund,1,startlux_27b,100.0,96,96,,,ContractNLI train split declared
+refund,7,intern_4b,95.83333333333334,92,96,,,not established
+refund,8,kev_4b,87.5,84,96,,,not established
+refund,9,qwen38_27b,77.08333333333334,74,96,,,not established
+refund,10,qwen35_9b,72.91666666666666,70,96,,,not established
+refund,11,kev_08b,56.25,54,96,,,not established
+refund,12,qwen35_4b,55.208333333333336,53,96,,,not established
+refund,13,llama31_8b_instruct,33.33333333333333,32,96,,,not established
+refund,14,english,25.0,24,96,,,not established
+refund,14,multilingual,25.0,24,96,,,not established
+refund,14,qwen3_8b,25.0,24,96,,,not established
+refund,14,nanojev,25.0,24,96,,,not established
+refund,14,qwen35_08b,25.0,24,96,,,not established
+access,1,jev-1.13.0,100.0,96,96,,,not established
+access,1,kev_27b,100.0,96,96,,,not established
+access,1,startlux_9b,100.0,96,96,,,ContractNLI train split declared
+access,1,startlux_27b,100.0,96,96,,,ContractNLI train split declared
+access,5,kev_9b,98.95833333333334,95,96,,,not established
+access,6,startlux_4b,97.91666666666666,94,96,,,ContractNLI train split declared
+access,7,kev_4b,96.875,93,96,,,not established
+access,7,qwen38_27b,96.875,93,96,,,not established
+access,9,qwen35_9b,89.58333333333334,86,96,,,not established
+access,9,intern_4b,89.58333333333334,86,96,,,not established
+access,11,qwen35_4b,79.16666666666666,76,96,,,not established
+access,12,qwen3_8b,66.66666666666666,64,96,,,not established
+access,12,kev_08b,66.66666666666666,64,96,,,not established
+access,14,qwen35_08b,52.083333333333336,50,96,,,not established
+access,15,english,34.375,33,96,,,not established
+access,15,llama31_8b_instruct,34.375,33,96,,,not established
+access,15,nanojev,34.375,33,96,,,not established
+access,18,multilingual,29.166666666666668,28,96,,,not established
+routing,1,kev_27b,100.0,96,96,,,not established
+routing,1,startlux_27b,100.0,96,96,,,ContractNLI train split declared
+routing,3,qwen35_9b,89.58333333333334,86,96,,,not established
+routing,4,kev_4b,81.25,78,96,,,not established
+routing,4,qwen38_27b,81.25,78,96,,,not established
+routing,6,kev_08b,76.04166666666666,73,96,,,not established
+routing,7,english,71.875,69,96,,,not established
+routing,8,kev_9b,70.83333333333334,68,96,,,not established
+routing,9,intern_4b,64.58333333333334,62,96,,,not established
+routing,10,qwen35_4b,57.291666666666664,55,96,,,not established
+routing,11,jev-1.13.0,54.166666666666664,52,96,,,not established
+routing,11,startlux_9b,54.166666666666664,52,96,,,ContractNLI train split declared
+routing,13,startlux_4b,52.083333333333336,50,96,,,ContractNLI train split declared
+routing,14,qwen3_8b,48.95833333333333,47,96,,,not established
+routing,15,llama31_8b_instruct,25.0,24,96,,,not established
+routing,15,nanojev,25.0,24,96,,,not established
+routing,15,qwen35_08b,25.0,24,96,,,not established
+routing,18,multilingual,23.958333333333336,23,96,,,not established
+policy_action,1,kev_27b,100.0,288,288,,,not established
+policy_action,1,startlux_27b,100.0,288,288,,,ContractNLI train split declared
+policy_action,3,kev_9b,89.93055555555556,259,288,,,not established
+policy_action,4,kev_4b,88.54166666666666,255,288,,,not established
+policy_action,5,qwen38_27b,85.06944444444444,245,288,,,not established
+policy_action,6,jev-1.13.0,84.72222222222221,244,288,,,not established
+policy_action,6,startlux_9b,84.72222222222221,244,288,,,ContractNLI train split declared
+policy_action,8,qwen35_9b,84.02777777777779,242,288,,,not established
+policy_action,9,startlux_4b,83.33333333333334,240,288,,,ContractNLI train split declared
+policy_action,9,intern_4b,83.33333333333334,240,288,,,not established
+policy_action,11,kev_08b,66.31944444444444,191,288,,,not established
+policy_action,12,qwen35_4b,63.888888888888886,184,288,,,not established
+policy_action,13,qwen3_8b,46.875,135,288,,,not established
+policy_action,14,english,43.75,126,288,,,not established
+policy_action,15,qwen35_08b,34.02777777777778,98,288,,,not established
+policy_action,16,llama31_8b_instruct,30.90277777777778,89,288,,,not established
+policy_action,17,nanojev,28.125,81,288,,,not established
+policy_action,18,multilingual,26.041666666666668,75,288,,,not established
+legal,1,startlux_27b,89.58333333333334,129,144,,,ContractNLI train split declared
+legal,2,startlux_4b,87.5,126,144,,,ContractNLI train split declared
+legal,2,startlux_9b,87.5,126,144,,,ContractNLI train split declared
+legal,4,kev_27b,80.55555555555556,116,144,,,not established
+legal,5,qwen38_27b,77.77777777777779,112,144,,,not established
+legal,6,jev-1.13.0,77.08333333333334,111,144,,,not established
+legal,7,qwen35_9b,75.69444444444444,109,144,,,not established
+legal,8,intern_4b,71.52777777777779,103,144,,,not established
+legal,9,kev_9b,70.13888888888889,101,144,,,not established
+legal,10,kev_4b,65.97222222222221,95,144,,,not established
+legal,11,qwen35_4b,59.72222222222222,86,144,,,not established
+legal,12,kev_08b,48.61111111111111,70,144,,,not established
+legal,13,qwen3_8b,45.13888888888889,65,144,,,not established
+legal,14,english,38.88888888888889,56,144,,,not established
+legal,15,multilingual,34.02777777777778,49,144,,,not established
+legal,16,nanojev,31.944444444444443,46,144,,,not established
+legal,17,llama31_8b_instruct,30.555555555555557,44,144,,,not established
+legal,17,qwen35_08b,30.555555555555557,44,144,,,not established
+science,1,jev-1.13.0,85.84070796460178,291,339,,,not established
+science,2,startlux_9b,84.66076696165192,287,339,,,ContractNLI train split declared
+science,3,kev_27b,84.070796460177,285,339,,,not established
+science,3,qwen38_27b,84.070796460177,285,339,,,not established
+science,5,qwen35_9b,83.48082595870207,283,339,,,not established
+science,6,startlux_27b,83.1858407079646,282,339,,,ContractNLI train split declared
+science,7,startlux_4b,82.89085545722715,281,339,,,ContractNLI train split declared
+science,8,kev_4b,80.8259587020649,274,339,,,not established
+science,9,kev_9b,80.53097345132744,273,339,,,not established
+science,10,intern_4b,75.81120943952803,257,339,,,not established
+science,11,qwen3_8b,68.14159292035397,231,339,,,not established
+science,12,qwen35_4b,66.3716814159292,225,339,,,not established
+science,13,llama31_8b_instruct,53.687315634218294,182,339,,,not established
+science,14,english,50.442477876106196,171,339,,,not established
+science,15,kev_08b,49.557522123893804,168,339,,,not established
+science,16,multilingual,44.24778761061947,150,339,,,not established
+science,17,qwen35_08b,40.707964601769916,138,339,,,not established
+science,18,nanojev,37.16814159292036,126,339,,,not established
+action_head,1,kev_27b,100.0,288,288,,,not established
+action_head,1,startlux_27b,100.0,288,288,,,ContractNLI train split declared
+action_head,3,kev_9b,89.93055555555556,259,288,,,not established
+action_head,4,kev_4b,88.54166666666666,255,288,,,not established
+action_head,5,qwen38_27b,85.06944444444444,245,288,,,not established
+action_head,6,jev-1.13.0,84.72222222222221,244,288,,,not established
+action_head,6,startlux_9b,84.72222222222221,244,288,,,ContractNLI train split declared
+action_head,8,qwen35_9b,84.02777777777779,242,288,,,not established
+action_head,9,startlux_4b,83.33333333333334,240,288,,,ContractNLI train split declared
+action_head,9,intern_4b,83.33333333333334,240,288,,,not established
+action_head,11,kev_08b,66.31944444444444,191,288,,,not established
+action_head,12,qwen35_4b,63.888888888888886,184,288,,,not established
+action_head,13,qwen3_8b,46.875,135,288,,,not established
+action_head,14,english,43.75,126,288,,,not established
+action_head,15,qwen35_08b,34.02777777777778,98,288,,,not established
+action_head,16,llama31_8b_instruct,30.90277777777778,89,288,,,not established
+action_head,17,nanojev,28.125,81,288,,,not established
+action_head,18,multilingual,26.041666666666668,75,288,,,not established
+review_head,1,kev_27b,100.0,288,288,,,not established
+review_head,1,startlux_27b,100.0,288,288,,,ContractNLI train split declared
+review_head,3,jev-1.13.0,96.52777777777779,278,288,,,not established
+review_head,4,startlux_4b,93.75,270,288,,,ContractNLI train split declared
+review_head,5,startlux_9b,92.36111111111111,266,288,,,ContractNLI train split declared
+review_head,6,kev_4b,84.02777777777779,242,288,,,not established
+review_head,7,intern_4b,80.20833333333334,231,288,,,not established
+review_head,8,kev_9b,77.43055555555556,223,288,,,not established
+review_head,9,qwen35_9b,77.08333333333334,222,288,,,not established
+review_head,10,qwen38_27b,71.52777777777779,206,288,,,not established
+review_head,11,kev_08b,66.66666666666666,192,288,,,not established
+review_head,12,english,63.888888888888886,184,288,,,not established
+review_head,12,qwen3_8b,63.888888888888886,184,288,,,not established
+review_head,14,multilingual,59.375,171,288,,,not established
+review_head,14,llama31_8b_instruct,59.375,171,288,,,not established
+review_head,14,nanojev,59.375,171,288,,,not established
+review_head,17,qwen35_4b,45.13888888888889,130,288,,,not established
+review_head,18,qwen35_08b,40.625,117,288,,,not established
+severity_head,1,startlux_27b,99.30555555555556,286,288,,,ContractNLI train split declared
+severity_head,2,kev_27b,98.95833333333334,285,288,,,not established
+severity_head,3,jev-1.13.0,97.22222222222221,280,288,,,not established
+severity_head,4,startlux_9b,94.44444444444444,272,288,,,ContractNLI train split declared
+severity_head,5,startlux_4b,91.66666666666666,264,288,,,ContractNLI train split declared
+severity_head,6,kev_9b,81.25,234,288,,,not established
+severity_head,7,intern_4b,79.16666666666666,228,288,,,not established
+severity_head,8,qwen3_8b,67.36111111111111,194,288,,,not established
+severity_head,8,qwen38_27b,67.36111111111111,194,288,,,not established
+severity_head,10,kev_4b,65.625,189,288,,,not established
+severity_head,11,qwen35_9b,62.84722222222222,181,288,,,not established
+severity_head,12,llama31_8b_instruct,62.5,180,288,,,not established
+severity_head,13,qwen35_4b,56.59722222222222,163,288,,,not established
+severity_head,14,kev_08b,41.66666666666667,120,288,,,not established
+severity_head,15,qwen35_08b,37.84722222222222,109,288,,,not established
+severity_head,16,english,36.80555555555556,106,288,,,not established
+severity_head,17,nanojev,31.944444444444443,92,288,,,not established
+severity_head,18,multilingual,31.25,90,288,,,not established
+all_heads,1,startlux_27b,99.30555555555556,286,288,,,ContractNLI train split declared
+all_heads,2,kev_27b,98.95833333333334,285,288,,,not established
+all_heads,3,jev-1.13.0,79.16666666666666,228,288,,,not established
+all_heads,4,startlux_9b,73.61111111111111,212,288,,,ContractNLI train split declared
+all_heads,5,startlux_4b,73.26388888888889,211,288,,,ContractNLI train split declared
+all_heads,6,kev_9b,58.68055555555556,169,288,,,not established
+all_heads,7,intern_4b,56.94444444444444,164,288,,,not established
+all_heads,8,kev_4b,50.34722222222222,145,288,,,not established
+all_heads,9,qwen35_9b,39.23611111111111,113,288,,,not established
+all_heads,10,qwen38_27b,36.11111111111111,104,288,,,not established
+all_heads,11,qwen3_8b,23.26388888888889,67,288,,,not established
+all_heads,12,kev_08b,20.833333333333336,60,288,,,not established
+all_heads,13,qwen35_4b,19.791666666666664,57,288,,,not established
+all_heads,14,llama31_8b_instruct,13.194444444444445,38,288,,,not established
+all_heads,15,english,11.11111111111111,32,288,,,not established
+all_heads,16,multilingual,7.986111111111111,23,288,,,not established
+all_heads,17,nanojev,7.638888888888889,22,288,,,not established
+all_heads,18,qwen35_08b,4.166666666666666,12,288,,,not established
+policy_counterfactual,1,kev_27b,100.0,288,288,,,not established
+policy_counterfactual,1,startlux_27b,100.0,288,288,,,ContractNLI train split declared
+policy_counterfactual,3,kev_9b,85.06944444444444,245,288,,,not established
+policy_counterfactual,4,kev_4b,83.68055555555556,241,288,,,not established
+policy_counterfactual,4,qwen38_27b,83.68055555555556,241,288,,,not established
+policy_counterfactual,6,qwen35_9b,79.16666666666666,228,288,,,not established
+policy_counterfactual,7,jev-1.13.0,76.38888888888889,220,288,,,not established
+policy_counterfactual,7,startlux_9b,76.38888888888889,220,288,,,ContractNLI train split declared
+policy_counterfactual,9,intern_4b,73.61111111111111,212,288,,,not established
+policy_counterfactual,10,startlux_4b,73.26388888888889,211,288,,,ContractNLI train split declared
+policy_counterfactual,11,qwen35_4b,46.18055555555556,133,288,,,not established
+policy_counterfactual,12,kev_08b,33.68055555555556,97,288,,,not established
+policy_counterfactual,13,qwen3_8b,25.34722222222222,73,288,,,not established
+policy_counterfactual,14,english,10.069444444444445,29,288,,,not established
+policy_counterfactual,15,multilingual,0.0,0,288,,,not established
+policy_counterfactual,15,llama31_8b_instruct,0.0,0,288,,,not established
+policy_counterfactual,15,nanojev,0.0,0,288,,,not established
+policy_counterfactual,15,qwen35_08b,0.0,0,288,,,not established
+natural_reversal,1,startlux_27b,86.38458702064898,,,,,ContractNLI train split declared
+natural_reversal,2,startlux_9b,85.29068338249755,,,,,ContractNLI train split declared
+natural_reversal,3,startlux_4b,84.1107423795477,,,,,ContractNLI train split declared
+natural_reversal,4,kev_27b,81.17625368731562,,,,,not established
+natural_reversal,5,jev-1.13.0,79.77814650934121,,,,,not established
+natural_reversal,6,qwen38_27b,76.4718534906588,,,,,not established
+natural_reversal,7,kev_9b,73.51278269419862,,,,,not established
+natural_reversal,8,qwen35_9b,71.2481563421829,,,,,not established
+natural_reversal,9,kev_4b,70.68276794493609,,,,,not established
+natural_reversal,10,intern_4b,69.81624877089479,,,,,not established
+natural_reversal,11,qwen35_4b,56.58185840707964,,,,,not established
+natural_reversal,12,qwen3_8b,45.141961651917406,,,,,not established
+natural_reversal,13,english,41.26413470993117,,,,,not established
+natural_reversal,14,kev_08b,39.90290068829892,,,,,not established
+natural_reversal,15,nanojev,34.556293018682396,,,,,not established
+natural_reversal,16,multilingual,33.75737463126844,,,,,not established
+natural_reversal,17,llama31_8b_instruct,32.84476401179941,,,,,not established
+natural_reversal,18,qwen35_08b,22.308259587020647,,,,,not established
+overall_domain_equal,1,startlux_27b,90.92305801376598,,,88.71813745915279,92.89481229991729,ContractNLI train split declared
+overall_domain_equal,2,kev_27b,88.20878400524418,,,85.86668574980462,90.48829623902519,not established
+overall_domain_equal,3,startlux_9b,85.62766306129139,,,83.11198424087641,87.97954265420019,ContractNLI train split declared
+overall_domain_equal,4,startlux_4b,84.57472959685349,,,82.00949166224746,87.07581866842663,ContractNLI train split declared
+overall_domain_equal,5,jev-1.13.0,82.5487545067191,,,79.41993420722928,85.50427007357581,not established
+overall_domain_equal,6,qwen38_27b,82.3060062274664,,,79.45072566173211,85.12164432948056,not established
+overall_domain_equal,7,qwen35_9b,81.06768272697477,,,77.90994020347797,84.09093649476931,not established
+overall_domain_equal,8,kev_9b,80.20013929859063,,,77.13708673052942,83.30769804966933,not established
+overall_domain_equal,9,kev_4b,78.44661586365126,,,75.48825796162193,81.58839270178801,not established
+overall_domain_equal,10,intern_4b,76.8907735168797,,,73.53167938626254,80.25090435131467,not established
+overall_domain_equal,11,qwen35_4b,63.32759750901344,,,59.55717667542068,66.91788318715133,not established
+overall_domain_equal,12,kev_08b,54.82935922648312,,,50.97296310387976,58.5566597860793,not established
+overall_domain_equal,13,qwen3_8b,53.38516060308095,,,49.80686097205295,57.08505146295304,not established
+overall_domain_equal,14,english,44.360455588331696,,,41.024653638292556,47.61933832674341,not established
+overall_domain_equal,15,llama31_8b_instruct,38.38188298918387,,,35.0314927060029,41.63333221735177,not established
+overall_domain_equal,16,qwen35_08b,35.097099311701086,,,31.761440242341486,38.40621332070405,not established
+overall_domain_equal,17,multilingual,34.772410685021306,,,31.483463803064048,38.15065034294148,not established
+overall_domain_equal,18,nanojev,32.4125286791216,,,29.28072713787588,35.63181060172533,not established
+overall_task_equal,1,startlux_27b,94.55383480825958,,,,,ContractNLI train split declared
+overall_task_equal,2,kev_27b,92.92527040314651,,,,,not established
+overall_task_equal,3,startlux_9b,85.2654867256637,,,,,ContractNLI train split declared
+overall_task_equal,4,kev_9b,84.0923058013766,,,,,not established
+overall_task_equal,5,startlux_4b,84.07817109144543,,,,,ContractNLI train split declared
+overall_task_equal,6,jev-1.13.0,83.41814159292035,,,,,not established
+overall_task_equal,7,qwen38_27b,83.41138151425763,,,,,not established
+overall_task_equal,8,kev_4b,82.48463618485742,,,,,not established
+overall_task_equal,9,qwen35_9b,82.25172074729598,,,,,not established
+overall_task_equal,10,intern_4b,79.46779744346117,,,,,not established
+overall_task_equal,11,qwen35_4b,63.55211406096362,,,,,not established
+overall_task_equal,12,kev_08b,59.425393313667655,,,,,not established
+overall_task_equal,13,qwen3_8b,50.781096361848576,,,,,not established
+overall_task_equal,14,english,44.116273352999016,,,,,not established
+overall_task_equal,15,llama31_8b_instruct,35.390240904621436,,,,,not established
+overall_task_equal,16,qwen35_08b,34.669370698131765,,,,,not established
+overall_task_equal,17,multilingual,31.28011307767945,,,,,not established
+overall_task_equal,18,nanojev,30.697517207472956,,,,,not established

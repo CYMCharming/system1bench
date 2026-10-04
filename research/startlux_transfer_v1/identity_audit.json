@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "case_selection_unchanged": true,
+  "display_meanings_and_order_unchanged": true,
+  "gold_meanings_unchanged": true,
+  "probability_pilot_unchanged": true,
+  "decisions": 1152,
+  "original_gold_identity_counts": {
+    "cladder": {
+      "option_0": 70,
+      "option_1": 74
+    },
+    "cruxeval": {
+      "option_0": 50,
+      "option_1": 44,
+      "option_2": 20,
+      "option_3": 11,
+      "option_5": 1,
+      "option_7": 1,
+      "option_6": 1
+    },
+    "finentity": {
+      "option_0": 50,
+      "option_1": 44,
+      "option_2": 34
+    },
+    "when2call": {
+      "option_1": 29,
+      "option_3": 36,
+      "option_2": 34,
+      "option_0": 29
+    }
+  },
+  "ordered_semantic_digest": "c008db4afe7ed8eda86c36eefb677bed790570c089efc0df90b983df1a66894c",
+  "checker_sha256": "4401fef7b6c21cb9d6ba0256ff3b207210ab3f2d41d50da37bec028b78f2f036"
+}

@@ -35,7 +35,41 @@ this historical 15-source matrix.
 - [Natural-domain paired protocol](research/domain_expansion_v1/PROTOCOL.md) · [legal/science results](research/domain_expansion_v1/RESULTS.en.md) · [third-party data attribution](research/domain_expansion_v1/DATA_LICENSES.md)
 - [Generative-baseline protocol](research/strong_baseline_v1/PROTOCOL.md) · [cross-domain complementarity](research/cross_domain_v1/RESULTS.en.md)
 
-## Fourteen-model follow-up leaderboard
+## Eighteen-model leaderboard and new transfer panel
+
+The [eighteen-model leaderboard](research/leaderboard_v3/REPORT.zh-CN.md)
+adds official **StartLux-Decision-4B/9B/27B and Intern-Decision-4B** to the
+same 4,905-decision panel. The previous fourteen results remain unchanged.
+StartLux declares ContractNLI train-split exposure; its legal scores carry a
+visible disclosure. This is a same-request comparison, not a controlled
+architecture/training study.
+
+![Eighteen-model index and domain scores](paper/figures/fig_leaderboard_v3_overview.png)
+
+- [Overall, domain, task, head and robustness rankings](research/leaderboard_v3/REPORT.zh-CN.md)
+  · [all exact scores and intervals](research/leaderboard_v3/scores.json)
+  · [category CSV](research/leaderboard_v3/rankings.csv)
+  · [independent replay](research/leaderboard_v3/verification.json)
+- [New transfer results](research/startlux_transfer_v1/RESULTS.zh-CN.md):
+  **CLadder, CRUXEval output-choice, FinEntity supplied-span sentiment,
+  When2Call tool-use timing**, plus a 96-case exact-probability diagnostic.
+  The fixed thirteen-model cohort completes 1,152 new decisions per model;
+  these tasks are kept separate from the original composite index.
+- [Dataset adaptation and license/source disclosures](research/startlux_transfer_v1/DATA_SOURCES.md)
+  · [frozen protocol](research/startlux_transfer_v1/PROTOCOL.md)
+  · [source-quality and exclusion receipt](research/startlux_transfer_v1/source_quality.json)
+- [Research leads in plain Chinese](research/startlux_transfer_v1/INSIGHTS.zh-CN.md)
+  · [tool-call / ask / cannot-answer class breakdown](paper/figures/fig_transfer_v1_tool_classes.png)
+
+![Source-separated transfer scores](paper/figures/fig_transfer_v1_domains.png)
+
+The new samples test causal judgments, code-output discrimination, entity-level
+financial sentiment and when to call/ask/decline. CRUXEval is not native pass@1;
+When2Call has no direct-answer positives. The probability pilot evaluates
+exact stochastic distributions, not single realized answers or correctness
+confidence. No temperatures are fitted on these test references.
+
+## Fourteen-model follow-up leaderboard (preserved snapshot)
 
 The [fourteen-model follow-up](research/leaderboard_v2/REPORT.zh-CN.md)
 retains the original ten results and adds four independently measured,

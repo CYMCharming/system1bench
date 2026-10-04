@@ -1,0 +1,45 @@
+{
+  "seed": 20261004,
+  "expected_decisions": 1152,
+  "frozen_sha256": "0c79d39653cdd874e5e1c3a98be44a9b791795567fa4115b2f6ece3273bc0ff6",
+  "protocol_sha256": "70ae482bc8064c0e594a6dac9bc142f32496634995ae7bb3665536d0501f97d3",
+  "freeze_sha256": "1ece48d1322ecba83777078fb79079fb545208ef407b3b84668c783e63e64364",
+  "model_pins": {
+    "startlux_4b": {
+      "repo": "startlux-models/StartLux-Decision-4B",
+      "revision": "9302aedb7f7bd889994336f2ae919dffbf5dbee1"
+    },
+    "startlux_9b": {
+      "repo": "startlux-models/StartLux-Decision-9B",
+      "revision": "342aad64840be8eee314455428a5a775f18ef547"
+    },
+    "startlux_27b": {
+      "repo": "startlux-models/StartLux-Decision-27B",
+      "revision": "95e31cda814fec2a7dc4ac4f8b9b832aa1c9c2e6"
+    },
+    "intern_4b": {
+      "repo": "internlm/Intern-Decision-4B",
+      "revision": "0e5e6aa7d6d750e2b1504ba11a8136cb58aeb3cd"
+    }
+  },
+  "cohort": [
+    "startlux_4b",
+    "startlux_9b",
+    "startlux_27b",
+    "intern_4b",
+    "kev_08b",
+    "kev_4b",
+    "kev_9b",
+    "kev_27b",
+    "qwen35_08b",
+    "qwen35_4b",
+    "qwen35_9b",
+    "qwen38_27b",
+    "jev"
+  ],
+  "code_sha256": {
+    "adapter.py": "bb7faf113557ff2fe2048211d4e087783cf37148504d36f1d094731360ed3dd2",
+    "run.py": "197650f243ba98d7c1ff377fa987b4a525a9df9490431205292a6b4414c0171c"
+  },
+  "source_quality_sha256": "baff2ee442022453d809687daf19d7bf44747dcaeb529f4018bea2331291d13e"
+}

@@ -1,0 +1,56 @@
+{
+  "reason": "Observed two-decimal reported probabilities can sum to0.99/1.01. Use historical hosted-client 0.02 mass tolerance, not presumed four-decimal rounding.",
+  "excluded_strict_run": {
+    "count": 1152,
+    "errors": {
+      "None": 1143,
+      "inference_failure:ValueError": 7,
+      "InvalidDecision": 2
+    },
+    "raw_sha256": "c6c0d0049f916cc6a794e8244fd7a958211b922bcfe764e1979d78821b465122"
+  },
+  "diagnostics": [
+    {
+      "suite": "cruxeval",
+      "id": "cruxeval/sample_58/original",
+      "diagnostic_only": true,
+      "client_error": null,
+      "probability_sum": 1.0,
+      "probabilities": {
+        "option_1": 0.58,
+        "option_0": 0.07,
+        "option_2": 0.02,
+        "option_3": 0.33
+      }
+    },
+    {
+      "suite": "when2call",
+      "id": "when2call/0987671b-f198-45c1-a52c-a59798c7200e/original",
+      "diagnostic_only": true,
+      "client_error": null,
+      "probability_sum": 0.9900000000000001,
+      "probabilities": {
+        "option_2": 0.93,
+        "option_1": 0.05,
+        "option_0": 0.01,
+        "option_3": 0.0
+      }
+    }
+  ],
+  "diagnostic_requeries_used_as_benchmark_answers": false,
+  "complete_hosted_panel_rerun": true,
+  "native_model_inputs_and_scoring_unchanged": true,
+  "reported_choice_amendment": {
+    "reason": "Rounded probability ties must not replace the official reported selection with first-listed argmax.",
+    "excluded_argmax_only_run": {
+      "count": 1152,
+      "errors": {
+        "None": 1152
+      },
+      "classification_rounded_max_ties": 4,
+      "raw_sha256": "46f63d9bc933b1660b91388321dcae727ceff0c0f41c5acfe6224cfcc7585570"
+    },
+    "fresh_full_panel_rerun": true,
+    "native_inputs_and_scoring_unchanged": true
+  }
+}

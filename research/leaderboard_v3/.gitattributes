@@ -1,0 +1,5 @@
+# New receipts bind source bytes, not checkout-specific line endings.
+*.json -text
+*.csv -text
+*.py -text
+*.md -text
