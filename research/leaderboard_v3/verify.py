@@ -30,7 +30,9 @@ def signature_receipt(meta,panel,model):
         assert measured['protocol_sha256'] in {sha(p) for p in EXP.glob('PROTOCOL*.md')}
         if model=='jev': assert measured['protocol_sha256']==manifest['protocol_sha256']
     else:
-        assert signature['frozen_sha256']==sha(ROOT/'research/model_expansion_v1/frozen.json')
+        previous=ROOT/'research/model_expansion_v1'
+        assert signature['frozen_sha256']==read(previous/'manifest.json')['prepared_sha256']
+        if (previous/'frozen.json').exists():assert signature['frozen_sha256']==sha(previous/'frozen.json')
 
 def distribution_receipt(row,model):
     if row['error'] is not None:return

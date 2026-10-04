@@ -8,6 +8,6 @@
   "pilot_losses_independently_recomputed": true,
   "csv_cells": 252,
   "figure_files": 42,
-  "verifier_sha256": "2b19b8cd3168b68deac8aacd5907fef366cf3eefba863575b7c1dff1ecde8532",
+  "verifier_sha256": "cee91a5d1204f99a2a49289e15bc089fb22f3dd2fbfa0b51b7faf674cb70638c",
   "limitations": "Numerical/source binding validation, not a new independent label adjudication or causal training study."
 }
