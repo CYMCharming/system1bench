@@ -1,6 +1,9 @@
 dist/
 .vercel/
 node_modules/
+!data/
+data/*
+!data/catalog.json
 
 .vercel
 .env*
