@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-05T14:04:23.978Z",
+  "generatedAt": "2026-10-05T14:09:37.345Z",
   "quality": {
     "protocol": "original-weight-expansion-v4",
     "models": {
@@ -13976,6 +13976,141 @@
       "source": "research/latency_v2/results/kev_4b/summary.json",
       "protocol": "research/latency_v2/PROTOCOL.md"
     },
+    "kev_9b": {
+      "status": "DONE",
+      "model": "kev_9b",
+      "workloads": {
+        "one_field": {
+          "n": 100,
+          "fields": 1,
+          "mean_ms": 67.75896436000001,
+          "median_ms": 67.5902445,
+          "p95_ms": 69.87579174999999,
+          "mean_round_ci95_ms": [
+            67.71544054,
+            67.82552210000001
+          ],
+          "requests_per_second": 14.758194866837838,
+          "fields_per_second": 14.758194866837838,
+          "round_mean_ms": [
+            67.7053405,
+            67.7310068,
+            67.88853230000002,
+            67.75218475,
+            67.71775745
+          ],
+          "distinct_prompt_encodings": 1,
+          "prompt_token_lengths": [
+            115
+          ],
+          "cpu_contention": {
+            "interval_seconds": 7.886475238017738,
+            "core_busy_fraction": {
+              "20": 0.030431846009361704,
+              "21": 0.02282388450702128,
+              "22": 0.8609676433481915,
+              "23": 0.46662163881021285,
+              "84": 0.002535987167446809,
+              "85": 0.006339967918617022,
+              "86": 0.002535987167446809,
+              "87": 0.0012679935837234045
+            },
+            "worker_cpu_seconds": 6.81,
+            "other_busy_fraction_on_worker_cores": 0.1293353455397873,
+            "smt_sibling_busy_fraction": 0.003169983959308511
+          }
+        },
+        "three_fields": {
+          "n": 100,
+          "fields": 3,
+          "mean_ms": 90.76081257,
+          "median_ms": 100.834314,
+          "p95_ms": 102.42253229999999,
+          "mean_round_ci95_ms": [
+            80.06992034000002,
+            101.45094420000001
+          ],
+          "requests_per_second": 11.017970990825386,
+          "fields_per_second": 33.053912972476155,
+          "round_mean_ms": [
+            74.70936450000002,
+            74.8036415,
+            101.3273927,
+            101.54579744999998,
+            101.4178667
+          ],
+          "distinct_prompt_encodings": 1,
+          "prompt_token_lengths": [
+            172
+          ],
+          "cpu_contention": {
+            "interval_seconds": 10.255095972213894,
+            "core_busy_fraction": {
+              "20": 0.6133535967915569,
+              "21": 0.036079623340679816,
+              "22": 0.29936336123212715,
+              "23": 0.49926397703859643,
+              "84": 0.0009751249551535087,
+              "85": 0.006825874686074561,
+              "86": 0.0019502499103070173,
+              "87": 0.0009751249551535087
+            },
+            "worker_cpu_seconds": 9.12,
+            "other_busy_fraction_on_worker_cores": 0.1396866498257401,
+            "smt_sibling_busy_fraction": 0.002681593626672149
+          }
+        },
+        "eight_fields": {
+          "n": 100,
+          "fields": 8,
+          "mean_ms": 106.06799624000001,
+          "median_ms": 104.2839755,
+          "p95_ms": 120.78709315,
+          "mean_round_ci95_ms": [
+            104.40632252,
+            109.33982375999999
+          ],
+          "requests_per_second": 9.427914502479151,
+          "fields_per_second": 75.42331601983321,
+          "round_mean_ms": [
+            112.59898515,
+            104.40057889999999,
+            104.39162210000002,
+            104.51054125,
+            104.43825380000001
+          ],
+          "distinct_prompt_encodings": 1,
+          "prompt_token_lengths": [
+            328
+          ],
+          "cpu_contention": {
+            "interval_seconds": 11.722284673247486,
+            "core_busy_fraction": {
+              "20": 0.21497515802112585,
+              "21": 0.025592280716800697,
+              "22": 0.7165838600704195,
+              "23": 0.3437896376290227,
+              "84": 0.0017061520477867132,
+              "85": 0.005118456143360139,
+              "86": 0.0034123040955734265,
+              "87": 0.0008530760238933566
+            },
+            "worker_cpu_seconds": 10.65,
+            "other_busy_fraction_on_worker_cores": 0.09810374274773599,
+            "smt_sibling_busy_fraction": 0.002772497077653409
+          }
+        }
+      },
+      "raw_sha256": "57e6d8057d2078f864f9b715a33ad46ce072c36f04ee29b55e7a04c66d287d23",
+      "metadata_sha256": "4898796d653a813ad552e328d79c2f2806e80c3fa35c4b913eef0350237f7320",
+      "telemetry_sha256": "815e535b5012503c209acb5c7520454a3b9ec33758ec4d615de8e0be5d731f9c",
+      "finished_at": "2026-10-05T14:07:39.411612+00:00",
+      "hardware": "NVIDIA A100 80GB PCIe",
+      "adapter": "kev_official_pointer",
+      "dtype": "bfloat16",
+      "source": "research/latency_v2/results/kev_9b/summary.json",
+      "protocol": "research/latency_v2/PROTOCOL.md"
+    },
     "llama32_1b_public": {
       "status": "DONE",
       "model": "llama32_1b_public",
@@ -15131,6 +15266,11 @@
       "path": "research/latency_v2/results/kev_4b/summary.json",
       "sha256": "f6e32fcd09aa4351251514fb90479dc32c4c387abd96cb4aba54b5902bdb6d43",
       "url": "https://github.com/CYMCharming/system1bench/blob/main/research/latency_v2/results/kev_4b/summary.json"
+    },
+    {
+      "path": "research/latency_v2/results/kev_9b/summary.json",
+      "sha256": "dc0299191db8731fa3510251d5e98768b441292dd4a83d6a82f699ba0183414f",
+      "url": "https://github.com/CYMCharming/system1bench/blob/main/research/latency_v2/results/kev_9b/summary.json"
     },
     {
       "path": "research/latency_v2/results/llama32_1b_public/summary.json",

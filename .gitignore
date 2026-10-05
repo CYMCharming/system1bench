@@ -35,3 +35,5 @@ research/natural_direct_v1/frozen.json
 research/domain_expansion_v1/hypothesis_only_probe/frozen.json
 refine-logs/
 *.premeasurement-draft
+.vercel
+.env*
