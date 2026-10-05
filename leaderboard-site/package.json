@@ -1,0 +1,7 @@
+{
+  "name": "system1bench-leaderboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"build": "node build.mjs", "dev": "node serve.mjs"},
+  "engines": {"node": ">=22"}
+}

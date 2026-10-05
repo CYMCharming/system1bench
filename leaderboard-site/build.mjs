@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import assert from 'node:assert/strict';
+const here = path.dirname(fileURLToPath(import.meta.url));
+const catalog = JSON.parse(fs.readFileSync(path.join(here,'data/catalog.json'),'utf8'));
+assert.equal(catalog.version,1);
+assert(Object.keys(catalog.quality.models).length >= 18);
+fs.mkdirSync(path.join(here,'dist'),{recursive:true});
+for (const f of ['index.html','style.css','app.js','favicon.svg']) fs.copyFileSync(path.join(here,f),path.join(here,'dist',f));
+fs.copyFileSync(path.join(here,'data/catalog.json'),path.join(here,'dist/catalog.json'));
+console.log('Built System1Bench leaderboard');

@@ -1,0 +1,57 @@
+{
+  "status": "DONE",
+  "signature": {
+    "model": {
+      "model": "qwen3_8b",
+      "checkpoint": {
+        "repo": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "admission_sha256": "db6a99150ec3b84454581c1f9f5cd3d8999b49f8b3d5c8ee89764c065344c7a9",
+        "provenance": "existing_gpu29_original"
+      },
+      "python": "3.12.13",
+      "torch": "2.7.1+cu118",
+      "transformers": "5.17.0",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "seed": 0,
+      "context_limit": 32768,
+      "truncation": false,
+      "batch_requests": 1,
+      "controlled_speed_measurement": false,
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "adapter": "qwen3_constrained_next_token",
+      "enable_thinking": false,
+      "text_only": true,
+      "quantized": false,
+      "probability_semantics": "conditional candidate-code likelihood, not calibrated correctness",
+      "chat_template_sha256": "41d5929bf73796beb66809ac700b2cf3ff81694f933e5c14d52b7fd6963c947d",
+      "model_files_sha256": {
+        "config.json": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+        "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+        "model-00001-of-00005.safetensors": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f",
+        "model-00002-of-00005.safetensors": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282",
+        "model-00003-of-00005.safetensors": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836",
+        "model-00004-of-00005.safetensors": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a",
+        "model-00005-of-00005.safetensors": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff",
+        "model.safetensors.index.json": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "manifest_sha256": "41def583f930dad2cee4e2ffa9ed807a46f4e938324107c95b59a341e0101f58",
+    "frozen_sha256": "702d60ec1e1a433b0256bc0f1e50189033338a3b91c34b17e60d1cf65baa436e",
+    "runner_sha256": "b2d56529284c73b808eeb86c078d69bb972f3527e3cd091a85eef19a50e99529",
+    "adapter_sha256": "e7cee60fc362959561135b87f01ef73523a9e8b6b25e80382abb195081dfc3f0",
+    "shared_adapter_sha256": "3c5ddaf183920869f8a880b1e2961dd5ad1bc9582ffc2598177de14f8ebf0416",
+    "expansion_adapter_sha256": "87ffacb58bf18fb47d9be4ec3cb022eca637ce906d77a9e6f3de860855e6aee8",
+    "panel": "transfer"
+  },
+  "expected": 1152,
+  "started_at": "2026-10-05T11:20:18.035897+00:00",
+  "count": 1152,
+  "errors": 0,
+  "finished_at": "2026-10-05T11:21:22.762754+00:00",
+  "raw_sha256": "3361ebd5e6025fb059bb678176439b06e9e734069230c74cfb36143efed61955"
+}

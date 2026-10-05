@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>System1Bench — 决策模型排行榜</title>
+  <meta name="description" content="决策专用模型与通用大模型的可追溯评测：综合与领域成绩、稳健性、概率质量及同卡推理速度。">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到排行榜</a>
+  <aside class="sidebar">
+    <a class="brand" href="/"><img src="/favicon.svg" alt="" width="34" height="34"><span>System1<span class="brand-light">Bench</span></span></a>
+    <div class="side-section">研究与评测</div>
+    <button class="side-link active" data-view="overall"><span class="nav-glyph">▤</span>模型排行榜</button>
+    <button class="side-link" data-view="datasets"><span class="nav-glyph">▦</span>数据集与任务</button>
+    <a class="side-link" href="https://github.com/CYMCharming/system1bench/tree/main/research" target="_blank" rel="noopener"><span class="nav-glyph">◈</span>研究与发现</a>
+    <div class="side-bottom"><span class="tiny-label">开放、独立、可复验</span><a href="https://github.com/CYMCharming/system1bench" target="_blank" rel="noopener">GitHub 项目</a><span class="release" id="release">读取数据版本…</span></div>
+  </aside>
+  <main id="main">
+    <header class="topbar"><span>RESEARCH <span class="slash">/</span> LEADERBOARD</span><a href="/catalog.json" download>下载完整数据</a></header>
+    <section class="heading">
+      <div><div class="eyebrow">SYSTEM1BENCH</div><h1>决策模型排行榜<span class="edition">OPEN BENCHMARK</span></h1><p>专用决策模型与通用大模型，在相同任务上的真实表现。</p></div>
+      <div class="scope-badge">固定题目<span>保留分母与测量条件</span></div>
+    </section>
+    <div class="overview"><div><strong id="modelCount">—</strong><span>主榜模型</span></div><div><strong>7</strong><span>任务领域</span></div><div><strong>4,905</strong><span>每模型主面板决策</span></div><div class="overview-note">成绩、稳定性与速度分开呈现。<br>不是 Elo，也不是人工偏好投票。</div></div>
+    <section class="board" aria-label="模型评测结果">
+      <nav class="tabs" aria-label="排行榜类型" role="tablist">
+        <button data-view="overall" role="tab" aria-selected="true">综合榜</button>
+        <button data-view="domains" role="tab" aria-selected="false">领域榜</button>
+        <button data-view="robustness" role="tab" aria-selected="false">稳健性</button>
+        <button data-view="transfer" role="tab" aria-selected="false">跨领域</button>
+        <button data-view="probability" role="tab" aria-selected="false">概率质量</button>
+        <button data-view="speed" role="tab" aria-selected="false">推理速度</button>
+        <button data-view="datasets" role="tab" aria-selected="false">数据集</button>
+      </nav>
+      <div class="board-heading"><div><h2 id="viewTitle">综合表现</h2><p id="viewDefinition"></p></div><a id="protocol" target="_blank" rel="noopener">查看协议</a></div>
+      <div class="toolbar" id="toolbar">
+        <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索模型…" aria-label="搜索模型"></label>
+        <label class="select-label">指标<select id="metric" aria-label="排序指标"></select></label>
+        <label class="select-label">模型类型<select id="family" aria-label="模型类型"><option value="all">全部模型</option><option value="decision">决策专用</option><option value="general">通用大模型</option><option value="representation">表示模型</option></select></label>
+        <button id="reset" class="quiet">重置</button>
+      </div>
+      <div id="resultCount" class="result-count" aria-live="polite"></div>
+      <div class="table-scroll" id="tableWrap"><table id="ranking"><caption class="sr-only" id="caption">模型排名与数值</caption><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
+      <div class="empty" id="empty" hidden></div>
+      <div class="board-foot" id="boardFoot"></div>
+    </section>
+    <section class="method-strip"><div><span class="method-number">01</span><h3>分数不隐藏分母</h3><p>分类成绩显示答对数与样本数；领域等权综合分不伪装成整体答对率。</p></div><div><span class="method-number">02</span><h3>稳定不是一直答同一个</h3><p>换选项顺序应保持正确；改变关键事实时则应及时改判。两次都答对才获得奖励。</p></div><div><span class="method-number">03</span><h3>速度不脱离测量条件</h3><p>同卡、相同字段数、完整请求耗时。托管 API 与官方不同硬件成绩不混排。</p></div></section>
+    <footer>System1Bench · Independent research benchmark <span>分数与来源可下载核验，不以训练史差异推断架构因果。</span></footer>
+  </main>
+  <dialog id="detail"><div class="dialog-top"><span>MODEL DETAILS</span><button id="closeDetail" aria-label="关闭模型详情">×</button></div><div id="detailContent"></div></dialog>
+</body>
+</html>

@@ -1,0 +1,83 @@
+{
+  "status": "RUNNING",
+  "contract": {
+    "model": "llama32_1b_public",
+    "adapter": {
+      "model": "llama32_1b_public",
+      "checkpoint": {
+        "repo": "unsloth/Llama-3.2-1B-Instruct",
+        "revision": "5a8abab4a5d6f164389b1079fb721cfab8d7126c",
+        "admission_sha256": "1785bc154dd1c285313c846922b95b7b1a3cf3a36f80f8aa013aebe07f667b77",
+        "provenance": "public_community_distribution_unquantized"
+      },
+      "python": "3.12.13",
+      "torch": "2.7.1+cu118",
+      "transformers": "5.17.0",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "seed": 0,
+      "context_limit": 32768,
+      "truncation": false,
+      "batch_requests": 1,
+      "controlled_speed_measurement": false,
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "adapter": "llama_constrained_next_token",
+      "enable_thinking": false,
+      "text_only": true,
+      "quantized": false,
+      "probability_semantics": "conditional candidate-code likelihood, not calibrated correctness",
+      "chat_template_sha256": "2732d9da5568668ed22ea202bffb12f0df405439651e1275ba1f521522f92966",
+      "model_files_sha256": {
+        "chat_template.jinja": "5816fce10444e03c2e9ee1ef8a4a1ea61ae7e69e438613f3b17b69d0426223a4",
+        "config.json": "dfb67fd8afe73a1c75245824ef9d64a6ba8983025447e3bf76aa1ea57ee46152",
+        "generation_config.json": "6d4f979915331212d7672c68b22a4ddad9e21ed8126cf2bd1ea6b2b88f595c1c",
+        "model.safetensors": "1ff795ff6a07e6a68085d206fb84417da2f083f68391c2843cd2b8ac6df8538f",
+        "special_tokens_map.json": "94e708c3f5e64acf85bbe5ad01467a1248faadb73e83b41793087ecced586e8f",
+        "tokenizer.json": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+        "tokenizer_config.json": "9ddd255c19fe319c8d4e891163540382e9fbda99f394674f2a929efc47d57458"
+      }
+    },
+    "device": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "15",
+      "utilization.gpu": "14",
+      "temperature.gpu": "47",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "69.49",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    },
+    "protocol_sha256": "353771c1f0bd7c880e23d5dc63e7e5259ceb97289d1c127ad8f194aa03c34632",
+    "runner_sha256": "3d828acab23d8c047ea93843944060fa0158acb520cc3961b60fb0bbb503d432",
+    "adapter_sha256": "e7cee60fc362959561135b87f01ef73523a9e8b6b25e80382abb195081dfc3f0",
+    "native_adapter_sha256": "bb7faf113557ff2fe2048211d4e087783cf37148504d36f1d094731360ed3dd2",
+    "shared_adapter_sha256": "3c5ddaf183920869f8a880b1e2961dd5ad1bc9582ffc2598177de14f8ebf0416",
+    "expansion_adapter_sha256": "87ffacb58bf18fb47d9be4ec3cb022eca637ce906d77a9e6f3de860855e6aee8",
+    "cpu_affinity": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "cpu_smt_siblings": [
+      84,
+      85,
+      86,
+      87
+    ],
+    "seed": 20261005,
+    "workloads_sha256": "584fcc9312ac0904e187cfd6e0fcea1b704d86c1f7413b22a39b336cd5d7abc4",
+    "warmup_requests": 10,
+    "rounds": 5,
+    "requests_per_round": 20,
+    "exclusive_gpu_process_checks": true,
+    "whole_host_exclusive": false,
+    "cpu_contention_threshold": 0.15,
+    "timings_include": "fresh tokenization, native prediction and synchronization; output validation after timing"
+  },
+  "started_at": "2026-10-05T13:38:10.154815+00:00"
+}

@@ -1,0 +1,55 @@
+{
+  "status": "DONE",
+  "signature": {
+    "model": {
+      "model": "llama32_3b_public",
+      "checkpoint": {
+        "repo": "unsloth/Llama-3.2-3B-Instruct",
+        "revision": "006f5dcd1393c3add266de40994ba96225e9689d",
+        "admission_sha256": "1a74ead22621cc17d245cc42b0180f528e11c821d80796a5196b1af6e11d72d6",
+        "provenance": "public_community_distribution_unquantized"
+      },
+      "python": "3.12.13",
+      "torch": "2.7.1+cu118",
+      "transformers": "5.17.0",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "seed": 0,
+      "context_limit": 32768,
+      "truncation": false,
+      "batch_requests": 1,
+      "controlled_speed_measurement": false,
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "adapter": "llama_constrained_next_token",
+      "enable_thinking": false,
+      "text_only": true,
+      "quantized": false,
+      "probability_semantics": "conditional candidate-code likelihood, not calibrated correctness",
+      "chat_template_sha256": "2732d9da5568668ed22ea202bffb12f0df405439651e1275ba1f521522f92966",
+      "model_files_sha256": {
+        "chat_template.jinja": "5816fce10444e03c2e9ee1ef8a4a1ea61ae7e69e438613f3b17b69d0426223a4",
+        "config.json": "eadff796b79b82cefa0537004668d70a1dd099fd4986b91ef88398ed91b26311",
+        "generation_config.json": "8bab06a398ca622f8b941eb0b5f425d71d007080436cfa4f37d6c03c23b756a9",
+        "model-00001-of-00002.safetensors": "13cbd6d16e927a0c5bad54102514e6e18b4a47b3a6eb911e39d678d328d19f55",
+        "model-00002-of-00002.safetensors": "7b770216613ac5c34d7c54bdff1fa616bc4e338a9d0b20af6303e48c295ee23c",
+        "model.safetensors.index.json": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c",
+        "special_tokens_map.json": "94e708c3f5e64acf85bbe5ad01467a1248faadb73e83b41793087ecced586e8f",
+        "tokenizer.json": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+        "tokenizer_config.json": "9ddd255c19fe319c8d4e891163540382e9fbda99f394674f2a929efc47d57458"
+      }
+    },
+    "manifest_sha256": "41def583f930dad2cee4e2ffa9ed807a46f4e938324107c95b59a341e0101f58",
+    "frozen_sha256": "702d60ec1e1a433b0256bc0f1e50189033338a3b91c34b17e60d1cf65baa436e",
+    "runner_sha256": "b2d56529284c73b808eeb86c078d69bb972f3527e3cd091a85eef19a50e99529",
+    "adapter_sha256": "e7cee60fc362959561135b87f01ef73523a9e8b6b25e80382abb195081dfc3f0",
+    "shared_adapter_sha256": "3c5ddaf183920869f8a880b1e2961dd5ad1bc9582ffc2598177de14f8ebf0416",
+    "expansion_adapter_sha256": "87ffacb58bf18fb47d9be4ec3cb022eca637ce906d77a9e6f3de860855e6aee8",
+    "panel": "transfer"
+  },
+  "expected": 1152,
+  "started_at": "2026-10-05T11:03:40.141419+00:00",
+  "count": 1152,
+  "errors": 0,
+  "finished_at": "2026-10-05T11:04:08.757421+00:00",
+  "raw_sha256": "a8530a864536228435b8eeb2b5a3f74468a0571dcddad10a4fde7b36e03f074f"
+}

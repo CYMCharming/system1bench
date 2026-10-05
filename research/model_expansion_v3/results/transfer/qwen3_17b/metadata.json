@@ -1,0 +1,54 @@
+{
+  "status": "DONE",
+  "signature": {
+    "model": {
+      "model": "qwen3_17b",
+      "checkpoint": {
+        "repo": "Qwen/Qwen3-1.7B",
+        "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+        "admission_sha256": "0aee91447e5c3f97729a33d9267e0160b5a10cc91d8981b388a08634058fe1c8",
+        "provenance": "existing_gpu24_original_weights_with_pinned_official_tokenizer_config"
+      },
+      "python": "3.12.13",
+      "torch": "2.7.1+cu118",
+      "transformers": "5.17.0",
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "seed": 0,
+      "context_limit": 32768,
+      "truncation": false,
+      "batch_requests": 1,
+      "controlled_speed_measurement": false,
+      "dtype": "bfloat16",
+      "attention": "sdpa",
+      "adapter": "qwen3_constrained_next_token",
+      "enable_thinking": false,
+      "text_only": true,
+      "quantized": false,
+      "probability_semantics": "conditional candidate-code likelihood, not calibrated correctness",
+      "chat_template_sha256": "41d5929bf73796beb66809ac700b2cf3ff81694f933e5c14d52b7fd6963c947d",
+      "model_files_sha256": {
+        "config.json": "1ddb5b89ebc90dcb417a45c213d818577e65976454d29385c8f6140771d95197",
+        "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+        "model-00001-of-00002.safetensors": "169ad53ec313c3a34b06c0809216e4fc072cce444a5d4ff2b59690d064130ed5",
+        "model-00002-of-00002.safetensors": "912becff8d60672aa8628ef08c05898d9adf17c2ad4ae3caf99b065622fdeff9",
+        "model.safetensors.index.json": "0d660e94b165eb912669a5249dff44b83188c4777a07ddb9611fb78d91b0578d",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "manifest_sha256": "41def583f930dad2cee4e2ffa9ed807a46f4e938324107c95b59a341e0101f58",
+    "frozen_sha256": "702d60ec1e1a433b0256bc0f1e50189033338a3b91c34b17e60d1cf65baa436e",
+    "runner_sha256": "b2d56529284c73b808eeb86c078d69bb972f3527e3cd091a85eef19a50e99529",
+    "adapter_sha256": "e7cee60fc362959561135b87f01ef73523a9e8b6b25e80382abb195081dfc3f0",
+    "shared_adapter_sha256": "3c5ddaf183920869f8a880b1e2961dd5ad1bc9582ffc2598177de14f8ebf0416",
+    "expansion_adapter_sha256": "87ffacb58bf18fb47d9be4ec3cb022eca637ce906d77a9e6f3de860855e6aee8",
+    "panel": "transfer"
+  },
+  "expected": 1152,
+  "started_at": "2026-10-05T13:23:36.777287+00:00",
+  "count": 1152,
+  "errors": 0,
+  "finished_at": "2026-10-05T13:24:00.327301+00:00",
+  "raw_sha256": "1db2032a4ad1a1d8ca64675d112330996f7981e83e93d8ccb3b1ff7e08ccbb21"
+}

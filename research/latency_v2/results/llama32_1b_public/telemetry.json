@@ -1,0 +1,272 @@
+[
+  {
+    "workload": "one_field",
+    "round": 0,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2920",
+      "utilization.gpu": "13",
+      "temperature.gpu": "44",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "195.62",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "one_field",
+    "round": 1,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2920",
+      "utilization.gpu": "14",
+      "temperature.gpu": "44",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "206.56",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "one_field",
+    "round": 2,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2920",
+      "utilization.gpu": "18",
+      "temperature.gpu": "44",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "196.27",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "one_field",
+    "round": 3,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2920",
+      "utilization.gpu": "27",
+      "temperature.gpu": "44",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "191.55",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "one_field",
+    "round": 4,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2920",
+      "utilization.gpu": "33",
+      "temperature.gpu": "44",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "194.54",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "three_fields",
+    "round": 0,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "76",
+      "temperature.gpu": "45",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "203.28",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "three_fields",
+    "round": 1,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "76",
+      "temperature.gpu": "45",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "200.30",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "three_fields",
+    "round": 2,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "76",
+      "temperature.gpu": "45",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "194.39",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "three_fields",
+    "round": 3,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "75",
+      "temperature.gpu": "45",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "187.28",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "three_fields",
+    "round": 4,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "76",
+      "temperature.gpu": "45",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "212.87",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "eight_fields",
+    "round": 0,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "75",
+      "temperature.gpu": "45",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "216.57",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "eight_fields",
+    "round": 1,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "76",
+      "temperature.gpu": "46",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "220.12",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "eight_fields",
+    "round": 2,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "74",
+      "temperature.gpu": "44",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "113.27",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "eight_fields",
+    "round": 3,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "75",
+      "temperature.gpu": "46",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "210.18",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  },
+  {
+    "workload": "eight_fields",
+    "round": 4,
+    "gpu": {
+      "uuid": "GPU-45c54113-eaa8-374c-7d8a-bb2d04d871f7",
+      "name": "NVIDIA A100 80GB PCIe",
+      "driver_version": "610.43.02",
+      "memory.total": "81920",
+      "memory.used": "2922",
+      "utilization.gpu": "76",
+      "temperature.gpu": "46",
+      "clocks.sm": "1410",
+      "clocks.mem": "1512",
+      "power.draw": "220.08",
+      "power.limit": "300.00",
+      "pstate": "P0"
+    }
+  }
+]
