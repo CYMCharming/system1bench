@@ -1,0 +1,47 @@
+{
+  "model": "intern_08b",
+  "repo": "internlm/Intern-Decision-0.8B",
+  "revision": "85a0cc5a99d67ea8d56dfe98115689212867171d",
+  "provenance": "official_download",
+  "upstream_license": "apache-2.0",
+  "quantization_config": false,
+  "verification": "all weight SHA-256 against pinned upstream LFS",
+  "weights": {
+    "model-language-0001-save_rank0.safetensors": {
+      "sha256": "4acc4bd67febb2466ef7c282099fd05ee0ba47b853b6c49b9e763fb642957820",
+      "bytes": 1504832320,
+      "tensor_dtypes": {
+        "F32": 36,
+        "BF16": 284
+      }
+    },
+    "model-projector-0001-save_rank0.safetensors": {
+      "sha256": "7f81b4ab1b4434c4d0322c849525337c1746f0ca4b9beac107a94e23b2952fee",
+      "bytes": 25177720,
+      "tensor_dtypes": {
+        "BF16": 6
+      }
+    },
+    "model-vision-0001-save_rank0.safetensors": {
+      "sha256": "bf8e03e3be40018e51037b46bb8ebe0471e2aceb394ad988632cce2c87d2e177",
+      "bytes": 176024696,
+      "tensor_dtypes": {
+        "BF16": 147
+      }
+    }
+  },
+  "input_files": {
+    "added_tokens.json": "f1073c68b68e68ea82a576cf0865df14fc71408681b35724a4d17a214db5a97d",
+    "chat_template.jinja": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+    "config.json": "b90b86f35c8e6925ef74ee04d0e758f0a845c83a42089ad82bbaa948de9b4204",
+    "merges.txt": "3bd640ba6d8da8f5844f3548b7e2184fc664dd670e1447e425a48dbaaad1ef43",
+    "model.safetensors.index.json": "f71a08fca77f74382c1b358bbf958bdbc9f82008c1bd7e9a842fc412eeec3ba9",
+    "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "requirements.txt": "a07f8990947cc3fa39800d510ebc6b995a15466656e339b485c0a632ef4cdb6e",
+    "special_tokens_map.json": "02c0c88f275a15197a3b600ccd6ae7976e9b8b67e8eb5d7500d256d91cb6791b",
+    "tokenizer.json": "94a639c4b33b192cc5a22cd3d7f0aaf6d97efa9577957a0382b55292ca4f0f00",
+    "tokenizer_config.json": "f26d55ed6da1fc0de69fbaefae7b855f762e36d0052c05f4fdec312f72a22ae1",
+    "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+    "vocab.json": "4ab0d5c096294054b66444a116a20baf6e29998fc1fae410ffe4b6fadbc56b5c"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "model": "intern_2b",
+  "repo": "internlm/Intern-Decision-2B",
+  "revision": "8797836c65fc91a2435b1fb6850b5f0aabd75cc3",
+  "provenance": "official_download",
+  "upstream_license": "apache-2.0",
+  "quantization_config": false,
+  "verification": "all weight SHA-256 against pinned upstream LFS",
+  "weights": {
+    "model-language-0001-save_rank0.safetensors": {
+      "sha256": "81ee251c9280fd8f0eb6472fd79b638bffbf3b46a8729fad353e053c8891bdf5",
+      "bytes": 3763696728,
+      "tensor_dtypes": {
+        "F32": 36,
+        "BF16": 284
+      }
+    },
+    "model-projector-0001-save_rank0.safetensors": {
+      "sha256": "26e6a8056dce97e33101fffab7f41a829546771326bbc03a42696c8bbed09ac3",
+      "bytes": 50348664,
+      "tensor_dtypes": {
+        "BF16": 6
+      }
+    },
+    "model-vision-0001-save_rank0.safetensors": {
+      "sha256": "ca0e18ef7b32cab7d52f27f4b52a9907bce9eb8e7b0d46c26bbddecb1d10b812",
+      "bytes": 612517440,
+      "tensor_dtypes": {
+        "BF16": 291
+      }
+    }
+  },
+  "input_files": {
+    "added_tokens.json": "f1073c68b68e68ea82a576cf0865df14fc71408681b35724a4d17a214db5a97d",
+    "chat_template.jinja": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+    "config.json": "ed1c1723241f23f7f4e23430759cbd7dcfb4103cbdfe052bfe7626b57c2615b4",
+    "merges.txt": "3bd640ba6d8da8f5844f3548b7e2184fc664dd670e1447e425a48dbaaad1ef43",
+    "model.safetensors.index.json": "0181b2e695c344cecef9e601d0fffaacc3f27688d0da6cc9426b2a7d168e9d4a",
+    "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "requirements.txt": "a07f8990947cc3fa39800d510ebc6b995a15466656e339b485c0a632ef4cdb6e",
+    "special_tokens_map.json": "02c0c88f275a15197a3b600ccd6ae7976e9b8b67e8eb5d7500d256d91cb6791b",
+    "tokenizer.json": "94a639c4b33b192cc5a22cd3d7f0aaf6d97efa9577957a0382b55292ca4f0f00",
+    "tokenizer_config.json": "f26d55ed6da1fc0de69fbaefae7b855f762e36d0052c05f4fdec312f72a22ae1",
+    "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+    "vocab.json": "4ab0d5c096294054b66444a116a20baf6e29998fc1fae410ffe4b6fadbc56b5c"
+  }
+}

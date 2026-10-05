@@ -1,0 +1,49 @@
+{
+  "seed": 20261004,
+  "expected_decisions": 1152,
+  "frozen_sha256": "702d60ec1e1a433b0256bc0f1e50189033338a3b91c34b17e60d1cf65baa436e",
+  "source_quality_sha256": "baff2ee442022453d809687daf19d7bf44747dcaeb529f4018bea2331291d13e",
+  "prepared_main_sha256": "2d13abec9e0dfd6c528cf6fca5cd47d46bf232ab4502f1e1a1f9b8a9e3699ae5",
+  "protocol_sha256": "bb9a5a6891da6b2ca47730c5218da6b41dfa7b9a173822311f3c0fd3d5981b57",
+  "cohort": [
+    "intern_08b",
+    "intern_2b",
+    "llama32_1b_public",
+    "llama32_3b_public",
+    "qwen3_17b",
+    "qwen3_8b"
+  ],
+  "base_runner_sha256": "55edb03705cad723dae6c132400956dd90d82b904a34ede3d4080dbbfad76765",
+  "base_protocol_sha256": "458a2366d6cf7112c431e8d660a8f57e509e392a7e45c36d009c976ddfdaa21c",
+  "code_sha256": {
+    "adapter.py": "e7cee60fc362959561135b87f01ef73523a9e8b6b25e80382abb195081dfc3f0",
+    "run.py": "b2d56529284c73b808eeb86c078d69bb972f3527e3cd091a85eef19a50e99529"
+  },
+  "model_pins": {
+    "intern_08b": {
+      "repo": "internlm/Intern-Decision-0.8B",
+      "revision": "85a0cc5a99d67ea8d56dfe98115689212867171d"
+    },
+    "intern_2b": {
+      "repo": "internlm/Intern-Decision-2B",
+      "revision": "8797836c65fc91a2435b1fb6850b5f0aabd75cc3"
+    },
+    "llama32_1b_public": {
+      "repo": "unsloth/Llama-3.2-1B-Instruct",
+      "revision": "5a8abab4a5d6f164389b1079fb721cfab8d7126c"
+    },
+    "llama32_3b_public": {
+      "repo": "unsloth/Llama-3.2-3B-Instruct",
+      "revision": "006f5dcd1393c3add266de40994ba96225e9689d"
+    },
+    "qwen3_17b": {
+      "repo": "Qwen/Qwen3-1.7B",
+      "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e"
+    },
+    "qwen3_8b": {
+      "repo": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+    }
+  },
+  "admission_policy": "per-model upstream weight and input-file verification before inference; receipt bound in run signature"
+}
