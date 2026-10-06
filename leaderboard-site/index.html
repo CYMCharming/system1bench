@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>System1Bench — 决策模型排行榜</title>
   <meta name="description" content="决策专用模型与通用大模型的可追溯评测：综合与领域成绩、稳健性、概率质量及同卡推理速度。">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/viz.css">
   <script type="module" src="/app.js"></script>
 </head>
 <body>
@@ -41,7 +41,8 @@
         <label class="select-label">模型类型<select id="family" aria-label="模型类型"><option value="all">全部模型</option><option value="decision">决策专用</option><option value="general">通用大模型</option><option value="representation">表示模型</option></select></label>
         <button id="reset" class="quiet">重置</button>
       </div>
-      <div id="resultCount" class="result-count" aria-live="polite"></div>
+      <div class="results-topline"><div id="resultCount" class="result-count" aria-live="polite"></div><div id="displaySwitch" class="display-switch" role="group" aria-label="结果展示方式"><button data-display="visual" aria-pressed="true">可视化</button><button data-display="table" aria-pressed="false">精确数据</button></div></div>
+      <div id="visuals" class="viz-area" aria-label="排名与模型能力可视化"></div>
       <div class="table-scroll" id="tableWrap"><table id="ranking"><caption class="sr-only" id="caption">模型排名与数值</caption><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
       <div class="empty" id="empty" hidden></div>
       <div class="board-foot" id="boardFoot"></div>

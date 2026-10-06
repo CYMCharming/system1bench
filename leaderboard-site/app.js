@@ -1,3 +1,4 @@
+import {renderVisuals} from './charts.js';
 const $ = id => document.getElementById(id);
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const repo = 'https://github.com/CYMCharming/system1bench/blob/main/';
@@ -11,7 +12,7 @@ const views = {
  speed:{title:'同卡推理速度',metrics:['three_fields','one_field','eight_fields'],description:'同一张 NVIDIA A100 80GB，逐模型独立测量。平均完整请求耗时越低越好；每个负载预热 10 次，再测 5 轮 × 20 次。',protocol:'research/latency_v2/PROTOCOL.md'},
  datasets:{title:'数据集与任务分类',metrics:[],description:'七个领域，分别标明数据类型、标签与样本数。同领域子任务不重复计为新领域；概率诊断独立展示。',protocol:'research/model_expansion_v3/PROTOCOL.md'}
 };
-let data, view='overall', metric='overall_domain_equal', family='all', search='';
+let data, view='overall', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=false;
 const kind = id => /^(qwen|llama)/.test(id) ? 'general' : ['english','multilingual'].includes(id) ? 'representation' : 'decision';
 const kindName = id => ({general:'通用大模型',representation:'表示模型',decision:'决策专用'})[kind(id)];
 const canonical = id => id === 'jev' ? 'jev-1.13.0' : id;
@@ -53,11 +54,14 @@ function render() {
  document.querySelectorAll('[role=tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
  document.querySelectorAll('.side-link[data-view]').forEach(b=>b.classList.toggle('active',view==='datasets'?b.dataset.view==='datasets':b.dataset.view==='overall'));
  $('viewTitle').textContent=config.title;$('viewDefinition').textContent=config.description;$('protocol').href=repo+config.protocol;$('toolbar').hidden=view==='datasets';$('caption').textContent=config.title+'：'+(names[metric]??'数据说明');
- $('empty').hidden=true;$('tableWrap').hidden=false;
+ $('empty').hidden=true;$('tableWrap').hidden=displayMode==='visual';
+ $('displaySwitch').hidden=view==='datasets';$('visuals').hidden=view==='datasets'||displayMode==='table';
+ document.querySelectorAll('[data-display]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.display===displayMode)));
  $('metric').innerHTML=config.metrics.map(m=>`<option value="${m}" ${m===metric?'selected':''}>${names[m]}</option>`).join('');
- const params=new URLSearchParams({view});if(metric)params.set('metric',metric);if(family!=='all')params.set('family',family);history.replaceState(null,'','?'+params.toString());
- if(view==='datasets'){datasets();return;}
+ const params=new URLSearchParams({view});if(metric)params.set('metric',metric);if(family!=='all')params.set('family',family);if(displayMode==='table')params.set('display','table');history.replaceState(null,'','?'+params.toString());
+ if(view==='datasets'){$('tableWrap').hidden=false;$('visuals').innerHTML='';datasets();return;}
  const all=rankedRows(),rows=all.filter(r=>(family==='all'||kind(r.id)===family)&&label(r.id).toLowerCase().includes(search.toLowerCase()));
+ renderVisuals($('visuals'),{data,rows,all,view,metric,names,label,kind,expanded});
  $('resultCount').innerHTML=`显示 <strong>${rows.length}</strong> / ${all.length} 个已完成模型${view==='speed'?` · 计划测量 ${data.speedExpected} 个 · 平均耗时升序`:' · 按当前指标排序'} · 并列分数并列名次`;
  const extra=columns(),down=['probability','speed'].includes(view);
  $('tableHead').innerHTML=`<tr><th>排名</th><th>模型 <span class="header-hint">点击查看详情</span></th><th class="metric-head">${esc(names[metric])}${view==='speed'?' · 均值 ms':''} ${down?'↓':'↑'}</th>${view==='speed'?'<th>P50 · ms</th><th>P95 · ms</th><th>请求 / 秒</th><th>字段 / 秒</th>':extra.map(m=>`<th>${esc(names[m])}</th>`).join('')}${view==='transfer'?'<th>当前任务：换序两次都对</th>':''}</tr>`;
@@ -67,7 +71,7 @@ function render() {
   else{const type=view==='probability'?'probability':'percent';cells=cell(r.c,true,type)+extra.map(m=>cell(view==='transfer'?r.m.metrics[m]?.original:view==='probability'?r.m.metrics.known_distribution?.[m]:r.m.metrics[m],false,type)).join('');if(view==='transfer')cells+=cell(r.m.metrics[metric]?.paired_both_correct);}
   return `<tr><td><span class="rank ${r.rank<=3?'top':''}">${r.rank}</span></td>${modelCell(r.id)}${cells}</tr>`;
  }).join('');
- if(!rows.length){$('tableWrap').hidden=true;$('empty').hidden=false;$('empty').textContent=all.length?'没有匹配的模型，请修改搜索或重置筛选。':'尚无符合测量条件的完成结果，没有用估计值填充排名。';}
+ if(!rows.length){$('tableWrap').hidden=true;$('visuals').hidden=true;$('empty').hidden=false;$('empty').textContent=all.length?'没有匹配的模型，请修改搜索或重置筛选。':'尚无符合测量条件的完成结果，没有用估计值填充排名。';}
  $('boardFoot').innerHTML=view==='speed'?'条件：A100 80GB PCIe · 单模型顺序运行 · GPU 同占用与 CPU 干扰检查 · 原始浮点权重 · 同步完整请求。相同语义工作负载，模型原生格式与 token 数不同。Qwen3.5 使用参考线性注意力实现；本榜反映当前软件栈，不代表优化内核极限。未测 / 未通过资源检查的不排名；托管 API、27B、外部硬件数据不混排。':view==='probability'?'默认用相对真实分布的额外 Brier 误差，剔除题目固有不确定性。概率是候选集合上的归一化输出，不等于已校准的正确性置信度。95% 区间来自协议中的配对 / 分层自助法。':view==='transfer'?'本面板与主榜覆盖不同，缺测不记零。每模型 1,152 次决策：528 道分类题的原始 / 换序版本，加 96 个概率诊断。StartLux 声明的训练历史需单独考虑；成绩差异不是架构因果证据。':view==='overall'?'领域等权 =（政策行动 + 法律 + 科学）/ 3；任务等权 =（退款 + 访问控制 + 分流 + 法律 + 科学）/ 5。95% 区间是样本层面不确定性，不含提示选择与训练历史偏差。保留之前 18 个模型的原始成绩。':view==='domains'?'每个分数保留分母。法律 †：StartLux 作者声明训练中使用 ContractNLI，不能直接视为纯未见领域能力，也没有据此证明测试泄漏。科学“未提供证据”依赖当前证据包。':'关键事实改变时应正确改判，换选项顺序时应保持正确。法律 / 科学换序总分为两个领域配对正确率的等权平均，无单一正确数分母。';
 }
 function detail(id) {
@@ -80,15 +84,22 @@ function detail(id) {
  html+='<h3>来源与版本</h3><p>'+data.sources.filter(x=>!x.path.includes('/latency_v2/')||x.path.includes('/'+id+'/')).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.path)}</a><br><span class="hash">SHA-256 ${esc(x.sha256)}</span>`).join('<br>')+'</p>';
  $('detailContent').innerHTML=html;$('detail').showModal();
 }
-document.addEventListener('click',event=>{const tab=event.target.closest('[data-view]');if(tab&&data){view=tab.dataset.view;metric=views[view].metrics[0]??'';render();}const model=event.target.closest('[data-model]');if(model)detail(model.dataset.model);});
+document.addEventListener('click',event=>{
+ const tab=event.target.closest('[data-view]');if(tab&&data){view=tab.dataset.view;metric=views[view].metrics[0]??'';expanded=false;render();}
+ const mode=event.target.closest('[data-display]');if(mode&&data){displayMode=mode.dataset.display;render();}
+ const action=event.target.closest('[data-chart-action]');if(action&&data){expanded=!expanded;render();}
+ const model=event.target.closest('[data-model]');if(model)detail(model.dataset.model);
+});
+document.addEventListener('keydown',event=>{const mark=event.target.closest('[data-point]');if(mark&&['Enter',' '].includes(event.key)){event.preventDefault();detail(mark.dataset.model);}});
 $('closeDetail').addEventListener('click',()=>$('detail').close());
 $('search').addEventListener('input',event=>{search=event.target.value;render();});
 $('metric').addEventListener('change',event=>{metric=event.target.value;render();});
 $('family').addEventListener('change',event=>{family=event.target.value;render();});
-$('reset').addEventListener('click',()=>{search='';family='all';$('search').value='';$('family').value='all';metric=views[view].metrics[0]??'';render();});
+$('reset').addEventListener('click',()=>{search='';family='all';expanded=false;$('search').value='';$('family').value='all';metric=views[view].metrics[0]??'';render();});
 try {
  const response=await fetch('/catalog.json');if(!response.ok)throw Error('数据响应 '+response.status);data=await response.json();if(data.version!==1)throw Error('数据版本不兼容');
  const params=new URLSearchParams(location.search);if(views[params.get('view')])view=params.get('view');metric=views[view].metrics.includes(params.get('metric'))?params.get('metric'):views[view].metrics[0]??'';
+ if(params.get('display')==='table')displayMode='table';
  if(['all','decision','general','representation'].includes(params.get('family')))family=params.get('family');$('family').value=family;
  $('modelCount').textContent=Object.keys(data.quality.models).length;$('release').textContent='数据快照 · '+new Date(data.generatedAt).toLocaleDateString('zh-CN',{timeZone:'Asia/Shanghai'});render();
-} catch(error){$('tableWrap').hidden=true;$('toolbar').hidden=true;$('empty').hidden=false;$('empty').textContent='暂时无法读取评测数据，请刷新后重试。';$('viewDefinition').textContent=error.message;}
+} catch(error){$('tableWrap').hidden=true;$('visuals').hidden=true;$('toolbar').hidden=true;$('empty').hidden=false;$('empty').textContent='暂时无法读取评测数据，请刷新后重试。';$('viewDefinition').textContent=error.message;}
