@@ -4,6 +4,7 @@ node_modules/
 !data/
 data/*
 !data/catalog.json
+!data/review.json
 
 .vercel
 .env*

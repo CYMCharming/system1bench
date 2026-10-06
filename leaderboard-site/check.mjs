@@ -3,11 +3,13 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {visualMarkup,buildRanking,barDomain,tradeoffRows,buildScatter,matrixCell,matrixColumns} from './charts.js';
+import {reviewMarkup} from './review.js';
 const elements=new Map();
 const get=id=>{if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',hidden:false,value:'',addEventListener(){},showModal(){},close(){}});return elements.get(id);};
 const catalog=JSON.parse(fs.readFileSync('data/catalog.json','utf8'));
-let source=fs.readFileSync('app.js','utf8').replace(/^import .*;\r?\n/,'');
-const context=vm.createContext({renderVisuals:(root,options)=>{root.innerHTML=visualMarkup(options);},document:{getElementById:get,querySelectorAll:()=>[],addEventListener(){}},history:{replaceState(){}},location:{search:''},URLSearchParams,Date,fetch:async()=>({ok:true,json:async()=>catalog}),console});
+let source=fs.readFileSync('app.js','utf8').replace(/^import .*;\r?\n/gm,'');
+const review=JSON.parse(fs.readFileSync('data/review.json','utf8'));
+const context=vm.createContext({reviewMarkup,renderVisuals:(root,options)=>{root.innerHTML=visualMarkup(options);},document:{getElementById:get,querySelectorAll:()=>[],addEventListener(){}},history:{replaceState(){}},location:{search:''},URLSearchParams,Date,fetch:async url=>({ok:true,json:async()=>url==='/review.json'?review:catalog}),console});
 await vm.runInContext(`(async()=>{${source}\n globalThis.verify=(v,m,f='all',s='')=>{view=v;metric=m;family=f;search=s;render();return {rows:rankedRows(),html:$('tableBody').innerHTML,empty:$('empty').hidden};};})()`,context);
 assert.equal(get('modelCount').textContent,23);
 for(const [v,m,n] of [['overall','overall_domain_equal',23],['domains','legal',23],['robustness','all_heads',23],['transfer','cladder',19],['probability','excess_brier',19],['speed','three_fields',Object.keys(catalog.speed).length]]){
@@ -19,6 +21,7 @@ for(const [v,m,n] of [['overall','overall_domain_equal',23],['domains','legal',2
 assert.equal(context.verify('overall','overall_domain_equal','all','nonexistent search').empty,false);
 assert.equal(context.verify('overall','overall_domain_equal','general').html.match(/class="model-button"/g).length,9);
 context.verify('datasets','');assert.equal((get('tableBody').innerHTML.match(/<tr>/g)||[]).length,10);
+assert.equal(get('datasetReview').hidden,false);assert.equal(review.datasets.length,2);assert(review.models.every(m=>m.score===null));assert(reviewMarkup(review).includes('尚未计分'));assert(!reviewMarkup(review).includes('undefined'));
 console.log('PASS: six rankings, sorting, 23/19 model coverage, search, family filter and dataset table');
 const qrows=context.verify('overall','overall_domain_equal').rows;
 const speedRows=context.verify('speed','three_fields').rows;

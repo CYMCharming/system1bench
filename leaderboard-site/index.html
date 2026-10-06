@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>System1Bench — 决策模型排行榜</title>
   <meta name="description" content="决策专用模型与通用大模型的可追溯评测：综合与领域成绩、稳健性、概率质量及同卡推理速度。">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/viz.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/viz.css"><link rel="stylesheet" href="/review.css">
   <script type="module" src="/app.js"></script>
 </head>
 <body>
@@ -15,15 +15,15 @@
     <button class="side-link active" data-view="overall"><span class="nav-glyph">▤</span>模型排行榜</button>
     <button class="side-link" data-view="datasets"><span class="nav-glyph">▦</span>数据集与任务</button>
     <a class="side-link" href="https://github.com/CYMCharming/system1bench/tree/main/research" target="_blank" rel="noopener"><span class="nav-glyph">◈</span>研究与发现</a>
-    <div class="side-bottom"><span class="tiny-label">开放、独立、可复验</span><a href="https://github.com/CYMCharming/system1bench" target="_blank" rel="noopener">GitHub 项目</a><span class="release" id="release">读取数据版本…</span></div>
+    <div class="side-bottom"><span class="tiny-label">评测协议与原始结果</span><a href="https://github.com/CYMCharming/system1bench" target="_blank" rel="noopener">GitHub 项目</a><span class="release" id="release">加载数据版本…</span></div>
   </aside>
   <main id="main">
     <header class="topbar"><span>RESEARCH <span class="slash">/</span> LEADERBOARD</span><a href="/catalog.json" download>下载完整数据</a></header>
     <section class="heading">
-      <div><div class="eyebrow">SYSTEM1BENCH</div><h1>决策模型排行榜<span class="edition">OPEN BENCHMARK</span></h1><p>专用决策模型与通用大模型，在相同任务上的真实表现。</p></div>
-      <div class="scope-badge">固定题目<span>保留分母与测量条件</span></div>
+      <div><div class="eyebrow">SYSTEM1BENCH</div><h1>决策模型排行榜<span class="edition">OPEN BENCHMARK</span></h1><p>决策专用模型与通用大模型的分类、稳健性、概率及延迟评测。</p></div>
+      <div class="scope-badge">固定评测集<span>版本、样本与协议公开</span></div>
     </section>
-    <div class="overview"><div><strong id="modelCount">—</strong><span>主榜模型</span></div><div><strong>7</strong><span>任务领域</span></div><div><strong>4,905</strong><span>每模型主面板决策</span></div><div class="overview-note">成绩、稳定性与速度分开呈现。<br>不是 Elo，也不是人工偏好投票。</div></div>
+    <div class="overview"><div><strong id="modelCount">—</strong><span>主榜模型</span></div><div><strong>7</strong><span>任务领域</span></div><div><strong>4,905</strong><span>每模型基础评测决策数</span></div><div class="overview-note">各项指标按评测协议计算。<br>不采用 Elo 或偏好投票。</div></div>
     <section class="board" aria-label="模型评测结果">
       <nav class="tabs" aria-label="排行榜类型" role="tablist">
         <button data-view="overall" role="tab" aria-selected="true">综合榜</button>
@@ -46,9 +46,10 @@
       <div class="table-scroll" id="tableWrap"><table id="ranking"><caption class="sr-only" id="caption">模型排名与数值</caption><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
       <div class="empty" id="empty" hidden></div>
       <div class="board-foot" id="boardFoot"></div>
+      <section id="datasetReview" class="dataset-review" aria-label="数据审核和待评测项目" hidden></section>
     </section>
-    <section class="method-strip"><div><span class="method-number">01</span><h3>分数不隐藏分母</h3><p>分类成绩显示答对数与样本数；领域等权综合分不伪装成整体答对率。</p></div><div><span class="method-number">02</span><h3>稳定不是一直答同一个</h3><p>换选项顺序应保持正确；改变关键事实时则应及时改判。两次都答对才获得奖励。</p></div><div><span class="method-number">03</span><h3>速度不脱离测量条件</h3><p>同卡、相同字段数、完整请求耗时。托管 API 与官方不同硬件成绩不混排。</p></div></section>
-    <footer>System1Bench · Independent research benchmark <span>分数与来源可下载核验，不以训练史差异推断架构因果。</span></footer>
+    <section class="method-strip"><div><span class="method-number">01</span><h3>评分口径</h3><p>分类指标列出正确数与样本数。综合分按领域等权平均，不是所有决策的整体准确率。</p></div><div><span class="method-number">02</span><h3>稳健性指标</h3><p>分别测试选项换序和关键事实反转。配对准确率要求原始题和变体均回答正确。</p></div><div><span class="method-number">03</span><h3>延迟测量</h3><p>同一显卡、相同语义字段数，记录完整请求耗时。托管 API 和外部硬件结果另列。</p></div></section>
+    <footer>System1Bench · Research benchmark <span>数据与协议可下载。模型训练历史不同，成绩差异不构成架构因果证据。</span></footer>
   </main>
   <dialog id="detail"><div class="dialog-top"><span>MODEL DETAILS</span><button id="closeDetail" aria-label="关闭模型详情">×</button></div><div id="detailContent"></div></dialog>
 </body>

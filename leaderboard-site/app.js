@@ -1,18 +1,19 @@
 import {renderVisuals} from './charts.js';
+import {reviewMarkup} from './review.js';
 const $ = id => document.getElementById(id);
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const repo = 'https://github.com/CYMCharming/system1bench/blob/main/';
 const names = {overall_domain_equal:'领域等权综合分',overall_task_equal:'任务等权综合分',refund:'退款政策',access:'访问控制',routing:'工单分流',policy_action:'政策行动',legal:'法律判断',science:'科学证据',all_heads:'三个字段全部正确',policy_counterfactual:'关键事实改变：两次都对',natural_reversal:'换选项顺序：两次都对',action_head:'行动字段',review_head:'人工审核字段',severity_head:'严重程度字段',cladder:'因果 · CLadder',cruxeval:'代码 · CRUXEval',finentity:'金融 · FinEntity',when2call:'工具 · When2Call',excess_brier:'额外 Brier 误差',expected_brier:'期望 Brier 分数',total_variation:'概率分布偏差（TV）',impossible_mass:'不可能事件的概率',one_field:'1 个决策字段',three_fields:'3 个决策字段',eight_fields:'8 个决策字段'};
 const views = {
- overall:{title:'综合表现',metrics:['overall_domain_equal','overall_task_equal'],description:'默认将政策、法律、科学三个领域等权平均，分数为 0–100。综合分不是 4,905 次决策的整体答对率。',protocol:'research/leaderboard_v3/PROTOCOL.md'},
- domains:{title:'领域与任务',metrics:['policy_action','legal','science','refund','access','routing'],description:'固定题目，分别看各领域与政策子任务。答对数 / 样本数直接展示，不将不同数据集混为单一成绩。',protocol:'research/leaderboard_v3/PROTOCOL.md'},
- robustness:{title:'决策是否可靠',metrics:['all_heads','policy_counterfactual','natural_reversal','action_head','review_head','severity_head'],description:'多字段要同时正确；关键事实改变时应该改判，换选项顺序时不应该被位置带偏。配对指标要求两次都答对。',protocol:'research/leaderboard_v3/PROTOCOL.md'},
- transfer:{title:'跨领域迁移',metrics:['cladder','cruxeval','finentity','when2call'],description:'因果、代码、金融、工具四类任务。主分是原始选项顺序的正确率，另列换序后两次都正确的成绩。',protocol:'research/startlux_transfer_v1/PROTOCOL.md'},
- probability:{title:'概率是否接近真实分布',metrics:['excess_brier','expected_brier','total_variation','impossible_mass'],description:'96 个已知真实概率的合成案例。均越低越好；不是正确率，也不能直接当作现实任务中答案正确的置信度。',protocol:'research/startlux_transfer_v1/PROTOCOL.md'},
+ overall:{title:'综合分',metrics:['overall_domain_equal','overall_task_equal'],description:'政策、法律、科学三个领域等权平均，范围 0–100。4,905 为决策总次数，不作为准确率分母。',protocol:'research/leaderboard_v3/PROTOCOL.md'},
+ domains:{title:'领域与任务',metrics:['policy_action','legal','science','refund','access','routing'],description:'按领域与政策子任务分别报告准确率，同时列出正确数和样本数。',protocol:'research/leaderboard_v3/PROTOCOL.md'},
+ robustness:{title:'稳健性',metrics:['all_heads','policy_counterfactual','natural_reversal','action_head','review_head','severity_head'],description:'评测多字段联合正确率、关键事实反转和选项换序。配对指标要求原始题与变体均回答正确。',protocol:'research/leaderboard_v3/PROTOCOL.md'},
+ transfer:{title:'跨领域评测',metrics:['cladder','cruxeval','finentity','when2call'],description:'因果、代码、金融和工具选择四类任务。分别报告原始题准确率与选项换序配对准确率。',protocol:'research/startlux_transfer_v1/PROTOCOL.md'},
+ probability:{title:'概率误差',metrics:['excess_brier','expected_brier','total_variation','impossible_mass'],description:'96 个已知参考分布的合成案例，误差越低越好。此处衡量分布误差，不衡量现实任务中答案正确的置信度。',protocol:'research/startlux_transfer_v1/PROTOCOL.md'},
  speed:{title:'同卡推理速度',metrics:['three_fields','one_field','eight_fields'],description:'同一张 NVIDIA A100 80GB，逐模型独立测量。平均完整请求耗时越低越好；每个负载预热 10 次，再测 5 轮 × 20 次。',protocol:'research/latency_v2/PROTOCOL.md'},
  datasets:{title:'数据集与任务分类',metrics:[],description:'七个领域，分别标明数据类型、标签与样本数。同领域子任务不重复计为新领域；概率诊断独立展示。',protocol:'research/model_expansion_v3/PROTOCOL.md'}
 };
-let data, view='overall', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=false;
+let data, review, view='overall', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=false;
 const kind = id => /^(qwen|llama)/.test(id) ? 'general' : ['english','multilingual'].includes(id) ? 'representation' : 'decision';
 const kindName = id => ({general:'通用大模型',representation:'表示模型',decision:'决策专用'})[kind(id)];
 const canonical = id => id === 'jev' ? 'jev-1.13.0' : id;
@@ -50,6 +51,8 @@ function datasets() {
  $('boardFoot').innerHTML='基础样本数不包括选项换序、事实反转与多字段展开。科学“未提供证据”依赖当前证据包，不等于证明现实中没有证据。StartLux 声明训练中使用 ContractNLI；法律成绩不能直接解释为完全未见领域迁移。<br>来源、划分与冻结方法见 <a href="'+repo+'research/startlux_transfer_v1/PROTOCOL.md" target="_blank" rel="noopener">迁移协议</a> 和 <a href="'+repo+'research/leaderboard_v3/PROTOCOL.md" target="_blank" rel="noopener">主榜协议</a>。';
 }
 function render() {
+ $('datasetReview').hidden=view!=='datasets';
+ if(view==='datasets')$('datasetReview').innerHTML=reviewMarkup(review);
  const config=views[view];
  document.querySelectorAll('[role=tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
  document.querySelectorAll('.side-link[data-view]').forEach(b=>b.classList.toggle('active',view==='datasets'?b.dataset.view==='datasets':b.dataset.view==='overall'));
@@ -76,7 +79,7 @@ function render() {
 }
 function detail(id) {
  const q=data.quality.models[canonical(id)],t=data.transfer[id]??data.transfer[id==='jev-1.13.0'?'jev':id],s=data.speed[id];
- let html=`<h2>${esc(label(id))}</h2><p>${esc(note(id))}。所有数值来自完成的固定评测，不补齐缺失项。</p>`;
+ let html=`<h2>${esc(label(id))}</h2><p>${esc(note(id))}。仅列已完成的评测，缺测项不估算。</p>`;
  if(id.startsWith('llama32'))html+=`<p>通过 Unsloth 社区渠道分发 BF16 权重，逐分片 SHA-256 与 Meta 官方权重一致；不表示已证明所有 tokenizer 文件相同。<a href="${repo}research/model_expansion_v3/llama_weight_identity.json" target="_blank" rel="noopener">权重一致性记录</a>。</p>`;
  if(q)html+='<h3>主面板</h3><table><tbody>'+Object.entries(q.metrics).map(([key,c])=>`<tr><td>${esc(names[key]??key)}</td>${cell(c)}</tr>`).join('')+'</tbody></table>';
  if(t)html+='<h3>迁移面板</h3><table><tbody>'+views.transfer.metrics.map(key=>`<tr><td>${names[key]}</td>${cell(t.metrics[key].original)}<td>两次都对 ${fmt(t.metrics[key].paired_both_correct.score)}%</td></tr>`).join('')+'</tbody></table>';
@@ -98,6 +101,7 @@ $('family').addEventListener('change',event=>{family=event.target.value;render()
 $('reset').addEventListener('click',()=>{search='';family='all';expanded=false;$('search').value='';$('family').value='all';metric=views[view].metrics[0]??'';render();});
 try {
  const response=await fetch('/catalog.json');if(!response.ok)throw Error('数据响应 '+response.status);data=await response.json();if(data.version!==1)throw Error('数据版本不兼容');
+ try{const result=await fetch('/review.json');if(result.ok){review=await result.json();if(review.version!==1)review=null;}}catch{review=null;}
  const params=new URLSearchParams(location.search);if(views[params.get('view')])view=params.get('view');metric=views[view].metrics.includes(params.get('metric'))?params.get('metric'):views[view].metrics[0]??'';
  if(params.get('display')==='table')displayMode='table';
  if(['all','decision','general','representation'].includes(params.get('family')))family=params.get('family');$('family').value=family;

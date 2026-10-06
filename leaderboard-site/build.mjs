@@ -7,6 +7,7 @@ const catalog = JSON.parse(fs.readFileSync(path.join(here,'data/catalog.json'),'
 assert.equal(catalog.version,1);
 assert(Object.keys(catalog.quality.models).length >= 18);
 fs.mkdirSync(path.join(here,'dist'),{recursive:true});
-for (const f of ['index.html','style.css','viz.css','app.js','charts.js','favicon.svg']) fs.copyFileSync(path.join(here,f),path.join(here,'dist',f));
+for (const f of ['index.html','style.css','viz.css','review.css','review.js','app.js','charts.js','favicon.svg']) fs.copyFileSync(path.join(here,f),path.join(here,'dist',f));
 fs.copyFileSync(path.join(here,'data/catalog.json'),path.join(here,'dist/catalog.json'));
+fs.copyFileSync(path.join(here,'data/review.json'),path.join(here,'dist/review.json'));
 console.log('Built System1Bench leaderboard');

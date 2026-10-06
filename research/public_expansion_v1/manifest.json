@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "seed": 20261006,
+  "status": "prepared_not_evaluated",
+  "licenses": {
+    "clinc150": "CC-BY-3.0",
+    "banking77": "CC-BY-4.0"
+  },
+  "split": "official test; training and validation used only for integrity audit and ontology verification",
+  "option_order": "fixed canonical alphabetical intent labels; CLINC oos last; original full choices retained",
+  "reference_fields_forwarded": false,
+  "pilot": "CLINC 1/in-scope class + 50 oos; BANKING 2/class; normalized text unique and exclude train/val normalized exact overlaps",
+  "exact_clean": "Supplementary slice only: exclude normalized train/val overlaps and retain first source ID per normalized test text; not pretraining-clean evidence",
+  "notes": [
+    "Full151/77-way tasks, not reduced-way variants.",
+    "Binary CLINC is a separate adaptation over the same 5500 rows; never count it as independent data.",
+    "No model inference has been run; no scores are available.",
+    "Source training exposure must be shown per model; exact-match audit does not establish pretraining cleanliness."
+  ],
+  "training_exposure": {
+    "startlux_family": {
+      "clinc150": "declared training source; authors claim train/test filtering",
+      "banking77": "declared training source; authors claim train/test filtering"
+    },
+    "innerjev_4b": {
+      "clinc150": "declared training source",
+      "banking77": "declared training source"
+    },
+    "kev_family": {
+      "clinc150": "publisher describes evaluation-only in current v2; checkpoint-specific verification still required",
+      "banking77": "unknown"
+    },
+    "other_models": "unknown; not presumed clean"
+  },
+  "training_exposure_sources": {
+    "startlux_family": "https://raw.githubusercontent.com/StartLuxLabs/StartLux-Decision/0e7a2e81b9c92756e26d8edd843a44d50e362669/README.md",
+    "innerjev_4b": "https://huggingface.co/datasets/jylin001206/InnerJev-4B-Training-Data/raw/b689deecf7b8b2f6001e5f0ef9779069be1b4bc7/README.md",
+    "kev_family": "https://raw.githubusercontent.com/jaredpalmer/kev/5e42a7a03f28134853dd3ff77461457e921e5ec1/docs/model-cards/kev-9b.md"
+  },
+  "code_sha256": {
+    "prepare.py": "3172be8ad171a895b9461a881371faaf90f16e9fa72995f7fb1b7fe6c45dd936"
+  },
+  "source_receipt_sha256": "081918c579e797bf86745693c7d1a224e0a59a8fe70ac7c71398d7998d004df3",
+  "source_files": {
+    "clinc_full.json": "36923c3705a59e08fe9c3883d8bc2dd966ef93e22cb78ac41171782a698d56e0",
+    "clinc_domains.json": "b947b579d3b8e74b06f93b01083d8efaff2888b43a3e362533bd88a6e1211b3a",
+    "clinc_license.txt": "e6bc9e9c474700b708f568bac9e5a8a9bcb2b1dad53442f5ba449fcb848b8e76",
+    "clinc_readme.md": "8a8df26c4de3d25b6c4cff385ca23602c30e4e56828b015206cbc202f6db363a",
+    "banking_train.csv": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+    "banking_test.csv": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+    "banking_license.txt": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+  },
+  "suites": {
+    "clinc150_full": {
+      "n": 5500,
+      "classes": 151,
+      "cases_sha256": "e76943bb02946bc297e62bbde64999ee06e4d05b593acbe528cd74157553ea85",
+      "payloads_sha256": "6cfdf1425f1e7067fbd61d2959039e1d99de452b03b92841bae7796d646ada88"
+    },
+    "banking77_full": {
+      "n": 3080,
+      "classes": 77,
+      "cases_sha256": "534215c8a149506533761f54f06608628b8b7b01f7a1e2fa9567733362354ea5",
+      "payloads_sha256": "f6c9a2ae74805f74fba79db11b668904ae266576b1a14c80f87f540f37c07a7c"
+    },
+    "clinc150_exact_clean": {
+      "n": 5498,
+      "classes": 151,
+      "cases_sha256": "c832c39340e3df47327ba49031b884d60bd9830abfeabe53c89cb39491da1676",
+      "payloads_sha256": "763e5a3431e45dcb648366b368e240ba0783c12381e2ccd4386efa03caeb7525"
+    },
+    "banking77_exact_clean": {
+      "n": 3072,
+      "classes": 77,
+      "cases_sha256": "98e89ece1dac445f440c7fe5c4f0e3151143b055cef3f978d558fb16e0533fb9",
+      "payloads_sha256": "2f7bd9d99de731ecadf9e3d2280641cca6a0663bcfb8aab2f153e01b36fc83c0"
+    },
+    "clinc150_pilot": {
+      "n": 200,
+      "classes": 151,
+      "cases_sha256": "fd887d49dbf61a81cda0c20e48261058d0c4f0b0168f49289c1b71c33a60da3b",
+      "payloads_sha256": "71319fcf3039363fcc47eb8293d8a0d9584ee2aa80a2030f2a77ab257fc475d6"
+    },
+    "banking77_pilot": {
+      "n": 154,
+      "classes": 77,
+      "cases_sha256": "5ffd0d8f371762debe1444bbec81754e8572b788d12ee76ad366d2f9ab4d4ec8",
+      "payloads_sha256": "d54a856897543cc6500ec3574103be47005f3aefe1d46d138e3c2f04016cebde"
+    },
+    "clinc150_binary_ood_adaptation": {
+      "n": 5500,
+      "classes": 2,
+      "cases_sha256": "23628655b80de66a29c7084f7e4f4276212d990c2eb0e51d5102fb74b528655b",
+      "payloads_sha256": "3ba1f075247b78d540353ab625a23f8ce0487f9dc6f5e0ac156ff258954e35ca"
+    }
+  },
+  "artifacts_sha256": {
+    "full.frozen.json": "120003eff5e3e1e530754f02d60f2d48a5033e09b15dda31f031f688a75e01e5",
+    "exact_clean.frozen.json": "cfaa7685617efa498caa0ddcd7d1da327c06defbf8fe66c746e0efc15bd08416",
+    "pilot.frozen.json": "a81eba07ad3cee6b6933347d8b6d6653ecf3c62a38f4ef732e9b43f63b732d5e",
+    "binary_ood.frozen.json": "e297a4fc6c436b3480b6482386eb71e6a94f054a971f2dfaf97a9729ea7a619c",
+    "full.payloads.json": "190b847aeada19c051fc19bf41c3b9cf3c9fa41192d91f8afcd8af1a75b5268f",
+    "exact_clean.payloads.json": "bd51ce1d349b1d73643e186b623d78b30c28255dad2b9c3082334b03dde0e12e",
+    "pilot.payloads.json": "31dd28a6c51c68683dbe9a16cb38594a9722b10a7db1744b6103eccb1ac34145",
+    "binary_ood.payloads.json": "1d075d35fc5961e430ac31c23ba078dc7511c56846ab0b40728c1e1101ac5033",
+    "full.references.json": "d4603ba5342eba0439b14353a9c162795aa40827aba97077b84f244457b90ea0",
+    "exact_clean.references.json": "828001ea7fe84bb5f24483d63bc447afe1b6f7e9262aa57a35fd4ba27ce6638f",
+    "pilot.references.json": "3552d38e586d7b1cab77c0cf53be253bee6bfa78e97407f52fc69402d13a71a6",
+    "binary_ood.references.json": "32ee68731546b839676953b934981aac7db90e0754a85c8e2556666dce8451b1"
+  },
+  "audit_sha256": "3cd80826ba4bfb019f8becd09f4b5a049f2f5ed68c8dda364c05d96f1fa45374"
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-06",
+  "scope": "Official-source landscape and candidate admission evidence; no new model scores or universal training-clean claims",
+  "repositories": [
+    {
+      "id": "kev",
+      "repo": "jaredpalmer/kev",
+      "revision": "5e42a7a03f28134853dd3ff77461457e921e5ec1",
+      "stars_observed": 8561,
+      "sources": [
+        "https://github.com/jaredpalmer/kev/tree/5e42a7a03f28134853dd3ff77461457e921e5ec1",
+        "https://github.com/jaredpalmer/kev/blob/5e42a7a03f28134853dd3ff77461457e921e5ec1/evals/breadth-v1/manifest.json",
+        "https://github.com/jaredpalmer/kev/blob/5e42a7a03f28134853dd3ff77461457e921e5ec1/scripts/build_breadth_v1.py",
+        "https://github.com/jaredpalmer/kev/blob/5e42a7a03f28134853dd3ff77461457e921e5ec1/docs/model-cards/kev-9b.md"
+      ],
+      "evaluation_sources": ["MuSR", "SATA-Bench", "ChessBench", "ContractNLI", "HellaSwag", "CLINC150+OOS", "SGD/SGD-X", "BRIGHT", "BFCL", "ToolRet", "API-Bank", "RouterBench", "Humicroedit", "cfcolor"],
+      "observations": [
+        "breadth-v1 has 14 public source datasets, 1990 records in each development/test partition; native and adapted metric meanings differ by source.",
+        "The manifest says several sources prohibit or do not clearly license public redistribution. Its private mirror is not a license for us to copy the entire suite.",
+        "Kev-9B version 2 was released on 2026-09-30; our previous 9B row is an earlier frozen checkpoint and must not be silently replaced."
+      ]
+    },
+    {
+      "id": "startlux",
+      "repo": "StartLuxLabs/StartLux-Decision",
+      "revision": "0e7a2e81b9c92756e26d8edd843a44d50e362669",
+      "stars_observed": 221,
+      "sources": [
+        "https://github.com/StartLuxLabs/StartLux-Decision/blob/0e7a2e81b9c92756e26d8edd843a44d50e362669/README.md",
+        "https://github.com/StartLuxLabs/StartLux-Decision/blob/0e7a2e81b9c92756e26d8edd843a44d50e362669/docs/evaluation.md",
+        "https://github.com/StartLuxLabs/StartLux-Decision/blob/0e7a2e81b9c92756e26d8edd843a44d50e362669/eval/fetch_benchmarks.sh"
+      ],
+      "observations": [
+        "The current Git revision matches the source already pinned in our transfer study.",
+        "Code is Apache-2.0, weights CC-BY-NC-4.0; code licensing does not confer unrestricted weight use.",
+        "Public train-source exposure is explicitly declared for 14 Decision Index sources, including ContractNLI, BANKING77 and CLINC150. They assert test items were filtered; this is source exposure, not proof of test leakage.",
+        "The Intern bundle ToolACE panel is drawn from the public ToolACE training data, not an official held-out test split."
+      ]
+    },
+    {
+      "id": "intern",
+      "repo": "InternLM/Intern-Decision",
+      "revision": "3572c8a68b5df5dafe02d0e093989ba8ec0183bc",
+      "stars_observed": 598,
+      "sources": [
+        "https://github.com/InternLM/Intern-Decision/blob/3572c8a68b5df5dafe02d0e093989ba8ec0183bc/docs/EVALUATION.md",
+        "https://github.com/InternLM/Intern-Decision/blob/3572c8a68b5df5dafe02d0e093989ba8ec0183bc/benchmarks/accuracy-v1/manifest.json",
+        "https://github.com/InternLM/Intern-Decision/blob/3572c8a68b5df5dafe02d0e093989ba8ec0183bc/src/eval/jev.py"
+      ],
+      "evaluation_sources": ["Jevbench Easy 48", "Jevbench Original 72", "Jevbench Hard 111", "AG News 7600", "ToolACE 310", "Typed Decisions 400 records / 2000 decisions", "WildJailBreak 2210", "Known-distribution pilot 96 / 48 paired settings"],
+      "observations": [
+        "The current Git revision matches the source already pinned in our transfer study.",
+        "Public Jevbench is disclosed as development diagnostic evidence, not an independent held-out or official complete leaderboard score.",
+        "Training and private temperature-fitting records are not published; fixed temperature presets are tied to checkpoint hashes and the XTuner backend.",
+        "The bundle calls WildJailBreak Apache-2.0, conflicting with the original publisher's current ODC-BY metadata and access gate. Upstream dataset authority controls our admission."
+      ]
+    }
+  ],
+  "dataset_sources": [
+    {
+      "id": "clinc150_oos",
+      "publisher": "clinc/oos-eval",
+      "source_revision": "828f8093932c8fe6ca7936c3d2e52903b1c523de",
+      "source_url": "https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/data/data_full.json",
+      "license": "CC-BY-3.0",
+      "license_url": "https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/LICENSE",
+      "domain_map_url": "https://raw.githubusercontent.com/clinc/oos-eval/828f8093932c8fe6ca7936c3d2e52903b1c523de/data/domains.json",
+      "card_url": "https://huggingface.co/datasets/clinc/clinc_oos/blob/155b9c710419136e17307b80d0a13e68cd46b4ec/README.md",
+      "hf_card_revision": "155b9c710419136e17307b80d0a13e68cd46b4ec",
+      "official_test": {"test": 4500, "oos_test": 1000, "total": 5500, "classes": 151},
+      "notes": ["Publisher JSON and HF plus/test are distinct representations of the official test population; HF integer OOS label is 42, not 150.", "Publisher full training OOS has 100 rows; HF plus training OOS has 250. Do not claim to freeze a plus training split when using publisher data_full.json."]
+    },
+    {
+      "id": "banking77",
+      "publisher": "PolyAI-LDN/task-specific-datasets",
+      "source_revision": "57ec275d8078af65b7731c2a98be812d844a6d6b",
+      "source_url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/57ec275d8078af65b7731c2a98be812d844a6d6b/banking_data/test.csv",
+      "train_url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/57ec275d8078af65b7731c2a98be812d844a6d6b/banking_data/train.csv",
+      "license": "CC-BY-4.0",
+      "license_url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/57ec275d8078af65b7731c2a98be812d844a6d6b/LICENSE",
+      "card_url": "https://huggingface.co/datasets/PolyAI/banking77/blob/90d4e2ee5521c04fc1488f065b8b083658768c57/README.md",
+      "hf_card_revision": "90d4e2ee5521c04fc1488f065b8b083658768c57",
+      "official_test": {"rows": 3080, "classes": 77},
+      "schema": {"text": "customer query", "category": "human-assigned intent name"},
+      "notes": ["The HF loader script is Apache-2.0 but the dataset itself is CC-BY-4.0. Use pinned original CSV; the HF legacy script currently cannot load in modern datasets versions."]
+    },
+    {
+      "id": "wildjailbreak",
+      "source_revision": "5ddc12a7894f842b0619b8e1c7ee496b198af009",
+      "source_url": "https://huggingface.co/datasets/allenai/wildjailbreak/tree/5ddc12a7894f842b0619b8e1c7ee496b198af009",
+      "license": "ODC-BY",
+      "gated": "auto; accepting AI2 Responsible Use Guidelines and contact-information terms is required",
+      "status": "hold_original_access_and_license_replay",
+      "notes": ["Original file access returned 403 without authenticated authorization. The vendor mirror was inspected only as evidence of adaptation; it will not be used to bypass original access conditions."]
+    },
+    {
+      "id": "jeval",
+      "source_revision": "5f623cfd03c3f13fbec566a99d76dad10cb9dd98",
+      "source_url": "https://huggingface.co/datasets/carlosxiang/JEVal/blob/5f623cfd03c3f13fbec566a99d76dad10cb9dd98/README.md",
+      "paper": "https://arxiv.org/abs/2610.03935",
+      "status": "hold_per_source_rights_and_splits",
+      "notes": ["Its test collection retains source_item_id with original test/dev/train split; it is not uniformly an upstream held-out test.", "The release explicitly assigns no blanket license; source URLs, citations and licensing are not consolidated."]
+    }
+  ],
+  "training_exposure_evidence": [
+    {"models": "StartLux-Decision released family", "datasets": ["ContractNLI", "BANKING77", "CLINC150"], "level": "declared_public_train_source", "source": "https://github.com/StartLuxLabs/StartLux-Decision/blob/0e7a2e81b9c92756e26d8edd843a44d50e362669/README.md"},
+    {"models": "InnerJev-4B released family", "datasets": ["BANKING77", "CLINC150"], "training_questions": {"banking77": 768, "clinc150": 905}, "level": "declared_public_train_source", "source": "https://huggingface.co/datasets/jylin001206/InnerJev-4B-Training-Data/blob/b689deecf7b8b2f6001e5f0ef9779069be1b4bc7/README.md"},
+    {"models": "Kev-9B v2", "datasets": ["CLINC150"], "level": "declared_evaluation_only_in_Kev_finetuning", "source": "https://github.com/jaredpalmer/kev/blob/5e42a7a03f28134853dd3ff77461457e921e5ec1/docs/model-cards/kev-9b.md"},
+    {"models": ["Jev API", "Clef", "Clef-flash"], "level": "not_disclosed_for_selected_sources", "notes": "Absence of a published training-source list is not evidence of no exposure."}
+  ],
+  "interpretation_limit": "Repository stars are dated discoverability indicators, not scientific influence, adoption, or model quality. Pinning public records does not prove pretraining contamination absent. This source pass is not a human relabeling audit."
+}

@@ -29,7 +29,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: node prepare.mjs && node check.mjs && node build.mjs
+      - run: node prepare.mjs && node prepare-review.mjs && node check.mjs && node build.mjs
         working-directory: leaderboard-site
       - run: git diff --exit-code -- results/summary.json results/metrics.csv docs/RESULTS.zh-CN.md README.md
       - run: git diff --exit-code -- performance/v1/summary.json performance/v1/metrics.csv docs/PERFORMANCE_RESULTS.en.md

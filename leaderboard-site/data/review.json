@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "date": "2026-10-06",
+  "datasets": [
+    {
+      "id": "clinc150",
+      "label": "CLINC150 + OOS",
+      "full": 5500,
+      "classes": 151,
+      "clean": 5498,
+      "pilot": 200,
+      "license": "CC-BY-3.0",
+      "status": "prepared_not_evaluated",
+      "score": null
+    },
+    {
+      "id": "banking77",
+      "label": "BANKING77",
+      "full": 3080,
+      "classes": 77,
+      "clean": 3072,
+      "pilot": 154,
+      "license": "CC-BY-4.0",
+      "status": "prepared_not_evaluated",
+      "score": null
+    }
+  ],
+  "models": [
+    {
+      "id": "clef_flash_9b",
+      "label": "Clef-flash 9B",
+      "repo": "Cloudflare/clef-flash",
+      "revision": "17f0b0ad64efb65d273590632833508766b2aae6",
+      "license": "Apache-2.0",
+      "score": null
+    },
+    {
+      "id": "clef_27b",
+      "label": "Clef 27B",
+      "repo": "Cloudflare/clef",
+      "revision": "2f3de3dd85f379784083b0814d997ab627200f0c",
+      "license": "Apache-2.0",
+      "score": null
+    },
+    {
+      "id": "kev_9b_v2",
+      "label": "Kev-9B v2 (2026-09-30 weights)",
+      "repo": "jaredpalmer/kev-9b",
+      "revision": "b5d8c18e44c60888d138b65cb6507ff0a5a448a0",
+      "license": "Apache-2.0",
+      "score": null
+    },
+    {
+      "id": "innerjev_4b_full",
+      "label": "InnerJev-4B-Full",
+      "repo": "jylin001206/InnerJev-4B-Full",
+      "revision": "a8d77e5a3cebfc92feeae93821efa6a22739c9e8",
+      "license": "Apache-2.0",
+      "score": null
+    },
+    {
+      "id": "startlux_2b",
+      "label": "StartLux-Decision-2B",
+      "repo": "startlux-models/StartLux-Decision-2B",
+      "revision": "3e2e456409a7fe44be69eee231566f7830872ea2",
+      "license": "CC-BY-NC-4.0",
+      "score": null
+    }
+  ],
+  "sources": [
+    {
+      "path": "research/dataset_audit_v1/existing_results.json",
+      "sha256": "1ef7a94dc2c0d6de5aeaa18c3e7d8cd840c673ec06b5e84e70bb19c099ddf7f2"
+    },
+    {
+      "path": "research/dataset_audit_v1/candidates.json",
+      "sha256": "fabd1160348e5d20236641abe19148dc2ae9d7b72fefedacdb5ae8c9f9555bfa"
+    },
+    {
+      "path": "research/public_expansion_v1/manifest.json",
+      "sha256": "c1270b3fcf1f6af0d4fc5342caf30bd9092ceadfbc52d41e2b08173134c53692"
+    },
+    {
+      "path": "research/public_expansion_v1/audit.json",
+      "sha256": "3cd80826ba4bfb019f8becd09f4b5a049f2f5ed68c8dda364c05d96f1fa45374"
+    }
+  ]
+}
