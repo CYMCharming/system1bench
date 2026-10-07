@@ -1,3 +1,12 @@
 # Preserve byte-bound vector-file hashes for this extension on all hosts.
 paper/figures/fig_leaderboard_v3_*.svg -text
 paper/figures/fig_transfer_v1_*.svg -text
+
+# Run archives are byte-bound: Git must not rewrite their line endings.
+api_results/jev-1.13.0/** -text
+research/public_expansion_v1/*.json -text
+research/public_expansion_v1/*.py -text
+research/dataset_audit_v1/*.json -text
+research/public_intent_pilot_v1/*.json -text
+research/public_intent_pilot_v1/*_original.py -text
+research/public_intent_pilot_v1/check_nano_native.py -text

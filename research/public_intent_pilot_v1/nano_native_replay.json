@@ -1,0 +1,52 @@
+{
+  "model": "nanojev",
+  "sampled_cases": 6,
+  "full_pilot_cases": 354,
+  "direct_upstream_replay": true,
+  "checks": [
+    {
+      "id": "clinc150/test/00001",
+      "suite": "clinc150_pilot",
+      "max_probability_delta": 0.0,
+      "prediction_matches": true,
+      "candidate_count": 151
+    },
+    {
+      "id": "clinc150/test/03022",
+      "suite": "clinc150_pilot",
+      "max_probability_delta": 0.0,
+      "prediction_matches": true,
+      "candidate_count": 151
+    },
+    {
+      "id": "clinc150/test/05499",
+      "suite": "clinc150_pilot",
+      "max_probability_delta": 0.0,
+      "prediction_matches": true,
+      "candidate_count": 151
+    },
+    {
+      "id": "banking77/test/00011",
+      "suite": "banking77_pilot",
+      "max_probability_delta": 0.0,
+      "prediction_matches": true,
+      "candidate_count": 77
+    },
+    {
+      "id": "banking77/test/01546",
+      "suite": "banking77_pilot",
+      "max_probability_delta": 0.0,
+      "prediction_matches": true,
+      "candidate_count": 77
+    },
+    {
+      "id": "banking77/test/03066",
+      "suite": "banking77_pilot",
+      "max_probability_delta": 0.0,
+      "prediction_matches": true,
+      "candidate_count": 77
+    }
+  ],
+  "script_sha256": "5837f1b111f2b80df80ff53c83d93e68069b6259cdf418fe237fa0ad6fe6b56c",
+  "scope": "Selected first/middle/last per suite; not a complete rerun or a causal explanation of low accuracy."
+}

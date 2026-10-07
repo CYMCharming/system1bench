@@ -84,5 +84,9 @@
       "path": "research/public_expansion_v1/audit.json",
       "sha256": "3cd80826ba4bfb019f8becd09f4b5a049f2f5ed68c8dda364c05d96f1fa45374"
     }
-  ]
+  ],
+  "pilot": {
+    "models": 5,
+    "source": "research/public_intent_pilot_v1/results.json"
+  }
 }

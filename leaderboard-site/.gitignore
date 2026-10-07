@@ -5,6 +5,7 @@ node_modules/
 data/*
 !data/catalog.json
 !data/review.json
+!data/intent-pilot.json
 
 .vercel
 .env*

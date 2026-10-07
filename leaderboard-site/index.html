@@ -5,7 +5,7 @@
   <title>System1Bench — 决策模型排行榜</title>
   <meta name="description" content="决策专用模型与通用大模型的可追溯评测：综合与领域成绩、稳健性、概率质量及同卡推理速度。">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/viz.css"><link rel="stylesheet" href="/review.css">
-  <script type="module" src="/app.js"></script>
+  <link rel="stylesheet" href="/intent.css"><script type="module" src="/app.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳到排行榜</a>
@@ -32,6 +32,7 @@
         <button data-view="transfer" role="tab" aria-selected="false">跨领域</button>
         <button data-view="probability" role="tab" aria-selected="false">概率质量</button>
         <button data-view="speed" role="tab" aria-selected="false">推理速度</button>
+        <button data-view="intent" role="tab" aria-selected="false">意图识别 · 试跑</button>
         <button data-view="datasets" role="tab" aria-selected="false">数据集</button>
       </nav>
       <div class="board-heading"><div><h2 id="viewTitle">综合表现</h2><p id="viewDefinition"></p></div><a id="protocol" target="_blank" rel="noopener">查看协议</a></div>
@@ -47,6 +48,7 @@
       <div class="empty" id="empty" hidden></div>
       <div class="board-foot" id="boardFoot"></div>
       <section id="datasetReview" class="dataset-review" aria-label="数据审核和待评测项目" hidden></section>
+      <section id="intentPilot" class="intent-pilot" aria-label="完整候选意图识别试跑" hidden></section>
     </section>
     <section class="method-strip"><div><span class="method-number">01</span><h3>评分口径</h3><p>分类指标列出正确数与样本数。综合分按领域等权平均，不是所有决策的整体准确率。</p></div><div><span class="method-number">02</span><h3>稳健性指标</h3><p>分别测试选项换序和关键事实反转。配对准确率要求原始题和变体均回答正确。</p></div><div><span class="method-number">03</span><h3>延迟测量</h3><p>同一显卡、相同语义字段数，记录完整请求耗时。托管 API 和外部硬件结果另列。</p></div></section>
     <footer>System1Bench · Research benchmark <span>数据与协议可下载。模型训练历史不同，成绩差异不构成架构因果证据。</span></footer>

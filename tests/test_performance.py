@@ -108,7 +108,8 @@ class PerformanceTests(unittest.TestCase):
                       cores={c: dict(busy=0) for c in [16, 17, 80, 81]})
         after = dict(monotonic=11, process_cpu_ticks=50,
                      cores={c: dict(busy=b) for c, b in [(16, 50), (17, 40), (80, 20), (81, 20)]})
-        with patch('benchmarks.performance_telemetry.os.sysconf', return_value=100):
+        # Mock the Linux clock-tick API even on Windows; this test uses no /proc.
+        with patch('benchmarks.performance_telemetry.os.sysconf', return_value=100, create=True):
             result = cpu_delta(before, after, [16, 17], [80, 81])
         self.assertAlmostEqual(result['other_busy_fraction_on_worker_cores'], 0.2)
         self.assertAlmostEqual(result['smt_sibling_busy_fraction'], 0.2)
