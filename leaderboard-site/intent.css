@@ -2,3 +2,4 @@
 .intent-bar svg{display:block}.intent-bar-fill{fill:#176745}.general .intent-bar-fill{fill:#6267c5}
 .intent-section table{table-layout:auto}.intent-section th:first-child,.intent-section td:first-child{width:auto;min-width:155px;white-space:nowrap}.intent-section th,.intent-section td{overflow-wrap:normal}
 .intent-section th:nth-child(2),.intent-section td:nth-child(2){width:auto;min-width:120px}
+.representation .intent-bar-fill{fill:#a07532}

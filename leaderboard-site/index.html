@@ -5,7 +5,7 @@
   <title>System1Bench — 决策模型排行榜</title>
   <meta name="description" content="决策专用模型与通用大模型的可追溯评测：综合与领域成绩、稳健性、概率质量及同卡推理速度。">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/viz.css"><link rel="stylesheet" href="/review.css">
-  <link rel="stylesheet" href="/intent.css"><script type="module" src="/app.js"></script>
+  <link rel="stylesheet" href="/intent.css"><link rel="stylesheet" href="/coverage.css"><script type="module" src="/app.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">跳到排行榜</a>
@@ -23,16 +23,18 @@
       <div><div class="eyebrow">SYSTEM1BENCH</div><h1>决策模型排行榜<span class="edition">OPEN BENCHMARK</span></h1><p>决策专用模型与通用大模型的分类、稳健性、概率及延迟评测。</p></div>
       <div class="scope-badge">固定评测集<span>版本、样本与协议公开</span></div>
     </section>
-    <div class="overview"><div><strong id="modelCount">—</strong><span>主榜模型</span></div><div><strong>7</strong><span>任务领域</span></div><div><strong>4,905</strong><span>每模型基础评测决策数</span></div><div class="overview-note">各项指标按评测协议计算。<br>不采用 Elo 或偏好投票。</div></div>
+    <div class="overview"><div><strong id="modelCount">—</strong><span>评测模型</span></div><div><strong>8</strong><span>综合榜领域</span></div><div><strong>11</strong><span>综合榜分类任务</span></div><div class="overview-note">完整覆盖才进入综合榜。<br>原生选项超限的模型不混排。</div></div>
     <section class="board" aria-label="模型评测结果">
       <nav class="tabs" aria-label="排行榜类型" role="tablist">
         <button data-view="overall" role="tab" aria-selected="true">综合榜</button>
+        <button data-view="legacy" role="tab" aria-selected="false">原综合榜</button>
         <button data-view="domains" role="tab" aria-selected="false">领域榜</button>
         <button data-view="robustness" role="tab" aria-selected="false">稳健性</button>
         <button data-view="transfer" role="tab" aria-selected="false">跨领域</button>
         <button data-view="probability" role="tab" aria-selected="false">概率质量</button>
         <button data-view="speed" role="tab" aria-selected="false">推理速度</button>
-        <button data-view="intent" role="tab" aria-selected="false">意图识别 · 试跑</button>
+        <button data-view="intent" role="tab" aria-selected="false">意图识别</button>
+        <button data-view="intentpilot" role="tab" aria-selected="false">意图试跑存档</button>
         <button data-view="datasets" role="tab" aria-selected="false">数据集</button>
       </nav>
       <div class="board-heading"><div><h2 id="viewTitle">综合表现</h2><p id="viewDefinition"></p></div><a id="protocol" target="_blank" rel="noopener">查看协议</a></div>
@@ -49,6 +51,7 @@
       <div class="board-foot" id="boardFoot"></div>
       <section id="datasetReview" class="dataset-review" aria-label="数据审核和待评测项目" hidden></section>
       <section id="intentPilot" class="intent-pilot" aria-label="完整候选意图识别试跑" hidden></section>
+      <div id="coverage" hidden></div>
     </section>
     <section class="method-strip"><div><span class="method-number">01</span><h3>评分口径</h3><p>分类指标列出正确数与样本数。综合分按领域等权平均，不是所有决策的整体准确率。</p></div><div><span class="method-number">02</span><h3>稳健性指标</h3><p>分别测试选项换序和关键事实反转。配对准确率要求原始题和变体均回答正确。</p></div><div><span class="method-number">03</span><h3>延迟测量</h3><p>同一显卡、相同语义字段数，记录完整请求耗时。托管 API 和外部硬件结果另列。</p></div></section>
     <footer>System1Bench · Research benchmark <span>数据与协议可下载。模型训练历史不同，成绩差异不构成架构因果证据。</span></footer>

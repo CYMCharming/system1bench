@@ -14,6 +14,7 @@ jobs:
       - run: ruff check system1bench benchmarks research tests
       - run: python -m unittest discover -s tests -v
       - run: python -m research.public_intent_pilot_v1.verify
+      - run: python -m research.evaluation_completion_v1.verify
       - run: python -m system1bench.metrics
       - run: python -m system1bench.report
       - run: python benchmarks/verify_hosted_outputs.py

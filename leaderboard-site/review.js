@@ -16,5 +16,6 @@ function baseMarkup(review){
 }
 export function reviewMarkup(review){
  const markup=baseMarkup(review);
+ if(review?.full)return markup.replace('新增数据 · 已冻结，尚未计分','新增数据 · 官方完整测试已计分').replaceAll('无成绩，不进入排行榜',`${review.full.models} 个模型已完成完整测试；其余在补测`).replace('27B 权重暂受服务器磁盘容量限制。','27B 原始权重已缓存；服务器当前有可用磁盘空间。')+'<p><a href="/?view=intent">查看完整意图识别成绩 →</a> · <a href="/?view=overall">查看新版综合榜与覆盖矩阵 →</a></p>';
  return review?.pilot?markup.replace('新增数据 · 已冻结，尚未计分','新增数据 · 已发布独立试跑').replaceAll('无成绩，不进入排行榜','完整集尚未计分；试跑单独展示')+'<p><a href="/?view=intent">查看意图识别试跑 →</a></p>':markup;
 }

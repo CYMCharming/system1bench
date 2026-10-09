@@ -10,3 +10,9 @@ research/dataset_audit_v1/*.json -text
 research/public_intent_pilot_v1/*.json -text
 research/public_intent_pilot_v1/*_original.py -text
 research/public_intent_pilot_v1/check_nano_native.py -text
+research/evaluation_completion_v1/*.py -text
+research/evaluation_completion_v1/*.json -text
+research/evaluation_completion_v1/*.md -text
+research/evaluation_completion_v2/*.py -text
+research/evaluation_completion_v2/*.json -text
+research/evaluation_completion_v2/*.md -text

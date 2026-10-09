@@ -74,7 +74,22 @@ if (fs.existsSync(speedFolder)) for (const name of fs.readdirSync(speedFolder)) 
     source:`${rel}/summary.json`, protocol:'research/latency_v2/PROTOCOL.md'};
   sources.push(`${rel}/summary.json`);
 }
-const catalog = {version:1, generatedAt:new Date().toISOString(), quality, transfer:transferModels, speed,
+const completionPath='research/evaluation_completion_v1/results.json';
+const comprehensive=fs.existsSync(path.join(root,completionPath))?read(completionPath):null;
+if(comprehensive){
+ assert.equal(comprehensive.old_quality_sha256,hash(qualityPath));
+ assert.equal(comprehensive.manifest_sha256,hash('research/evaluation_completion_v1/manifest.json'));
+ assert.equal(Object.keys(comprehensive.coverage).length,23);
+ for(const item of Object.values(comprehensive.projections))assert.equal(hash(item.path),item.sha256);
+ for(const [id,m] of Object.entries(comprehensive.models)){
+  assert(m.complete&&m.classification_tasks===11);assert.equal(comprehensive.coverage[id].status,'complete');
+  assert.equal(Object.keys(m.domain_scores).length,8);
+  assert(Math.abs(Object.values(m.domain_scores).reduce((s,c)=>s+c.score,0)/8-m.metrics.overall_domain_equal.score)<1e-12);
+ }
+ Object.assign(transferModels,comprehensive.transfer_additions);sources.push(completionPath,'research/evaluation_completion_v1/manifest.json');
+ if(comprehensive.supplement_manifest){assert.equal(hash(comprehensive.supplement_manifest.path),comprehensive.supplement_manifest.sha256);sources.push(comprehensive.supplement_manifest.path,'research/evaluation_completion_v2/PROTOCOL.md');}
+}
+const catalog = {version:1, generatedAt:new Date().toISOString(), quality, comprehensive, transfer:transferModels, speed,
   pendingModels:additions?.pending ?? [], speedExpected:14,
   sources:sources.map(p => ({path:p,sha256:hash(p),url:`https://github.com/CYMCharming/system1bench/blob/main/${p}`}))};
 assert(!/hf_[A-Za-z0-9]{25,}|apikey_[A-Za-z0-9_]+/.test(JSON.stringify(catalog)));
