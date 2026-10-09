@@ -17,3 +17,9 @@ research/evaluation_completion_v2/*.py -text
 research/evaluation_completion_v2/*.json -text
 research/evaluation_completion_v2/*.md -text
 research/evaluation_completion_v3/** -text
+
+# Paper figures and provenance are byte-bound, including Windows SVG newlines.
+paper/figures/compass_v1/** -text
+research/paper_compass_v1/** -text
+leaderboard-site/assets/paper/** -text
+leaderboard-site/data/research.json -text
