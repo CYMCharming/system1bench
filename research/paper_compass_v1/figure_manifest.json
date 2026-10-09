@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "design_reference": "https://arxiv.org/pdf/2512.21094v3#page=1",
+  "reference_panels": [
+    "radial grouped bars",
+    "length density",
+    "diversity bars",
+    "diversity bars",
+    "hierarchical rings"
+  ],
+  "adaptation": {
+    "c": "query-only semantic retention with an independently pinned encoder",
+    "d": "reference-label entropy, NOT audio/semantic diversity",
+    "e": "classification tasks plus separate measured diagnostic tracks"
+  },
+  "source_sha256": {
+    "corpus_statistics.json": "8561a6489906e0868c5a2d12872375ee3f07602da810d86c7f59c4fe33dd2b3b",
+    "research/evaluation_completion_v1/results.json": "1f6b9f82a6d5b57a505082fcc611f6b78055d3f9e92408c618e5bfaeacf1e932"
+  },
+  "outputs": {
+    "paper/figures/compass_v1/a_radial_decision_profiles.pdf": "4d8fc4c649b445c269ca2dff566639f09846d9d778701cc1f96e5647dc6c075c",
+    "paper/figures/compass_v1/a_radial_decision_profiles.svg": "3d5115b9aec68feb451f332df3ea2b8a867df155b1c82f859af5bc9b2d46be59",
+    "paper/figures/compass_v1/a_radial_decision_profiles.png": "ea535863af18eea298b0c41685a72a1552525d4a1391c9412a904780d39b1bed",
+    "paper/figures/compass_v1/b_input_length_distribution.pdf": "31125548f53ef12122af16aedaf0984fd0e524787729a664cbd26bdadf50da2a",
+    "paper/figures/compass_v1/b_input_length_distribution.svg": "714fb1773be4fc3750ad15c4220c40355f5173437ed2b0ecffa90de6ee836f03",
+    "paper/figures/compass_v1/b_input_length_distribution.png": "c56d2fc3e8618d2868e337c13be397718e69810f11b6cc18f95293426b0e6307",
+    "paper/figures/compass_v1/c_semantic_query_diversity.pdf": "5a10b8d327b94efedf11b5b8f6792db59e987b9d03533dc0cc3f8d4574b3a1a8",
+    "paper/figures/compass_v1/c_semantic_query_diversity.svg": "3f15e54959b0548b3fcf056d08bb76c36f1e5d33722ea4da8799a4f820d51b62",
+    "paper/figures/compass_v1/c_semantic_query_diversity.png": "f480762eadb57d22a8ac08f7e8ea2d2cfe079209d271e5d9c722bc8f1defc2e8",
+    "paper/figures/compass_v1/d_reference_label_balance.pdf": "5f6e944bf8627c61123925a394139f9930d4a0ae38ed6dfbd5e5db683d98de28",
+    "paper/figures/compass_v1/d_reference_label_balance.svg": "f578980901cd3eb5870bb72413edf7a2d5462fe85a2a65c306b9ecd0d177a419",
+    "paper/figures/compass_v1/d_reference_label_balance.png": "4180dae6e175d9266ed8cd4bb78966a63233bdeca0ed2fbe550f93021393bc6d",
+    "paper/figures/compass_v1/e_evaluation_taxonomy.pdf": "f85033943260f6f5b7aa0911d0b596899e9b7578d62a2335f21389485e6765ce",
+    "paper/figures/compass_v1/e_evaluation_taxonomy.svg": "75bbd03e5760ff46170fa0dfc5b1dc741de36c7c0c0ac91eb7c10f3268577398",
+    "paper/figures/compass_v1/e_evaluation_taxonomy.png": "b95ac7a6c371a583dcb58d41cd85fec7cc3a5c54950253c363b6a569c7ed1f1f",
+    "paper/figures/compass_v1/overview_five_panels.pdf": "28c6585e4f1a9d3173523fcfb0c543101d3012e79a44d7a62c263ffc39728a59",
+    "paper/figures/compass_v1/overview_five_panels.svg": "47c57ee0996a4a8408b46bc88695d7e81e912031acfc627149d6e6e04a876e41",
+    "paper/figures/compass_v1/overview_five_panels.png": "e80ae05195306cc5498b7bcf0373d13835dfe695b91e84b15ce8fc7988a5d552",
+    "paper/figures/compass_v1/System1Bench_Compass_Figures.pdf": "d1fa1dbaebe8e483c40cc7ace3686b91eac2327f5f5a70dd7dfd9f8b6925bca5"
+  },
+  "selected_radial_models": [
+    "kev_27b",
+    "jev-1.13.0",
+    "qwen38_27b",
+    "kev_9b",
+    "qwen35_9b",
+    "llama31_8b_instruct"
+  ],
+  "derived": {
+    "a_radial_decision_profiles": null,
+    "b_input_length_distribution": [
+      {
+        "group": "Policy",
+        "n": 288,
+        "median": 184.0,
+        "min": 181,
+        "max": 201
+      },
+      {
+        "group": "Evidence + reasoning",
+        "n": 1011,
+        "median": 385.0,
+        "min": 77,
+        "max": 3347
+      },
+      {
+        "group": "Intent",
+        "n": 8580,
+        "median": 1427.0,
+        "min": 843,
+        "max": 1453
+      }
+    ],
+    "c_semantic_query_diversity": [
+      "clinc150_full",
+      "when2call",
+      "science",
+      "banking77_full",
+      "cladder",
+      "legal"
+    ],
+    "d_reference_label_balance": null,
+    "e_evaluation_taxonomy": null
+  },
+  "new_score_confidence_intervals": null,
+  "caveats": [
+    "Semantic retention is an encoder/threshold-dependent query-only proxy, not task difficulty or pretraining-cleanliness.",
+    "Label entropy describes the full frozen reference-label distribution, not model performance.",
+    "Full intent tests; historical tasks are frozen evaluation subsets, not all original corpus rows.",
+    "Taxonomy width is not score weight or sample volume.",
+    "Model-selection examples do not establish architecture effects or pretraining-cleanliness."
+  ]
+}

@@ -6,13 +6,15 @@ import {visualMarkup,buildRanking,barDomain,tradeoffRows,buildScatter,matrixCell
 import {reviewMarkup} from './review.js';
 import {intentMarkup} from './intent.js';
 import {coverageMarkup} from './coverage.js';
+import {galleryMarkup,previewMarkup,figureDetailMarkup,bindResearch} from './research.js';
 const elements=new Map();
 const get=id=>{if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',hidden:false,value:'',addEventListener(){},showModal(){},close(){}});return elements.get(id);};
 const catalog=JSON.parse(fs.readFileSync('data/catalog.json','utf8'));
 let source=fs.readFileSync('app.js','utf8').replace(/^import .*;\r?\n/gm,'');
 const review=JSON.parse(fs.readFileSync('data/review.json','utf8'));
 const pilot=JSON.parse(fs.readFileSync('data/intent-pilot.json','utf8'));
-const context=vm.createContext({intentMarkup,reviewMarkup,coverageMarkup,renderVisuals:(root,options)=>{root.innerHTML=visualMarkup(options);},document:{getElementById:get,querySelectorAll:()=>[],addEventListener(){}},history:{replaceState(){}},location:{search:''},URLSearchParams,Date,fetch:async url=>({ok:true,json:async()=>url==='/review.json'?review:url==='/intent-pilot.json'?pilot:catalog}),console});
+const research=JSON.parse(fs.readFileSync('data/research.json','utf8'));
+const context=vm.createContext({intentMarkup,reviewMarkup,coverageMarkup,galleryMarkup,previewMarkup,figureDetailMarkup,bindResearch,renderVisuals:(root,options)=>{root.innerHTML=visualMarkup(options);},document:{getElementById:get,querySelectorAll:()=>[],addEventListener(){}},history:{replaceState(){}},location:{search:''},URLSearchParams,Date,fetch:async url=>({ok:true,json:async()=>url==='/review.json'?review:url==='/intent-pilot.json'?pilot:url==='/research.json'?research:catalog}),console});
 await vm.runInContext(`(async()=>{${source}\n globalThis.verify=(v,m,f='all',s='')=>{view=v;metric=m;family=f;search=s;render();return {rows:rankedRows(),html:$('tableBody').innerHTML,empty:$('empty').hidden};};})()`,context);
 assert.equal(get('modelCount').textContent,23);
 for(const [v,m,n] of [['overall','overall_domain_equal',catalog.comprehensive.complete_models],['legacy','overall_domain_equal',23],['domains','legal',23],['robustness','all_heads',23],['transfer','cladder',Object.keys(catalog.transfer).length],['probability','excess_brier',Object.keys(catalog.transfer).length],['speed','three_fields',Object.keys(catalog.speed).length]]){
@@ -52,3 +54,16 @@ for(const r of completeRows){assert.equal(r.m.classification_tasks,11);assert(!/
 const fullPoints=tradeoffRows(catalog,completeRows,{view:'overall',metric:'overall_domain_equal'});
 for(const p of fullPoints)assert.equal(p.y,catalog.comprehensive.models[p.id].metrics.overall_domain_equal.score);
 console.log('PASS: zero-based bar geometry, six linked chart views, source-exact 14-point scatter, intervals and responsive coordinates');
+context.verify('paper','');assert.equal(get('paperGallery').hidden,false);assert(get('tableWrap').hidden);assert(get('visuals').hidden);assert(get('displaySwitch').hidden);assert(get('toolbar').hidden);
+assert.equal((get('paperGallery').innerHTML.match(/<article /g)||[]).length,5);
+assert.equal((galleryMarkup(research,{filter:'models'}).match(/<article /g)||[]).length,1);
+assert.equal((galleryMarkup(research,{filter:'data'}).match(/<article /g)||[]).length,4);
+assert(galleryMarkup(null).includes('暂时无法读取'));assert(!/undefined|NaN/.test(galleryMarkup(research)));
+assert.equal((previewMarkup(research).match(/class="paper-thumbnail"/g)||[]).length,3);
+assert(galleryMarkup(research).includes('不是模型准确率'));assert(galleryMarkup(research).includes('不是置信区间'));
+for(const f of research.figures){assert(figureDetailMarkup(f).includes('200%'));assert(figureDetailMarkup(f).includes('<table>'));for(const p of Object.values(f.assets))assert(fs.existsSync('.'+p));}
+assert.equal(research.figures.find(f=>f.id==='queries').rows.find(r=>r[0]==='ContractNLI')[3],'10.2%');
+assert.equal(research.figures.find(f=>f.id==='labels').rows.find(r=>r[0]==='When2Call')[3],3);
+for(const row of research.figures.find(f=>f.id==='profiles').rows){const m=Object.values(catalog.comprehensive.models).find(m=>m.label.replace(/ \(Unsloth BF16 distribution\)/,'')===row[0]);assert(m);assert.equal(row.at(-1),(m.metrics.overall_domain_equal.score*100).toFixed(2)+'%');}
+context.verify('overall','overall_domain_equal');assert(get('paperGallery').hidden);assert.equal(get('paperPreview').hidden,false);context.verify('datasets','');assert(get('paperPreview').hidden);
+console.log('PASS: research gallery, filters, exact 17-model scores, dataset caveats, zoom markup and local exports');

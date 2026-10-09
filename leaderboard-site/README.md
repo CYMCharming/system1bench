@@ -24,6 +24,7 @@ From this directory:
 
 ```
 node prepare.mjs
+node prepare-research.mjs
 node check.mjs
 npm run build
 npm run dev
@@ -45,3 +46,12 @@ limits. Hosted Jev and external hardware figures never enter the A100 ranking.
 The DOM unit checks validate each ranking's coverage, direction, filter logic,
 zero-origin mark geometry, exact source coordinates and responsive SVG output.
 They do not replace screenshot inspection or browser interaction tests.
+
+The **论文图表** view adds five reviewed paper figures with group filters,
+native-dialog zoom, exact-value tables, source links, and local SVG/PDF/PNG
+downloads. The overall view previews three figures without replacing its
+interactive ranking bars, domain heatmap or latency scatter. `prepare-research.mjs`
+checks the original figure and evidence SHA-256 identities before packaging;
+production builds use the self-contained exported assets. The query-text
+retention chart excludes evidence and explicitly explains ContractNLI's 13/128
+retention; this is not accuracy or a whole-dataset quality ranking.

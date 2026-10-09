@@ -7,6 +7,6 @@ http.createServer((req,res) => {
   const pathname = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
   const target = path.resolve(root,'.'+(pathname==='/'?'/index.html':pathname));
   if (!target.startsWith(root+path.sep) || !fs.existsSync(target)) {res.writeHead(404); res.end('Not found'); return;}
-  res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml'})[path.extname(target)]??'application/octet-stream');
+  res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.pdf':'application/pdf','.png':'image/png','.csv':'text/csv; charset=utf-8'})[path.extname(target)]??'application/octet-stream');
   fs.createReadStream(target).pipe(res);
 }).listen(4173,'127.0.0.1',()=>console.log('Leaderboard preview: http://127.0.0.1:4173/'));

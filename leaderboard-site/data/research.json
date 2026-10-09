@@ -1,0 +1,601 @@
+{
+  "version": 1,
+  "modelCount": 17,
+  "domainCount": 8,
+  "taskCount": 11,
+  "population": 9879,
+  "book": "/assets/paper/System1Bench_Compass_Figures.pdf",
+  "protocol": "https://github.com/CYMCharming/system1bench/blob/main/research/paper_compass_v1/README.zh-CN.md",
+  "reference": "https://arxiv.org/pdf/2512.21094v3#page=1",
+  "source": {
+    "figure_manifest_sha256": "786e3783aeb5cd9d3ec591a5bb9839471a95653a9319e5dbceb49d86b066dc52",
+    "statistics_sha256": "8561a6489906e0868c5a2d12872375ee3f07602da810d86c7f59c4fe33dd2b3b",
+    "catalog_source_sha256": "1f6b9f82a6d5b57a505082fcc611f6b78055d3f9e92408c618e5bfaeacf1e932",
+    "semantic_encoder": {
+      "repo": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "cpu": true,
+      "dtype": "float32",
+      "pooling": "attention-mask mean pooling; weighted aggregation of all 254-wordpiece chunks; L2 normalization",
+      "files_sha256": {
+        "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+        "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+        "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+        "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+        "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+        "model.safetensors": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db"
+      },
+      "truncation": false,
+      "threshold": 0.8,
+      "sensitivity_thresholds": [
+        0.75,
+        0.8,
+        0.85
+      ]
+    },
+    "reference_tokenizer": {
+      "repo": "Qwen/Qwen3.8-27B",
+      "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "files_sha256": {
+        "tokenizer.json": "0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3",
+        "tokenizer_config.json": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27"
+      },
+      "serialization": "compact JSON of state plus target question; no gold, chat template or other heads"
+    }
+  },
+  "figures": [
+    {
+      "id": "profiles",
+      "letter": "a",
+      "kicker": "DOMAIN PROFILES",
+      "title": "模型的八领域成绩",
+      "group": "models",
+      "assets": {
+        "svg": "/assets/paper/a_radial_decision_profiles.svg",
+        "pdf": "/assets/paper/a_radial_decision_profiles.pdf",
+        "png": "/assets/paper/a_radial_decision_profiles.png"
+      },
+      "source": "https://github.com/CYMCharming/system1bench/blob/main/research/paper_compass_v1/figure_manifest.json",
+      "description": "六个代表模型在相同的八个领域上的成绩。每个扇区均使用 0–100% 尺度；精确表格保留全部 17 个完整模型。",
+      "caveat": "综合榜按八领域等权，不按样本量加权。这是当前评测的点估计，尚无新版综合分置信区间；六个代表模型不构成独立排行榜。",
+      "definition": "图中只画六个代表模型，表中展示全部完整模型。领域成绩与综合榜 catalog.json 完全一致；政策内三个任务、意图内两个任务分别等权。总体综合分是八领域成绩的平均值。",
+      "alt": "六个代表模型的八领域径向分组柱图，各扇区使用相同零起点准确率尺度。精确数值可在下方展开。",
+      "columns": [
+        "模型",
+        "政策",
+        "法律",
+        "科学",
+        "因果",
+        "代码",
+        "金融",
+        "工具",
+        "意图",
+        "领域等权综合分"
+      ],
+      "rows": [
+        [
+          "Kev-27B v2",
+          "100.00%",
+          "80.56%",
+          "84.07%",
+          "72.92%",
+          "71.88%",
+          "92.19%",
+          "64.06%",
+          "86.60%",
+          "81.53%"
+        ],
+        [
+          "Jev 1.13.0 API",
+          "84.72%",
+          "77.08%",
+          "85.84%",
+          "77.08%",
+          "66.41%",
+          "89.84%",
+          "75.00%",
+          "85.03%",
+          "80.13%"
+        ],
+        [
+          "Qwen3.8-27B",
+          "85.07%",
+          "77.78%",
+          "84.07%",
+          "59.03%",
+          "54.69%",
+          "88.28%",
+          "69.53%",
+          "82.82%",
+          "75.16%"
+        ],
+        [
+          "Kev-9B",
+          "89.93%",
+          "70.14%",
+          "80.53%",
+          "58.33%",
+          "46.09%",
+          "92.97%",
+          "61.72%",
+          "83.01%",
+          "72.84%"
+        ],
+        [
+          "Kev-4B",
+          "88.54%",
+          "65.97%",
+          "80.83%",
+          "60.42%",
+          "42.97%",
+          "89.06%",
+          "68.75%",
+          "82.19%",
+          "72.34%"
+        ],
+        [
+          "Qwen3.5-9B",
+          "84.03%",
+          "75.69%",
+          "83.48%",
+          "55.56%",
+          "37.50%",
+          "83.59%",
+          "58.59%",
+          "76.98%",
+          "69.43%"
+        ],
+        [
+          "Qwen3.5-4B",
+          "63.89%",
+          "59.72%",
+          "66.37%",
+          "56.94%",
+          "37.50%",
+          "73.44%",
+          "46.88%",
+          "72.31%",
+          "59.63%"
+        ],
+        [
+          "Qwen3-8B",
+          "46.88%",
+          "45.14%",
+          "68.14%",
+          "52.78%",
+          "38.28%",
+          "79.69%",
+          "44.53%",
+          "58.30%",
+          "54.22%"
+        ],
+        [
+          "Kev-0.8B",
+          "66.32%",
+          "48.61%",
+          "49.56%",
+          "51.39%",
+          "30.47%",
+          "71.88%",
+          "35.16%",
+          "74.79%",
+          "53.52%"
+        ],
+        [
+          "Laya English",
+          "43.75%",
+          "38.89%",
+          "50.44%",
+          "54.86%",
+          "41.41%",
+          "74.22%",
+          "32.81%",
+          "42.03%",
+          "47.30%"
+        ],
+        [
+          "Llama-3.1-8B",
+          "30.90%",
+          "30.56%",
+          "53.69%",
+          "46.53%",
+          "30.47%",
+          "61.72%",
+          "35.94%",
+          "55.66%",
+          "43.18%"
+        ],
+        [
+          "Laya Multilingual",
+          "26.04%",
+          "34.03%",
+          "44.25%",
+          "52.08%",
+          "34.38%",
+          "64.06%",
+          "22.66%",
+          "48.69%",
+          "40.77%"
+        ],
+        [
+          "Llama-3.2-3B-Instruct",
+          "33.33%",
+          "32.64%",
+          "43.95%",
+          "50.00%",
+          "35.16%",
+          "62.50%",
+          "27.34%",
+          "22.55%",
+          "38.43%"
+        ],
+        [
+          "Qwen3-1.7B",
+          "30.21%",
+          "36.81%",
+          "52.80%",
+          "47.92%",
+          "27.34%",
+          "44.53%",
+          "34.38%",
+          "17.02%",
+          "36.38%"
+        ],
+        [
+          "Qwen3.5-0.8B",
+          "34.03%",
+          "30.56%",
+          "40.71%",
+          "45.83%",
+          "32.03%",
+          "59.38%",
+          "26.56%",
+          "4.68%",
+          "34.22%"
+        ],
+        [
+          "Llama-3.2-1B-Instruct",
+          "29.86%",
+          "31.25%",
+          "35.40%",
+          "50.00%",
+          "31.25%",
+          "49.22%",
+          "21.88%",
+          "1.36%",
+          "31.28%"
+        ],
+        [
+          "NanoJev",
+          "28.13%",
+          "31.94%",
+          "37.17%",
+          "49.31%",
+          "39.84%",
+          "30.47%",
+          "28.13%",
+          "3.89%",
+          "31.11%"
+        ]
+      ],
+      "asset_sha256": {
+        "svg": "3d5115b9aec68feb451f332df3ea2b8a867df155b1c82f859af5bc9b2d46be59",
+        "pdf": "4d8fc4c649b445c269ca2dff566639f09846d9d778701cc1f96e5647dc6c075c",
+        "png": "ea535863af18eea298b0c41685a72a1552525d4a1391c9412a904780d39b1bed"
+      }
+    },
+    {
+      "id": "lengths",
+      "letter": "b",
+      "kicker": "INPUT STRUCTURE",
+      "title": "评测输入有多长",
+      "group": "data",
+      "assets": {
+        "svg": "/assets/paper/b_input_length_distribution.svg",
+        "pdf": "/assets/paper/b_input_length_distribution.pdf",
+        "png": "/assets/paper/b_input_length_distribution.png"
+      },
+      "source": "https://github.com/CYMCharming/system1bench/blob/main/research/paper_compass_v1/figure_manifest.json",
+      "description": "政策、证据与推理、意图识别三组输入的长度分布。包含候选选项，排除重复题、换序题与其他输出字段。",
+      "caveat": "统一用 Qwen3.8-27B 的参考 tokenizer 计数，不是各模型的原生 token 费用或延迟。每组曲线单独归一化，曲线面积不表示该组样本量。",
+      "definition": "9,879 条原始样本。将 state 与目标 question 序列化为紧凑 JSON，排除 gold、聊天模板和其他字段头。横轴为对数 token 长度；密度采用固定带宽，不移除已评分输入。",
+      "alt": "三组评测输入在对数 token 长度轴上的密度曲线：政策、证据与推理、意图识别。各组样本量和中位数列于表格。",
+      "columns": [
+        "输入组",
+        "原始样本数",
+        "中位 token 数",
+        "最短",
+        "最长"
+      ],
+      "rows": [
+        [
+          "政策",
+          288,
+          184,
+          181,
+          201
+        ],
+        [
+          "证据与推理",
+          1011,
+          385,
+          77,
+          3347
+        ],
+        [
+          "意图识别",
+          8580,
+          1427,
+          843,
+          1453
+        ]
+      ],
+      "asset_sha256": {
+        "svg": "714fb1773be4fc3750ad15c4220c40355f5173437ed2b0ecffa90de6ee836f03",
+        "pdf": "31125548f53ef12122af16aedaf0984fd0e524787729a664cbd26bdadf50da2a",
+        "png": "c56d2fc3e8618d2868e337c13be397718e69810f11b6cc18f95293426b0e6307"
+      }
+    },
+    {
+      "id": "queries",
+      "letter": "c",
+      "kicker": "QUERY TEXT",
+      "title": "问题文本去重保留率",
+      "group": "data",
+      "assets": {
+        "svg": "/assets/paper/c_semantic_query_diversity.svg",
+        "pdf": "/assets/paper/c_semantic_query_diversity.pdf",
+        "png": "/assets/paper/c_semantic_query_diversity.png"
+      },
+      "source": "https://github.com/CYMCharming/system1bench/blob/main/research/paper_compass_v1/figure_manifest.json",
+      "description": "每个任务抽取 128 条查询文本，进行语义去重。这里只比较问题的问法，不比较合同、证据或整道题的多样性。",
+      "caveat": "ContractNLI 的 10.2% = 13 / 128：固定命题用于不同合同，问法重复而证据不同。不是模型准确率，也不是数据集质量评分。细线为阈值敏感性范围，不是置信区间。",
+      "definition": "MiniLM 语义编码器；哈希确定性抽样；余弦相似度阈值 0.80 的贪心去重。保留率 = 保留条数 / 128。0.75 与 0.85 仅检验阈值敏感性。不使用合同正文等证据；各任务的查询粒度也不同。",
+      "alt": "六个任务的问题文本去重保留率。ContractNLI 保留 13/128，即 10.2%，统计不包含合同正文，也不表示模型正确率。",
+      "columns": [
+        "任务",
+        "抽样查询数",
+        "阈值 0.80 保留数",
+        "保留率",
+        "阈值 0.75 保留数",
+        "阈值 0.85 保留数"
+      ],
+      "rows": [
+        [
+          "CLINC150 + OOS",
+          128,
+          124,
+          "96.9%",
+          124,
+          126
+        ],
+        [
+          "When2Call",
+          128,
+          122,
+          "95.3%",
+          115,
+          124
+        ],
+        [
+          "SciFact",
+          128,
+          118,
+          "92.2%",
+          115,
+          120
+        ],
+        [
+          "BANKING77",
+          128,
+          116,
+          "90.6%",
+          111,
+          124
+        ],
+        [
+          "CLadder",
+          128,
+          93,
+          "72.7%",
+          86,
+          102
+        ],
+        [
+          "ContractNLI",
+          128,
+          13,
+          "10.2%",
+          8,
+          15
+        ]
+      ],
+      "asset_sha256": {
+        "svg": "3f15e54959b0548b3fcf056d08bb76c36f1e5d33722ea4da8799a4f820d51b62",
+        "pdf": "5a10b8d327b94efedf11b5b8f6792db59e987b9d03533dc0cc3f8d4574b3a1a8",
+        "png": "f480762eadb57d22a8ac08f7e8ea2d2cfe079209d271e5d9c722bc8f1defc2e8"
+      }
+    },
+    {
+      "id": "labels",
+      "letter": "d",
+      "kicker": "REFERENCE LABELS",
+      "title": "标准答案的类别分布",
+      "group": "data",
+      "assets": {
+        "svg": "/assets/paper/d_reference_label_balance.svg",
+        "pdf": "/assets/paper/d_reference_label_balance.pdf",
+        "png": "/assets/paper/d_reference_label_balance.png"
+      },
+      "source": "https://github.com/CYMCharming/system1bench/blob/main/research/paper_compass_v1/figure_manifest.json",
+      "description": "衡量冻结评测集的标准答案是否集中在少数类别。这里比较的是参考标签，不是模型的预测分布。",
+      "caveat": "均衡度不是准确率。When2Call 有 4 个候选类别，但当前 128 条冻结样本只出现其中 3 类；CLINC 的 1,000 条域外请求使其不完全均衡。",
+      "definition": "均衡度 = 标准答案的 Shannon 熵 / log(完整类别数)，显示为百分比；包含未出现的合法类别。按语义标签统计，不把每题换过的选项 ID 当成固定类别。100% 表示所有类别数量相同。",
+      "alt": "六个数据集的标准答案类别均衡度，使用归一化标签熵；不是模型分数。样本数、候选类别数与实际出现类别数可查。",
+      "columns": [
+        "任务",
+        "完整冻结样本数",
+        "候选类别数",
+        "出现类别数",
+        "标签均衡度"
+      ],
+      "rows": [
+        [
+          "CLINC150 + OOS",
+          5500,
+          151,
+          151,
+          "91.2%"
+        ],
+        [
+          "When2Call",
+          128,
+          4,
+          3,
+          "79.2%"
+        ],
+        [
+          "SciFact",
+          339,
+          3,
+          3,
+          "96.6%"
+        ],
+        [
+          "BANKING77",
+          3080,
+          77,
+          77,
+          "100.0%"
+        ],
+        [
+          "CLadder",
+          144,
+          2,
+          2,
+          "100.0%"
+        ],
+        [
+          "ContractNLI",
+          144,
+          3,
+          3,
+          "100.0%"
+        ]
+      ],
+      "asset_sha256": {
+        "svg": "f578980901cd3eb5870bb72413edf7a2d5462fe85a2a65c306b9ecd0d177a419",
+        "pdf": "5f6e944bf8627c61123925a394139f9930d4a0ae38ed6dfbd5e5db683d98de28",
+        "png": "4180dae6e175d9266ed8cd4bb78966a63233bdeca0ed2fbe550f93021393bc6d"
+      }
+    },
+    {
+      "id": "taxonomy",
+      "letter": "e",
+      "kicker": "EVALUATION MAP",
+      "title": "评测任务与诊断指标",
+      "group": "data",
+      "assets": {
+        "svg": "/assets/paper/e_evaluation_taxonomy.svg",
+        "pdf": "/assets/paper/e_evaluation_taxonomy.pdf",
+        "png": "/assets/paper/e_evaluation_taxonomy.png"
+      },
+      "source": "https://github.com/CYMCharming/system1bench/blob/main/research/paper_compass_v1/figure_manifest.json",
+      "description": "分类任务与独立诊断分开组织：综合榜只用分类准确率，稳健性、概率误差和速度另行展示。",
+      "caveat": "扇区宽度按任务或指标个数绘制，不代表样本占比、领域权重或模型覆盖。分类任务由 17 个完整模型覆盖，诊断项的覆盖范围以各自榜单为准。",
+      "definition": "分类分支：八领域、11 个分类任务。诊断分支：11 个叶节点。图中分类与诊断各占半圈，仅为层级结构呈现；综合榜依然按八个分类领域等权。",
+      "alt": "同心层级图，将八领域的 11 个分类任务与稳健性、概率和速度等独立诊断指标分开。角度不表示样本量或评分权重。",
+      "columns": [
+        "分支",
+        "领域 / 诊断组",
+        "叶节点数量",
+        "内容"
+      ],
+      "rows": [
+        [
+          "分类",
+          "政策",
+          3,
+          "退款、访问控制、工单分流"
+        ],
+        [
+          "分类",
+          "法律",
+          1,
+          "ContractNLI"
+        ],
+        [
+          "分类",
+          "科学",
+          1,
+          "SciFact"
+        ],
+        [
+          "分类",
+          "因果",
+          1,
+          "CLadder"
+        ],
+        [
+          "分类",
+          "代码",
+          1,
+          "CRUXEval"
+        ],
+        [
+          "分类",
+          "金融",
+          1,
+          "FinEntity"
+        ],
+        [
+          "分类",
+          "工具",
+          1,
+          "When2Call"
+        ],
+        [
+          "分类",
+          "意图",
+          2,
+          "CLINC150 + OOS、BANKING77"
+        ],
+        [
+          "诊断",
+          "不变性",
+          3,
+          "重复、选项换序、改写"
+        ],
+        [
+          "诊断",
+          "响应性",
+          1,
+          "关键事实反转"
+        ],
+        [
+          "诊断",
+          "联合决策",
+          1,
+          "全部字段正确"
+        ],
+        [
+          "诊断",
+          "概率误差",
+          3,
+          "Brier、NLL、TV"
+        ],
+        [
+          "诊断",
+          "效率",
+          3,
+          "P50、P95、吞吐量"
+        ]
+      ],
+      "asset_sha256": {
+        "svg": "75bbd03e5760ff46170fa0dfc5b1dc741de36c7c0c0ac91eb7c10f3268577398",
+        "pdf": "f85033943260f6f5b7aa0911d0b596899e9b7578d62a2335f21389485e6765ce",
+        "png": "b95ac7a6c371a583dcb58d41cd85fec7cc3a5c54950253c363b6a569c7ed1f1f"
+      }
+    }
+  ]
+}

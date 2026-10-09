@@ -2,11 +2,13 @@ import {renderVisuals} from './charts.js';
 import {reviewMarkup} from './review.js';
 import {intentMarkup} from './intent.js';
 import {coverageMarkup} from './coverage.js';
+import {galleryMarkup,previewMarkup,figureDetailMarkup,bindResearch} from './research.js';
 const $ = id => document.getElementById(id);
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const repo = 'https://github.com/CYMCharming/system1bench/blob/main/';
 const names = {overall_domain_equal:'领域等权综合分',overall_task_equal:'任务等权综合分',refund:'退款政策',access:'访问控制',routing:'工单分流',policy_action:'政策行动',legal:'法律判断',science:'科学证据',all_heads:'三个字段全部正确',policy_counterfactual:'关键事实改变：两次都对',natural_reversal:'换选项顺序：两次都对',action_head:'行动字段',review_head:'人工审核字段',severity_head:'严重程度字段',cladder:'因果 · CLadder',cruxeval:'代码 · CRUXEval',finentity:'金融 · FinEntity',when2call:'工具 · When2Call',excess_brier:'额外 Brier 误差',expected_brier:'期望 Brier 分数',total_variation:'概率分布偏差（TV）',impossible_mass:'不可能事件的概率',one_field:'1 个决策字段',three_fields:'3 个决策字段',eight_fields:'8 个决策字段'};
 const views = {
+ paper:{title:'论文图表',metrics:[],description:'领域成绩、输入长度与数据结构。支持放大、精确查数及 SVG / PDF 下载。',protocol:'research/paper_compass_v1/README.zh-CN.md'},
  intent:{title:'意图识别 · 试跑',metrics:['intent_accuracy','intent_macro_f1'],description:'完整 151 / 77 个候选；200 条 CLINC 与 154 条 BANKING 固定试跑。准确率按样本等权，宏 F1 按类别等权。',protocol:'research/public_intent_pilot_v1/README.zh-CN.md'},
  overall:{title:'综合榜 · 八领域',metrics:['overall_domain_equal','overall_task_equal'],description:'政策、法律、科学、因果、代码、金融、工具、意图识别八领域等权。仅纳入完整覆盖 11 个分类任务的模型；选项超限不计入，缺测不记零。',protocol:'research/evaluation_completion_v1/PROTOCOL.md'},
  legacy:{title:'原综合榜 · 三领域',metrics:['overall_domain_equal','overall_task_equal'],description:'保留扩展前的 23 模型榜单：政策、法律、科学三个领域等权。原始成绩未被改写，不与新版综合分直接混排。',protocol:'research/leaderboard_v3/PROTOCOL.md'},
@@ -21,7 +23,7 @@ const views = {
 views.intent={title:'意图识别 · 官方完整测试',metrics:['intent_accuracy','intent_macro_f1'],description:'CLINC：5,500 条、151 个选项；BANKING：3,080 条、77 个选项。已完成模型的准确率计入新版综合榜；概率指标和宏 F1 独立展示。',protocol:'research/evaluation_completion_v1/PROTOCOL.md'};
 names.intent_accuracy='准确率';names.intent_macro_f1='宏平均 F1';
 names.intent_domain='意图识别';names.clinc150_full='CLINC150 + OOS';names.banking77_full='BANKING77';
-let data, review, pilot, view='overall', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=false;
+let data, review, pilot, research, view='overall', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=false,paperFilter='all';
 const kind = id => /^(qwen|llama)/.test(id) ? 'general' : ['english','multilingual'].includes(id) ? 'representation' : 'decision';
 const kindName = id => ({general:'通用大模型',representation:'表示模型',decision:'决策专用'})[kind(id)];
 const canonical = id => id === 'jev' ? 'jev-1.13.0' : id;
@@ -62,19 +64,28 @@ function datasets() {
  $('boardFoot').innerHTML='基础样本数不包括选项换序、事实反转与多字段展开。科学“未提供证据”依赖当前证据包，不等于证明现实中没有证据。StartLux 声明训练中使用 ContractNLI；法律成绩不能直接解释为完全未见领域迁移。<br>来源、划分与冻结方法见 <a href="'+repo+'research/startlux_transfer_v1/PROTOCOL.md" target="_blank" rel="noopener">迁移协议</a> 和 <a href="'+repo+'research/leaderboard_v3/PROTOCOL.md" target="_blank" rel="noopener">主榜协议</a>。';
 }
 function render() {
+ $('pageTitle').textContent=view==='paper'?'决策模型研究图表':'决策模型排行榜';
+ $('pageIntro').textContent=view==='paper'?'模型成绩与评测数据的图形化呈现。':'决策专用模型与通用大模型的分类、稳健性、概率及延迟评测。';
+ $('overview').hidden=view==='paper';$('boardFoot').hidden=view==='paper';
+ $('paperGallery').hidden=view!=='paper';$('paperPreview').hidden=view!=='overall'||!research;
+ if(!$('paperPreview').hidden)$('paperPreview').innerHTML=previewMarkup(research);
  $('intentPilot').hidden=!['intent','intentpilot'].includes(view);
  $('coverage').hidden=!['overall','datasets'].includes(view);if(!$('coverage').hidden)$('coverage').innerHTML=coverageMarkup(data);
  $('datasetReview').hidden=view!=='datasets';
  if(view==='datasets')$('datasetReview').innerHTML=reviewMarkup(review);
  const config=views[view];
  document.querySelectorAll('[role=tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
- document.querySelectorAll('.side-link[data-view]').forEach(b=>b.classList.toggle('active',view==='datasets'?b.dataset.view==='datasets':b.dataset.view==='overall'));
- $('viewTitle').textContent=config.title;$('viewDefinition').textContent=config.description;$('protocol').href=repo+config.protocol;$('toolbar').hidden=view==='datasets';$('caption').textContent=config.title+'：'+(names[metric]??'数据说明');
+ document.querySelectorAll('.side-link[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===(['datasets','paper'].includes(view)?view:'overall')));
+ $('viewTitle').textContent=config.title;$('viewDefinition').textContent=config.description;$('protocol').href=repo+config.protocol;$('toolbar').hidden=['datasets','paper'].includes(view);$('caption').textContent=config.title+'：'+(names[metric]??'数据说明');
  $('empty').hidden=true;$('tableWrap').hidden=displayMode==='visual';
  $('displaySwitch').hidden=view==='datasets';$('visuals').hidden=view==='datasets'||displayMode==='table';
  document.querySelectorAll('[data-display]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.display===displayMode)));
  $('metric').innerHTML=config.metrics.map(m=>`<option value="${m}" ${m===metric?'selected':''}>${names[m]}</option>`).join('');
  const params=new URLSearchParams({view});if(metric)params.set('metric',metric);if(family!=='all')params.set('family',family);if(displayMode==='table')params.set('display','table');history.replaceState(null,'','?'+params.toString());
+ if(view==='paper'){
+  $('tableWrap').hidden=true;$('visuals').hidden=true;$('displaySwitch').hidden=true;$('visuals').innerHTML='';$('resultCount').textContent='5 张研究图 · 8 个领域 · 11 个分类任务';$('boardFoot').innerHTML='';
+  $('paperGallery').innerHTML=galleryMarkup(research,{filter:paperFilter});return;
+ }
  if(view==='datasets'){$('tableWrap').hidden=false;$('visuals').innerHTML='';datasets();return;}
  if(['intent','intentpilot'].includes(view)){
   const full=view==='intent';const result=full?{models:data.comprehensive?.intent??{},official_full_test:true,capability_limits:Object.entries(data.comprehensive?.coverage??{}).filter(([,m])=>m.status==='native_options_exceeded').map(([id,m])=>({id,label:m.label,limit:m.choice_limit,score:null}))}:pilot;
@@ -114,6 +125,8 @@ function detail(id) {
  $('detailContent').innerHTML=html;$('detail').showModal();
 }
 document.addEventListener('click',event=>{
+ const filter=event.target.closest('[data-paper-filter]');if(filter){paperFilter=filter.dataset.paperFilter;render();}
+ const figure=event.target.closest('[data-figure]');if(figure&&research){const item=research.figures.find(f=>f.id===figure.dataset.figure);if(item){$('figureTitle').textContent=item.title;$('figureContent').innerHTML=figureDetailMarkup(item);$('figureDetail').showModal();}}
  const tab=event.target.closest('[data-view]');if(tab&&data){view=tab.dataset.view;metric=views[view].metrics[0]??'';expanded=false;render();}
  const mode=event.target.closest('[data-display]');if(mode&&data){displayMode=mode.dataset.display;render();}
  const action=event.target.closest('[data-chart-action]');if(action&&data){expanded=!expanded;render();}
@@ -121,6 +134,8 @@ document.addEventListener('click',event=>{
 });
 document.addEventListener('keydown',event=>{const mark=event.target.closest('[data-point]');if(mark&&['Enter',' '].includes(event.key)){event.preventDefault();detail(mark.dataset.model);}});
 $('closeDetail').addEventListener('click',()=>$('detail').close());
+$('closeFigure').addEventListener('click',()=>$('figureDetail').close());
+bindResearch(document);
 $('search').addEventListener('input',event=>{search=event.target.value;render();});
 $('metric').addEventListener('change',event=>{metric=event.target.value;render();});
 $('family').addEventListener('change',event=>{family=event.target.value;render();});
@@ -129,6 +144,7 @@ try {
  const response=await fetch('/catalog.json');if(!response.ok)throw Error('数据响应 '+response.status);data=await response.json();if(data.version!==1)throw Error('数据版本不兼容');
  try{const result=await fetch('/review.json');if(result.ok){review=await result.json();if(review.version!==1)review=null;}}catch{review=null;}
  try{const result=await fetch('/intent-pilot.json');if(result.ok){pilot=await result.json();if(pilot.version!==1||!pilot.models)pilot=null;}}catch{pilot=null;}
+ try{const result=await fetch('/research.json');if(result.ok){research=await result.json();if(research.version!==1||!Array.isArray(research.figures))research=null;}}catch{research=null;}
  const params=new URLSearchParams(location.search);if(views[params.get('view')])view=params.get('view');metric=views[view].metrics.includes(params.get('metric'))?params.get('metric'):views[view].metrics[0]??'';
  if(params.get('display')==='table')displayMode='table';
  if(['all','decision','general','representation'].includes(params.get('family')))family=params.get('family');$('family').value=family;
