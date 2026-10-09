@@ -88,6 +88,7 @@ if(comprehensive){
  }
  Object.assign(transferModels,comprehensive.transfer_additions);sources.push(completionPath,'research/evaluation_completion_v1/manifest.json');
  if(comprehensive.supplement_manifest){assert.equal(hash(comprehensive.supplement_manifest.path),comprehensive.supplement_manifest.sha256);sources.push(comprehensive.supplement_manifest.path,'research/evaluation_completion_v2/PROTOCOL.md');}
+ if(comprehensive.execution_shard_manifest){assert.equal(hash(comprehensive.execution_shard_manifest.path),comprehensive.execution_shard_manifest.sha256);sources.push(comprehensive.execution_shard_manifest.path,'research/evaluation_completion_v3/PROTOCOL.md');}
 }
 const catalog = {version:1, generatedAt:new Date().toISOString(), quality, comprehensive, transfer:transferModels, speed,
   pendingModels:additions?.pending ?? [], speedExpected:14,

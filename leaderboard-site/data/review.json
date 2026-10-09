@@ -90,8 +90,8 @@
     "source": "research/public_intent_pilot_v1/results.json"
   },
   "full": {
-    "models": 12,
-    "completeModels": 12,
+    "models": 15,
+    "completeModels": 15,
     "eligibleModels": 17,
     "source": "research/evaluation_completion_v1/results.json"
   }

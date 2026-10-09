@@ -16,3 +16,4 @@ research/evaluation_completion_v1/*.md -text
 research/evaluation_completion_v2/*.py -text
 research/evaluation_completion_v2/*.json -text
 research/evaluation_completion_v2/*.md -text
+research/evaluation_completion_v3/** -text

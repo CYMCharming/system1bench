@@ -56,6 +56,36 @@ def main():
         assert adapted['protocol_sha256'] == sha(ROOT / 'research/evaluation_completion_v2/PROTOCOL.md')
         for p, expected_hash in adapted['code_sha256'].items():
             assert hashlib.sha256((ROOT / p).read_bytes().replace(b'\r\n', b'\n')).hexdigest() == expected_hash
+    if 'execution_shard_manifest' in result:
+        entry = result['execution_shard_manifest']
+        assert sha(ROOT / entry['path']) == entry['sha256']
+        sharded = read(ROOT / entry['path'])
+        assert sharded['parent_manifest_sha256'] == result['manifest_sha256']
+        assert sharded['inputs'] == manifest['inputs'] and sharded['model_pins'] == manifest['model_pins']
+        assert sharded['protocol_sha256'] == sha(ROOT / 'research/evaluation_completion_v3/PROTOCOL.md')
+        for p, expected_hash in sharded['code_sha256'].items():
+            assert hashlib.sha256((ROOT / p).read_bytes().replace(b'\r\n', b'\n')).hexdigest() == expected_hash
+        for name, plan in sharded['plans'].items():
+            seen_indices = set(range(plan['prefix_n']))
+            assert plan['prefix_receipt']['n'] == plan['prefix_n']
+            for part in plan['shards']:
+                assert sha(ROOT / part['manifest_path']) == part['manifest_sha256']
+                part_manifest = read(ROOT / part['manifest_path'])
+                assert part_manifest['source_indices'] == part['indices']
+                assert part_manifest['code_sha256'] == sharded['code_sha256']
+                assert part_manifest['inputs']['intent']['sha256'] == part['frozen_sha256']
+                assert len(part['indices']) == len(set(part['indices'])) == part['expected']
+                assert not (seen_indices & set(part['indices']))
+                seen_indices.update(part['indices'])
+            assert seen_indices == set(range(8580))
+            if name in result['intent']:
+                receipt = result['intent'][name]['receipt']
+                assert receipt['binding']['kind'] == 'verified_shard_union'
+                assert receipt['binding']['manifest_sha256'] == entry['sha256']
+                fragments = receipt['source_fragments']
+                assert fragments[0] == plan['prefix_receipt']
+                assert [r['n'] for r in fragments[1:]] == [p['expected'] for p in plan['shards']]
+                assert sum(r['n'] for r in fragments) == 8580
     assert set(result['coverage']) == set(manifest['cohort']) and len(result['coverage']) == 23
     assert result['complete_models'] == len(result['models'])
     assert result['eligible_models'] == 17 and result['all_eligible_complete'] == (len(result['models']) == 17)

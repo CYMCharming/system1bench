@@ -5,9 +5,18 @@ import unittest
 
 from research.evaluation_completion_v1.analyze import projection
 from research.evaluation_completion_v1.verify import main as verify_public
+from research.evaluation_completion_v3.run import partition_indices
 
 
 class CompletionTests(unittest.TestCase):
+    def test_shards_cover_only_remaining_cases_without_overlap(self):
+        for prefix in [1, 400, 2023, 5499, 8579]:
+            a, b = map(set, partition_indices(prefix))
+            self.assertFalse(a & b)
+            self.assertEqual(a | b | set(range(prefix)), set(range(8580)))
+            self.assertFalse((a | b) & set(range(prefix)))
+            self.assertLessEqual(abs(len(a) - len(b)), 1)
+
     def test_projection_preserves_variable_candidate_order(self):
         def row(identity, labels, probabilities, error=None):
             return dict(suite='code', id=identity, qid='decision', request_sha256='digest',

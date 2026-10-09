@@ -52,14 +52,20 @@ def verify(folder, name, panel, frozen, legacy=False):
     else:
         manifest = read(HERE / 'manifest.json')
         if binding['manifest_sha256'] != sha(HERE / 'manifest.json'):
-            supplement = HERE.parent / 'evaluation_completion_v2/manifest.json'
+            sharded = binding.get('kind') == 'verified_shard_union'
+            supplement = HERE.parent / ('evaluation_completion_v3' if sharded else 'evaluation_completion_v2') / 'manifest.json'
             adapted = read(supplement)
-            assert panel == 'transfer' and name in {'english', 'multilingual'}
+            assert (panel == 'intent' and name in {'kev_27b', 'qwen38_27b'}) if sharded else (
+                panel == 'transfer' and name in {'english', 'multilingual'})
             assert binding['manifest_sha256'] == sha(supplement)
             assert adapted['parent_manifest_sha256'] == sha(HERE / 'manifest.json')
             assert adapted['inputs'] == manifest['inputs'] and adapted['model_pins'] == manifest['model_pins']
             assert all(adapted['code_sha256'][p] == value for p, value in manifest['code_sha256'].items())
             assert adapted['protocol_sha256'] == sha(supplement.parent / 'PROTOCOL.md')
+            if sharded:
+                from research.evaluation_completion_v3.run import verify_union
+                reconstructed, _, _ = verify_union(folder, name, frozen)
+                assert reconstructed == [json.loads(line) for line in (folder / 'raw.jsonl').read_text().splitlines()]
             manifest = adapted
         assert binding['code_sha256'] == manifest['code_sha256']
         assert binding['frozen_sha256'] == manifest['inputs'][panel]['sha256']
@@ -117,9 +123,15 @@ def verify(folder, name, panel, frozen, legacy=False):
                    base_files_sha256=metadata.get('base_files_sha256', {}),
                    probability_semantics=metadata.get('probability_semantics', 'native candidate distribution'))
     for field in ['input_adaptation', 'native_interface_unchanged', 'laya_source_sha256',
-                  'temperatures', 'historical_budget']:
+                  'temperatures', 'historical_budget', 'vendor_commit', 'vendor_code_sha256',
+                  'python', 'torch', 'transformers', 'peft', 'pydantic', 'gpu', 'attention',
+                  'temperature', 'temperature_by_type', 'probability_semantics']:
         if field in metadata:
             receipt[field] = metadata[field]
+    if binding.get('kind') == 'verified_shard_union':
+        receipt['execution_method'] = metadata['execution_method']
+        receipt['source_fragments'] = [read(folder / 'fragments/prefix/PREFIX.json'),
+                                       *[read(folder / f'fragments/{part}/DONE.json') for part in range(2)]]
     if 'configuration' in metadata:
         receipt['released_temperature_by_options'] = metadata['configuration'].get('temperature_by_options', {})
         receipt['calibration_caveat'] = ('Installed Laya runtime validates released per-option temperatures; '
@@ -172,6 +184,7 @@ def main():
     parser.add_argument('--input', type=Path, required=True)
     parser.add_argument('--completion', type=Path)
     parser.add_argument('--supplement', type=Path)
+    parser.add_argument('--sharded', type=Path)
     parser.add_argument('--check-only', action='store_true')
     args = parser.parse_args()
     manifest = read(HERE / 'manifest.json')
@@ -192,6 +205,9 @@ def main():
     for name in manifest['cohort']:
         legacy = (args.input / name / 'DONE.json').exists()
         folder = args.input / name if legacy else (args.completion / 'intent' / name if args.completion else None)
+        shard_folder = args.sharded / 'intent' / name if args.sharded else None
+        if shard_folder and (shard_folder / 'DONE.json').exists():
+            folder, legacy = shard_folder, False
         if folder and (folder / 'DONE.json').exists():
             rows, receipt = verify(folder, name, 'intent', frozen, legacy)
             receipt['historical_weight_identity'] = verify_historical_identity(name, receipt)
@@ -264,6 +280,10 @@ def main():
         supplement_manifest = HERE.parent / 'evaluation_completion_v2/manifest.json'
         result['supplement_manifest'] = dict(path=str(supplement_manifest.relative_to(ROOT)).replace('\\', '/'),
                                               sha256=sha(supplement_manifest))
+    if args.sharded:
+        shard_manifest = HERE.parent / 'evaluation_completion_v3/manifest.json'
+        result['execution_shard_manifest'] = dict(path=str(shard_manifest.relative_to(ROOT)).replace('\\', '/'),
+                                                  sha256=sha(shard_manifest))
     references = {'intent': {suite['name']: {
         'labels': list(suite['cases'][0]['questions']['decision']['criteria']),
         'rows': [[case['id'], digest({'state': case['state'], 'questions': case['questions']}),

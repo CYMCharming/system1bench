@@ -35,7 +35,7 @@ assert(intentMarkup(pilot).includes('Intern-Decision-4B'));assert(intentMarkup(p
 for(const metric of ['intent_accuracy','intent_macro_f1']){const html=intentMarkup(pilot,{metric});assert(!/undefined|NaN/.test(html));assert.equal((html.match(/class="intent-row /g)||[]).length,Object.keys(pilot.models).length*2);assert(!html.includes('style='));}
 assert.equal((intentMarkup(pilot,{family:'general'}).match(/class="intent-row /g)||[]).length,Object.keys(pilot.models).filter(id=>id.startsWith('qwen')).length*2);
 assert(intentMarkup(pilot,{search:'nonexistent'}).includes('没有匹配'));assert(intentMarkup(null).includes('暂未加载'));
-console.log('PASS: six rankings, sorting, 23/19 model coverage, search, family filter and dataset table');
+console.log('PASS: all rankings, sorting, full-cohort coverage, search, family filter and dataset table');
 const qrows=context.verify('legacy','overall_domain_equal').rows;
 const speedRows=context.verify('speed','three_fields').rows;
 const points=tradeoffRows(catalog,qrows,{view:'legacy',metric:'overall_domain_equal'});
