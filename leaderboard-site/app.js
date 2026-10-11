@@ -8,6 +8,7 @@ const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&
 const repo = 'https://github.com/CYMCharming/system1bench/blob/main/';
 const names = {overall_domain_equal:'领域等权综合分',overall_task_equal:'任务等权综合分',refund:'退款政策',access:'访问控制',routing:'工单分流',policy_action:'政策行动',legal:'法律判断',science:'科学证据',all_heads:'三个字段全部正确',policy_counterfactual:'关键事实改变：两次都对',natural_reversal:'换选项顺序：两次都对',action_head:'行动字段',review_head:'人工审核字段',severity_head:'严重程度字段',cladder:'因果 · CLadder',cruxeval:'代码 · CRUXEval',finentity:'金融 · FinEntity',when2call:'工具 · When2Call',excess_brier:'额外 Brier 误差',expected_brier:'期望 Brier 分数',total_variation:'概率分布偏差（TV）',impossible_mass:'不可能事件的概率',one_field:'1 个决策字段',three_fields:'3 个决策字段',eight_fields:'8 个决策字段'};
 const views = {
+ common:{title:'全模型综合榜 · 七领域',metrics:['overall_domain_equal','overall_task_equal'],description:'23 个模型统一比较政策、法律、科学、因果、代码、金融和工具七领域，共 9 个分类任务。不包含 CLINC150 + OOS 和 BANKING77。',protocol:'research/common_suite_v1/PROTOCOL.md'},
  paper:{title:'论文图表',metrics:[],description:'领域成绩、输入长度与数据结构。支持放大、精确查数及 SVG / PDF 下载。',protocol:'research/paper_compass_v1/README.zh-CN.md'},
  intent:{title:'意图识别 · 试跑',metrics:['intent_accuracy','intent_macro_f1'],description:'完整 151 / 77 个候选；200 条 CLINC 与 154 条 BANKING 固定试跑。准确率按样本等权，宏 F1 按类别等权。',protocol:'research/public_intent_pilot_v1/README.zh-CN.md'},
  overall:{title:'综合榜 · 八领域',metrics:['overall_domain_equal','overall_task_equal'],description:'政策、法律、科学、因果、代码、金融、工具、意图识别八领域等权。仅纳入完整覆盖 11 个分类任务的模型；选项超限不计入，缺测不记零。',protocol:'research/evaluation_completion_v1/PROTOCOL.md'},
@@ -23,7 +24,7 @@ const views = {
 views.intent={title:'意图识别 · 官方完整测试',metrics:['intent_accuracy','intent_macro_f1'],description:'CLINC：5,500 条、151 个选项；BANKING：3,080 条、77 个选项。已完成模型的准确率计入新版综合榜；概率指标和宏 F1 独立展示。',protocol:'research/evaluation_completion_v1/PROTOCOL.md'};
 names.intent_accuracy='准确率';names.intent_macro_f1='宏平均 F1';
 names.intent_domain='意图识别';names.clinc150_full='CLINC150 + OOS';names.banking77_full='BANKING77';
-let data, review, pilot, research, view='overall', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=false,paperFilter='all';
+let data, review, pilot, research, view='common', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=true,paperFilter='all';
 const kind = id => /^(qwen|llama)/.test(id) ? 'general' : ['english','multilingual'].includes(id) ? 'representation' : 'decision';
 const kindName = id => ({general:'通用大模型',representation:'表示模型',decision:'决策专用'})[kind(id)];
 const canonical = id => id === 'jev' ? 'jev-1.13.0' : id;
@@ -40,12 +41,13 @@ function modelCell(id) {
  return `<td><button class="model-button" data-model="${esc(id)}"><span class="model-icon ${kind(id)}">${icon(id)}</span><span><span class="model-name">${esc(label(id))}${view==='domains'&&metric==='legal'&&id.startsWith('startlux')?'<span class="overlap" title="作者声明使用 ContractNLI 训练；不代表已证实测试泄漏">†</span>':''}</span><span class="model-meta">${note(id)}</span></span></button></td>`;
 }
 function rankedRows() {
- const source=['transfer','probability'].includes(view)?data.transfer:view==='speed'?data.speed:view==='overall'?data.comprehensive?.models??{}:data.quality.models;
+ const source=['transfer','probability'].includes(view)?data.transfer:view==='speed'?data.speed:view==='common'?data.common?.models??{}:view==='overall'?data.comprehensive?.models??{}:data.quality.models;
  return Object.entries(source).map(([id,m])=>({id,m,c:view==='transfer'?m.metrics[metric]?.original:view==='probability'?m.metrics.known_distribution?.[metric]:view==='speed'?{score:m.workloads[metric]?.mean_ms}:m.metrics[metric]}))
   .filter(r=>finite(r.c?.score)).sort((a,b)=>(['speed','probability'].includes(view)?1:-1)*(a.c.score-b.c.score)||label(a.id).localeCompare(label(b.id)))
   .map((r,i,arr)=>({...r,rank:i&&Math.abs(r.c.score-arr[i-1].c.score)<1e-12?arr.findIndex(x=>Math.abs(x.c.score-r.c.score)<1e-12)+1:i+1}));
 }
 function columns() {
+ if(view==='common')return ['policy_action','legal','science','cladder','cruxeval','finentity','when2call'];
  if(view==='overall')return ['policy_action','legal','science','cladder','cruxeval','finentity','when2call','intent_domain'];
  if(view==='legacy')return ['policy_action','legal','science'];
  if(view==='domains')return ['refund','access','routing','legal','science'].filter(x=>x!==metric);
@@ -67,15 +69,17 @@ function render() {
  $('pageTitle').textContent=view==='paper'?'决策模型研究图表':'决策模型排行榜';
  $('pageIntro').textContent=view==='paper'?'模型成绩与评测数据的图形化呈现。':'决策专用模型与通用大模型的分类、稳健性、概率及延迟评测。';
  $('overview').hidden=view==='paper';$('boardFoot').hidden=view==='paper';
+ $('domainCount').textContent=view==='common'?7:8;$('taskCount').textContent=view==='common'?9:11;
+ $('overviewNote').innerHTML=view==='common'?'23 个模型，同一套 9 项任务。<br>不包含两项意图识别测试。':'完整覆盖才进入含意图综合榜。<br>原生选项超限的模型不混排。';
  $('paperGallery').hidden=view!=='paper';$('paperPreview').hidden=view!=='overall'||!research;
  if(!$('paperPreview').hidden)$('paperPreview').innerHTML=previewMarkup(research);
  $('intentPilot').hidden=!['intent','intentpilot'].includes(view);
- $('coverage').hidden=!['overall','datasets'].includes(view);if(!$('coverage').hidden)$('coverage').innerHTML=coverageMarkup(data);
+ $('coverage').hidden=!['common','overall','datasets'].includes(view);if(!$('coverage').hidden)$('coverage').innerHTML=coverageMarkup(data,{scope:view==='common'?'common':'full'});
  $('datasetReview').hidden=view!=='datasets';
  if(view==='datasets')$('datasetReview').innerHTML=reviewMarkup(review);
  const config=views[view];
  document.querySelectorAll('[role=tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
- document.querySelectorAll('.side-link[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===(['datasets','paper'].includes(view)?view:'overall')));
+ document.querySelectorAll('.side-link[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===(['datasets','paper'].includes(view)?view:'common')));
  $('viewTitle').textContent=config.title;$('viewDefinition').textContent=config.description;$('protocol').href=repo+config.protocol;$('toolbar').hidden=['datasets','paper'].includes(view);$('caption').textContent=config.title+'：'+(names[metric]??'数据说明');
  $('empty').hidden=true;$('tableWrap').hidden=displayMode==='visual';
  $('displaySwitch').hidden=view==='datasets';$('visuals').hidden=view==='datasets'||displayMode==='table';
@@ -105,6 +109,7 @@ function render() {
  if(!rows.length){$('tableWrap').hidden=true;$('visuals').hidden=true;$('empty').hidden=false;$('empty').textContent=all.length?'没有匹配的模型，请修改搜索或重置筛选。':'尚无符合测量条件的完成结果，没有用估计值填充排名。';}
  $('boardFoot').innerHTML=view==='speed'?'条件：A100 80GB PCIe · 单模型顺序运行 · GPU 同占用与 CPU 干扰检查 · 原始浮点权重 · 同步完整请求。相同语义工作负载，模型原生格式与 token 数不同。Qwen3.5 使用参考线性注意力实现；本榜反映当前软件栈，不代表优化内核极限。未测 / 未通过资源检查的不排名；托管 API、27B、外部硬件数据不混排。':view==='probability'?'默认用相对真实分布的额外 Brier 误差，剔除题目固有不确定性。概率是候选集合上的归一化输出，不等于已校准的正确性置信度。95% 区间来自协议中的配对 / 分层自助法。':view==='transfer'?'本面板与主榜覆盖不同，缺测不记零。每模型 1,152 次决策：528 道分类题的原始 / 换序版本，加 96 个概率诊断。StartLux 声明的训练历史需单独考虑；成绩差异不是架构因果证据。':view==='overall'?'领域等权 =（政策行动 + 法律 + 科学）/ 3；任务等权 =（退款 + 访问控制 + 分流 + 法律 + 科学）/ 5。95% 区间是样本层面不确定性，不含提示选择与训练历史偏差。保留之前 18 个模型的原始成绩。':view==='domains'?'每个分数保留分母。法律 †：StartLux 作者声明训练中使用 ContractNLI，不能直接视为纯未见领域能力，也没有据此证明测试泄漏。科学“未提供证据”依赖当前证据包。':'关键事实改变时应正确改判，换选项顺序时应保持正确。法律 / 科学换序总分为两个领域配对正确率的等权平均，无单一正确数分母。';
  if(view==='overall')$('boardFoot').innerHTML='领域等权：8 个领域各占 1/8；政策内 3 个任务等权，意图识别内 2 个任务等权。任务等权：11 个分类任务各占 1/11。仅使用原始选项分类准确率，不重复计入换序题、二元 CLINC 或试跑。综合分无单一分母；尚未为新版综合分建立置信区间，不沿用旧区间。历史数据的冻结子集、来源标签与训练接触风险仍适用。';
+ if(view==='common')$('boardFoot').innerHTML='领域等权：7 个领域各占 1/7；政策内退款、访问、分流 3 个任务等权。任务等权：9 个分类任务各占 1/9。每模型 1,299 道原始分类题，但综合分不是汇总准确率，无单一分母。不计入 CLINC150 + OOS、BANKING77、换序变体、概率诊断或速度。此综合分未建立置信区间；与含意图综合榜的权重和任务范围不同。StartLux 的 ContractNLI 训练接触风险、Laya 的完整选项文本适配及历史冻结子集口径仍适用。 <a href="/common-scores.csv" download>下载 23 模型分数 CSV</a>。';
  if(view==='legacy')$('boardFoot').innerHTML='旧榜：政策、法律、科学三个领域等权；任务等权为退款、访问、分流、法律、科学五项平均。23 个模型的历史成绩保持不变。此处不含新增分类任务。';
 }
 function detail(id) {
@@ -112,9 +117,11 @@ function detail(id) {
  let html=`<h2>${esc(label(id))}</h2><p>${esc(note(id))}。仅列已完成的评测，缺测项不估算。</p>`;
  if(id.startsWith('llama32'))html+=`<p>通过 Unsloth 社区渠道分发 BF16 权重，逐分片 SHA-256 与 Meta 官方权重一致；不表示已证明所有 tokenizer 文件相同。<a href="${repo}research/model_expansion_v3/llama_weight_identity.json" target="_blank" rel="noopener">权重一致性记录</a>。</p>`;
  if(q)html+='<h3>主面板</h3><table><tbody>'+Object.entries(q.metrics).map(([key,c])=>`<tr><td>${esc(names[key]??key)}</td>${cell(c)}</tr>`).join('')+'</tbody></table>';
+ const shared=data.common?.models[canonical(id)];
+ if(shared)html+='<h3>全模型综合榜 · 七领域</h3><p>不包含 CLINC150 + OOS 和 BANKING77；所有模型比较相同的 9 项任务。</p><table><tbody>'+['overall_domain_equal','overall_task_equal',...data.common.tasks].map(key=>`<tr><td>${esc(names[key]??key)}</td>${cell(shared.metrics[key])}</tr>`).join('')+'</tbody></table>';
  const complete=data.comprehensive?.models[canonical(id)],intent=data.comprehensive?.intent[canonical(id)];
- if(complete)html+='<h3>新版综合榜 · 八领域</h3><table><tbody>'+['overall_domain_equal','overall_task_equal',...data.comprehensive.tasks].map(key=>`<tr><td>${esc(names[key]??key)}</td>${cell(complete.metrics[key])}</tr>`).join('')+'</tbody></table>';
- else if(data.comprehensive)html+='<p>新版综合榜状态：'+(data.comprehensive.coverage[canonical(id)].status==='native_options_exceeded'?'原生选项上限不足，不混入综合分。':'尚未完成全部 11 个分类任务。')+'</p>';
+ if(complete)html+='<h3>含意图综合榜 · 八领域</h3><table><tbody>'+['overall_domain_equal','overall_task_equal',...data.comprehensive.tasks].map(key=>`<tr><td>${esc(names[key]??key)}</td>${cell(complete.metrics[key])}</tr>`).join('')+'</tbody></table>';
+ else if(data.comprehensive)html+='<p>含意图综合榜状态：'+(data.comprehensive.coverage[canonical(id)].status==='native_options_exceeded'?'原生选项上限不足，不混入八领域综合分；已进入七领域全模型综合榜。':'尚未完成全部 11 个分类任务。')+'</p>';
  if(intent)html+='<h3>完整意图测试</h3><table><tbody>'+Object.entries(intent.metrics).map(([key,c])=>`<tr><td>${esc(names[key]??key)}</td>${cell(c)}</tr>`).join('')+'</tbody></table>';
  const adaptation=data.comprehensive?.transfer_additions[canonical(id)]?.receipt;
  if(adaptation?.input_adaptation)html+='<p>迁移测试接口：完整选项文本适配。仅去掉 Laya 对单个选项描述的 48-token 截断；权重、选项、顺序与全局输入预算不变。不是未经改动的原生接口。<a href="'+repo+'research/evaluation_completion_v2/PROTOCOL.md" target="_blank" rel="noopener">适配说明</a></p>';
@@ -127,7 +134,7 @@ function detail(id) {
 document.addEventListener('click',event=>{
  const filter=event.target.closest('[data-paper-filter]');if(filter){paperFilter=filter.dataset.paperFilter;render();}
  const figure=event.target.closest('[data-figure]');if(figure&&research){const item=research.figures.find(f=>f.id===figure.dataset.figure);if(item){$('figureTitle').textContent=item.title;$('figureContent').innerHTML=figureDetailMarkup(item);$('figureDetail').showModal();}}
- const tab=event.target.closest('[data-view]');if(tab&&data){view=tab.dataset.view;metric=views[view].metrics[0]??'';expanded=false;render();}
+ const tab=event.target.closest('[data-view]');if(tab&&data){view=tab.dataset.view;metric=views[view].metrics[0]??'';expanded=view==='common';render();}
  const mode=event.target.closest('[data-display]');if(mode&&data){displayMode=mode.dataset.display;render();}
  const action=event.target.closest('[data-chart-action]');if(action&&data){expanded=!expanded;render();}
  const model=event.target.closest('[data-model]');if(model)detail(model.dataset.model);
@@ -139,13 +146,14 @@ bindResearch(document);
 $('search').addEventListener('input',event=>{search=event.target.value;render();});
 $('metric').addEventListener('change',event=>{metric=event.target.value;render();});
 $('family').addEventListener('change',event=>{family=event.target.value;render();});
-$('reset').addEventListener('click',()=>{search='';family='all';expanded=false;$('search').value='';$('family').value='all';metric=views[view].metrics[0]??'';render();});
+$('reset').addEventListener('click',()=>{search='';family='all';expanded=view==='common';$('search').value='';$('family').value='all';metric=views[view].metrics[0]??'';render();});
 try {
  const response=await fetch('/catalog.json');if(!response.ok)throw Error('数据响应 '+response.status);data=await response.json();if(data.version!==1)throw Error('数据版本不兼容');
  try{const result=await fetch('/review.json');if(result.ok){review=await result.json();if(review.version!==1)review=null;}}catch{review=null;}
  try{const result=await fetch('/intent-pilot.json');if(result.ok){pilot=await result.json();if(pilot.version!==1||!pilot.models)pilot=null;}}catch{pilot=null;}
  try{const result=await fetch('/research.json');if(result.ok){research=await result.json();if(research.version!==1||!Array.isArray(research.figures))research=null;}}catch{research=null;}
  const params=new URLSearchParams(location.search);if(views[params.get('view')])view=params.get('view');metric=views[view].metrics.includes(params.get('metric'))?params.get('metric'):views[view].metrics[0]??'';
+ expanded=view==='common';
  if(params.get('display')==='table')displayMode='table';
  if(['all','decision','general','representation'].includes(params.get('family')))family=params.get('family');$('family').value=family;
  $('modelCount').textContent=Object.keys(data.quality.models).length;$('release').textContent='发布快照 · '+new Date(data.generatedAt).toLocaleDateString('zh-CN',{timeZone:'Asia/Shanghai'});render();

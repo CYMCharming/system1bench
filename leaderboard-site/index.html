@@ -12,7 +12,7 @@
   <aside class="sidebar">
     <a class="brand" href="/"><img src="/favicon.svg" alt="" width="34" height="34"><span>System1<span class="brand-light">Bench</span></span></a>
     <div class="side-section">研究与评测</div>
-    <button class="side-link active" data-view="overall"><span class="nav-glyph">▤</span>模型排行榜</button>
+    <button class="side-link active" data-view="common"><span class="nav-glyph">▤</span>模型排行榜</button>
     <button class="side-link" data-view="datasets"><span class="nav-glyph">▦</span>数据集与任务</button>
     <button class="side-link" data-view="paper"><span class="nav-glyph">◉</span>论文图表</button>
     <a class="side-link" href="https://github.com/CYMCharming/system1bench/tree/main/research" target="_blank" rel="noopener"><span class="nav-glyph">◈</span>研究与发现</a>
@@ -24,10 +24,11 @@
       <div><div class="eyebrow">SYSTEM1BENCH</div><h1><span id="pageTitle">决策模型排行榜</span><span class="edition">OPEN BENCHMARK</span></h1><p id="pageIntro">决策专用模型与通用大模型的分类、稳健性、概率及延迟评测。</p></div>
       <div class="scope-badge">固定评测集<span>版本、样本与协议公开</span></div>
     </section>
-    <div class="overview" id="overview"><div><strong id="modelCount">—</strong><span>评测模型</span></div><div><strong>8</strong><span>综合榜领域</span></div><div><strong>11</strong><span>综合榜分类任务</span></div><div class="overview-note">完整覆盖才进入综合榜。<br>原生选项超限的模型不混排。</div></div>
+    <div class="overview" id="overview"><div><strong id="modelCount">—</strong><span>评测模型</span></div><div><strong id="domainCount">7</strong><span>当前综合榜领域</span></div><div><strong id="taskCount">9</strong><span>当前综合榜分类任务</span></div><div class="overview-note" id="overviewNote">23 个模型，同一套 9 项任务。<br>不包含两项意图识别测试。</div></div>
     <section class="board" aria-label="模型评测结果">
       <nav class="tabs" aria-label="排行榜类型" role="tablist">
-        <button data-view="overall" role="tab" aria-selected="true">综合榜</button>
+        <button data-view="common" role="tab" aria-selected="true">全模型综合榜</button>
+        <button data-view="overall" role="tab" aria-selected="false">含意图综合榜</button>
         <button data-view="legacy" role="tab" aria-selected="false">原综合榜</button>
         <button data-view="domains" role="tab" aria-selected="false">领域榜</button>
         <button data-view="robustness" role="tab" aria-selected="false">稳健性</button>

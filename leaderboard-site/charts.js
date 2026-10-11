@@ -31,6 +31,7 @@ export function buildRanking(rows,{type,metricName,label,kind,max}) {
 }
 const shortNames={policy_action:'政策',legal:'法律',science:'科学',intent_domain:'意图',all_heads:'多字段',policy_counterfactual:'事实改变',natural_reversal:'选项换序',cladder:'因果',cruxeval:'代码',finentity:'金融',when2call:'工具',one_field:'1 字段',three_fields:'3 字段',eight_fields:'8 字段',direct:'直接',composition:'组合',daily_evidence:'日常证据',disclosure:'信息披露',history:'历史',sequential:'顺序'};
 export function matrixColumns(view) {
+ if(view==='common')return ['policy_action','legal','science','cladder','cruxeval','finentity','when2call'];
  if(view==='overall')return ['policy_action','legal','science','cladder','cruxeval','finentity','when2call','intent_domain'];
  return view==='speed'?['one_field','three_fields','eight_fields']:view==='transfer'?['cladder','cruxeval','finentity','when2call']:view==='robustness'?['all_heads','policy_counterfactual','natural_reversal']:view==='probability'?['direct','composition','daily_evidence','disclosure','history','sequential']:['policy_action','legal','science'];
 }
@@ -59,7 +60,7 @@ export function buildMatrix(rows,all,{view,metric,type,label,names}) {
 export function tradeoffRows(data,rows,{view,metric}) {
  const workload=view==='speed'?metric:'three_fields';
  return rows.map(r=>{
-  const s=data.speed[r.id]?.workloads[workload],q=(view==='overall'?data.comprehensive?.models[r.id]:data.quality.models[r.id])?.metrics[view==='speed'?'overall_domain_equal':metric];
+  const s=data.speed[r.id]?.workloads[workload],q=(view==='common'?data.common?.models[r.id]:view==='overall'?data.comprehensive?.models[r.id]:data.quality.models[r.id])?.metrics[view==='speed'?'overall_domain_equal':metric];
   return s&&q?{id:r.id,x:s.mean_ms,y:q.score,xci:s.mean_round_ci95_ms,yci:q.ci95,n:s.n,workload}:null;
  }).filter(Boolean);
 }
@@ -99,9 +100,9 @@ export function visualMarkup({data,rows,all,view,metric,names,label,kind,expande
  const visualRows=rows.map(r=>view==='speed'?{...r,c:matrixCell(r.m,metric,{view,metric})}:r);
  const domainRows=all.map(r=>view==='speed'?{...r,c:matrixCell(r.m,metric,{view,metric})}:r);
  const chosen=expanded?visualRows:visualRows.slice(0,6),max=barDomain(domainRows,type);
- const points=['overall','legacy','speed'].includes(view)?tradeoffRows(data,rows,{view,metric}):[];
+ const points=['common','overall','legacy','speed'].includes(view)?tradeoffRows(data,rows,{view,metric}):[];
  const matrixTitle=view==='speed'?'各字段负载延迟':view==='probability'?'各类概率误差':view==='robustness'?'各项稳健性指标':view==='transfer'?'跨领域准确率':'各领域准确率';
- const matrixScope=view==='speed'?'相同语义 · 1 / 3 / 8 字段 · 毫秒':view==='probability'?'六类案例 · 每类 16 个 · 同一误差尺度':view==='transfer'?'原始选项成绩 · 四领域 · 0–100%':view==='robustness'?'多字段与两类配对检查 · 0–100%':view==='overall'?'八领域 · 完整覆盖 · 0–100%':'政策 / 法律 / 科学 · 0–100%';
+ const matrixScope=view==='speed'?'相同语义 · 1 / 3 / 8 字段 · 毫秒':view==='probability'?'六类案例 · 每类 16 个 · 同一误差尺度':view==='transfer'?'原始选项成绩 · 四领域 · 0–100%':view==='robustness'?'多字段与两类配对检查 · 0–100%':view==='common'?'七领域 · 23 模型同任务 · 0–100%':view==='overall'?'八领域 · 完整覆盖 · 0–100%':'政策 / 法律 / 科学 · 0–100%';
  return `<div class="visual-header"><div><span class="section-kicker">MODEL COMPARISON</span><h3>模型比较</h3></div>${legend()}</div><div class="visual-grid"><section class="ranking-plot" aria-labelledby="rankingTitle"><div class="chart-heading"><h4 id="rankingTitle">${esc(names[metric])}</h4><span>${type==='percent'?'分数降序':'误差升序'}${type==='speed'?' · 按平均延迟排序':''}</span></div>${buildRanking(chosen,{type,metricName:names[metric],label,kind,max})}<div class="viz-readout" aria-live="polite">${chosen.length===rows.length?'当前筛选全部模型':'当前筛选前 '+chosen.length+' 个模型'} · 悬停查看数值，点击查看详情</div></section><section class="matrix-plot" aria-labelledby="matrixTitle"><div class="chart-heading"><h4 id="matrixTitle">${matrixTitle}</h4><span>${matrixScope}</span></div>${buildMatrix(chosen,domainRows,{view,metric,type,label,names})}<div class="viz-readout" aria-live="polite">${view==='speed'?'部分模型使用参考内核；此处报告当前软件栈的实测延迟。':'单元格为对应任务的指标值；点击查看模型详情。'}</div></section></div>${rows.length>6?`<div class="visual-expand"><span>显示 ${chosen.length} / ${rows.length} 个模型</span><button data-chart-action="expand">${expanded?'收起为前 6 个':'展开全部 '+rows.length+' 个模型'}</button></div>`:''}${points.length?`<section class="tradeoff-plot" aria-labelledby="tradeoffTitle"><div class="chart-heading"><div><span class="section-kicker">QUALITY × LATENCY</span><h4 id="tradeoffTitle">综合分与延迟</h4></div><span>${points.length} 个模型 · A100 80GB</span></div><div id="tradeoffCanvas" data-plot-width></div><div class="viz-readout" aria-live="polite">点形表示模型类型；悬停查看数值，点击查看详情。</div><p class="chart-method">综合分与延迟来自两次独立评测。延迟负载为${view==='speed'?names[metric]:'3 个决策字段'}，仅显示两项数据均完整的模型。托管 API 不纳入同卡测量；本图不作架构因果判断。</p></section>`:''}`;
 }
 let resizeObserver;

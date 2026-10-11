@@ -5,6 +5,18 @@ cross-domain, known-probability and same-device latency rankings; dataset taxono
 search, family filters, metric selection, model detail and downloadable exact data.
 No Elo, missing-score imputation, API credentials or private question corpus.
 
+The default **全模型综合榜** compares all 23 models on the same seven domains
+and nine classification tasks, excluding CLINC150 + OOS and BANKING77. All
+23 bars and seven-domain heatmap rows are shown initially; the chart can be
+collapsed to six. Domain-equal (1/7) and task-equal (1/9) scores are available,
+with exact counts and a downloadable `common-scores.csv`. This reuses completed
+evaluations, not new inference. The existing eight-domain **含意图综合榜**
+remains at `?view=overall`, with its original 17-model complete-case cohort
+and unchanged scores. The three-domain historical ranking is also preserved.
+Reproduce the common scores with `python research/common_suite_v1/analyze.py`
+from the repository root; `--check` verifies without rewriting. Its protocol
+and source hashes are published under `research/common_suite_v1/`.
+
 The default view is a linked visual leaderboard: zero-based horizontal ranking
 bars with available 95% intervals, a fixed-scale domain/task heatmap, and a
 quality–latency scatter for the fourteen models with both measurements. Forest,

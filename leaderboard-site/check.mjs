@@ -15,11 +15,11 @@ const review=JSON.parse(fs.readFileSync('data/review.json','utf8'));
 const pilot=JSON.parse(fs.readFileSync('data/intent-pilot.json','utf8'));
 const research=JSON.parse(fs.readFileSync('data/research.json','utf8'));
 const context=vm.createContext({intentMarkup,reviewMarkup,coverageMarkup,galleryMarkup,previewMarkup,figureDetailMarkup,bindResearch,renderVisuals:(root,options)=>{root.innerHTML=visualMarkup(options);},document:{getElementById:get,querySelectorAll:()=>[],addEventListener(){}},history:{replaceState(){}},location:{search:''},URLSearchParams,Date,fetch:async url=>({ok:true,json:async()=>url==='/review.json'?review:url==='/intent-pilot.json'?pilot:url==='/research.json'?research:catalog}),console});
-await vm.runInContext(`(async()=>{${source}\n globalThis.verify=(v,m,f='all',s='')=>{view=v;metric=m;family=f;search=s;render();return {rows:rankedRows(),html:$('tableBody').innerHTML,empty:$('empty').hidden};};})()`,context);
+await vm.runInContext(`(async()=>{${source}\n globalThis.verify=(v,m,f='all',s='',e=v==='common')=>{view=v;metric=m;family=f;search=s;expanded=e;render();return {rows:rankedRows(),html:$('tableBody').innerHTML,empty:$('empty').hidden};};globalThis.verifyDetail=detail;})()`,context);
 assert.equal(get('modelCount').textContent,23);
-for(const [v,m,n] of [['overall','overall_domain_equal',catalog.comprehensive.complete_models],['legacy','overall_domain_equal',23],['domains','legal',23],['robustness','all_heads',23],['transfer','cladder',Object.keys(catalog.transfer).length],['probability','excess_brier',Object.keys(catalog.transfer).length],['speed','three_fields',Object.keys(catalog.speed).length]]){
+for(const [v,m,n] of [['common','overall_domain_equal',23],['common','overall_task_equal',23],['overall','overall_domain_equal',catalog.comprehensive.complete_models],['legacy','overall_domain_equal',23],['domains','legal',23],['robustness','all_heads',23],['transfer','cladder',Object.keys(catalog.transfer).length],['probability','excess_brier',Object.keys(catalog.transfer).length],['speed','three_fields',Object.keys(catalog.speed).length]]){
  const r=context.verify(v,m);assert.equal(r.rows.length,n);assert(!r.html.includes('undefined'));assert(!r.html.includes('NaN'));
- assert.equal((get('visuals').innerHTML.match(/class="ranked-row"/g)||[]).length,Math.min(6,n));
+ assert.equal((get('visuals').innerHTML.match(/class="ranked-row"/g)||[]).length,v==='common'?n:Math.min(6,n));
  assert(!get('visuals').innerHTML.includes('NaN'));assert(!get('visuals').innerHTML.includes('undefined'));
  const scores=r.rows.map(x=>x.c.score);for(let i=1;i<scores.length;i++)assert(['probability','speed'].includes(v)?scores[i]>=scores[i-1]:scores[i]<=scores[i-1]);
 }
@@ -54,6 +54,24 @@ for(const r of completeRows){assert.equal(r.m.classification_tasks,11);assert(!/
 const fullPoints=tradeoffRows(catalog,completeRows,{view:'overall',metric:'overall_domain_equal'});
 for(const p of fullPoints)assert.equal(p.y,catalog.comprehensive.models[p.id].metrics.overall_domain_equal.score);
 console.log('PASS: zero-based bar geometry, six linked chart views, source-exact 14-point scatter, intervals and responsive coordinates');
+const sharedRows=context.verify('common','overall_domain_equal').rows;
+assert.equal(get('domainCount').textContent,7);assert.equal(get('taskCount').textContent,9);
+assert.equal(matrixColumns('common').length,7);assert(get('visuals').innerHTML.includes('columns-7'));
+assert.equal((get('visuals').innerHTML.match(/class="matrix-cell /g)||[]).length,23*7);
+assert(get('boardFoot').innerHTML.includes('/common-scores.csv'));assert(get('paperPreview').hidden);
+assert.equal((coverageMarkup(catalog,{scope:'common'}).match(/<tr><th scope=/g)||[]).length,23);
+assert(!/undefined|NaN/.test(coverageMarkup(catalog,{scope:'common'})));assert(coverageMarkup(catalog,{scope:'common'}).includes('9/9'));
+for(const r of sharedRows){assert.equal(r.m.classification_tasks,9);assert(!('intent_domain' in r.m.metrics));}
+const sharedPoints=tradeoffRows(catalog,sharedRows,{view:'common',metric:'overall_domain_equal'});
+assert.equal(sharedPoints.length,14);for(const p of sharedPoints)assert.equal(p.y,catalog.common.models[p.id].metrics.overall_domain_equal.score);
+context.verify('common','overall_domain_equal','all','',false);assert.equal((get('visuals').innerHTML.match(/class="ranked-row"/g)||[]).length,6);
+assert(get('visuals').innerHTML.includes('展开全部 23 个模型'));
+assert.equal(context.verify('common','overall_domain_equal','general').html.match(/class="model-button"/g).length,9);
+assert.equal(context.verify('common','overall_domain_equal','decision').html.match(/class="model-button"/g).length,12);
+context.verify('common','overall_domain_equal','all','StartLux');assert.equal((get('visuals').innerHTML.match(/class="ranked-row"/g)||[]).length,3);
+context.verifyDetail('startlux_27b');assert(get('detailContent').innerHTML.includes('全模型综合榜 · 七领域'));assert(get('detailContent').innerHTML.includes('已进入七领域全模型综合榜'));
+assert(!/undefined|NaN/.test(get('detailContent').innerHTML));
+console.log('PASS: all 23 common-suite models; exact nine-task counts; seven-domain heatmap; current-scope scatter; filters and model details');
 context.verify('paper','');assert.equal(get('paperGallery').hidden,false);assert(get('tableWrap').hidden);assert(get('visuals').hidden);assert(get('displaySwitch').hidden);assert(get('toolbar').hidden);
 assert.equal((get('paperGallery').innerHTML.match(/<article /g)||[]).length,5);
 assert.equal((galleryMarkup(research,{filter:'models'}).match(/<article /g)||[]).length,1);

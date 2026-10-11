@@ -90,10 +90,31 @@ if(comprehensive){
  if(comprehensive.supplement_manifest){assert.equal(hash(comprehensive.supplement_manifest.path),comprehensive.supplement_manifest.sha256);sources.push(comprehensive.supplement_manifest.path,'research/evaluation_completion_v2/PROTOCOL.md');}
  if(comprehensive.execution_shard_manifest){assert.equal(hash(comprehensive.execution_shard_manifest.path),comprehensive.execution_shard_manifest.sha256);sources.push(comprehensive.execution_shard_manifest.path,'research/evaluation_completion_v3/PROTOCOL.md');}
 }
-const catalog = {version:1, generatedAt:new Date().toISOString(), quality, comprehensive, transfer:transferModels, speed,
+const commonPath='research/common_suite_v1/scores.json',common=read(commonPath);
+assert.equal(common.protocol,'common-suite-seven-domains-v1');assert.equal(common.total_models,23);
+assert.equal(common.complete_models,23);assert.equal(common.tasks.length,9);assert.equal(Object.keys(common.domains).length,7);
+assert.equal(common.examples_per_model,1299);assert.deepEqual(common.excluded_tasks,['clinc150_full','banking77_full']);
+assert.deepEqual(Object.keys(common.models).sort(),Object.keys(quality.models).sort());
+for(const [p,expected]of Object.entries(common.sources))assert.equal(hash(p),expected,`Common-suite source: ${p}`);
+for(const [id,m]of Object.entries(common.models)){
+ assert(m.complete&&m.classification_tasks===9);
+ const transfer=transferModels[id==='jev-1.13.0'?'jev':id]??transferModels[id];
+ for(const task of common.tasks){
+  const c=m.metrics[task],original=quality.models[id].metrics[task]??transfer?.metrics[task]?.original;
+  assert(original,`Missing shared task: ${id}/${task}`);
+  for(const key of ['correct','n','score'])assert.equal(c[key],original[key]);
+  assert.equal(c.score,c.correct/c.n);
+ }
+ assert(!('intent_domain' in m.metrics));assert(!('ci95' in m.metrics.overall_domain_equal));
+ assert(Math.abs(Object.values(m.domain_scores).reduce((s,c)=>s+c.score,0)/7-m.metrics.overall_domain_equal.score)<1e-12);
+ assert(Math.abs(common.tasks.reduce((s,t)=>s+m.metrics[t].score,0)/9-m.metrics.overall_task_equal.score)<1e-12);
+}
+sources.push(commonPath,'research/common_suite_v1/PROTOCOL.md','research/common_suite_v1/scores.csv');
+const catalog = {version:1, generatedAt:new Date().toISOString(), quality, comprehensive, common, transfer:transferModels, speed,
   pendingModels:additions?.pending ?? [], speedExpected:14,
   sources:sources.map(p => ({path:p,sha256:hash(p),url:`https://github.com/CYMCharming/system1bench/blob/main/${p}`}))};
 assert(!/hf_[A-Za-z0-9]{25,}|apikey_[A-Za-z0-9_]+/.test(JSON.stringify(catalog)));
 fs.mkdirSync(path.join(here,'data'),{recursive:true});
 fs.writeFileSync(path.join(here,'data/catalog.json'),JSON.stringify(catalog,null,2)+'\n');
+fs.copyFileSync(path.join(root,'research/common_suite_v1/scores.csv'),path.join(here,'data/common-scores.csv'));
 console.log('Prepared verified website data:',Object.keys(quality.models).length,'quality,',Object.keys(transferModels).length,'transfer,',Object.keys(speed).length,'speed models');

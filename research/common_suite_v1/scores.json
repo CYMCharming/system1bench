@@ -1,0 +1,3490 @@
+{
+  "version": 1,
+  "protocol": "common-suite-seven-domains-v1",
+  "derived_from_existing_evaluations": true,
+  "excluded_tasks": [
+    "clinc150_full",
+    "banking77_full"
+  ],
+  "domains": {
+    "policy_action": [
+      "refund",
+      "access",
+      "routing"
+    ],
+    "legal": [
+      "legal"
+    ],
+    "science": [
+      "science"
+    ],
+    "cladder": [
+      "cladder"
+    ],
+    "cruxeval": [
+      "cruxeval"
+    ],
+    "finentity": [
+      "finentity"
+    ],
+    "when2call": [
+      "when2call"
+    ]
+  },
+  "tasks": [
+    "refund",
+    "access",
+    "routing",
+    "legal",
+    "science",
+    "cladder",
+    "cruxeval",
+    "finentity",
+    "when2call"
+  ],
+  "examples_per_model": 1299,
+  "total_models": 23,
+  "complete_models": 23,
+  "all_models_complete": true,
+  "confidence_intervals_available": false,
+  "sources": {
+    "research/model_expansion_v3/scores.json": "82f1339f85c595e2ac45218b8eddcaa95f99c6a7207fe522b85ab739c4dc367d",
+    "research/startlux_transfer_v1/summary.json": "01183ad1fe818ae278bc1e369e47eb5d4e562b9a32fd045b32f688d0c5bae0d2",
+    "research/model_expansion_v3/summary.json": "12935896cdfb25f4a63e867a43271fa78dc1b7f821d1d5917c12bdea6eb67096",
+    "research/evaluation_completion_v1/results.json": "1f6b9f82a6d5b57a505082fcc611f6b78055d3f9e92408c618e5bfaeacf1e932",
+    "research/evaluation_completion_v1/manifest.json": "c67e05feb96f2514a91f456f33825456d49d6f1a144873231835041b9b653ac5",
+    "research/common_suite_v1/PROTOCOL.md": "d325b5205897627f72aec2855bb9f454526f28cc0b81246c5be8bb01d9689ee7",
+    "research/common_suite_v1/analyze.py": "b797ee6b3d451dcf73cc8d4606c67ba703610906184605c97aa301a3b8703e89"
+  },
+  "models": {
+    "english": {
+      "label": "Laya English",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 33,
+          "n": 96,
+          "score": 0.34375
+        },
+        "routing": {
+          "correct": 69,
+          "n": 96,
+          "score": 0.71875
+        },
+        "legal": {
+          "correct": 56,
+          "n": 144,
+          "score": 0.3888888888888889
+        },
+        "science": {
+          "correct": 171,
+          "n": 339,
+          "score": 0.504424778761062
+        },
+        "cladder": {
+          "correct": 79,
+          "n": 144,
+          "score": 0.5486111111111112
+        },
+        "cruxeval": {
+          "correct": 53,
+          "n": 128,
+          "score": 0.4140625
+        },
+        "finentity": {
+          "correct": 95,
+          "n": 128,
+          "score": 0.7421875
+        },
+        "when2call": {
+          "correct": 42,
+          "n": 128,
+          "score": 0.328125
+        },
+        "policy_action": {
+          "correct": 126,
+          "n": 288,
+          "score": 0.4375
+        },
+        "overall_domain_equal": {
+          "score": 0.4805428255372946,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.4709777531956736,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.4375,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.3888888888888889,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.504424778761062,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5486111111111112,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.4140625,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.7421875,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.328125,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "multilingual": {
+      "label": "Laya Multilingual",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 28,
+          "n": 96,
+          "score": 0.2916666666666667
+        },
+        "routing": {
+          "correct": 23,
+          "n": 96,
+          "score": 0.23958333333333334
+        },
+        "legal": {
+          "correct": 49,
+          "n": 144,
+          "score": 0.3402777777777778
+        },
+        "science": {
+          "correct": 150,
+          "n": 339,
+          "score": 0.4424778761061947
+        },
+        "cladder": {
+          "correct": 75,
+          "n": 144,
+          "score": 0.5208333333333334
+        },
+        "cruxeval": {
+          "correct": 44,
+          "n": 128,
+          "score": 0.34375
+        },
+        "finentity": {
+          "correct": 82,
+          "n": 128,
+          "score": 0.640625
+        },
+        "when2call": {
+          "correct": 29,
+          "n": 128,
+          "score": 0.2265625
+        },
+        "policy_action": {
+          "correct": 75,
+          "n": 288,
+          "score": 0.2604166666666667
+        },
+        "overall_domain_equal": {
+          "score": 0.39642045055485325,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.36619738746858954,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.2604166666666667,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.3402777777777778,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.4424778761061947,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5208333333333334,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.34375,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.640625,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.2265625,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "llama31_8b_instruct": {
+      "label": "Llama-3.1-8B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 32,
+          "n": 96,
+          "score": 0.3333333333333333
+        },
+        "access": {
+          "correct": 33,
+          "n": 96,
+          "score": 0.34375
+        },
+        "routing": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "legal": {
+          "correct": 44,
+          "n": 144,
+          "score": 0.3055555555555556
+        },
+        "science": {
+          "correct": 182,
+          "n": 339,
+          "score": 0.5368731563421829
+        },
+        "cladder": {
+          "correct": 67,
+          "n": 144,
+          "score": 0.4652777777777778
+        },
+        "cruxeval": {
+          "correct": 39,
+          "n": 128,
+          "score": 0.3046875
+        },
+        "finentity": {
+          "correct": 79,
+          "n": 128,
+          "score": 0.6171875
+        },
+        "when2call": {
+          "correct": 46,
+          "n": 128,
+          "score": 0.359375
+        },
+        "policy_action": {
+          "correct": 89,
+          "n": 288,
+          "score": 0.30902777777777773
+        },
+        "overall_domain_equal": {
+          "score": 0.4139977524933277,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.3906710914454277,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.30902777777777773,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.3055555555555556,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.5368731563421829,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.4652777777777778,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.3046875,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.6171875,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.359375,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "qwen3_8b": {
+      "label": "Qwen3-8B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 64,
+          "n": 96,
+          "score": 0.6666666666666666
+        },
+        "routing": {
+          "correct": 47,
+          "n": 96,
+          "score": 0.4895833333333333
+        },
+        "legal": {
+          "correct": 65,
+          "n": 144,
+          "score": 0.4513888888888889
+        },
+        "science": {
+          "correct": 231,
+          "n": 339,
+          "score": 0.6814159292035398
+        },
+        "cladder": {
+          "correct": 76,
+          "n": 144,
+          "score": 0.5277777777777778
+        },
+        "cruxeval": {
+          "correct": 49,
+          "n": 128,
+          "score": 0.3828125
+        },
+        "finentity": {
+          "correct": 102,
+          "n": 128,
+          "score": 0.796875
+        },
+        "when2call": {
+          "correct": 57,
+          "n": 128,
+          "score": 0.4453125
+        },
+        "policy_action": {
+          "correct": 135,
+          "n": 288,
+          "score": 0.46875
+        },
+        "overall_domain_equal": {
+          "score": 0.536333227981458,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.5213147328744674,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.46875,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.4513888888888889,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.6814159292035398,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5277777777777778,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.3828125,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.796875,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.4453125,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "jev-1.13.0": {
+      "label": "Jev 1.13.0 API",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "access": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "routing": {
+          "correct": 52,
+          "n": 96,
+          "score": 0.5416666666666666
+        },
+        "legal": {
+          "correct": 111,
+          "n": 144,
+          "score": 0.7708333333333334
+        },
+        "science": {
+          "correct": 291,
+          "n": 339,
+          "score": 0.8584070796460177
+        },
+        "cladder": {
+          "correct": 111,
+          "n": 144,
+          "score": 0.7708333333333334
+        },
+        "cruxeval": {
+          "correct": 85,
+          "n": 128,
+          "score": 0.6640625
+        },
+        "finentity": {
+          "correct": 115,
+          "n": 128,
+          "score": 0.8984375
+        },
+        "when2call": {
+          "correct": 96,
+          "n": 128,
+          "score": 0.75
+        },
+        "policy_action": {
+          "correct": 244,
+          "n": 288,
+          "score": 0.8472222222222222
+        },
+        "overall_domain_equal": {
+          "score": 0.7942565669335581,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.8060267125532613,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.8472222222222222,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.7708333333333334,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.8584070796460177,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.7708333333333334,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.6640625,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.8984375,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.75,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "kev_08b": {
+      "label": "Kev-0.8B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 54,
+          "n": 96,
+          "score": 0.5625
+        },
+        "access": {
+          "correct": 64,
+          "n": 96,
+          "score": 0.6666666666666666
+        },
+        "routing": {
+          "correct": 73,
+          "n": 96,
+          "score": 0.7604166666666666
+        },
+        "legal": {
+          "correct": 70,
+          "n": 144,
+          "score": 0.4861111111111111
+        },
+        "science": {
+          "correct": 168,
+          "n": 339,
+          "score": 0.49557522123893805
+        },
+        "cladder": {
+          "correct": 74,
+          "n": 144,
+          "score": 0.5138888888888888
+        },
+        "cruxeval": {
+          "correct": 39,
+          "n": 128,
+          "score": 0.3046875
+        },
+        "finentity": {
+          "correct": 92,
+          "n": 128,
+          "score": 0.71875
+        },
+        "when2call": {
+          "correct": 45,
+          "n": 128,
+          "score": 0.3515625
+        },
+        "policy_action": {
+          "correct": 191,
+          "n": 288,
+          "score": 0.6631944444444444
+        },
+        "overall_domain_equal": {
+          "score": 0.5048242379547689,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.5400176171746968,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.6631944444444444,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.4861111111111111,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.49557522123893805,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5138888888888888,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.3046875,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.71875,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.3515625,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "kev_4b": {
+      "label": "Kev-4B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 84,
+          "n": 96,
+          "score": 0.875
+        },
+        "access": {
+          "correct": 93,
+          "n": 96,
+          "score": 0.96875
+        },
+        "routing": {
+          "correct": 78,
+          "n": 96,
+          "score": 0.8125
+        },
+        "legal": {
+          "correct": 95,
+          "n": 144,
+          "score": 0.6597222222222222
+        },
+        "science": {
+          "correct": 274,
+          "n": 339,
+          "score": 0.8082595870206489
+        },
+        "cladder": {
+          "correct": 87,
+          "n": 144,
+          "score": 0.6041666666666666
+        },
+        "cruxeval": {
+          "correct": 55,
+          "n": 128,
+          "score": 0.4296875
+        },
+        "finentity": {
+          "correct": 114,
+          "n": 128,
+          "score": 0.890625
+        },
+        "when2call": {
+          "correct": 88,
+          "n": 128,
+          "score": 0.6875
+        },
+        "policy_action": {
+          "correct": 255,
+          "n": 288,
+          "score": 0.8854166666666666
+        },
+        "overall_domain_equal": {
+          "score": 0.709339663225172,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.7484678862121709,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.8854166666666666,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.6597222222222222,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.8082595870206489,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.6041666666666666,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.4296875,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.890625,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.6875,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "kev_9b": {
+      "label": "Kev-9B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "access": {
+          "correct": 95,
+          "n": 96,
+          "score": 0.9895833333333334
+        },
+        "routing": {
+          "correct": 68,
+          "n": 96,
+          "score": 0.7083333333333334
+        },
+        "legal": {
+          "correct": 101,
+          "n": 144,
+          "score": 0.7013888888888888
+        },
+        "science": {
+          "correct": 273,
+          "n": 339,
+          "score": 0.8053097345132744
+        },
+        "cladder": {
+          "correct": 84,
+          "n": 144,
+          "score": 0.5833333333333334
+        },
+        "cruxeval": {
+          "correct": 59,
+          "n": 128,
+          "score": 0.4609375
+        },
+        "finentity": {
+          "correct": 119,
+          "n": 128,
+          "score": 0.9296875
+        },
+        "when2call": {
+          "correct": 79,
+          "n": 128,
+          "score": 0.6171875
+        },
+        "policy_action": {
+          "correct": 259,
+          "n": 288,
+          "score": 0.8993055555555557
+        },
+        "overall_domain_equal": {
+          "score": 0.713878573184436,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.755084569266907,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.8993055555555557,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.7013888888888888,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.8053097345132744,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5833333333333334,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.4609375,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.9296875,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.6171875,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "nanojev": {
+      "label": "NanoJev",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 33,
+          "n": 96,
+          "score": 0.34375
+        },
+        "routing": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "legal": {
+          "correct": 46,
+          "n": 144,
+          "score": 0.3194444444444444
+        },
+        "science": {
+          "correct": 126,
+          "n": 339,
+          "score": 0.37168141592920356
+        },
+        "cladder": {
+          "correct": 71,
+          "n": 144,
+          "score": 0.4930555555555556
+        },
+        "cruxeval": {
+          "correct": 51,
+          "n": 128,
+          "score": 0.3984375
+        },
+        "finentity": {
+          "correct": 39,
+          "n": 128,
+          "score": 0.3046875
+        },
+        "when2call": {
+          "correct": 36,
+          "n": 128,
+          "score": 0.28125
+        },
+        "policy_action": {
+          "correct": 81,
+          "n": 288,
+          "score": 0.28125
+        },
+        "overall_domain_equal": {
+          "score": 0.3499723451327434,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.33470071288102266,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.28125,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.3194444444444444,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.37168141592920356,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.4930555555555556,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.3984375,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.3046875,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.28125,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "qwen35_9b": {
+      "label": "Qwen3.5-9B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 70,
+          "n": 96,
+          "score": 0.7291666666666666
+        },
+        "access": {
+          "correct": 86,
+          "n": 96,
+          "score": 0.8958333333333334
+        },
+        "routing": {
+          "correct": 86,
+          "n": 96,
+          "score": 0.8958333333333334
+        },
+        "legal": {
+          "correct": 109,
+          "n": 144,
+          "score": 0.7569444444444444
+        },
+        "science": {
+          "correct": 283,
+          "n": 339,
+          "score": 0.8348082595870207
+        },
+        "cladder": {
+          "correct": 80,
+          "n": 144,
+          "score": 0.5555555555555556
+        },
+        "cruxeval": {
+          "correct": 48,
+          "n": 128,
+          "score": 0.375
+        },
+        "finentity": {
+          "correct": 107,
+          "n": 128,
+          "score": 0.8359375
+        },
+        "when2call": {
+          "correct": 75,
+          "n": 128,
+          "score": 0.5859375
+        },
+        "policy_action": {
+          "correct": 242,
+          "n": 288,
+          "score": 0.8402777777777778
+        },
+        "overall_domain_equal": {
+          "score": 0.6834944339092569,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.7183351769911505,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.8402777777777778,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.7569444444444444,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.8348082595870207,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5555555555555556,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.375,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.8359375,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.5859375,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "kev_27b": {
+      "label": "Kev-27B v2",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "access": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "routing": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "legal": {
+          "correct": 116,
+          "n": 144,
+          "score": 0.8055555555555556
+        },
+        "science": {
+          "correct": 285,
+          "n": 339,
+          "score": 0.8407079646017699
+        },
+        "cladder": {
+          "correct": 105,
+          "n": 144,
+          "score": 0.7291666666666666
+        },
+        "cruxeval": {
+          "correct": 92,
+          "n": 128,
+          "score": 0.71875
+        },
+        "finentity": {
+          "correct": 118,
+          "n": 128,
+          "score": 0.921875
+        },
+        "when2call": {
+          "correct": 82,
+          "n": 128,
+          "score": 0.640625
+        },
+        "policy_action": {
+          "correct": 288,
+          "n": 288,
+          "score": 1.0
+        },
+        "overall_domain_equal": {
+          "score": 0.8080971695462846,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.8507422429804437,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 1.0,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.8055555555555556,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.8407079646017699,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.7291666666666666,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.71875,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.921875,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.640625,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "qwen35_08b": {
+      "label": "Qwen3.5-0.8B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 50,
+          "n": 96,
+          "score": 0.5208333333333334
+        },
+        "routing": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "legal": {
+          "correct": 44,
+          "n": 144,
+          "score": 0.3055555555555556
+        },
+        "science": {
+          "correct": 138,
+          "n": 339,
+          "score": 0.40707964601769914
+        },
+        "cladder": {
+          "correct": 66,
+          "n": 144,
+          "score": 0.4583333333333333
+        },
+        "cruxeval": {
+          "correct": 41,
+          "n": 128,
+          "score": 0.3203125
+        },
+        "finentity": {
+          "correct": 76,
+          "n": 128,
+          "score": 0.59375
+        },
+        "when2call": {
+          "correct": 34,
+          "n": 128,
+          "score": 0.265625
+        },
+        "policy_action": {
+          "correct": 98,
+          "n": 288,
+          "score": 0.34027777777777785
+        },
+        "overall_domain_equal": {
+          "score": 0.3844191160977665,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.37460992980443575,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.34027777777777785,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.3055555555555556,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.40707964601769914,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.4583333333333333,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.3203125,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.59375,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.265625,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "qwen35_4b": {
+      "label": "Qwen3.5-4B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 53,
+          "n": 96,
+          "score": 0.5520833333333334
+        },
+        "access": {
+          "correct": 76,
+          "n": 96,
+          "score": 0.7916666666666666
+        },
+        "routing": {
+          "correct": 55,
+          "n": 96,
+          "score": 0.5729166666666666
+        },
+        "legal": {
+          "correct": 86,
+          "n": 144,
+          "score": 0.5972222222222222
+        },
+        "science": {
+          "correct": 225,
+          "n": 339,
+          "score": 0.6637168141592921
+        },
+        "cladder": {
+          "correct": 82,
+          "n": 144,
+          "score": 0.5694444444444444
+        },
+        "cruxeval": {
+          "correct": 48,
+          "n": 128,
+          "score": 0.375
+        },
+        "finentity": {
+          "correct": 94,
+          "n": 128,
+          "score": 0.734375
+        },
+        "when2call": {
+          "correct": 60,
+          "n": 128,
+          "score": 0.46875
+        },
+        "policy_action": {
+          "correct": 184,
+          "n": 288,
+          "score": 0.6388888888888888
+        },
+        "overall_domain_equal": {
+          "score": 0.5781996242449782,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.5916861274991806,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.6388888888888888,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.5972222222222222,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.6637168141592921,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5694444444444444,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.375,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.734375,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.46875,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "qwen38_27b": {
+      "label": "Qwen3.8-27B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 74,
+          "n": 96,
+          "score": 0.7708333333333334
+        },
+        "access": {
+          "correct": 93,
+          "n": 96,
+          "score": 0.96875
+        },
+        "routing": {
+          "correct": 78,
+          "n": 96,
+          "score": 0.8125
+        },
+        "legal": {
+          "correct": 112,
+          "n": 144,
+          "score": 0.7777777777777778
+        },
+        "science": {
+          "correct": 285,
+          "n": 339,
+          "score": 0.8407079646017699
+        },
+        "cladder": {
+          "correct": 85,
+          "n": 144,
+          "score": 0.5902777777777778
+        },
+        "cruxeval": {
+          "correct": 70,
+          "n": 128,
+          "score": 0.546875
+        },
+        "finentity": {
+          "correct": 113,
+          "n": 128,
+          "score": 0.8828125
+        },
+        "when2call": {
+          "correct": 89,
+          "n": 128,
+          "score": 0.6953125
+        },
+        "policy_action": {
+          "correct": 245,
+          "n": 288,
+          "score": 0.8506944444444445
+        },
+        "overall_domain_equal": {
+          "score": 0.7406368520859672,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.7650940948322954,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.8506944444444445,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.7777777777777778,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.8407079646017699,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5902777777777778,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.546875,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.8828125,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.6953125,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "startlux_4b": {
+      "label": "StartLux-Decision-4B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "access": {
+          "correct": 94,
+          "n": 96,
+          "score": 0.9791666666666666
+        },
+        "routing": {
+          "correct": 50,
+          "n": 96,
+          "score": 0.5208333333333334
+        },
+        "legal": {
+          "correct": 126,
+          "n": 144,
+          "score": 0.875
+        },
+        "science": {
+          "correct": 281,
+          "n": 339,
+          "score": 0.8289085545722714
+        },
+        "cladder": {
+          "correct": 92,
+          "n": 144,
+          "score": 0.6388888888888888
+        },
+        "cruxeval": {
+          "correct": 66,
+          "n": 128,
+          "score": 0.515625
+        },
+        "finentity": {
+          "correct": 120,
+          "n": 128,
+          "score": 0.9375
+        },
+        "when2call": {
+          "correct": 105,
+          "n": 128,
+          "score": 0.8203125
+        },
+        "policy_action": {
+          "correct": 240,
+          "n": 288,
+          "score": 0.8333333333333334
+        },
+        "overall_domain_equal": {
+          "score": 0.7785097538277848,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.7906927714956845,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.8333333333333334,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.875,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.8289085545722714,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.6388888888888888,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.515625,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.9375,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.8203125,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "startlux_9b": {
+      "label": "StartLux-Decision-9B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "access": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "routing": {
+          "correct": 52,
+          "n": 96,
+          "score": 0.5416666666666666
+        },
+        "legal": {
+          "correct": 126,
+          "n": 144,
+          "score": 0.875
+        },
+        "science": {
+          "correct": 287,
+          "n": 339,
+          "score": 0.8466076696165191
+        },
+        "cladder": {
+          "correct": 104,
+          "n": 144,
+          "score": 0.7222222222222222
+        },
+        "cruxeval": {
+          "correct": 71,
+          "n": 128,
+          "score": 0.5546875
+        },
+        "finentity": {
+          "correct": 121,
+          "n": 128,
+          "score": 0.9453125
+        },
+        "when2call": {
+          "correct": 103,
+          "n": 128,
+          "score": 0.8046875
+        },
+        "policy_action": {
+          "correct": 244,
+          "n": 288,
+          "score": 0.8472222222222222
+        },
+        "overall_domain_equal": {
+          "score": 0.7993913734372805,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.8100204509450453,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.8472222222222222,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.875,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.8466076696165191,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.7222222222222222,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.5546875,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.9453125,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.8046875,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "startlux_27b": {
+      "label": "StartLux-Decision-27B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "access": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "routing": {
+          "correct": 96,
+          "n": 96,
+          "score": 1.0
+        },
+        "legal": {
+          "correct": 129,
+          "n": 144,
+          "score": 0.8958333333333334
+        },
+        "science": {
+          "correct": 282,
+          "n": 339,
+          "score": 0.831858407079646
+        },
+        "cladder": {
+          "correct": 108,
+          "n": 144,
+          "score": 0.75
+        },
+        "cruxeval": {
+          "correct": 102,
+          "n": 128,
+          "score": 0.796875
+        },
+        "finentity": {
+          "correct": 122,
+          "n": 128,
+          "score": 0.953125
+        },
+        "when2call": {
+          "correct": 111,
+          "n": 128,
+          "score": 0.8671875
+        },
+        "policy_action": {
+          "correct": 288,
+          "n": 288,
+          "score": 1.0
+        },
+        "overall_domain_equal": {
+          "score": 0.8706970343447112,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.8994310267125533,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 1.0,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.8958333333333334,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.831858407079646,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.75,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.796875,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.953125,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.8671875,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "intern_4b": {
+      "label": "Intern-Decision-4B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 92,
+          "n": 96,
+          "score": 0.9583333333333334
+        },
+        "access": {
+          "correct": 86,
+          "n": 96,
+          "score": 0.8958333333333334
+        },
+        "routing": {
+          "correct": 62,
+          "n": 96,
+          "score": 0.6458333333333334
+        },
+        "legal": {
+          "correct": 103,
+          "n": 144,
+          "score": 0.7152777777777778
+        },
+        "science": {
+          "correct": 257,
+          "n": 339,
+          "score": 0.7581120943952803
+        },
+        "cladder": {
+          "correct": 90,
+          "n": 144,
+          "score": 0.625
+        },
+        "cruxeval": {
+          "correct": 49,
+          "n": 128,
+          "score": 0.3828125
+        },
+        "finentity": {
+          "correct": 107,
+          "n": 128,
+          "score": 0.8359375
+        },
+        "when2call": {
+          "correct": 84,
+          "n": 128,
+          "score": 0.65625
+        },
+        "policy_action": {
+          "correct": 240,
+          "n": 288,
+          "score": 0.8333333333333334
+        },
+        "overall_domain_equal": {
+          "score": 0.6866747436437702,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.719265541352562,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.8333333333333334,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.7152777777777778,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.7581120943952803,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.625,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.3828125,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.8359375,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.65625,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "intern_08b": {
+      "label": "Intern-Decision-0.8B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 72,
+          "n": 96,
+          "score": 0.75
+        },
+        "access": {
+          "correct": 40,
+          "n": 96,
+          "score": 0.4166666666666667
+        },
+        "routing": {
+          "correct": 56,
+          "n": 96,
+          "score": 0.5833333333333334
+        },
+        "legal": {
+          "correct": 61,
+          "n": 144,
+          "score": 0.4236111111111111
+        },
+        "science": {
+          "correct": 149,
+          "n": 339,
+          "score": 0.43952802359882004
+        },
+        "cladder": {
+          "correct": 72,
+          "n": 144,
+          "score": 0.5
+        },
+        "cruxeval": {
+          "correct": 34,
+          "n": 128,
+          "score": 0.265625
+        },
+        "finentity": {
+          "correct": 98,
+          "n": 128,
+          "score": 0.765625
+        },
+        "when2call": {
+          "correct": 62,
+          "n": 128,
+          "score": 0.484375
+        },
+        "policy_action": {
+          "correct": 168,
+          "n": 288,
+          "score": 0.5833333333333334
+        },
+        "overall_domain_equal": {
+          "score": 0.4945853525776092,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.5143071260788813,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.5833333333333334,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.4236111111111111,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.43952802359882004,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.265625,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.765625,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.484375,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "intern_2b": {
+      "label": "Intern-Decision-2B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 76,
+          "n": 96,
+          "score": 0.7916666666666666
+        },
+        "access": {
+          "correct": 73,
+          "n": 96,
+          "score": 0.7604166666666666
+        },
+        "routing": {
+          "correct": 70,
+          "n": 96,
+          "score": 0.7291666666666666
+        },
+        "legal": {
+          "correct": 67,
+          "n": 144,
+          "score": 0.4652777777777778
+        },
+        "science": {
+          "correct": 206,
+          "n": 339,
+          "score": 0.6076696165191741
+        },
+        "cladder": {
+          "correct": 78,
+          "n": 144,
+          "score": 0.5416666666666666
+        },
+        "cruxeval": {
+          "correct": 44,
+          "n": 128,
+          "score": 0.34375
+        },
+        "finentity": {
+          "correct": 99,
+          "n": 128,
+          "score": 0.7734375
+        },
+        "when2call": {
+          "correct": 78,
+          "n": 128,
+          "score": 0.609375
+        },
+        "policy_action": {
+          "correct": 219,
+          "n": 288,
+          "score": 0.7604166666666666
+        },
+        "overall_domain_equal": {
+          "score": 0.5859418896614693,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.6247140623292909,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.7604166666666666,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.4652777777777778,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.6076696165191741,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5416666666666666,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.34375,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.7734375,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.609375,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "llama32_1b_public": {
+      "label": "Llama-3.2-1B-Instruct (Unsloth BF16 distribution)",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 33,
+          "n": 96,
+          "score": 0.34375
+        },
+        "routing": {
+          "correct": 29,
+          "n": 96,
+          "score": 0.3020833333333333
+        },
+        "legal": {
+          "correct": 45,
+          "n": 144,
+          "score": 0.3125
+        },
+        "science": {
+          "correct": 120,
+          "n": 339,
+          "score": 0.35398230088495575
+        },
+        "cladder": {
+          "correct": 72,
+          "n": 144,
+          "score": 0.5
+        },
+        "cruxeval": {
+          "correct": 40,
+          "n": 128,
+          "score": 0.3125
+        },
+        "finentity": {
+          "correct": 63,
+          "n": 128,
+          "score": 0.4921875
+        },
+        "when2call": {
+          "correct": 28,
+          "n": 128,
+          "score": 0.21875
+        },
+        "policy_action": {
+          "correct": 86,
+          "n": 288,
+          "score": 0.2986111111111111
+        },
+        "overall_domain_equal": {
+          "score": 0.35550441599943816,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.34286145935758766,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.2986111111111111,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.3125,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.35398230088495575,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.3125,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.4921875,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.21875,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "llama32_3b_public": {
+      "label": "Llama-3.2-3B-Instruct (Unsloth BF16 distribution)",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 30,
+          "n": 96,
+          "score": 0.3125
+        },
+        "routing": {
+          "correct": 42,
+          "n": 96,
+          "score": 0.4375
+        },
+        "legal": {
+          "correct": 47,
+          "n": 144,
+          "score": 0.3263888888888889
+        },
+        "science": {
+          "correct": 149,
+          "n": 339,
+          "score": 0.43952802359882004
+        },
+        "cladder": {
+          "correct": 72,
+          "n": 144,
+          "score": 0.5
+        },
+        "cruxeval": {
+          "correct": 45,
+          "n": 128,
+          "score": 0.3515625
+        },
+        "finentity": {
+          "correct": 80,
+          "n": 128,
+          "score": 0.625
+        },
+        "when2call": {
+          "correct": 35,
+          "n": 128,
+          "score": 0.2734375
+        },
+        "policy_action": {
+          "correct": 96,
+          "n": 288,
+          "score": 0.3333333333333333
+        },
+        "overall_domain_equal": {
+          "score": 0.407035749403006,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.3906574347208565,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.3333333333333333,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.3263888888888889,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.43952802359882004,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.5,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.3515625,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.625,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.2734375,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    },
+    "qwen3_17b": {
+      "label": "Qwen3-1.7B",
+      "complete": true,
+      "classification_tasks": 9,
+      "metrics": {
+        "refund": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "access": {
+          "correct": 39,
+          "n": 96,
+          "score": 0.40625
+        },
+        "routing": {
+          "correct": 24,
+          "n": 96,
+          "score": 0.25
+        },
+        "legal": {
+          "correct": 53,
+          "n": 144,
+          "score": 0.3680555555555556
+        },
+        "science": {
+          "correct": 179,
+          "n": 339,
+          "score": 0.528023598820059
+        },
+        "cladder": {
+          "correct": 69,
+          "n": 144,
+          "score": 0.4791666666666667
+        },
+        "cruxeval": {
+          "correct": 35,
+          "n": 128,
+          "score": 0.2734375
+        },
+        "finentity": {
+          "correct": 57,
+          "n": 128,
+          "score": 0.4453125
+        },
+        "when2call": {
+          "correct": 44,
+          "n": 128,
+          "score": 0.34375
+        },
+        "policy_action": {
+          "correct": 87,
+          "n": 288,
+          "score": 0.3020833333333333
+        },
+        "overall_domain_equal": {
+          "score": 0.3914041649108021,
+          "domains": [
+            "policy_action",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "seven_domains_equal"
+        },
+        "overall_task_equal": {
+          "score": 0.37155509122692015,
+          "tasks": [
+            "refund",
+            "access",
+            "routing",
+            "legal",
+            "science",
+            "cladder",
+            "cruxeval",
+            "finentity",
+            "when2call"
+          ],
+          "weighting": "nine_tasks_equal"
+        }
+      },
+      "domain_scores": {
+        "policy_action": {
+          "score": 0.3020833333333333,
+          "tasks": [
+            "refund",
+            "access",
+            "routing"
+          ]
+        },
+        "legal": {
+          "score": 0.3680555555555556,
+          "tasks": [
+            "legal"
+          ]
+        },
+        "science": {
+          "score": 0.528023598820059,
+          "tasks": [
+            "science"
+          ]
+        },
+        "cladder": {
+          "score": 0.4791666666666667,
+          "tasks": [
+            "cladder"
+          ]
+        },
+        "cruxeval": {
+          "score": 0.2734375,
+          "tasks": [
+            "cruxeval"
+          ]
+        },
+        "finentity": {
+          "score": 0.4453125,
+          "tasks": [
+            "finentity"
+          ]
+        },
+        "when2call": {
+          "score": 0.34375,
+          "tasks": [
+            "when2call"
+          ]
+        }
+      }
+    }
+  },
+  "coverage": {
+    "english": {
+      "label": "Laya English",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "multilingual": {
+      "label": "Laya Multilingual",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "llama31_8b_instruct": {
+      "label": "Llama-3.1-8B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "qwen3_8b": {
+      "label": "Qwen3-8B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "jev-1.13.0": {
+      "label": "Jev 1.13.0 API",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "kev_08b": {
+      "label": "Kev-0.8B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "kev_4b": {
+      "label": "Kev-4B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "kev_9b": {
+      "label": "Kev-9B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "nanojev": {
+      "label": "NanoJev",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "qwen35_9b": {
+      "label": "Qwen3.5-9B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "kev_27b": {
+      "label": "Kev-27B v2",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "qwen35_08b": {
+      "label": "Qwen3.5-0.8B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "qwen35_4b": {
+      "label": "Qwen3.5-4B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "qwen38_27b": {
+      "label": "Qwen3.8-27B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "startlux_4b": {
+      "label": "StartLux-Decision-4B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "startlux_9b": {
+      "label": "StartLux-Decision-9B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "startlux_27b": {
+      "label": "StartLux-Decision-27B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "intern_4b": {
+      "label": "Intern-Decision-4B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "intern_08b": {
+      "label": "Intern-Decision-0.8B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "intern_2b": {
+      "label": "Intern-Decision-2B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "llama32_1b_public": {
+      "label": "Llama-3.2-1B-Instruct (Unsloth BF16 distribution)",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "llama32_3b_public": {
+      "label": "Llama-3.2-3B-Instruct (Unsloth BF16 distribution)",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    },
+    "qwen3_17b": {
+      "label": "Qwen3-1.7B",
+      "completed_tasks": [
+        "refund",
+        "access",
+        "routing",
+        "legal",
+        "science",
+        "cladder",
+        "cruxeval",
+        "finentity",
+        "when2call"
+      ],
+      "classification_tasks": 9,
+      "total_tasks": 9,
+      "status": "complete",
+      "missing_tasks": []
+    }
+  }
+}
