@@ -23,6 +23,7 @@ An independently frozen legal/scientific extension is reported separately from
 this historical 15-source matrix.
 
 - [Controlled speed results](docs/PERFORMANCE_RESULTS.en.md) · [timing protocol](docs/PERFORMANCE_PROTOCOL.md) · [performance audit](docs/PERFORMANCE_AUDIT.md)
+- [Option-length diagnostics · 23 models](https://system1bench.vercel.app/?view=length) · [通俗解读](research/option_length_v1/FINDINGS.zh-CN.md) · [observational protocol](research/option_length_v1/PROTOCOL.md)
 - [Results in English](docs/RESULTS.en.md) · [中文结果](docs/RESULTS.zh-CN.md)
 - [Dataset guide in English](docs/DATASETS.en.md) · [数据集中文解读](docs/DATASETS.zh-CN.md)
 - [Protocol and metrics](PROTOCOL.md) · [dataset suitability review](docs/DATASET_REVIEW.md)

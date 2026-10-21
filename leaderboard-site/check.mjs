@@ -7,6 +7,7 @@ import {reviewMarkup} from './review.js';
 import {intentMarkup} from './intent.js';
 import {coverageMarkup} from './coverage.js';
 import {galleryMarkup,previewMarkup,figureDetailMarkup,bindResearch} from './research.js';
+import {lengthMarkup,lengthRows,bindLength} from './length.js';
 const elements=new Map();
 const get=id=>{if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',hidden:false,value:'',addEventListener(){},showModal(){},close(){}});return elements.get(id);};
 const catalog=JSON.parse(fs.readFileSync('data/catalog.json','utf8'));
@@ -14,9 +15,26 @@ let source=fs.readFileSync('app.js','utf8').replace(/^import .*;\r?\n/gm,'');
 const review=JSON.parse(fs.readFileSync('data/review.json','utf8'));
 const pilot=JSON.parse(fs.readFileSync('data/intent-pilot.json','utf8'));
 const research=JSON.parse(fs.readFileSync('data/research.json','utf8'));
-const context=vm.createContext({intentMarkup,reviewMarkup,coverageMarkup,galleryMarkup,previewMarkup,figureDetailMarkup,bindResearch,renderVisuals:(root,options)=>{root.innerHTML=visualMarkup(options);},document:{getElementById:get,querySelectorAll:()=>[],addEventListener(){}},history:{replaceState(){}},location:{search:''},URLSearchParams,Date,fetch:async url=>({ok:true,json:async()=>url==='/review.json'?review:url==='/intent-pilot.json'?pilot:url==='/research.json'?research:catalog}),console});
-await vm.runInContext(`(async()=>{${source}\n globalThis.verify=(v,m,f='all',s='',e=v==='common')=>{view=v;metric=m;family=f;search=s;expanded=e;render();return {rows:rankedRows(),html:$('tableBody').innerHTML,empty:$('empty').hidden};};globalThis.verifyDetail=detail;})()`,context);
+const lengthData=JSON.parse(fs.readFileSync('../research/option_length_v1/results.json','utf8'));
+const context=vm.createContext({intentMarkup,reviewMarkup,coverageMarkup,galleryMarkup,previewMarkup,figureDetailMarkup,bindResearch,lengthMarkup,bindLength,renderVisuals:(root,options)=>{root.innerHTML=visualMarkup(options);},document:{getElementById:get,querySelectorAll:()=>[],addEventListener(){}},history:{replaceState(){}},location:{search:''},URLSearchParams,Date,fetch:async url=>({ok:true,json:async()=>url==='/review.json'?review:url==='/intent-pilot.json'?pilot:url==='/research.json'?research:url==='/length-bias.json'?lengthData:catalog}),console});
+await vm.runInContext(`(async()=>{${source}\n globalThis.verify=(v,m,f='all',s='',e=v==='common')=>{view=v;metric=m;family=f;search=s;expanded=e;render();return {rows:rankedRows(),html:$('tableBody').innerHTML,empty:$('empty').hidden};};globalThis.verifyDetail=detail;globalThis.verifyLength=()=>{view='length';metric='';render();};})()`,context);
 assert.equal(get('modelCount').textContent,23);
+for(const mode of ['all','errors'])for(const task of ['variable','all',...lengthData.tasks.map(t=>t.id)]){
+ const html=lengthMarkup(lengthData,{task,mode});
+ assert(!/undefined|NaN|style=/.test(html));
+ assert.equal((html.match(/data-length-row=/g)||[]).length,23);
+ assert.equal((html.match(/class="length-task-cell /g)||[]).length,23*9);
+ for(const r of lengthRows(lengthData,{task,mode}))assert(html.includes(`data-length-score="${r.s.score??''}"`));
+}
+assert.equal(lengthRows(lengthData,{family:'decision'}).length,12);
+assert.equal(lengthRows(lengthData,{family:'general'}).length,9);
+assert.equal(lengthRows(lengthData,{family:'representation'}).length,2);
+assert(lengthMarkup(lengthData,{search:'no matching model'}).includes('没有匹配'));
+assert(lengthMarkup(null).includes('暂未加载'));
+context.verifyLength();
+assert(!get('lengthAnalysis').hidden);assert(get('overview').hidden);assert(get('metricControl').hidden);
+assert(get('tableWrap').hidden);assert.equal((get('lengthAnalysis').innerHTML.match(/data-length-row=/g)||[]).length,23);
+console.log('PASS: option-length 23-model chart, 207-cell task matrix, 22 scope/mode views, family and missing-data states');
 for(const [v,m,n] of [['common','overall_domain_equal',23],['common','overall_task_equal',23],['overall','overall_domain_equal',catalog.comprehensive.complete_models],['legacy','overall_domain_equal',23],['domains','legal',23],['robustness','all_heads',23],['transfer','cladder',Object.keys(catalog.transfer).length],['probability','excess_brier',Object.keys(catalog.transfer).length],['speed','three_fields',Object.keys(catalog.speed).length]]){
  const r=context.verify(v,m);assert.equal(r.rows.length,n);assert(!r.html.includes('undefined'));assert(!r.html.includes('NaN'));
  assert.equal((get('visuals').innerHTML.match(/class="ranked-row"/g)||[]).length,v==='common'?n:Math.min(6,n));

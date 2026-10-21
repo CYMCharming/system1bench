@@ -3,11 +3,13 @@ import {reviewMarkup} from './review.js';
 import {intentMarkup} from './intent.js';
 import {coverageMarkup} from './coverage.js';
 import {galleryMarkup,previewMarkup,figureDetailMarkup,bindResearch} from './research.js';
+import {lengthMarkup,bindLength} from './length.js';
 const $ = id => document.getElementById(id);
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const repo = 'https://github.com/CYMCharming/system1bench/blob/main/';
 const names = {overall_domain_equal:'领域等权综合分',overall_task_equal:'任务等权综合分',refund:'退款政策',access:'访问控制',routing:'工单分流',policy_action:'政策行动',legal:'法律判断',science:'科学证据',all_heads:'三个字段全部正确',policy_counterfactual:'关键事实改变：两次都对',natural_reversal:'换选项顺序：两次都对',action_head:'行动字段',review_head:'人工审核字段',severity_head:'严重程度字段',cladder:'因果 · CLadder',cruxeval:'代码 · CRUXEval',finentity:'金融 · FinEntity',when2call:'工具 · When2Call',excess_brier:'额外 Brier 误差',expected_brier:'期望 Brier 分数',total_variation:'概率分布偏差（TV）',impossible_mass:'不可能事件的概率',one_field:'1 个决策字段',three_fields:'3 个决策字段',eight_fields:'8 个决策字段'};
 const views = {
+ length:{title:'选项描述长短偏好',metrics:[],description:'23 个模型的已有选择记录：是否常选最长、最短，以及答错时的长短倾向。这里展示选择相关性，不把它当成已证实的因果偏好。',protocol:'research/option_length_v1/PROTOCOL.md'},
  common:{title:'全模型综合榜 · 七领域',metrics:['overall_domain_equal','overall_task_equal'],description:'23 个模型统一比较政策、法律、科学、因果、代码、金融和工具七领域，共 9 个分类任务。不包含 CLINC150 + OOS 和 BANKING77。',protocol:'research/common_suite_v1/PROTOCOL.md'},
  paper:{title:'论文图表',metrics:[],description:'领域成绩、输入长度与数据结构。支持放大、精确查数及 SVG / PDF 下载。',protocol:'research/paper_compass_v1/README.zh-CN.md'},
  intent:{title:'意图识别 · 试跑',metrics:['intent_accuracy','intent_macro_f1'],description:'完整 151 / 77 个候选；200 条 CLINC 与 154 条 BANKING 固定试跑。准确率按样本等权，宏 F1 按类别等权。',protocol:'research/public_intent_pilot_v1/README.zh-CN.md'},
@@ -24,7 +26,7 @@ const views = {
 views.intent={title:'意图识别 · 官方完整测试',metrics:['intent_accuracy','intent_macro_f1'],description:'CLINC：5,500 条、151 个选项；BANKING：3,080 条、77 个选项。已完成模型的准确率计入新版综合榜；概率指标和宏 F1 独立展示。',protocol:'research/evaluation_completion_v1/PROTOCOL.md'};
 names.intent_accuracy='准确率';names.intent_macro_f1='宏平均 F1';
 names.intent_domain='意图识别';names.clinc150_full='CLINC150 + OOS';names.banking77_full='BANKING77';
-let data, review, pilot, research, view='common', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=true,paperFilter='all';
+let data, review, pilot, research, lengthData, lengthTask='variable',lengthMode='all',view='common', metric='overall_domain_equal', family='all', search='', displayMode='visual',expanded=true,paperFilter='all';
 const kind = id => /^(qwen|llama)/.test(id) ? 'general' : ['english','multilingual'].includes(id) ? 'representation' : 'decision';
 const kindName = id => ({general:'通用大模型',representation:'表示模型',decision:'决策专用'})[kind(id)];
 const canonical = id => id === 'jev' ? 'jev-1.13.0' : id;
@@ -66,9 +68,9 @@ function datasets() {
  $('boardFoot').innerHTML='基础样本数不包括选项换序、事实反转与多字段展开。科学“未提供证据”依赖当前证据包，不等于证明现实中没有证据。StartLux 声明训练中使用 ContractNLI；法律成绩不能直接解释为完全未见领域迁移。<br>来源、划分与冻结方法见 <a href="'+repo+'research/startlux_transfer_v1/PROTOCOL.md" target="_blank" rel="noopener">迁移协议</a> 和 <a href="'+repo+'research/leaderboard_v3/PROTOCOL.md" target="_blank" rel="noopener">主榜协议</a>。';
 }
 function render() {
- $('pageTitle').textContent=view==='paper'?'决策模型研究图表':'决策模型排行榜';
- $('pageIntro').textContent=view==='paper'?'模型成绩与评测数据的图形化呈现。':'决策专用模型与通用大模型的分类、稳健性、概率及延迟评测。';
- $('overview').hidden=view==='paper';$('boardFoot').hidden=view==='paper';
+ $('pageTitle').textContent=view==='length'?'选项长短与模型选择':view==='paper'?'决策模型研究图表':'决策模型排行榜';
+ $('pageIntro').textContent=view==='length'?'S1 决策专用模型与传统大模型：对照正确答案、随机基线和不同任务。':view==='paper'?'模型成绩与评测数据的图形化呈现。':'决策专用模型与通用大模型的分类、稳健性、概率及延迟评测。';
+ $('overview').hidden=['paper','length'].includes(view);$('boardFoot').hidden=['paper','length'].includes(view);$('lengthAnalysis').hidden=view!=='length';$('metricControl').hidden=view==='length';
  $('domainCount').textContent=view==='common'?7:8;$('taskCount').textContent=view==='common'?9:11;
  $('overviewNote').innerHTML=view==='common'?'23 个模型，同一套 9 项任务。<br>不包含两项意图识别测试。':'完整覆盖才进入含意图综合榜。<br>原生选项超限的模型不混排。';
  $('paperGallery').hidden=view!=='paper';$('paperPreview').hidden=view!=='overall'||!research;
@@ -79,13 +81,20 @@ function render() {
  if(view==='datasets')$('datasetReview').innerHTML=reviewMarkup(review);
  const config=views[view];
  document.querySelectorAll('[role=tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
- document.querySelectorAll('.side-link[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===(['datasets','paper'].includes(view)?view:'common')));
+ document.querySelectorAll('.side-link[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===(['datasets','paper','length'].includes(view)?view:'common')));
  $('viewTitle').textContent=config.title;$('viewDefinition').textContent=config.description;$('protocol').href=repo+config.protocol;$('toolbar').hidden=['datasets','paper'].includes(view);$('caption').textContent=config.title+'：'+(names[metric]??'数据说明');
  $('empty').hidden=true;$('tableWrap').hidden=displayMode==='visual';
  $('displaySwitch').hidden=view==='datasets';$('visuals').hidden=view==='datasets'||displayMode==='table';
  document.querySelectorAll('[data-display]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.display===displayMode)));
  $('metric').innerHTML=config.metrics.map(m=>`<option value="${m}" ${m===metric?'selected':''}>${names[m]}</option>`).join('');
  const params=new URLSearchParams({view});if(metric)params.set('metric',metric);if(family!=='all')params.set('family',family);if(displayMode==='table')params.set('display','table');history.replaceState(null,'','?'+params.toString());
+ if(view==='length'){
+  params.delete('display');params.set('length_task',lengthTask);params.set('length_mode',lengthMode);history.replaceState(null,'','?'+params.toString());
+  $('tableWrap').hidden=true;$('visuals').hidden=true;$('displaySwitch').hidden=true;$('visuals').innerHTML='';
+  const visibleModels=Object.keys(lengthData?.models??{}).filter(id=>(family==='all'||kind(id)===family)&&label(id).toLowerCase().includes(search.toLowerCase())).length;
+  $('resultCount').textContent=`显示 ${visibleModels} / 23 个模型 · 默认比较共同 221 题`;
+  $('lengthAnalysis').innerHTML=lengthMarkup(lengthData,{family,search,task:lengthTask,mode:lengthMode});return;
+ }
  if(view==='paper'){
   $('tableWrap').hidden=true;$('visuals').hidden=true;$('displaySwitch').hidden=true;$('visuals').innerHTML='';$('resultCount').textContent='5 张研究图 · 8 个领域 · 11 个分类任务';$('boardFoot').innerHTML='';
   $('paperGallery').innerHTML=galleryMarkup(research,{filter:paperFilter});return;
@@ -143,17 +152,21 @@ document.addEventListener('keydown',event=>{const mark=event.target.closest('[da
 $('closeDetail').addEventListener('click',()=>$('detail').close());
 $('closeFigure').addEventListener('click',()=>$('figureDetail').close());
 bindResearch(document);
+bindLength(document,patch=>{if(patch.task)lengthTask=patch.task;if(patch.mode)lengthMode=patch.mode;render();});
 $('search').addEventListener('input',event=>{search=event.target.value;render();});
 $('metric').addEventListener('change',event=>{metric=event.target.value;render();});
 $('family').addEventListener('change',event=>{family=event.target.value;render();});
-$('reset').addEventListener('click',()=>{search='';family='all';expanded=view==='common';$('search').value='';$('family').value='all';metric=views[view].metrics[0]??'';render();});
+$('reset').addEventListener('click',()=>{search='';family='all';lengthTask='variable';lengthMode='all';expanded=view==='common';$('search').value='';$('family').value='all';metric=views[view].metrics[0]??'';render();});
 try {
  const response=await fetch('/catalog.json');if(!response.ok)throw Error('数据响应 '+response.status);data=await response.json();if(data.version!==1)throw Error('数据版本不兼容');
  try{const result=await fetch('/review.json');if(result.ok){review=await result.json();if(review.version!==1)review=null;}}catch{review=null;}
  try{const result=await fetch('/intent-pilot.json');if(result.ok){pilot=await result.json();if(pilot.version!==1||!pilot.models)pilot=null;}}catch{pilot=null;}
  try{const result=await fetch('/research.json');if(result.ok){research=await result.json();if(research.version!==1||!Array.isArray(research.figures))research=null;}}catch{research=null;}
+ try{const result=await fetch('/length-bias.json');if(result.ok){lengthData=await result.json();if(lengthData.version!==1||!lengthData.models)lengthData=null;}}catch{lengthData=null;}
  const params=new URLSearchParams(location.search);if(views[params.get('view')])view=params.get('view');metric=views[view].metrics.includes(params.get('metric'))?params.get('metric'):views[view].metrics[0]??'';
  expanded=view==='common';
+ if(['variable','all',...(lengthData?.tasks??[]).map(t=>t.id)].includes(params.get('length_task')))lengthTask=params.get('length_task');
+ if(['all','errors'].includes(params.get('length_mode')))lengthMode=params.get('length_mode');
  if(params.get('display')==='table')displayMode='table';
  if(['all','decision','general','representation'].includes(params.get('family')))family=params.get('family');$('family').value=family;
  $('modelCount').textContent=Object.keys(data.quality.models).length;$('release').textContent='发布快照 · '+new Date(data.generatedAt).toLocaleDateString('zh-CN',{timeZone:'Asia/Shanghai'});render();

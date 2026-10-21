@@ -26,4 +26,5 @@ leaderboard-site/data/research.json -text
 
 # Reproducible common-suite sources and score exports are byte-bound.
 research/common_suite_v1/** -text
+research/option_length_v1/** -text
 leaderboard-site/data/common-scores.csv -text
