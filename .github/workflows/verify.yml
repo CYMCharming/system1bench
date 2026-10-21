@@ -17,6 +17,7 @@ jobs:
       - run: python -m research.evaluation_completion_v1.verify
       - run: python research/common_suite_v1/analyze.py --check
       - run: python research/option_length_v1/analyze.py --check
+      - run: python research/option_length_tokens_v1/analyze.py --check
       - run: python research/paper_compass_v1/verify.py
       - run: python -m system1bench.metrics
       - run: python -m system1bench.report
